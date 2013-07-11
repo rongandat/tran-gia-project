@@ -1,9 +1,9 @@
 <?php
 // HTTP
-define('HTTP_SERVER', 'http://zodia.lc/');
+define('HTTP_SERVER', 'http://trangia.lc/');
 
 // HTTPS
-define('HTTPS_SERVER', 'http://zodia.lc/');
+define('HTTPS_SERVER', 'http://trangia.lc/');
 
 // DIR
 define('DIR_APPLICATION', 'F:\Google Drive\trangia/catalog/');
