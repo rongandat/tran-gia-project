@@ -1,6 +1,5 @@
 
 </div>
-</div>
 <div id="footer">
     
         <div id="powered">

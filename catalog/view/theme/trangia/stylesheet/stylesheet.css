@@ -8,7 +8,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0px;
     padding: 0px;
-    background:url(../image/bkg_bg.jpg) repeat-x top center;
+    background:#A52E4E;
 }
 body, td, th, input, textarea, select, a {
     font-size: 12px;
@@ -70,8 +70,10 @@ label {
 #container {
     margin: 0px auto 0;
     text-align: left;
-    width:998px;
+    width:1024px;
 }
+
+
 #column-left {
     float: left;
     margin-left: 5px;
@@ -79,7 +81,7 @@ label {
 }
 #column-right {
     float: right;
-    width: 220px;
+    width: 300px;
     margin-right:5px;
 }
 #content {
@@ -95,9 +97,11 @@ label {
 }
 /* header */
 #header {
-    height:235px;
     position: relative;
-    background:url(../image/header_bg.gif) no-repeat left top;
+    background: url(../image/bg_header.png) no-repeat top center;
+    width: 100%;
+    height: 180px;
+    clear: both;
 }
 #header #logo {
     margin-left: 15px;
@@ -405,12 +409,15 @@ label {
 }
 /* menu */
 #menu {
-    background: url("../image/nav_bg.gif") no-repeat scroll 0 0 transparent;
-    height: 48px;
+    background: url("../image/mainmenu.png") no-repeat scroll left top transparent;
+    height: 35px;
+    list-style: none outside none;
+    margin: 0 auto;
     padding: 0;
-    position: absolute;
-    top: 134px;
-    width: 998px;
+    position: relative;
+    text-align: left;
+    width: 1024px;
+    z-index: 1;
 }
 #menu ul {
     list-style: none;
@@ -2133,6 +2140,38 @@ padding: 13px 5px 15px 12px; */
 
 .center-containt {
     padding: 0px;
+    background: none repeat scroll 0 0 #FFFFFF;
+    list-style: none outside none;
+    margin: 0 auto;
+}
+
+
+#Sly-menu1 {
+    background: none repeat scroll 0 0 #FFFFFF;
+    list-style: none outside none;
+    margin: 0 auto;
+    max-height: 40px;
+    min-height: 39px;
+    overflow: hidden;
+    position: relative;
+    text-align: left;
+    width: 1024px;
+    z-index: 1;
+}
+
+
+#bogo {
+    color: #FF0000;
+    float: left;
+    font-family: Candara;
+    font-size: 16px;
+    font-weight: bold;
+    height: 40px;
+    line-height: 39px;
+    margin-left: 12px;
+    margin-top: 2px;
+    overflow: hidden;
+    width: 600px;
 }
 
 .wraper { background:url(../image/bottombg.jpg) repeat-x bottom center;}

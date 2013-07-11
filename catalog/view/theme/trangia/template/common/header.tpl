@@ -16,7 +16,7 @@
         <?php foreach ($links as $link) { ?>
             <link href="<?php echo $link['href']; ?>" rel="<?php echo $link['rel']; ?>" />
         <?php } ?>
-        <link rel="stylesheet" type="text/css" href="catalog/view/theme/equipment/stylesheet/stylesheet.css" />
+        <link rel="stylesheet" type="text/css" href="catalog/view/theme/trangia/stylesheet/stylesheet.css" />
         <?php foreach ($styles as $style) { ?>
             <link rel="<?php echo $style['rel']; ?>" type="text/css" href="<?php echo $style['href']; ?>" media="<?php echo $style['media']; ?>" />
         <?php } ?>
@@ -30,10 +30,10 @@
             <script type="text/javascript" src="<?php echo $script; ?>"></script>
         <?php } ?>
         <!--[if IE 7]> 
-        <link rel="stylesheet" type="text/css" href="catalog/view/theme/equipment/stylesheet/ie7.css" />
+        <link rel="stylesheet" type="text/css" href="catalog/view/theme/trangia/stylesheet/ie7.css" />
         <![endif]-->
         <!--[if lt IE 7]>
-        <link rel="stylesheet" type="text/css" href="catalog/view/theme/equipment/stylesheet/ie6.css" />
+        <link rel="stylesheet" type="text/css" href="catalog/view/theme/trangia/stylesheet/ie6.css" />
         <script type="text/javascript" src="catalog/view/javascript/DD_belatedPNG_0.0.8a-min.js"></script>
         <script type="text/javascript">
         DD_belatedPNG.fix('#logo img');
@@ -51,33 +51,22 @@
         <?php echo $google_analytics; ?>
     </head>
     <body>
-        <div class="wraper-bottom">
         <div id="container">
             <div id="header">
-                <?php if ($logo) { ?>
-                    <div id="logo"><a href="<?php echo $home; ?>"><img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" /></a></div>
-                <?php } ?>
-
-                
-                <?php echo $cart; ?>
-                <div id="search">
-                    <div class="button-search"></div>
-                    <input type="text" name="search" placeholder="<?php echo $text_search; ?>" value="<?php echo $search; ?>" />
-                </div>
-                <div id="welcome">
-                    <?php if (!$logged) { ?>
-                        <?php echo $text_welcome; ?>
-                    <?php } else { ?>
-                        <?php echo $text_logged; ?>
+                <div class="banner_header">
+                    <?php if ($logo) { ?>
+                        <div id="logo"><a href="<?php echo $home; ?>"><img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" /></a></div>
                     <?php } ?>
-                </div>
-                <div class="test-link">
-                    <?php echo $currency; ?>
-                    <?php echo $language; ?>
-                    <div class="links">
-                        <a href="<?php echo $home; ?>"><?php echo $text_home; ?></a><a href="<?php echo $wishlist; ?>" id="wishlist-total"><?php echo $text_wishlist; ?></a><a href="<?php echo $account; ?>"><?php echo $text_account; ?></a><a href="<?php echo $shopping_cart; ?>"><?php echo $text_shopping_cart; ?></a><a href="<?php echo $checkout; ?>"><?php echo $text_checkout; ?></a>
+                    <div id="welcome">
+                        <?php if (!$logged) { ?>
+                            <?php echo $text_welcome; ?>
+                        <?php } else { ?>
+                            <?php echo $text_logged; ?>
+                        <?php } ?>
                     </div>
+                    <?php echo $cart; ?>
                 </div>
+                <div class="clear"></div>
 
             </div>
             <?php if ($categories) { ?>
@@ -107,6 +96,22 @@
             <div id="notification"></div>
 
             <div class="center-containt">
+                <div id="Sly-menu1">
+                    <div id="bogo">		
+                        <div class="moduletable">
+                            <div class="marquee">
+                                <marquee width="100%" direction="left" behavior="scroll" onmouseover="this.stop()" onmouseout="this.start()" scrolldelay="50" scrollamount="2">
+                                    TRANGIA..,JSC Cảm ơn quý khách đã ghé thăm Website công ty, Kính chúc quý khách sức khỏe - thành đạt - hạnh phúc !</marquee>
+                            </div>		
+                        </div>
+                    </div>
+                    <div id="timkiem">		
+                        <div class="moduletable">
+                            <div class="vmCartModule">&#65279;           Bạn chưa có sản phẩm nào trong giỏ!       
+                            </div>		
+                        </div>
+                    </div>
+                </div>
                 <div class="bottom_bg">
                     <?php echo $column_banner_left; ?>
                     <?php echo $column_banner_right; ?>
