@@ -1,0 +1,39 @@
+* {padding:0; margin:0; background:none; list-style-type:none; font-family:Tahoma, Arial; font-size:11px; color:#666; outline:none; border:none;}
+.pkg:after{content:" ";display:block;visibility:hidden;clear:both;height:0.1px;font-size:0.1em;line-height:0}
+/*body {background: url(body.png) repeat-x 0 0 #5D0205;}*/
+.bg1full {background:url(http://www.vuongquocgame.com/css/default/img/bgfooterfixed.jpg) no-repeat center bottom; position:fixed; z-index:-99; width:100%; height:100%; bottom: 0;}
+#topBar {background:url(bgtopbar.png) repeat-x; width:100%; height:40px; position:fixed; top:0; z-index: 999999;}
+#topBar .tb-inner {width: 960px;margin: 12px auto 0;}
+.fl {float: left;}
+#topBar ul.tb-menu {float: right;}
+#topBar li {display: block;float: left ;margin-left: 40px;}
+#topBar a {color:#ccc; text-decoration:none; font-size:12px; line-height:14px;}
+#topBar a:hover {color:#FFF;}
+.tbloginfb {background:url(icon-topbar.png) no-repeat 0 1px; padding-left:20px;}
+.news-topBar {background:url(icon-topbar.png) no-repeat 0 -50px; padding-left:20px;}
+.mobile-topBar {background:url(icon-topbar.png) no-repeat 0 -80px; padding-left:15px;}
+.forum-topBar {background:url(icon-topbar.png) no-repeat 0 -110px; padding-left:21px;}
+.team-topBar {background:url(icon-topbar.png) no-repeat 0 -136px; padding-left:20px;}
+
+#warp {margin: 0 auto;width: 960px;padding: 40px 0 30px;}
+.head {background:url(bghead.png?a) no-repeat; width:960px; height:140px; position:relative;}
+.nav {height:40px; width:960px; background:url(bg-navl.png?r) no-repeat; box-shadow:0 1px 3px rgba(0,0,0,.15);}
+.nav li {float:left; padding:0 29px; border-right:1px solid #b70500;color:#000; text-shadow:0 1px rgba(255,255,255,.2); cursor:pointer; font:bold 12px arial; line-height:40px;}
+.nav li.home {border-radius:3px 0 0 3px;}
+.nav li.last {border:none;}
+.nav li:hover, .nav li.active {background-image: -o-linear-gradient(bottom, #9d0200 0%, #c11800 100%); background-image: -moz-linear-gradient(bottom, #9d0200 0%, #c11800 100%); background-image: -webkit-linear-gradient(bottom, #9d0200 0%, #c11800 100%); box-shadow:inset 0 0 1px rgba(255,255,255,.5); color:#FB0;}
+.ad728x90 {margin:30px 0; width:960px; background:url(728x90-right.png?d) no-repeat right; height:96px;}
+.ad728x90 .ad-area {width:728px; height:90px; border:3px solid #FFF; border-radius: 3px 3px 0 3px;}
+.floatright {position:fixed; right:0; bottom:40px; width:177px; height:353px; background:url(floatrl.png?f) right no-repeat;}
+.floatleft {position:fixed; left:0; bottom:40px; width:177px; height:353px; background:url(floatrl.png?g) left no-repeat;}
+
+#topBar .bglogin1 {margin-top:-7px;}
+#topBar .bglogin1 img {height: 19px;width: 19px;margin: 4px 5px 0 13px;float: left; color: #FFF;}
+#topBar .topBarUsername {line-height: 27px;font-weight: bold;margin-right: 11px; float:left; max-width:150px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; color: #FFF;}
+#topBar .logouttb {text-indent: 0;float: left;display: block;padding: 0 10px;line-height: 27px;margin: 0; font-size: 11px;}
+#topBar .logouttb:hover {color:#000;}
+
+/*04/01/2012*/
+/*.infoVQG, .coppyright, .fcoll h3, .fcoll a, fcoll a:hover, .fcoll b, .f-col a {color:#FC0;}
+.navFooter {border-color:#FC0;}*/
+.linktags li {background-color: #5BA715; border: 1px solid #1D9213;}

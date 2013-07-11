@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<root>
+    <supplier>
+        <supplier_name>samsung</supplier_name>
+        <supplier_link>http://www.samsung.com/</supplier_link>
+        <supplier_logo>http://www.samsung.com/common/img/logo.png</supplier_logo>
+        <supplier_status>0</supplier_status>
+        <supplier_function>getDataSamsung</supplier_function>
+        <supplier_company>Samsung Việt Nam</supplier_company>
+        <supplier_address></supplier_address>
+        <supplier_mobile>0934449338</supplier_mobile>
+        <supplier_phone>04.22142382</supplier_phone>
+        <supplier_fax/>
+        <supplier_email>rongandat@gmail.com</supplier_email>
+        <main_category>77</main_category>
+        <p_category>146</p_category>
+        <p_url>http://www.samsung.com/vn/consumer/mobile-devices/tablets/productlist</p_url>
+        <supplier_category>Máy tính bảng</supplier_category>
+    </supplier>
+    
+</root>
