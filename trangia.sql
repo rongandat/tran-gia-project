@@ -10,13 +10,13 @@
 /*!40101 SET NAMES utf8 */;
 /*!40014 SET FOREIGN_KEY_CHECKS=0 */;
 
--- Dumping database structure for zodia
-DROP DATABASE IF EXISTS `zodia`;
-CREATE DATABASE IF NOT EXISTS `zodia` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `zodia`;
+-- Dumping database structure for trangia
+DROP DATABASE IF EXISTS `trangia`;
+CREATE DATABASE IF NOT EXISTS `trangia` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `trangia`;
 
 
--- Dumping structure for table zodia.address
+-- Dumping structure for table trangia.address
 DROP TABLE IF EXISTS `address`;
 CREATE TABLE IF NOT EXISTS `address` (
   `address_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `address` (
   KEY `customer_id` (`customer_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.address: 2 rows
+-- Dumping data for table trangia.address: 2 rows
 /*!40000 ALTER TABLE `address` DISABLE KEYS */;
 INSERT INTO `address` (`address_id`, `customer_id`, `firstname`, `lastname`, `company`, `company_id`, `tax_id`, `address_1`, `address_2`, `city`, `postcode`, `country_id`, `zone_id`) VALUES
 	(1, 1, 'Khiem', 'Pham', 'CYA', '34', '', '2343242', '423', '242', '4242', 230, 3776),
@@ -44,7 +44,7 @@ INSERT INTO `address` (`address_id`, `customer_id`, `firstname`, `lastname`, `co
 /*!40000 ALTER TABLE `address` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.affiliate
+-- Dumping structure for table trangia.affiliate
 DROP TABLE IF EXISTS `affiliate`;
 CREATE TABLE IF NOT EXISTS `affiliate` (
   `affiliate_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -81,12 +81,12 @@ CREATE TABLE IF NOT EXISTS `affiliate` (
   PRIMARY KEY (`affiliate_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.affiliate: 0 rows
+-- Dumping data for table trangia.affiliate: 0 rows
 /*!40000 ALTER TABLE `affiliate` DISABLE KEYS */;
 /*!40000 ALTER TABLE `affiliate` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.affiliate_transaction
+-- Dumping structure for table trangia.affiliate_transaction
 DROP TABLE IF EXISTS `affiliate_transaction`;
 CREATE TABLE IF NOT EXISTS `affiliate_transaction` (
   `affiliate_transaction_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -98,12 +98,12 @@ CREATE TABLE IF NOT EXISTS `affiliate_transaction` (
   PRIMARY KEY (`affiliate_transaction_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.affiliate_transaction: 0 rows
+-- Dumping data for table trangia.affiliate_transaction: 0 rows
 /*!40000 ALTER TABLE `affiliate_transaction` DISABLE KEYS */;
 /*!40000 ALTER TABLE `affiliate_transaction` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.attribute
+-- Dumping structure for table trangia.attribute
 DROP TABLE IF EXISTS `attribute`;
 CREATE TABLE IF NOT EXISTS `attribute` (
   `attribute_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -112,7 +112,7 @@ CREATE TABLE IF NOT EXISTS `attribute` (
   PRIMARY KEY (`attribute_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.attribute: 11 rows
+-- Dumping data for table trangia.attribute: 11 rows
 /*!40000 ALTER TABLE `attribute` DISABLE KEYS */;
 INSERT INTO `attribute` (`attribute_id`, `attribute_group_id`, `sort_order`) VALUES
 	(1, 6, 1),
@@ -129,7 +129,7 @@ INSERT INTO `attribute` (`attribute_id`, `attribute_group_id`, `sort_order`) VAL
 /*!40000 ALTER TABLE `attribute` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.attribute_description
+-- Dumping structure for table trangia.attribute_description
 DROP TABLE IF EXISTS `attribute_description`;
 CREATE TABLE IF NOT EXISTS `attribute_description` (
   `attribute_id` int(11) NOT NULL,
@@ -138,7 +138,7 @@ CREATE TABLE IF NOT EXISTS `attribute_description` (
   PRIMARY KEY (`attribute_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.attribute_description: 22 rows
+-- Dumping data for table trangia.attribute_description: 22 rows
 /*!40000 ALTER TABLE `attribute_description` DISABLE KEYS */;
 INSERT INTO `attribute_description` (`attribute_id`, `language_id`, `name`) VALUES
 	(1, 1, 'Description'),
@@ -166,7 +166,7 @@ INSERT INTO `attribute_description` (`attribute_id`, `language_id`, `name`) VALU
 /*!40000 ALTER TABLE `attribute_description` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.attribute_group
+-- Dumping structure for table trangia.attribute_group
 DROP TABLE IF EXISTS `attribute_group`;
 CREATE TABLE IF NOT EXISTS `attribute_group` (
   `attribute_group_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -174,7 +174,7 @@ CREATE TABLE IF NOT EXISTS `attribute_group` (
   PRIMARY KEY (`attribute_group_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.attribute_group: 4 rows
+-- Dumping data for table trangia.attribute_group: 4 rows
 /*!40000 ALTER TABLE `attribute_group` DISABLE KEYS */;
 INSERT INTO `attribute_group` (`attribute_group_id`, `sort_order`) VALUES
 	(3, 2),
@@ -184,7 +184,7 @@ INSERT INTO `attribute_group` (`attribute_group_id`, `sort_order`) VALUES
 /*!40000 ALTER TABLE `attribute_group` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.attribute_group_description
+-- Dumping structure for table trangia.attribute_group_description
 DROP TABLE IF EXISTS `attribute_group_description`;
 CREATE TABLE IF NOT EXISTS `attribute_group_description` (
   `attribute_group_id` int(11) NOT NULL,
@@ -193,7 +193,7 @@ CREATE TABLE IF NOT EXISTS `attribute_group_description` (
   PRIMARY KEY (`attribute_group_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.attribute_group_description: 8 rows
+-- Dumping data for table trangia.attribute_group_description: 8 rows
 /*!40000 ALTER TABLE `attribute_group_description` DISABLE KEYS */;
 INSERT INTO `attribute_group_description` (`attribute_group_id`, `language_id`, `name`) VALUES
 	(3, 1, 'Memory'),
@@ -207,7 +207,7 @@ INSERT INTO `attribute_group_description` (`attribute_group_id`, `language_id`, 
 /*!40000 ALTER TABLE `attribute_group_description` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.banner
+-- Dumping structure for table trangia.banner
 DROP TABLE IF EXISTS `banner`;
 CREATE TABLE IF NOT EXISTS `banner` (
   `banner_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -216,7 +216,7 @@ CREATE TABLE IF NOT EXISTS `banner` (
   PRIMARY KEY (`banner_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.banner: 3 rows
+-- Dumping data for table trangia.banner: 3 rows
 /*!40000 ALTER TABLE `banner` DISABLE KEYS */;
 INSERT INTO `banner` (`banner_id`, `name`, `status`) VALUES
 	(6, 'HP Products', 1),
@@ -225,7 +225,7 @@ INSERT INTO `banner` (`banner_id`, `name`, `status`) VALUES
 /*!40000 ALTER TABLE `banner` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.banner_image
+-- Dumping structure for table trangia.banner_image
 DROP TABLE IF EXISTS `banner_image`;
 CREATE TABLE IF NOT EXISTS `banner_image` (
   `banner_image_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -235,7 +235,7 @@ CREATE TABLE IF NOT EXISTS `banner_image` (
   PRIMARY KEY (`banner_image_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=85 DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.banner_image: 6 rows
+-- Dumping data for table trangia.banner_image: 6 rows
 /*!40000 ALTER TABLE `banner_image` DISABLE KEYS */;
 INSERT INTO `banner_image` (`banner_image_id`, `banner_id`, `link`, `image`) VALUES
 	(54, 7, 'index.php?route=product/product&amp;path=57&amp;product_id=49', 'data/demo/samsung_banner.jpg'),
@@ -247,7 +247,7 @@ INSERT INTO `banner_image` (`banner_image_id`, `banner_id`, `link`, `image`) VAL
 /*!40000 ALTER TABLE `banner_image` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.banner_image_description
+-- Dumping structure for table trangia.banner_image_description
 DROP TABLE IF EXISTS `banner_image_description`;
 CREATE TABLE IF NOT EXISTS `banner_image_description` (
   `banner_image_id` int(11) NOT NULL,
@@ -257,25 +257,25 @@ CREATE TABLE IF NOT EXISTS `banner_image_description` (
   PRIMARY KEY (`banner_image_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.banner_image_description: 12 rows
+-- Dumping data for table trangia.banner_image_description: 12 rows
 /*!40000 ALTER TABLE `banner_image_description` DISABLE KEYS */;
 INSERT INTO `banner_image_description` (`banner_image_id`, `language_id`, `banner_id`, `title`) VALUES
 	(54, 1, 7, 'Samsung Tab 10.1'),
-	(83, 1, 6, 'zodia'),
-	(84, 1, 6, 'zodia'),
+	(83, 1, 6, 'trangia'),
+	(84, 1, 6, 'trangia'),
 	(54, 2, 7, 'Samsung Tab 10.1'),
-	(83, 2, 6, 'zodia'),
-	(84, 2, 6, 'zodia'),
+	(83, 2, 6, 'trangia'),
+	(84, 2, 6, 'trangia'),
 	(81, 1, 8, 'Apple'),
 	(81, 2, 8, 'Apple'),
 	(80, 1, 8, 'HTC'),
 	(80, 2, 8, 'HTC'),
-	(82, 1, 6, 'zodia'),
-	(82, 2, 6, 'zodia');
+	(82, 1, 6, 'trangia'),
+	(82, 2, 6, 'trangia');
 /*!40000 ALTER TABLE `banner_image_description` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.category
+-- Dumping structure for table trangia.category
 DROP TABLE IF EXISTS `category`;
 CREATE TABLE IF NOT EXISTS `category` (
   `category_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -290,7 +290,7 @@ CREATE TABLE IF NOT EXISTS `category` (
   PRIMARY KEY (`category_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=69 DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.category: 6 rows
+-- Dumping data for table trangia.category: 6 rows
 /*!40000 ALTER TABLE `category` DISABLE KEYS */;
 INSERT INTO `category` (`category_id`, `image`, `parent_id`, `top`, `column`, `sort_order`, `status`, `date_added`, `date_modified`) VALUES
 	(67, '', 0, 1, 1, 0, 1, '2013-01-25 21:20:02', '2013-01-25 21:31:50'),
@@ -302,7 +302,7 @@ INSERT INTO `category` (`category_id`, `image`, `parent_id`, `top`, `column`, `s
 /*!40000 ALTER TABLE `category` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.category_description
+-- Dumping structure for table trangia.category_description
 DROP TABLE IF EXISTS `category_description`;
 CREATE TABLE IF NOT EXISTS `category_description` (
   `category_id` int(11) NOT NULL,
@@ -315,7 +315,7 @@ CREATE TABLE IF NOT EXISTS `category_description` (
   KEY `name` (`name`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.category_description: 8 rows
+-- Dumping data for table trangia.category_description: 8 rows
 /*!40000 ALTER TABLE `category_description` DISABLE KEYS */;
 INSERT INTO `category_description` (`category_id`, `language_id`, `name`, `description`, `meta_description`, `meta_keyword`) VALUES
 	(66, 2, 'hỗ trợ xương khớp', '', 'hỗ trợ xương khớp', 'hỗ trợ xương khớp'),
@@ -329,7 +329,7 @@ INSERT INTO `category_description` (`category_id`, `language_id`, `name`, `descr
 /*!40000 ALTER TABLE `category_description` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.category_filter
+-- Dumping structure for table trangia.category_filter
 DROP TABLE IF EXISTS `category_filter`;
 CREATE TABLE IF NOT EXISTS `category_filter` (
   `category_id` int(11) NOT NULL,
@@ -337,12 +337,12 @@ CREATE TABLE IF NOT EXISTS `category_filter` (
   PRIMARY KEY (`category_id`,`filter_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.category_filter: 0 rows
+-- Dumping data for table trangia.category_filter: 0 rows
 /*!40000 ALTER TABLE `category_filter` DISABLE KEYS */;
 /*!40000 ALTER TABLE `category_filter` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.category_path
+-- Dumping structure for table trangia.category_path
 DROP TABLE IF EXISTS `category_path`;
 CREATE TABLE IF NOT EXISTS `category_path` (
   `category_id` int(11) NOT NULL,
@@ -351,7 +351,7 @@ CREATE TABLE IF NOT EXISTS `category_path` (
   PRIMARY KEY (`category_id`,`path_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.category_path: 7 rows
+-- Dumping data for table trangia.category_path: 7 rows
 /*!40000 ALTER TABLE `category_path` DISABLE KEYS */;
 INSERT INTO `category_path` (`category_id`, `path_id`, `level`) VALUES
 	(67, 67, 0),
@@ -364,7 +364,7 @@ INSERT INTO `category_path` (`category_id`, `path_id`, `level`) VALUES
 /*!40000 ALTER TABLE `category_path` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.category_to_layout
+-- Dumping structure for table trangia.category_to_layout
 DROP TABLE IF EXISTS `category_to_layout`;
 CREATE TABLE IF NOT EXISTS `category_to_layout` (
   `category_id` int(11) NOT NULL,
@@ -373,12 +373,12 @@ CREATE TABLE IF NOT EXISTS `category_to_layout` (
   PRIMARY KEY (`category_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.category_to_layout: 0 rows
+-- Dumping data for table trangia.category_to_layout: 0 rows
 /*!40000 ALTER TABLE `category_to_layout` DISABLE KEYS */;
 /*!40000 ALTER TABLE `category_to_layout` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.category_to_store
+-- Dumping structure for table trangia.category_to_store
 DROP TABLE IF EXISTS `category_to_store`;
 CREATE TABLE IF NOT EXISTS `category_to_store` (
   `category_id` int(11) NOT NULL,
@@ -386,7 +386,7 @@ CREATE TABLE IF NOT EXISTS `category_to_store` (
   PRIMARY KEY (`category_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.category_to_store: 3 rows
+-- Dumping data for table trangia.category_to_store: 3 rows
 /*!40000 ALTER TABLE `category_to_store` DISABLE KEYS */;
 INSERT INTO `category_to_store` (`category_id`, `store_id`) VALUES
 	(66, 0),
@@ -395,7 +395,7 @@ INSERT INTO `category_to_store` (`category_id`, `store_id`) VALUES
 /*!40000 ALTER TABLE `category_to_store` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.country
+-- Dumping structure for table trangia.country
 DROP TABLE IF EXISTS `country`;
 CREATE TABLE IF NOT EXISTS `country` (
   `country_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -408,7 +408,7 @@ CREATE TABLE IF NOT EXISTS `country` (
   PRIMARY KEY (`country_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=252 DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.country: 249 rows
+-- Dumping data for table trangia.country: 249 rows
 /*!40000 ALTER TABLE `country` DISABLE KEYS */;
 INSERT INTO `country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `address_format`, `postcode_required`, `status`) VALUES
 	(1, 'Afghanistan', 'AF', 'AFG', '', 0, 1),
@@ -663,7 +663,7 @@ INSERT INTO `country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `addres
 /*!40000 ALTER TABLE `country` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.coupon
+-- Dumping structure for table trangia.coupon
 DROP TABLE IF EXISTS `coupon`;
 CREATE TABLE IF NOT EXISTS `coupon` (
   `coupon_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -683,7 +683,7 @@ CREATE TABLE IF NOT EXISTS `coupon` (
   PRIMARY KEY (`coupon_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.coupon: 3 rows
+-- Dumping data for table trangia.coupon: 3 rows
 /*!40000 ALTER TABLE `coupon` DISABLE KEYS */;
 INSERT INTO `coupon` (`coupon_id`, `name`, `code`, `type`, `discount`, `logged`, `shipping`, `total`, `date_start`, `date_end`, `uses_total`, `uses_customer`, `status`, `date_added`) VALUES
 	(4, '-10% Discount', '2222', 'P', 10.0000, 0, 0, 0.0000, '2011-01-01', '2012-01-01', 10, '10', 1, '2009-01-27 13:55:03'),
@@ -692,7 +692,7 @@ INSERT INTO `coupon` (`coupon_id`, `name`, `code`, `type`, `discount`, `logged`,
 /*!40000 ALTER TABLE `coupon` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.coupon_category
+-- Dumping structure for table trangia.coupon_category
 DROP TABLE IF EXISTS `coupon_category`;
 CREATE TABLE IF NOT EXISTS `coupon_category` (
   `coupon_id` int(11) NOT NULL,
@@ -700,12 +700,12 @@ CREATE TABLE IF NOT EXISTS `coupon_category` (
   PRIMARY KEY (`coupon_id`,`category_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.coupon_category: 0 rows
+-- Dumping data for table trangia.coupon_category: 0 rows
 /*!40000 ALTER TABLE `coupon_category` DISABLE KEYS */;
 /*!40000 ALTER TABLE `coupon_category` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.coupon_history
+-- Dumping structure for table trangia.coupon_history
 DROP TABLE IF EXISTS `coupon_history`;
 CREATE TABLE IF NOT EXISTS `coupon_history` (
   `coupon_history_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -717,12 +717,12 @@ CREATE TABLE IF NOT EXISTS `coupon_history` (
   PRIMARY KEY (`coupon_history_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.coupon_history: 0 rows
+-- Dumping data for table trangia.coupon_history: 0 rows
 /*!40000 ALTER TABLE `coupon_history` DISABLE KEYS */;
 /*!40000 ALTER TABLE `coupon_history` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.coupon_product
+-- Dumping structure for table trangia.coupon_product
 DROP TABLE IF EXISTS `coupon_product`;
 CREATE TABLE IF NOT EXISTS `coupon_product` (
   `coupon_product_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -731,12 +731,12 @@ CREATE TABLE IF NOT EXISTS `coupon_product` (
   PRIMARY KEY (`coupon_product_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.coupon_product: 0 rows
+-- Dumping data for table trangia.coupon_product: 0 rows
 /*!40000 ALTER TABLE `coupon_product` DISABLE KEYS */;
 /*!40000 ALTER TABLE `coupon_product` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.currency
+-- Dumping structure for table trangia.currency
 DROP TABLE IF EXISTS `currency`;
 CREATE TABLE IF NOT EXISTS `currency` (
   `currency_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -751,7 +751,7 @@ CREATE TABLE IF NOT EXISTS `currency` (
   PRIMARY KEY (`currency_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.currency: 3 rows
+-- Dumping data for table trangia.currency: 3 rows
 /*!40000 ALTER TABLE `currency` DISABLE KEYS */;
 INSERT INTO `currency` (`currency_id`, `title`, `code`, `symbol_left`, `symbol_right`, `decimal_place`, `value`, `status`, `date_modified`) VALUES
 	(4, 'VNĐ', 'VND', '', ' VNĐ', '', 1.00000000, 1, '2013-06-25 11:53:05'),
@@ -760,7 +760,7 @@ INSERT INTO `currency` (`currency_id`, `title`, `code`, `symbol_left`, `symbol_r
 /*!40000 ALTER TABLE `currency` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.customer
+-- Dumping structure for table trangia.customer
 DROP TABLE IF EXISTS `customer`;
 CREATE TABLE IF NOT EXISTS `customer` (
   `customer_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -785,7 +785,7 @@ CREATE TABLE IF NOT EXISTS `customer` (
   PRIMARY KEY (`customer_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.customer: 2 rows
+-- Dumping data for table trangia.customer: 2 rows
 /*!40000 ALTER TABLE `customer` DISABLE KEYS */;
 INSERT INTO `customer` (`customer_id`, `store_id`, `firstname`, `lastname`, `email`, `telephone`, `fax`, `password`, `salt`, `cart`, `wishlist`, `newsletter`, `address_id`, `customer_group_id`, `ip`, `status`, `approved`, `token`, `date_added`) VALUES
 	(1, 0, 'Khiem', 'Pham', 'rongandat@gmail.com', '123456789', '0165235952', '6b8c18dcc4811558b4e82e54376e224963e863df', 'd2fb62120', 'a:1:{i:51;i:1;}', '', 0, 1, 1, '127.0.0.1', 1, 1, '', '2013-03-19 10:55:25'),
@@ -793,7 +793,7 @@ INSERT INTO `customer` (`customer_id`, `store_id`, `firstname`, `lastname`, `ema
 /*!40000 ALTER TABLE `customer` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.customer_ban_ip
+-- Dumping structure for table trangia.customer_ban_ip
 DROP TABLE IF EXISTS `customer_ban_ip`;
 CREATE TABLE IF NOT EXISTS `customer_ban_ip` (
   `customer_ban_ip_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -802,12 +802,12 @@ CREATE TABLE IF NOT EXISTS `customer_ban_ip` (
   KEY `ip` (`ip`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.customer_ban_ip: 0 rows
+-- Dumping data for table trangia.customer_ban_ip: 0 rows
 /*!40000 ALTER TABLE `customer_ban_ip` DISABLE KEYS */;
 /*!40000 ALTER TABLE `customer_ban_ip` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.customer_field
+-- Dumping structure for table trangia.customer_field
 DROP TABLE IF EXISTS `customer_field`;
 CREATE TABLE IF NOT EXISTS `customer_field` (
   `customer_id` int(11) NOT NULL,
@@ -819,12 +819,12 @@ CREATE TABLE IF NOT EXISTS `customer_field` (
   PRIMARY KEY (`customer_id`,`custom_field_id`,`custom_field_value_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.customer_field: 0 rows
+-- Dumping data for table trangia.customer_field: 0 rows
 /*!40000 ALTER TABLE `customer_field` DISABLE KEYS */;
 /*!40000 ALTER TABLE `customer_field` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.customer_group
+-- Dumping structure for table trangia.customer_group
 DROP TABLE IF EXISTS `customer_group`;
 CREATE TABLE IF NOT EXISTS `customer_group` (
   `customer_group_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -837,14 +837,14 @@ CREATE TABLE IF NOT EXISTS `customer_group` (
   PRIMARY KEY (`customer_group_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.customer_group: 1 rows
+-- Dumping data for table trangia.customer_group: 1 rows
 /*!40000 ALTER TABLE `customer_group` DISABLE KEYS */;
 INSERT INTO `customer_group` (`customer_group_id`, `approval`, `company_id_display`, `company_id_required`, `tax_id_display`, `tax_id_required`, `sort_order`) VALUES
 	(1, 0, 1, 0, 0, 1, 1);
 /*!40000 ALTER TABLE `customer_group` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.customer_group_description
+-- Dumping structure for table trangia.customer_group_description
 DROP TABLE IF EXISTS `customer_group_description`;
 CREATE TABLE IF NOT EXISTS `customer_group_description` (
   `customer_group_id` int(11) NOT NULL,
@@ -854,7 +854,7 @@ CREATE TABLE IF NOT EXISTS `customer_group_description` (
   PRIMARY KEY (`customer_group_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.customer_group_description: 2 rows
+-- Dumping data for table trangia.customer_group_description: 2 rows
 /*!40000 ALTER TABLE `customer_group_description` DISABLE KEYS */;
 INSERT INTO `customer_group_description` (`customer_group_id`, `language_id`, `name`, `description`) VALUES
 	(1, 1, 'Default', 'test'),
@@ -862,7 +862,7 @@ INSERT INTO `customer_group_description` (`customer_group_id`, `language_id`, `n
 /*!40000 ALTER TABLE `customer_group_description` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.customer_history
+-- Dumping structure for table trangia.customer_history
 DROP TABLE IF EXISTS `customer_history`;
 CREATE TABLE IF NOT EXISTS `customer_history` (
   `customer_history_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -872,12 +872,12 @@ CREATE TABLE IF NOT EXISTS `customer_history` (
   PRIMARY KEY (`customer_history_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.customer_history: 0 rows
+-- Dumping data for table trangia.customer_history: 0 rows
 /*!40000 ALTER TABLE `customer_history` DISABLE KEYS */;
 /*!40000 ALTER TABLE `customer_history` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.customer_ip
+-- Dumping structure for table trangia.customer_ip
 DROP TABLE IF EXISTS `customer_ip`;
 CREATE TABLE IF NOT EXISTS `customer_ip` (
   `customer_ip_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -888,7 +888,7 @@ CREATE TABLE IF NOT EXISTS `customer_ip` (
   KEY `ip` (`ip`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.customer_ip: 2 rows
+-- Dumping data for table trangia.customer_ip: 2 rows
 /*!40000 ALTER TABLE `customer_ip` DISABLE KEYS */;
 INSERT INTO `customer_ip` (`customer_ip_id`, `customer_id`, `ip`, `date_added`) VALUES
 	(1, 1, '127.0.0.1', '2013-03-19 10:55:31'),
@@ -896,7 +896,7 @@ INSERT INTO `customer_ip` (`customer_ip_id`, `customer_id`, `ip`, `date_added`) 
 /*!40000 ALTER TABLE `customer_ip` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.customer_online
+-- Dumping structure for table trangia.customer_online
 DROP TABLE IF EXISTS `customer_online`;
 CREATE TABLE IF NOT EXISTS `customer_online` (
   `ip` varchar(40) NOT NULL,
@@ -907,12 +907,12 @@ CREATE TABLE IF NOT EXISTS `customer_online` (
   PRIMARY KEY (`ip`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.customer_online: 0 rows
+-- Dumping data for table trangia.customer_online: 0 rows
 /*!40000 ALTER TABLE `customer_online` DISABLE KEYS */;
 /*!40000 ALTER TABLE `customer_online` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.customer_reward
+-- Dumping structure for table trangia.customer_reward
 DROP TABLE IF EXISTS `customer_reward`;
 CREATE TABLE IF NOT EXISTS `customer_reward` (
   `customer_reward_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -924,12 +924,12 @@ CREATE TABLE IF NOT EXISTS `customer_reward` (
   PRIMARY KEY (`customer_reward_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.customer_reward: 0 rows
+-- Dumping data for table trangia.customer_reward: 0 rows
 /*!40000 ALTER TABLE `customer_reward` DISABLE KEYS */;
 /*!40000 ALTER TABLE `customer_reward` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.customer_transaction
+-- Dumping structure for table trangia.customer_transaction
 DROP TABLE IF EXISTS `customer_transaction`;
 CREATE TABLE IF NOT EXISTS `customer_transaction` (
   `customer_transaction_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -941,12 +941,12 @@ CREATE TABLE IF NOT EXISTS `customer_transaction` (
   PRIMARY KEY (`customer_transaction_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.customer_transaction: 0 rows
+-- Dumping data for table trangia.customer_transaction: 0 rows
 /*!40000 ALTER TABLE `customer_transaction` DISABLE KEYS */;
 /*!40000 ALTER TABLE `customer_transaction` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.custom_field
+-- Dumping structure for table trangia.custom_field
 DROP TABLE IF EXISTS `custom_field`;
 CREATE TABLE IF NOT EXISTS `custom_field` (
   `custom_field_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -959,12 +959,12 @@ CREATE TABLE IF NOT EXISTS `custom_field` (
   PRIMARY KEY (`custom_field_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.custom_field: 0 rows
+-- Dumping data for table trangia.custom_field: 0 rows
 /*!40000 ALTER TABLE `custom_field` DISABLE KEYS */;
 /*!40000 ALTER TABLE `custom_field` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.custom_field_description
+-- Dumping structure for table trangia.custom_field_description
 DROP TABLE IF EXISTS `custom_field_description`;
 CREATE TABLE IF NOT EXISTS `custom_field_description` (
   `custom_field_id` int(11) NOT NULL,
@@ -973,12 +973,12 @@ CREATE TABLE IF NOT EXISTS `custom_field_description` (
   PRIMARY KEY (`custom_field_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.custom_field_description: 0 rows
+-- Dumping data for table trangia.custom_field_description: 0 rows
 /*!40000 ALTER TABLE `custom_field_description` DISABLE KEYS */;
 /*!40000 ALTER TABLE `custom_field_description` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.custom_field_to_customer_group
+-- Dumping structure for table trangia.custom_field_to_customer_group
 DROP TABLE IF EXISTS `custom_field_to_customer_group`;
 CREATE TABLE IF NOT EXISTS `custom_field_to_customer_group` (
   `custom_field_id` int(11) NOT NULL,
@@ -986,12 +986,12 @@ CREATE TABLE IF NOT EXISTS `custom_field_to_customer_group` (
   PRIMARY KEY (`custom_field_id`,`customer_group_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.custom_field_to_customer_group: 0 rows
+-- Dumping data for table trangia.custom_field_to_customer_group: 0 rows
 /*!40000 ALTER TABLE `custom_field_to_customer_group` DISABLE KEYS */;
 /*!40000 ALTER TABLE `custom_field_to_customer_group` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.custom_field_value
+-- Dumping structure for table trangia.custom_field_value
 DROP TABLE IF EXISTS `custom_field_value`;
 CREATE TABLE IF NOT EXISTS `custom_field_value` (
   `custom_field_value_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -1000,12 +1000,12 @@ CREATE TABLE IF NOT EXISTS `custom_field_value` (
   PRIMARY KEY (`custom_field_value_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.custom_field_value: 0 rows
+-- Dumping data for table trangia.custom_field_value: 0 rows
 /*!40000 ALTER TABLE `custom_field_value` DISABLE KEYS */;
 /*!40000 ALTER TABLE `custom_field_value` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.custom_field_value_description
+-- Dumping structure for table trangia.custom_field_value_description
 DROP TABLE IF EXISTS `custom_field_value_description`;
 CREATE TABLE IF NOT EXISTS `custom_field_value_description` (
   `custom_field_value_id` int(11) NOT NULL,
@@ -1015,12 +1015,12 @@ CREATE TABLE IF NOT EXISTS `custom_field_value_description` (
   PRIMARY KEY (`custom_field_value_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.custom_field_value_description: 0 rows
+-- Dumping data for table trangia.custom_field_value_description: 0 rows
 /*!40000 ALTER TABLE `custom_field_value_description` DISABLE KEYS */;
 /*!40000 ALTER TABLE `custom_field_value_description` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.download
+-- Dumping structure for table trangia.download
 DROP TABLE IF EXISTS `download`;
 CREATE TABLE IF NOT EXISTS `download` (
   `download_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -1031,12 +1031,12 @@ CREATE TABLE IF NOT EXISTS `download` (
   PRIMARY KEY (`download_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.download: 0 rows
+-- Dumping data for table trangia.download: 0 rows
 /*!40000 ALTER TABLE `download` DISABLE KEYS */;
 /*!40000 ALTER TABLE `download` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.download_description
+-- Dumping structure for table trangia.download_description
 DROP TABLE IF EXISTS `download_description`;
 CREATE TABLE IF NOT EXISTS `download_description` (
   `download_id` int(11) NOT NULL,
@@ -1045,12 +1045,12 @@ CREATE TABLE IF NOT EXISTS `download_description` (
   PRIMARY KEY (`download_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.download_description: 0 rows
+-- Dumping data for table trangia.download_description: 0 rows
 /*!40000 ALTER TABLE `download_description` DISABLE KEYS */;
 /*!40000 ALTER TABLE `download_description` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.extension
+-- Dumping structure for table trangia.extension
 DROP TABLE IF EXISTS `extension`;
 CREATE TABLE IF NOT EXISTS `extension` (
   `extension_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -1059,7 +1059,7 @@ CREATE TABLE IF NOT EXISTS `extension` (
   PRIMARY KEY (`extension_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=456 DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.extension: 31 rows
+-- Dumping data for table trangia.extension: 31 rows
 /*!40000 ALTER TABLE `extension` DISABLE KEYS */;
 INSERT INTO `extension` (`extension_id`, `type`, `code`) VALUES
 	(23, 'payment', 'cod'),
@@ -1096,7 +1096,7 @@ INSERT INTO `extension` (`extension_id`, `type`, `code`) VALUES
 /*!40000 ALTER TABLE `extension` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.filter
+-- Dumping structure for table trangia.filter
 DROP TABLE IF EXISTS `filter`;
 CREATE TABLE IF NOT EXISTS `filter` (
   `filter_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -1105,12 +1105,12 @@ CREATE TABLE IF NOT EXISTS `filter` (
   PRIMARY KEY (`filter_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.filter: 0 rows
+-- Dumping data for table trangia.filter: 0 rows
 /*!40000 ALTER TABLE `filter` DISABLE KEYS */;
 /*!40000 ALTER TABLE `filter` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.filter_description
+-- Dumping structure for table trangia.filter_description
 DROP TABLE IF EXISTS `filter_description`;
 CREATE TABLE IF NOT EXISTS `filter_description` (
   `filter_id` int(11) NOT NULL,
@@ -1120,12 +1120,12 @@ CREATE TABLE IF NOT EXISTS `filter_description` (
   PRIMARY KEY (`filter_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.filter_description: 0 rows
+-- Dumping data for table trangia.filter_description: 0 rows
 /*!40000 ALTER TABLE `filter_description` DISABLE KEYS */;
 /*!40000 ALTER TABLE `filter_description` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.filter_group
+-- Dumping structure for table trangia.filter_group
 DROP TABLE IF EXISTS `filter_group`;
 CREATE TABLE IF NOT EXISTS `filter_group` (
   `filter_group_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -1133,12 +1133,12 @@ CREATE TABLE IF NOT EXISTS `filter_group` (
   PRIMARY KEY (`filter_group_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.filter_group: 0 rows
+-- Dumping data for table trangia.filter_group: 0 rows
 /*!40000 ALTER TABLE `filter_group` DISABLE KEYS */;
 /*!40000 ALTER TABLE `filter_group` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.filter_group_description
+-- Dumping structure for table trangia.filter_group_description
 DROP TABLE IF EXISTS `filter_group_description`;
 CREATE TABLE IF NOT EXISTS `filter_group_description` (
   `filter_group_id` int(11) NOT NULL,
@@ -1147,12 +1147,12 @@ CREATE TABLE IF NOT EXISTS `filter_group_description` (
   PRIMARY KEY (`filter_group_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.filter_group_description: 0 rows
+-- Dumping data for table trangia.filter_group_description: 0 rows
 /*!40000 ALTER TABLE `filter_group_description` DISABLE KEYS */;
 /*!40000 ALTER TABLE `filter_group_description` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.geo_zone
+-- Dumping structure for table trangia.geo_zone
 DROP TABLE IF EXISTS `geo_zone`;
 CREATE TABLE IF NOT EXISTS `geo_zone` (
   `geo_zone_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -1163,7 +1163,7 @@ CREATE TABLE IF NOT EXISTS `geo_zone` (
   PRIMARY KEY (`geo_zone_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.geo_zone: 2 rows
+-- Dumping data for table trangia.geo_zone: 2 rows
 /*!40000 ALTER TABLE `geo_zone` DISABLE KEYS */;
 INSERT INTO `geo_zone` (`geo_zone_id`, `name`, `description`, `date_modified`, `date_added`) VALUES
 	(3, 'UK VAT Zone', 'UK VAT', '2010-02-26 22:33:24', '2009-01-06 23:26:25'),
@@ -1171,7 +1171,7 @@ INSERT INTO `geo_zone` (`geo_zone_id`, `name`, `description`, `date_modified`, `
 /*!40000 ALTER TABLE `geo_zone` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.information
+-- Dumping structure for table trangia.information
 DROP TABLE IF EXISTS `information`;
 CREATE TABLE IF NOT EXISTS `information` (
   `information_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -1181,7 +1181,7 @@ CREATE TABLE IF NOT EXISTS `information` (
   PRIMARY KEY (`information_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.information: 4 rows
+-- Dumping data for table trangia.information: 4 rows
 /*!40000 ALTER TABLE `information` DISABLE KEYS */;
 INSERT INTO `information` (`information_id`, `bottom`, `sort_order`, `status`) VALUES
 	(3, 1, 3, 0),
@@ -1191,7 +1191,7 @@ INSERT INTO `information` (`information_id`, `bottom`, `sort_order`, `status`) V
 /*!40000 ALTER TABLE `information` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.information_description
+-- Dumping structure for table trangia.information_description
 DROP TABLE IF EXISTS `information_description`;
 CREATE TABLE IF NOT EXISTS `information_description` (
   `information_id` int(11) NOT NULL,
@@ -1201,7 +1201,7 @@ CREATE TABLE IF NOT EXISTS `information_description` (
   PRIMARY KEY (`information_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.information_description: 8 rows
+-- Dumping data for table trangia.information_description: 8 rows
 /*!40000 ALTER TABLE `information_description` DISABLE KEYS */;
 INSERT INTO `information_description` (`information_id`, `language_id`, `title`, `description`) VALUES
 	(4, 1, 'About Us', '&lt;p&gt;\r\n	About Us&lt;/p&gt;\r\n'),
@@ -1215,7 +1215,7 @@ INSERT INTO `information_description` (`information_id`, `language_id`, `title`,
 /*!40000 ALTER TABLE `information_description` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.information_to_layout
+-- Dumping structure for table trangia.information_to_layout
 DROP TABLE IF EXISTS `information_to_layout`;
 CREATE TABLE IF NOT EXISTS `information_to_layout` (
   `information_id` int(11) NOT NULL,
@@ -1224,12 +1224,12 @@ CREATE TABLE IF NOT EXISTS `information_to_layout` (
   PRIMARY KEY (`information_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.information_to_layout: 0 rows
+-- Dumping data for table trangia.information_to_layout: 0 rows
 /*!40000 ALTER TABLE `information_to_layout` DISABLE KEYS */;
 /*!40000 ALTER TABLE `information_to_layout` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.information_to_store
+-- Dumping structure for table trangia.information_to_store
 DROP TABLE IF EXISTS `information_to_store`;
 CREATE TABLE IF NOT EXISTS `information_to_store` (
   `information_id` int(11) NOT NULL,
@@ -1237,7 +1237,7 @@ CREATE TABLE IF NOT EXISTS `information_to_store` (
   PRIMARY KEY (`information_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.information_to_store: 4 rows
+-- Dumping data for table trangia.information_to_store: 4 rows
 /*!40000 ALTER TABLE `information_to_store` DISABLE KEYS */;
 INSERT INTO `information_to_store` (`information_id`, `store_id`) VALUES
 	(3, 0),
@@ -1247,7 +1247,7 @@ INSERT INTO `information_to_store` (`information_id`, `store_id`) VALUES
 /*!40000 ALTER TABLE `information_to_store` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.language
+-- Dumping structure for table trangia.language
 DROP TABLE IF EXISTS `language`;
 CREATE TABLE IF NOT EXISTS `language` (
   `language_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -1263,7 +1263,7 @@ CREATE TABLE IF NOT EXISTS `language` (
   KEY `name` (`name`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.language: 2 rows
+-- Dumping data for table trangia.language: 2 rows
 /*!40000 ALTER TABLE `language` DISABLE KEYS */;
 INSERT INTO `language` (`language_id`, `name`, `code`, `locale`, `image`, `directory`, `filename`, `sort_order`, `status`) VALUES
 	(1, 'English', 'en', 'en_US.UTF-8,en_US,en-gb,english', 'gb.png', 'english', 'english', 2, 1),
@@ -1271,7 +1271,7 @@ INSERT INTO `language` (`language_id`, `name`, `code`, `locale`, `image`, `direc
 /*!40000 ALTER TABLE `language` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.layout
+-- Dumping structure for table trangia.layout
 DROP TABLE IF EXISTS `layout`;
 CREATE TABLE IF NOT EXISTS `layout` (
   `layout_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -1279,7 +1279,7 @@ CREATE TABLE IF NOT EXISTS `layout` (
   PRIMARY KEY (`layout_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.layout: 12 rows
+-- Dumping data for table trangia.layout: 12 rows
 /*!40000 ALTER TABLE `layout` DISABLE KEYS */;
 INSERT INTO `layout` (`layout_id`, `name`) VALUES
 	(1, 'Home'),
@@ -1297,7 +1297,7 @@ INSERT INTO `layout` (`layout_id`, `name`) VALUES
 /*!40000 ALTER TABLE `layout` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.layout_route
+-- Dumping structure for table trangia.layout_route
 DROP TABLE IF EXISTS `layout_route`;
 CREATE TABLE IF NOT EXISTS `layout_route` (
   `layout_route_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -1307,7 +1307,7 @@ CREATE TABLE IF NOT EXISTS `layout_route` (
   PRIMARY KEY (`layout_route_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=34 DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.layout_route: 11 rows
+-- Dumping data for table trangia.layout_route: 11 rows
 /*!40000 ALTER TABLE `layout_route` DISABLE KEYS */;
 INSERT INTO `layout_route` (`layout_route_id`, `layout_id`, `store_id`, `route`) VALUES
 	(30, 6, 0, 'account'),
@@ -1324,7 +1324,7 @@ INSERT INTO `layout_route` (`layout_route_id`, `layout_id`, `store_id`, `route`)
 /*!40000 ALTER TABLE `layout_route` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.length_class
+-- Dumping structure for table trangia.length_class
 DROP TABLE IF EXISTS `length_class`;
 CREATE TABLE IF NOT EXISTS `length_class` (
   `length_class_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -1332,7 +1332,7 @@ CREATE TABLE IF NOT EXISTS `length_class` (
   PRIMARY KEY (`length_class_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.length_class: 3 rows
+-- Dumping data for table trangia.length_class: 3 rows
 /*!40000 ALTER TABLE `length_class` DISABLE KEYS */;
 INSERT INTO `length_class` (`length_class_id`, `value`) VALUES
 	(1, 1.00000000),
@@ -1341,7 +1341,7 @@ INSERT INTO `length_class` (`length_class_id`, `value`) VALUES
 /*!40000 ALTER TABLE `length_class` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.length_class_description
+-- Dumping structure for table trangia.length_class_description
 DROP TABLE IF EXISTS `length_class_description`;
 CREATE TABLE IF NOT EXISTS `length_class_description` (
   `length_class_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -1351,7 +1351,7 @@ CREATE TABLE IF NOT EXISTS `length_class_description` (
   PRIMARY KEY (`length_class_id`,`language_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.length_class_description: 6 rows
+-- Dumping data for table trangia.length_class_description: 6 rows
 /*!40000 ALTER TABLE `length_class_description` DISABLE KEYS */;
 INSERT INTO `length_class_description` (`length_class_id`, `language_id`, `title`, `unit`) VALUES
 	(1, 1, 'Centimeter', 'cm'),
@@ -1363,7 +1363,7 @@ INSERT INTO `length_class_description` (`length_class_id`, `language_id`, `title
 /*!40000 ALTER TABLE `length_class_description` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.manufacturer
+-- Dumping structure for table trangia.manufacturer
 DROP TABLE IF EXISTS `manufacturer`;
 CREATE TABLE IF NOT EXISTS `manufacturer` (
   `manufacturer_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -1373,7 +1373,7 @@ CREATE TABLE IF NOT EXISTS `manufacturer` (
   PRIMARY KEY (`manufacturer_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.manufacturer: 6 rows
+-- Dumping data for table trangia.manufacturer: 6 rows
 /*!40000 ALTER TABLE `manufacturer` DISABLE KEYS */;
 INSERT INTO `manufacturer` (`manufacturer_id`, `name`, `image`, `sort_order`) VALUES
 	(5, 'HTC', 'data/demo/htc_logo.jpg', 0),
@@ -1385,7 +1385,7 @@ INSERT INTO `manufacturer` (`manufacturer_id`, `name`, `image`, `sort_order`) VA
 /*!40000 ALTER TABLE `manufacturer` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.manufacturer_to_store
+-- Dumping structure for table trangia.manufacturer_to_store
 DROP TABLE IF EXISTS `manufacturer_to_store`;
 CREATE TABLE IF NOT EXISTS `manufacturer_to_store` (
   `manufacturer_id` int(11) NOT NULL,
@@ -1393,7 +1393,7 @@ CREATE TABLE IF NOT EXISTS `manufacturer_to_store` (
   PRIMARY KEY (`manufacturer_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.manufacturer_to_store: 6 rows
+-- Dumping data for table trangia.manufacturer_to_store: 6 rows
 /*!40000 ALTER TABLE `manufacturer_to_store` DISABLE KEYS */;
 INSERT INTO `manufacturer_to_store` (`manufacturer_id`, `store_id`) VALUES
 	(5, 0),
@@ -1405,7 +1405,7 @@ INSERT INTO `manufacturer_to_store` (`manufacturer_id`, `store_id`) VALUES
 /*!40000 ALTER TABLE `manufacturer_to_store` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.news
+-- Dumping structure for table trangia.news
 DROP TABLE IF EXISTS `news`;
 CREATE TABLE IF NOT EXISTS `news` (
   `news_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -1421,7 +1421,7 @@ CREATE TABLE IF NOT EXISTS `news` (
   PRIMARY KEY (`news_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Dumping data for table zodia.news: 4 rows
+-- Dumping data for table trangia.news: 4 rows
 /*!40000 ALTER TABLE `news` DISABLE KEYS */;
 INSERT INTO `news` (`news_id`, `image`, `date_available`, `sort_order`, `comment`, `approved`, `status`, `date_added`, `date_modified`, `viewed`) VALUES
 	(1, '', '2013-01-22', 1, 1, 1, 1, '2013-01-23 22:35:07', '0000-00-00 00:00:00', 11),
@@ -1431,7 +1431,7 @@ INSERT INTO `news` (`news_id`, `image`, `date_available`, `sort_order`, `comment
 /*!40000 ALTER TABLE `news` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.news_category
+-- Dumping structure for table trangia.news_category
 DROP TABLE IF EXISTS `news_category`;
 CREATE TABLE IF NOT EXISTS `news_category` (
   `news_category_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -1446,7 +1446,7 @@ CREATE TABLE IF NOT EXISTS `news_category` (
   PRIMARY KEY (`news_category_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Dumping data for table zodia.news_category: 2 rows
+-- Dumping data for table trangia.news_category: 2 rows
 /*!40000 ALTER TABLE `news_category` DISABLE KEYS */;
 INSERT INTO `news_category` (`news_category_id`, `image`, `parent_id`, `top`, `column`, `sort_order`, `status`, `date_added`, `date_modified`) VALUES
 	(1, '', 0, 0, 1, 0, 1, '2013-01-23 22:33:42', '2013-01-23 22:33:42'),
@@ -1454,7 +1454,7 @@ INSERT INTO `news_category` (`news_category_id`, `image`, `parent_id`, `top`, `c
 /*!40000 ALTER TABLE `news_category` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.news_category_description
+-- Dumping structure for table trangia.news_category_description
 DROP TABLE IF EXISTS `news_category_description`;
 CREATE TABLE IF NOT EXISTS `news_category_description` (
   `news_category_id` int(11) NOT NULL,
@@ -1467,7 +1467,7 @@ CREATE TABLE IF NOT EXISTS `news_category_description` (
   KEY `name` (`name`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Dumping data for table zodia.news_category_description: 4 rows
+-- Dumping data for table trangia.news_category_description: 4 rows
 /*!40000 ALTER TABLE `news_category_description` DISABLE KEYS */;
 INSERT INTO `news_category_description` (`news_category_id`, `language_id`, `name`, `description`, `meta_description`, `meta_keyword`) VALUES
 	(1, 1, 'Tin Khuyến mại', '', '', ''),
@@ -1477,7 +1477,7 @@ INSERT INTO `news_category_description` (`news_category_id`, `language_id`, `nam
 /*!40000 ALTER TABLE `news_category_description` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.news_category_to_layout
+-- Dumping structure for table trangia.news_category_to_layout
 DROP TABLE IF EXISTS `news_category_to_layout`;
 CREATE TABLE IF NOT EXISTS `news_category_to_layout` (
   `news_category_id` int(11) NOT NULL,
@@ -1486,12 +1486,12 @@ CREATE TABLE IF NOT EXISTS `news_category_to_layout` (
   PRIMARY KEY (`news_category_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Dumping data for table zodia.news_category_to_layout: 0 rows
+-- Dumping data for table trangia.news_category_to_layout: 0 rows
 /*!40000 ALTER TABLE `news_category_to_layout` DISABLE KEYS */;
 /*!40000 ALTER TABLE `news_category_to_layout` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.news_category_to_store
+-- Dumping structure for table trangia.news_category_to_store
 DROP TABLE IF EXISTS `news_category_to_store`;
 CREATE TABLE IF NOT EXISTS `news_category_to_store` (
   `news_category_id` int(11) NOT NULL,
@@ -1499,7 +1499,7 @@ CREATE TABLE IF NOT EXISTS `news_category_to_store` (
   PRIMARY KEY (`news_category_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Dumping data for table zodia.news_category_to_store: 2 rows
+-- Dumping data for table trangia.news_category_to_store: 2 rows
 /*!40000 ALTER TABLE `news_category_to_store` DISABLE KEYS */;
 INSERT INTO `news_category_to_store` (`news_category_id`, `store_id`) VALUES
 	(1, 0),
@@ -1507,7 +1507,7 @@ INSERT INTO `news_category_to_store` (`news_category_id`, `store_id`) VALUES
 /*!40000 ALTER TABLE `news_category_to_store` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.news_comment
+-- Dumping structure for table trangia.news_comment
 DROP TABLE IF EXISTS `news_comment`;
 CREATE TABLE IF NOT EXISTS `news_comment` (
   `comment_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -1523,12 +1523,12 @@ CREATE TABLE IF NOT EXISTS `news_comment` (
   KEY `product_id` (`news_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Dumping data for table zodia.news_comment: 0 rows
+-- Dumping data for table trangia.news_comment: 0 rows
 /*!40000 ALTER TABLE `news_comment` DISABLE KEYS */;
 /*!40000 ALTER TABLE `news_comment` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.news_description
+-- Dumping structure for table trangia.news_description
 DROP TABLE IF EXISTS `news_description`;
 CREATE TABLE IF NOT EXISTS `news_description` (
   `news_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -1542,7 +1542,7 @@ CREATE TABLE IF NOT EXISTS `news_description` (
   KEY `name` (`name`)
 ) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Dumping data for table zodia.news_description: 8 rows
+-- Dumping data for table trangia.news_description: 8 rows
 /*!40000 ALTER TABLE `news_description` DISABLE KEYS */;
 INSERT INTO `news_description` (`news_id`, `language_id`, `name`, `short_description`, `description`, `meta_description`, `meta_keyword`) VALUES
 	(1, 1, 'Tuyển dụng nhân viên bán hàng', 'Tuyển dụng nhân viên bán hàng', '&lt;p&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas feugiat consequat diam. Maecenas metus. Vivamus diam purus, cursus a, commodo non, facilisis vitae, nulla. Aenean dictum lacinia tortor. Nunc iaculis, nibh non iaculis aliquam, orci felis euismod neque, sed ornare massa mauris sed velit. Nulla pretium mi et risus. Fusce mi pede, tempor id, cursus ac, ullamcorper nec, enim. Sed tortor. Curabitur molestie. Duis velit augue, condimentum at, ultrices a, luctus ut, orci. Donec pellentesque egestas eros. Integer cursus, augue in cursus faucibus, eros pede bibendum sem, in tempus tellus justo quis ligula. Etiam eget tortor. Vestibulum rutrum, est ut placerat elementum, lectus nisl aliquam velit, tempor aliquam eros nunc nonummy metus. In eros metus, gravida a, gravida sed, lobortis id, turpis. Ut ultrices, ipsum at venenatis fringilla, sem nulla lacinia tellus, eget aliquet turpis mauris non enim. Nam turpis. Suspendisse lacinia. Curabitur ac tortor ut ipsum egestas elementum. Nunc imperdiet gravida mauris.&lt;/p&gt;\r\n', '', ''),
@@ -1556,7 +1556,7 @@ INSERT INTO `news_description` (`news_id`, `language_id`, `name`, `short_descrip
 /*!40000 ALTER TABLE `news_description` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.news_related
+-- Dumping structure for table trangia.news_related
 DROP TABLE IF EXISTS `news_related`;
 CREATE TABLE IF NOT EXISTS `news_related` (
   `news_id` int(11) NOT NULL,
@@ -1564,12 +1564,12 @@ CREATE TABLE IF NOT EXISTS `news_related` (
   PRIMARY KEY (`news_id`,`related_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Dumping data for table zodia.news_related: 0 rows
+-- Dumping data for table trangia.news_related: 0 rows
 /*!40000 ALTER TABLE `news_related` DISABLE KEYS */;
 /*!40000 ALTER TABLE `news_related` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.news_tag
+-- Dumping structure for table trangia.news_tag
 DROP TABLE IF EXISTS `news_tag`;
 CREATE TABLE IF NOT EXISTS `news_tag` (
   `news_tag_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -1579,12 +1579,12 @@ CREATE TABLE IF NOT EXISTS `news_tag` (
   PRIMARY KEY (`news_tag_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Dumping data for table zodia.news_tag: 0 rows
+-- Dumping data for table trangia.news_tag: 0 rows
 /*!40000 ALTER TABLE `news_tag` DISABLE KEYS */;
 /*!40000 ALTER TABLE `news_tag` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.news_to_category
+-- Dumping structure for table trangia.news_to_category
 DROP TABLE IF EXISTS `news_to_category`;
 CREATE TABLE IF NOT EXISTS `news_to_category` (
   `news_id` int(11) NOT NULL,
@@ -1592,7 +1592,7 @@ CREATE TABLE IF NOT EXISTS `news_to_category` (
   PRIMARY KEY (`news_id`,`news_category_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Dumping data for table zodia.news_to_category: 4 rows
+-- Dumping data for table trangia.news_to_category: 4 rows
 /*!40000 ALTER TABLE `news_to_category` DISABLE KEYS */;
 INSERT INTO `news_to_category` (`news_id`, `news_category_id`) VALUES
 	(1, 2),
@@ -1602,7 +1602,7 @@ INSERT INTO `news_to_category` (`news_id`, `news_category_id`) VALUES
 /*!40000 ALTER TABLE `news_to_category` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.news_to_layout
+-- Dumping structure for table trangia.news_to_layout
 DROP TABLE IF EXISTS `news_to_layout`;
 CREATE TABLE IF NOT EXISTS `news_to_layout` (
   `news_id` int(11) NOT NULL,
@@ -1611,12 +1611,12 @@ CREATE TABLE IF NOT EXISTS `news_to_layout` (
   PRIMARY KEY (`news_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Dumping data for table zodia.news_to_layout: 0 rows
+-- Dumping data for table trangia.news_to_layout: 0 rows
 /*!40000 ALTER TABLE `news_to_layout` DISABLE KEYS */;
 /*!40000 ALTER TABLE `news_to_layout` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.news_to_store
+-- Dumping structure for table trangia.news_to_store
 DROP TABLE IF EXISTS `news_to_store`;
 CREATE TABLE IF NOT EXISTS `news_to_store` (
   `news_id` int(11) NOT NULL,
@@ -1624,7 +1624,7 @@ CREATE TABLE IF NOT EXISTS `news_to_store` (
   PRIMARY KEY (`news_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Dumping data for table zodia.news_to_store: 4 rows
+-- Dumping data for table trangia.news_to_store: 4 rows
 /*!40000 ALTER TABLE `news_to_store` DISABLE KEYS */;
 INSERT INTO `news_to_store` (`news_id`, `store_id`) VALUES
 	(1, 0),
@@ -1634,7 +1634,7 @@ INSERT INTO `news_to_store` (`news_id`, `store_id`) VALUES
 /*!40000 ALTER TABLE `news_to_store` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.option
+-- Dumping structure for table trangia.option
 DROP TABLE IF EXISTS `option`;
 CREATE TABLE IF NOT EXISTS `option` (
   `option_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -1643,7 +1643,7 @@ CREATE TABLE IF NOT EXISTS `option` (
   PRIMARY KEY (`option_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.option: 2 rows
+-- Dumping data for table trangia.option: 2 rows
 /*!40000 ALTER TABLE `option` DISABLE KEYS */;
 INSERT INTO `option` (`option_id`, `type`, `sort_order`) VALUES
 	(14, 'radio', 2),
@@ -1651,7 +1651,7 @@ INSERT INTO `option` (`option_id`, `type`, `sort_order`) VALUES
 /*!40000 ALTER TABLE `option` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.option_description
+-- Dumping structure for table trangia.option_description
 DROP TABLE IF EXISTS `option_description`;
 CREATE TABLE IF NOT EXISTS `option_description` (
   `option_id` int(11) NOT NULL,
@@ -1660,7 +1660,7 @@ CREATE TABLE IF NOT EXISTS `option_description` (
   PRIMARY KEY (`option_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.option_description: 4 rows
+-- Dumping data for table trangia.option_description: 4 rows
 /*!40000 ALTER TABLE `option_description` DISABLE KEYS */;
 INSERT INTO `option_description` (`option_id`, `language_id`, `name`) VALUES
 	(14, 1, 'Kích thước'),
@@ -1670,7 +1670,7 @@ INSERT INTO `option_description` (`option_id`, `language_id`, `name`) VALUES
 /*!40000 ALTER TABLE `option_description` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.option_value
+-- Dumping structure for table trangia.option_value
 DROP TABLE IF EXISTS `option_value`;
 CREATE TABLE IF NOT EXISTS `option_value` (
   `option_value_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -1680,7 +1680,7 @@ CREATE TABLE IF NOT EXISTS `option_value` (
   PRIMARY KEY (`option_value_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=55 DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.option_value: 6 rows
+-- Dumping data for table trangia.option_value: 6 rows
 /*!40000 ALTER TABLE `option_value` DISABLE KEYS */;
 INSERT INTO `option_value` (`option_value_id`, `option_id`, `image`, `sort_order`) VALUES
 	(54, 14, 'no_image.jpg', 0),
@@ -1692,7 +1692,7 @@ INSERT INTO `option_value` (`option_value_id`, `option_id`, `image`, `sort_order
 /*!40000 ALTER TABLE `option_value` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.option_value_description
+-- Dumping structure for table trangia.option_value_description
 DROP TABLE IF EXISTS `option_value_description`;
 CREATE TABLE IF NOT EXISTS `option_value_description` (
   `option_value_id` int(11) NOT NULL,
@@ -1702,7 +1702,7 @@ CREATE TABLE IF NOT EXISTS `option_value_description` (
   PRIMARY KEY (`option_value_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.option_value_description: 12 rows
+-- Dumping data for table trangia.option_value_description: 12 rows
 /*!40000 ALTER TABLE `option_value_description` DISABLE KEYS */;
 INSERT INTO `option_value_description` (`option_value_id`, `language_id`, `option_id`, `name`) VALUES
 	(54, 1, 14, 'XL'),
@@ -1720,7 +1720,7 @@ INSERT INTO `option_value_description` (`option_value_id`, `language_id`, `optio
 /*!40000 ALTER TABLE `option_value_description` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.order
+-- Dumping structure for table trangia.order
 DROP TABLE IF EXISTS `order`;
 CREATE TABLE IF NOT EXISTS `order` (
   `order_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -1784,23 +1784,23 @@ CREATE TABLE IF NOT EXISTS `order` (
   PRIMARY KEY (`order_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.order: 10 rows
+-- Dumping data for table trangia.order: 10 rows
 /*!40000 ALTER TABLE `order` DISABLE KEYS */;
 INSERT INTO `order` (`order_id`, `invoice_no`, `invoice_prefix`, `store_id`, `store_name`, `store_url`, `customer_id`, `customer_group_id`, `firstname`, `lastname`, `email`, `telephone`, `fax`, `payment_firstname`, `payment_lastname`, `payment_company`, `payment_company_id`, `payment_tax_id`, `payment_address_1`, `payment_address_2`, `payment_city`, `payment_postcode`, `payment_country`, `payment_country_id`, `payment_zone`, `payment_zone_id`, `payment_address_format`, `payment_method`, `payment_code`, `shipping_firstname`, `shipping_lastname`, `shipping_company`, `shipping_address_1`, `shipping_address_2`, `shipping_city`, `shipping_postcode`, `shipping_country`, `shipping_country_id`, `shipping_zone`, `shipping_zone_id`, `shipping_address_format`, `shipping_method`, `shipping_code`, `comment`, `total`, `order_status_id`, `affiliate_id`, `commission`, `language_id`, `currency_id`, `currency_code`, `currency_value`, `ip`, `forwarded_ip`, `user_agent`, `accept_language`, `date_added`, `date_modified`) VALUES
-	(1, 0, 'INV-2012-00', 0, 'Thực phẩm chức năng hàng đầu Việt Nam', 'http://zodia.lc/', 0, 1, '43534', '53453', 'rong@gmail.com', '234234', '', '43534', '53453', '', '', '', '423423423', '', '42342', '423424', 'United Kingdom', 222, 'Cheshire', 3529, '', 'Thu tiền khi giao hàng', 'cod', '43534', '53453', '', '423423423', '', '42342', '423424', 'United Kingdom', 222, 'Cheshire', 3529, '', 'Phí vận chuyển cố định', 'flat.flat', '', 799007.8750, 0, 0, 0.0000, 2, 4, 'VND', 1.00000000, '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 6.1; rv:18.0) Gecko/20100101 Firefox/18.0', 'vi-vn,vi;q=0.8,en-us;q=0.5,en;q=0.3', '2013-01-31 14:38:19', '2013-01-31 14:38:19'),
-	(2, 0, 'INV-2012-00', 0, 'Thực phẩm chức năng hàng đầu Việt Nam', 'http://zodia.lc/', 0, 1, '43534', '53453', 'rong@gmail.com', '234234', '', '43534', '53453', '', '', '', '423423423', '', '42342', '423424', 'United Kingdom', 222, 'Cheshire', 3529, '', 'Thu tiền khi giao hàng', 'cod', '43534', '53453', '', '423423423', '', '42342', '423424', 'United Kingdom', 222, 'Cheshire', 3529, '', 'Phí vận chuyển cố định', 'flat.flat', '', 799007.8750, 0, 0, 0.0000, 2, 4, 'VND', 1.00000000, '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 6.1; rv:18.0) Gecko/20100101 Firefox/18.0', 'vi-vn,vi;q=0.8,en-us;q=0.5,en;q=0.3', '2013-01-31 14:40:14', '2013-01-31 14:40:14'),
-	(3, 0, 'INV-2012-00', 0, 'Thực phẩm chức năng hàng đầu Việt Nam', 'http://zodia.lc/', 1, 1, 'Khiem', 'Pham', 'rongandat@gmail.com', '123456789', '0165235952', 'Khiem', 'Pham', 'CYA', '34', '', '2343242', '423', '242', '4242', 'Viet Nam', 230, 'Ha Noi', 3776, '', 'Thu tiền khi giao hàng', 'cod', 'Khiem', 'Pham', 'CYA', '2343242', '423', '242', '4242', 'Viet Nam', 230, 'Ha Noi', 3776, '', 'Phí vận chuyển cố định', 'flat.flat', '', 250005.0000, 0, 0, 0.0000, 2, 4, 'VND', 1.00000000, '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 6.1; rv:19.0) Gecko/20100101 Firefox/19.0', 'vi-vn,vi;q=0.8,en-us;q=0.5,en;q=0.3', '2013-03-19 10:55:41', '2013-03-19 10:55:41'),
-	(4, 0, 'INV-2012-00', 0, 'My Pham', 'http://zodia.lc/', 1, 1, 'Khiem', 'Pham', 'rongandat@gmail.com', '123456789', '0165235952', 'Khiem', 'Pham', 'CYA', '34', '', '2343242', '423', '242', '4242', 'Viet Nam', 230, 'Ha Noi', 3776, '', 'Credit hoặc Debit Card (Xử lý an toàn thanh toán vĩnh viễn)', 'pp_pro', 'Khiem', 'Pham', 'CYA', '2343242', '423', '242', '4242', 'Viet Nam', 230, 'Ha Noi', 3776, '', 'Phí vận chuyển cố định', 'flat.flat', '', 1299005.0000, 0, 0, 0.0000, 2, 4, 'VND', 1.00000000, '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 6.1; rv:20.0) Gecko/20100101 Firefox/20.0', 'vi-vn,vi;q=0.8,en-us;q=0.5,en;q=0.3', '2013-04-26 14:14:51', '2013-04-26 14:14:51'),
-	(5, 0, 'INV-2012-00', 0, 'My Pham', 'http://zodia.lc/', 1, 1, 'Khiem', 'Pham', 'rongandat@gmail.com', '123456789', '0165235952', 'Khiem', 'Pham', 'CYA', '34', '', '2343242', '423', '242', '4242', 'Viet Nam', 230, 'Ha Noi', 3776, '', 'Credit hoặc Debit Card (Xử lý an toàn thanh toán vĩnh viễn)', 'pp_pro', 'Khiem', 'Pham', 'CYA', '2343242', '423', '242', '4242', 'Viet Nam', 230, 'Ha Noi', 3776, '', 'Phí vận chuyển cố định', 'flat.flat', '', 1299005.0000, 0, 0, 0.0000, 2, 4, 'VND', 1.00000000, '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 6.1; rv:20.0) Gecko/20100101 Firefox/20.0', 'vi-vn,vi;q=0.8,en-us;q=0.5,en;q=0.3', '2013-04-26 14:17:38', '2013-04-26 14:17:38'),
-	(6, 0, 'INV-2012-00', 0, 'My Pham', 'http://zodia.lc/', 1, 1, 'Khiem', 'Pham', 'rongandat@gmail.com', '123456789', '0165235952', 'Khiem', 'Pham', 'CYA', '34', '', '2343242', '423', '242', '4242', 'Viet Nam', 230, 'Ha Noi', 3776, '', 'Thu tiền khi giao hàng', 'cod', 'Khiem', 'Pham', 'CYA', '2343242', '423', '242', '4242', 'Viet Nam', 230, 'Ha Noi', 3776, '', 'Phí vận chuyển cố định', 'flat.flat', '', 1299005.0000, 1, 0, 0.0000, 2, 4, 'VND', 1.00000000, '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 6.1; rv:20.0) Gecko/20100101 Firefox/20.0', 'vi-vn,vi;q=0.8,en-us;q=0.5,en;q=0.3', '2013-04-26 14:17:53', '2013-04-26 14:17:54'),
-	(7, 0, 'INV-2012-00', 0, 'My Pham', 'http://zodia.lc/', 1, 1, 'Khiem', 'Pham', 'rongandat@gmail.com', '123456789', '0165235952', 'Khiem', 'Pham', 'CYA', '34', '', '2343242', '423', '242', '4242', 'Viet Nam', 230, 'Ha Noi', 3776, '', 'Thu tiền khi giao hàng', 'cod', 'Khiem', 'Pham', 'CYA', '2343242', '423', '242', '4242', 'Viet Nam', 230, 'Ha Noi', 3776, '', 'Phí vận chuyển cố định', 'flat.flat', '', 500005.0000, 0, 0, 0.0000, 2, 4, 'VND', 1.00000000, '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 6.1; rv:20.0) Gecko/20100101 Firefox/20.0', 'vi-vn,vi;q=0.8,en-us;q=0.5,en;q=0.3', '2013-04-26 14:19:22', '2013-04-26 14:19:22'),
-	(8, 0, 'INV-2012-00', 0, 'My Pham', 'http://zodia.lc/', 1, 1, 'Khiem', 'Pham', 'rongandat@gmail.com', '123456789', '0165235952', 'Khiem', 'Pham', 'CYA', '34', '', '2343242', '423', '242', '4242', 'Viet Nam', 230, 'Ha Noi', 3776, '', 'Thu tiền khi giao hàng', 'cod', 'Khiem', 'Pham', 'CYA', '2343242', '423', '242', '4242', 'Viet Nam', 230, 'Ha Noi', 3776, '', 'Phí vận chuyển cố định', 'flat.flat', '', 500005.0000, 0, 0, 0.0000, 2, 4, 'VND', 1.00000000, '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 6.1; rv:20.0) Gecko/20100101 Firefox/20.0', 'vi-vn,vi;q=0.8,en-us;q=0.5,en;q=0.3', '2013-04-26 14:20:00', '2013-04-26 14:20:00'),
-	(9, 0, 'INV-2012-00', 0, 'My Pham', 'http://zodia.lc/', 1, 1, 'Khiem', 'Pham', 'rongandat@gmail.com', '123456789', '0165235952', 'Khiem', 'Pham', 'CYA', '34', '', '2343242', '423', '242', '4242', 'Viet Nam', 230, 'Ha Noi', 3776, '', 'Thu tiền khi giao hàng', 'cod', 'Khiem', 'Pham', 'CYA', '2343242', '423', '242', '4242', 'Viet Nam', 230, 'Ha Noi', 3776, '', 'Phí vận chuyển cố định', 'flat.flat', '', 500005.0000, 0, 0, 0.0000, 2, 4, 'VND', 1.00000000, '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 6.1; rv:20.0) Gecko/20100101 Firefox/20.0', 'vi-vn,vi;q=0.8,en-us;q=0.5,en;q=0.3', '2013-04-26 14:31:52', '2013-04-26 14:31:52'),
-	(10, 0, 'INV-2012-00', 0, 'My Pham', 'http://zodia.lc/', 1, 1, 'Khiem', 'Pham', 'rongandat@gmail.com', '123456789', '0165235952', 'Khiem', 'Pham', 'CYA', '34', '', '2343242', '423', '242', '4242', 'Viet Nam', 230, 'Ha Noi', 3776, '', 'Credit hoặc Debit Card (Xử lý an toàn thanh toán vĩnh viễn)', 'pp_pro', 'Khiem', 'Pham', 'CYA', '2343242', '423', '242', '4242', 'Viet Nam', 230, 'Ha Noi', 3776, '', 'Phí vận chuyển cố định', 'flat.flat', '', 500005.0000, 0, 0, 0.0000, 2, 4, 'VND', 1.00000000, '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 6.1; rv:20.0) Gecko/20100101 Firefox/20.0', 'vi-vn,vi;q=0.8,en-us;q=0.5,en;q=0.3', '2013-04-26 14:32:18', '2013-04-26 14:32:18');
+	(1, 0, 'INV-2012-00', 0, 'Thực phẩm chức năng hàng đầu Việt Nam', 'http://trangia.lc/', 0, 1, '43534', '53453', 'rong@gmail.com', '234234', '', '43534', '53453', '', '', '', '423423423', '', '42342', '423424', 'United Kingdom', 222, 'Cheshire', 3529, '', 'Thu tiền khi giao hàng', 'cod', '43534', '53453', '', '423423423', '', '42342', '423424', 'United Kingdom', 222, 'Cheshire', 3529, '', 'Phí vận chuyển cố định', 'flat.flat', '', 799007.8750, 0, 0, 0.0000, 2, 4, 'VND', 1.00000000, '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 6.1; rv:18.0) Gecko/20100101 Firefox/18.0', 'vi-vn,vi;q=0.8,en-us;q=0.5,en;q=0.3', '2013-01-31 14:38:19', '2013-01-31 14:38:19'),
+	(2, 0, 'INV-2012-00', 0, 'Thực phẩm chức năng hàng đầu Việt Nam', 'http://trangia.lc/', 0, 1, '43534', '53453', 'rong@gmail.com', '234234', '', '43534', '53453', '', '', '', '423423423', '', '42342', '423424', 'United Kingdom', 222, 'Cheshire', 3529, '', 'Thu tiền khi giao hàng', 'cod', '43534', '53453', '', '423423423', '', '42342', '423424', 'United Kingdom', 222, 'Cheshire', 3529, '', 'Phí vận chuyển cố định', 'flat.flat', '', 799007.8750, 0, 0, 0.0000, 2, 4, 'VND', 1.00000000, '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 6.1; rv:18.0) Gecko/20100101 Firefox/18.0', 'vi-vn,vi;q=0.8,en-us;q=0.5,en;q=0.3', '2013-01-31 14:40:14', '2013-01-31 14:40:14'),
+	(3, 0, 'INV-2012-00', 0, 'Thực phẩm chức năng hàng đầu Việt Nam', 'http://trangia.lc/', 1, 1, 'Khiem', 'Pham', 'rongandat@gmail.com', '123456789', '0165235952', 'Khiem', 'Pham', 'CYA', '34', '', '2343242', '423', '242', '4242', 'Viet Nam', 230, 'Ha Noi', 3776, '', 'Thu tiền khi giao hàng', 'cod', 'Khiem', 'Pham', 'CYA', '2343242', '423', '242', '4242', 'Viet Nam', 230, 'Ha Noi', 3776, '', 'Phí vận chuyển cố định', 'flat.flat', '', 250005.0000, 0, 0, 0.0000, 2, 4, 'VND', 1.00000000, '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 6.1; rv:19.0) Gecko/20100101 Firefox/19.0', 'vi-vn,vi;q=0.8,en-us;q=0.5,en;q=0.3', '2013-03-19 10:55:41', '2013-03-19 10:55:41'),
+	(4, 0, 'INV-2012-00', 0, 'My Pham', 'http://trangia.lc/', 1, 1, 'Khiem', 'Pham', 'rongandat@gmail.com', '123456789', '0165235952', 'Khiem', 'Pham', 'CYA', '34', '', '2343242', '423', '242', '4242', 'Viet Nam', 230, 'Ha Noi', 3776, '', 'Credit hoặc Debit Card (Xử lý an toàn thanh toán vĩnh viễn)', 'pp_pro', 'Khiem', 'Pham', 'CYA', '2343242', '423', '242', '4242', 'Viet Nam', 230, 'Ha Noi', 3776, '', 'Phí vận chuyển cố định', 'flat.flat', '', 1299005.0000, 0, 0, 0.0000, 2, 4, 'VND', 1.00000000, '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 6.1; rv:20.0) Gecko/20100101 Firefox/20.0', 'vi-vn,vi;q=0.8,en-us;q=0.5,en;q=0.3', '2013-04-26 14:14:51', '2013-04-26 14:14:51'),
+	(5, 0, 'INV-2012-00', 0, 'My Pham', 'http://trangia.lc/', 1, 1, 'Khiem', 'Pham', 'rongandat@gmail.com', '123456789', '0165235952', 'Khiem', 'Pham', 'CYA', '34', '', '2343242', '423', '242', '4242', 'Viet Nam', 230, 'Ha Noi', 3776, '', 'Credit hoặc Debit Card (Xử lý an toàn thanh toán vĩnh viễn)', 'pp_pro', 'Khiem', 'Pham', 'CYA', '2343242', '423', '242', '4242', 'Viet Nam', 230, 'Ha Noi', 3776, '', 'Phí vận chuyển cố định', 'flat.flat', '', 1299005.0000, 0, 0, 0.0000, 2, 4, 'VND', 1.00000000, '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 6.1; rv:20.0) Gecko/20100101 Firefox/20.0', 'vi-vn,vi;q=0.8,en-us;q=0.5,en;q=0.3', '2013-04-26 14:17:38', '2013-04-26 14:17:38'),
+	(6, 0, 'INV-2012-00', 0, 'My Pham', 'http://trangia.lc/', 1, 1, 'Khiem', 'Pham', 'rongandat@gmail.com', '123456789', '0165235952', 'Khiem', 'Pham', 'CYA', '34', '', '2343242', '423', '242', '4242', 'Viet Nam', 230, 'Ha Noi', 3776, '', 'Thu tiền khi giao hàng', 'cod', 'Khiem', 'Pham', 'CYA', '2343242', '423', '242', '4242', 'Viet Nam', 230, 'Ha Noi', 3776, '', 'Phí vận chuyển cố định', 'flat.flat', '', 1299005.0000, 1, 0, 0.0000, 2, 4, 'VND', 1.00000000, '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 6.1; rv:20.0) Gecko/20100101 Firefox/20.0', 'vi-vn,vi;q=0.8,en-us;q=0.5,en;q=0.3', '2013-04-26 14:17:53', '2013-04-26 14:17:54'),
+	(7, 0, 'INV-2012-00', 0, 'My Pham', 'http://trangia.lc/', 1, 1, 'Khiem', 'Pham', 'rongandat@gmail.com', '123456789', '0165235952', 'Khiem', 'Pham', 'CYA', '34', '', '2343242', '423', '242', '4242', 'Viet Nam', 230, 'Ha Noi', 3776, '', 'Thu tiền khi giao hàng', 'cod', 'Khiem', 'Pham', 'CYA', '2343242', '423', '242', '4242', 'Viet Nam', 230, 'Ha Noi', 3776, '', 'Phí vận chuyển cố định', 'flat.flat', '', 500005.0000, 0, 0, 0.0000, 2, 4, 'VND', 1.00000000, '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 6.1; rv:20.0) Gecko/20100101 Firefox/20.0', 'vi-vn,vi;q=0.8,en-us;q=0.5,en;q=0.3', '2013-04-26 14:19:22', '2013-04-26 14:19:22'),
+	(8, 0, 'INV-2012-00', 0, 'My Pham', 'http://trangia.lc/', 1, 1, 'Khiem', 'Pham', 'rongandat@gmail.com', '123456789', '0165235952', 'Khiem', 'Pham', 'CYA', '34', '', '2343242', '423', '242', '4242', 'Viet Nam', 230, 'Ha Noi', 3776, '', 'Thu tiền khi giao hàng', 'cod', 'Khiem', 'Pham', 'CYA', '2343242', '423', '242', '4242', 'Viet Nam', 230, 'Ha Noi', 3776, '', 'Phí vận chuyển cố định', 'flat.flat', '', 500005.0000, 0, 0, 0.0000, 2, 4, 'VND', 1.00000000, '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 6.1; rv:20.0) Gecko/20100101 Firefox/20.0', 'vi-vn,vi;q=0.8,en-us;q=0.5,en;q=0.3', '2013-04-26 14:20:00', '2013-04-26 14:20:00'),
+	(9, 0, 'INV-2012-00', 0, 'My Pham', 'http://trangia.lc/', 1, 1, 'Khiem', 'Pham', 'rongandat@gmail.com', '123456789', '0165235952', 'Khiem', 'Pham', 'CYA', '34', '', '2343242', '423', '242', '4242', 'Viet Nam', 230, 'Ha Noi', 3776, '', 'Thu tiền khi giao hàng', 'cod', 'Khiem', 'Pham', 'CYA', '2343242', '423', '242', '4242', 'Viet Nam', 230, 'Ha Noi', 3776, '', 'Phí vận chuyển cố định', 'flat.flat', '', 500005.0000, 0, 0, 0.0000, 2, 4, 'VND', 1.00000000, '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 6.1; rv:20.0) Gecko/20100101 Firefox/20.0', 'vi-vn,vi;q=0.8,en-us;q=0.5,en;q=0.3', '2013-04-26 14:31:52', '2013-04-26 14:31:52'),
+	(10, 0, 'INV-2012-00', 0, 'My Pham', 'http://trangia.lc/', 1, 1, 'Khiem', 'Pham', 'rongandat@gmail.com', '123456789', '0165235952', 'Khiem', 'Pham', 'CYA', '34', '', '2343242', '423', '242', '4242', 'Viet Nam', 230, 'Ha Noi', 3776, '', 'Credit hoặc Debit Card (Xử lý an toàn thanh toán vĩnh viễn)', 'pp_pro', 'Khiem', 'Pham', 'CYA', '2343242', '423', '242', '4242', 'Viet Nam', 230, 'Ha Noi', 3776, '', 'Phí vận chuyển cố định', 'flat.flat', '', 500005.0000, 0, 0, 0.0000, 2, 4, 'VND', 1.00000000, '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 6.1; rv:20.0) Gecko/20100101 Firefox/20.0', 'vi-vn,vi;q=0.8,en-us;q=0.5,en;q=0.3', '2013-04-26 14:32:18', '2013-04-26 14:32:18');
 /*!40000 ALTER TABLE `order` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.order_download
+-- Dumping structure for table trangia.order_download
 DROP TABLE IF EXISTS `order_download`;
 CREATE TABLE IF NOT EXISTS `order_download` (
   `order_download_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -1813,12 +1813,12 @@ CREATE TABLE IF NOT EXISTS `order_download` (
   PRIMARY KEY (`order_download_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.order_download: 0 rows
+-- Dumping data for table trangia.order_download: 0 rows
 /*!40000 ALTER TABLE `order_download` DISABLE KEYS */;
 /*!40000 ALTER TABLE `order_download` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.order_field
+-- Dumping structure for table trangia.order_field
 DROP TABLE IF EXISTS `order_field`;
 CREATE TABLE IF NOT EXISTS `order_field` (
   `order_id` int(11) NOT NULL,
@@ -1830,12 +1830,12 @@ CREATE TABLE IF NOT EXISTS `order_field` (
   PRIMARY KEY (`order_id`,`custom_field_id`,`custom_field_value_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.order_field: 0 rows
+-- Dumping data for table trangia.order_field: 0 rows
 /*!40000 ALTER TABLE `order_field` DISABLE KEYS */;
 /*!40000 ALTER TABLE `order_field` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.order_fraud
+-- Dumping structure for table trangia.order_fraud
 DROP TABLE IF EXISTS `order_fraud`;
 CREATE TABLE IF NOT EXISTS `order_fraud` (
   `order_id` int(11) NOT NULL,
@@ -1894,12 +1894,12 @@ CREATE TABLE IF NOT EXISTS `order_fraud` (
   PRIMARY KEY (`order_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.order_fraud: 0 rows
+-- Dumping data for table trangia.order_fraud: 0 rows
 /*!40000 ALTER TABLE `order_fraud` DISABLE KEYS */;
 /*!40000 ALTER TABLE `order_fraud` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.order_history
+-- Dumping structure for table trangia.order_history
 DROP TABLE IF EXISTS `order_history`;
 CREATE TABLE IF NOT EXISTS `order_history` (
   `order_history_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -1911,14 +1911,14 @@ CREATE TABLE IF NOT EXISTS `order_history` (
   PRIMARY KEY (`order_history_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.order_history: 1 rows
+-- Dumping data for table trangia.order_history: 1 rows
 /*!40000 ALTER TABLE `order_history` DISABLE KEYS */;
 INSERT INTO `order_history` (`order_history_id`, `order_id`, `order_status_id`, `notify`, `comment`, `date_added`) VALUES
 	(1, 6, 1, 1, '', '2013-04-26 14:17:54');
 /*!40000 ALTER TABLE `order_history` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.order_option
+-- Dumping structure for table trangia.order_option
 DROP TABLE IF EXISTS `order_option`;
 CREATE TABLE IF NOT EXISTS `order_option` (
   `order_option_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -1932,12 +1932,12 @@ CREATE TABLE IF NOT EXISTS `order_option` (
   PRIMARY KEY (`order_option_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.order_option: 0 rows
+-- Dumping data for table trangia.order_option: 0 rows
 /*!40000 ALTER TABLE `order_option` DISABLE KEYS */;
 /*!40000 ALTER TABLE `order_option` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.order_product
+-- Dumping structure for table trangia.order_product
 DROP TABLE IF EXISTS `order_product`;
 CREATE TABLE IF NOT EXISTS `order_product` (
   `order_product_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -1953,7 +1953,7 @@ CREATE TABLE IF NOT EXISTS `order_product` (
   PRIMARY KEY (`order_product_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.order_product: 15 rows
+-- Dumping data for table trangia.order_product: 15 rows
 /*!40000 ALTER TABLE `order_product` DISABLE KEYS */;
 INSERT INTO `order_product` (`order_product_id`, `order_id`, `product_id`, `name`, `model`, `quantity`, `price`, `total`, `tax`, `reward`) VALUES
 	(1, 1, 50, 'Neocell Collagen Type 2', ' Neocell Collagen Type 2', 1, 799000.0000, 799000.0000, 0.0000, 0),
@@ -1974,7 +1974,7 @@ INSERT INTO `order_product` (`order_product_id`, `order_id`, `product_id`, `name
 /*!40000 ALTER TABLE `order_product` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.order_status
+-- Dumping structure for table trangia.order_status
 DROP TABLE IF EXISTS `order_status`;
 CREATE TABLE IF NOT EXISTS `order_status` (
   `order_status_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -1983,7 +1983,7 @@ CREATE TABLE IF NOT EXISTS `order_status` (
   PRIMARY KEY (`order_status_id`,`language_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.order_status: 28 rows
+-- Dumping data for table trangia.order_status: 28 rows
 /*!40000 ALTER TABLE `order_status` DISABLE KEYS */;
 INSERT INTO `order_status` (`order_status_id`, `language_id`, `name`) VALUES
 	(2, 1, 'Processing'),
@@ -2017,7 +2017,7 @@ INSERT INTO `order_status` (`order_status_id`, `language_id`, `name`) VALUES
 /*!40000 ALTER TABLE `order_status` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.order_total
+-- Dumping structure for table trangia.order_total
 DROP TABLE IF EXISTS `order_total`;
 CREATE TABLE IF NOT EXISTS `order_total` (
   `order_total_id` int(10) NOT NULL AUTO_INCREMENT,
@@ -2031,7 +2031,7 @@ CREATE TABLE IF NOT EXISTS `order_total` (
   KEY `idx_orders_total_orders_id` (`order_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=35 DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.order_total: 34 rows
+-- Dumping data for table trangia.order_total: 34 rows
 /*!40000 ALTER TABLE `order_total` DISABLE KEYS */;
 INSERT INTO `order_total` (`order_total_id`, `order_id`, `code`, `title`, `text`, `value`, `sort_order`) VALUES
 	(1, 1, 'sub_total', 'Thành tiền:', '799.000 VNĐ', 799000.0000, 1),
@@ -2071,7 +2071,7 @@ INSERT INTO `order_total` (`order_total_id`, `order_id`, `code`, `title`, `text`
 /*!40000 ALTER TABLE `order_total` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.order_voucher
+-- Dumping structure for table trangia.order_voucher
 DROP TABLE IF EXISTS `order_voucher`;
 CREATE TABLE IF NOT EXISTS `order_voucher` (
   `order_voucher_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -2089,12 +2089,12 @@ CREATE TABLE IF NOT EXISTS `order_voucher` (
   PRIMARY KEY (`order_voucher_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.order_voucher: 0 rows
+-- Dumping data for table trangia.order_voucher: 0 rows
 /*!40000 ALTER TABLE `order_voucher` DISABLE KEYS */;
 /*!40000 ALTER TABLE `order_voucher` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.product
+-- Dumping structure for table trangia.product
 DROP TABLE IF EXISTS `product`;
 CREATE TABLE IF NOT EXISTS `product` (
   `product_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -2131,7 +2131,7 @@ CREATE TABLE IF NOT EXISTS `product` (
   PRIMARY KEY (`product_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=52 DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.product: 2 rows
+-- Dumping data for table trangia.product: 2 rows
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
 INSERT INTO `product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `isbn`, `mpn`, `location`, `quantity`, `stock_status_id`, `image`, `manufacturer_id`, `shipping`, `price`, `points`, `tax_class_id`, `date_available`, `weight`, `weight_class_id`, `length`, `width`, `height`, `length_class_id`, `subtract`, `minimum`, `sort_order`, `status`, `date_added`, `date_modified`, `viewed`) VALUES
 	(50, ' Neocell Collagen Type 2', '', '', '', '', '', '', '', 0, 7, 'data/sanpham/589b7d7ad40999ec363d0e32a211802f.jpg', 0, 1, 799000.0000, 0, 0, '2013-01-24', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, '2013-01-25 21:25:30', '2013-03-19 11:28:56', 9),
@@ -2139,7 +2139,7 @@ INSERT INTO `product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `isbn`
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.product_attribute
+-- Dumping structure for table trangia.product_attribute
 DROP TABLE IF EXISTS `product_attribute`;
 CREATE TABLE IF NOT EXISTS `product_attribute` (
   `product_id` int(11) NOT NULL,
@@ -2149,12 +2149,12 @@ CREATE TABLE IF NOT EXISTS `product_attribute` (
   PRIMARY KEY (`product_id`,`attribute_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.product_attribute: 0 rows
+-- Dumping data for table trangia.product_attribute: 0 rows
 /*!40000 ALTER TABLE `product_attribute` DISABLE KEYS */;
 /*!40000 ALTER TABLE `product_attribute` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.product_description
+-- Dumping structure for table trangia.product_description
 DROP TABLE IF EXISTS `product_description`;
 CREATE TABLE IF NOT EXISTS `product_description` (
   `product_id` int(11) NOT NULL,
@@ -2168,7 +2168,7 @@ CREATE TABLE IF NOT EXISTS `product_description` (
   KEY `name` (`name`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.product_description: 4 rows
+-- Dumping data for table trangia.product_description: 4 rows
 /*!40000 ALTER TABLE `product_description` DISABLE KEYS */;
 INSERT INTO `product_description` (`product_id`, `language_id`, `name`, `description`, `meta_description`, `meta_keyword`, `tag`) VALUES
 	(51, 2, ' Collagen + CTM Pomegranate Liquid', '&lt;p&gt;\r\n	&lt;span style=&quot;color:#008000;&quot;&gt;&lt;strong&gt;Tác dụng:&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;span style=&quot;color:#008000;&quot;&gt;Collagen +C&lt;sup&gt;TM&lt;/sup&gt; Pomegranate liquid là một sản phẩm có sự kết hợp giữa khả năng chống oxy hóa mạnh của lựu và trà xanh, lợi ích với sức khỏe của Collagel + C&lt;sup&gt;TM&lt;/sup&gt; và lợi ích nhờ sự hấp thu muối khoáng.&lt;/span&gt;&lt;/p&gt;\r\n&lt;p&gt;\r\n	Trong cơ thể, collagen có vai trò liên kết tượng tự như chất keo, giúp tăng cường sự chắc chắn, giữ cho các bộ phận trên cơ thể kết hợp cùng nhau và ở đúng vị trí. Từ 25 tuổi trờ đi, sự tái cấu trúc Collagen chậm dần làm giảm lượng Collagen trong cơ thể dấn đến những triệu chứng dễ nhận thấy như da nhăn, chảy xệ, đau khớp, và móng giòn dể gãy.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Việc bổ sung Collagen giúp:&lt;/strong&gt;&lt;/p&gt;\r\n&lt;p&gt;\r\n	- Làm giảm các vết nhăn, xóa mờ vết thâm, tăng cường sản sinh ra các tế bào da mới giúp làn da hồi sinh nhanh chóng trở nên săn chắc và mịn màng hơn.&lt;/p&gt;\r\n&lt;p style=&quot;text-align: center;&quot;&gt;\r\n	&lt;img alt=&quot;cogai copy&quot; height=&quot;313&quot; src=&quot;http://phady.com.vn/images/stories/images/cogai_copy.jpg&quot; width=&quot;500&quot; /&gt;&lt;/p&gt;\r\n&lt;p&gt;\r\n	- Giúp xương chắc khỏe hơn và phòng chống các bệnh như loãng xương, xốp xương, đau thắt lưng, thoát vị đĩa đệm và một số bệnh về xương, sụn khác.&lt;/p&gt;\r\n&lt;p style=&quot;text-align: center;&quot;&gt;\r\n	&lt;img alt=&quot;tap-the-duc&quot; height=&quot;340&quot; src=&quot;http://phady.com.vn/images/stories/images/tap-the-duc.jpg&quot; width=&quot;500&quot; /&gt;&lt;/p&gt;\r\n&lt;p&gt;\r\n	- Giúp cho tóc và móng chân-tay bóng mượt, mịn màng, chắc khỏe, hạn chết rụng tóc thông qua việc cung cấp chất dinh dưỡng hỗ trợ cho hoạt động của chất sừng trong tóc, móng chân, móng tay&lt;/p&gt;\r\n&lt;p style=&quot;text-align: center;&quot;&gt;\r\n	&lt;img alt=&quot;1457115018 1&quot; height=&quot;360&quot; src=&quot;http://phady.com.vn/images/stories/images/1457115018_1.jpg&quot; width=&quot;480&quot; /&gt;&lt;/p&gt;\r\n&lt;p&gt;\r\n	Vitamin C tham gia tạo colagen và một số thành phần khác tạo nên mô liên kết ở xương. Ngoài ra, vitamin C còn hết sức cần thiết cho sự lành vết thương, sự mạnh khỏe của nướu răng, và ngăn ngừa các mảng bám ở da.&lt;/p&gt;\r\n&lt;p&gt;\r\n	Sodium (muối Natri): tăng cường lưu thông của tuyến mồ hôi và bã nhờn, giúp hấp thu và đào thải chất độc ra khỏi da, giảm kích thước lỗ chân long, giúp da mềm mại mà không có cảm giác nhờn. Ngoài ra muối còn giúp làm giảm ngứa đầu, giảm gàu và rụng tóc, loại bỏ mảng bám, làm nướu răng khỏe mạnh&lt;/p&gt;\r\n&lt;p&gt;\r\n	Sự bổ sung kết hợp giữa Collagen và các thành phần vitamin C, dịch chiết từ hỗn hợp trái cây có khả năng chống oxy hóa mạnh giúp:&lt;/p&gt;\r\n&lt;p&gt;\r\n	-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Tăng cường sức khoẻ da, giúp giảm nếp nhăn, chống lão hoá, làm đẹp da.&lt;/p&gt;\r\n&lt;p&gt;\r\n	-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Tăng cường nuôi dưỡng sự đàn hồi cho gân, dây chằng, xương.&lt;/p&gt;\r\n&lt;p&gt;\r\n	- &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;Làm đẹp, tăng độ chắc khoẻ của móng và tóc.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;&amp;nbsp;Đối tượng sử dụng:&lt;/strong&gt;&lt;/p&gt;\r\n&lt;p&gt;\r\n	Người bị khô da, da nhăn, da bị giảm độ đàn hồi, bị lão hoá. Người bị rụng tóc, móng bị chẻ yếu giòn dễ gãy. Người bị chấn thương gân, dây chằng.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Hướng dẫn cách dùng:&lt;/strong&gt;&lt;/p&gt;\r\n&lt;p&gt;\r\n	Mỗi ngày uống 1 thìa canh (15ml), sử dụng trực tiếp hoặc pha loãng với 180ml nước hoa quả hoặc trà thảo dược. Uống vào buổi sáng, lúc đói, 30 phút trước khi ăn sáng.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Hướng dẫn bảo quản:&lt;/strong&gt; &amp;nbsp;Bảo quản ở nơi khô, mát, nhiệt độ dưới 30&lt;sup&gt;o&lt;/sup&gt;C. Khi mở nắp bảo quản lạnh.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Hạn sử dụng:&lt;/strong&gt; 02 năm kể từ ngày sản xuất. HSD xem in trên bao bì, nhãn sản phẩm.Khi mở nắp sử dụng tối đa trong vòng 02 tháng, bảo quản lạnh.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Quy cách đóng gói:&lt;/strong&gt; Chai thủy tinh 16 fl.Oz (tương đương 473 ml)&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Số đăng ký:&lt;/strong&gt; 6112/2012/ATTP-XNCB&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Lưu ý:&lt;/strong&gt; &lt;em&gt;Sản phẩm này không phải là thuốc, không có tác dụng thay thế thuốc chữa bệnh. Phụ nữ có thai và cho con bú, người đang điều trị thuốc khác nên tham khảo ý kiến của bác sĩ trước khi sử dụng.&lt;/em&gt;&lt;/p&gt;\r\n', 'Collagen + CTM Pomegranate Liquid\r\n', 'Collagen + CTM Pomegranate Liquid\r\n', ''),
@@ -2178,7 +2178,7 @@ INSERT INTO `product_description` (`product_id`, `language_id`, `name`, `descrip
 /*!40000 ALTER TABLE `product_description` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.product_discount
+-- Dumping structure for table trangia.product_discount
 DROP TABLE IF EXISTS `product_discount`;
 CREATE TABLE IF NOT EXISTS `product_discount` (
   `product_discount_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -2193,14 +2193,14 @@ CREATE TABLE IF NOT EXISTS `product_discount` (
   KEY `product_id` (`product_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=442 DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.product_discount: 1 rows
+-- Dumping data for table trangia.product_discount: 1 rows
 /*!40000 ALTER TABLE `product_discount` DISABLE KEYS */;
 INSERT INTO `product_discount` (`product_discount_id`, `product_id`, `customer_group_id`, `quantity`, `priority`, `price`, `date_start`, `date_end`) VALUES
 	(441, 50, 1, 100, 0, 20000.0000, '2013-03-18', '2013-03-21');
 /*!40000 ALTER TABLE `product_discount` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.product_filter
+-- Dumping structure for table trangia.product_filter
 DROP TABLE IF EXISTS `product_filter`;
 CREATE TABLE IF NOT EXISTS `product_filter` (
   `product_id` int(11) NOT NULL,
@@ -2208,12 +2208,12 @@ CREATE TABLE IF NOT EXISTS `product_filter` (
   PRIMARY KEY (`product_id`,`filter_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.product_filter: 0 rows
+-- Dumping data for table trangia.product_filter: 0 rows
 /*!40000 ALTER TABLE `product_filter` DISABLE KEYS */;
 /*!40000 ALTER TABLE `product_filter` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.product_image
+-- Dumping structure for table trangia.product_image
 DROP TABLE IF EXISTS `product_image`;
 CREATE TABLE IF NOT EXISTS `product_image` (
   `product_image_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -2223,12 +2223,12 @@ CREATE TABLE IF NOT EXISTS `product_image` (
   PRIMARY KEY (`product_image_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2352 DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.product_image: 0 rows
+-- Dumping data for table trangia.product_image: 0 rows
 /*!40000 ALTER TABLE `product_image` DISABLE KEYS */;
 /*!40000 ALTER TABLE `product_image` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.product_option
+-- Dumping structure for table trangia.product_option
 DROP TABLE IF EXISTS `product_option`;
 CREATE TABLE IF NOT EXISTS `product_option` (
   `product_option_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -2239,7 +2239,7 @@ CREATE TABLE IF NOT EXISTS `product_option` (
   PRIMARY KEY (`product_option_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=229 DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.product_option: 2 rows
+-- Dumping data for table trangia.product_option: 2 rows
 /*!40000 ALTER TABLE `product_option` DISABLE KEYS */;
 INSERT INTO `product_option` (`product_option_id`, `product_id`, `option_id`, `option_value`, `required`) VALUES
 	(227, 51, 13, '', 1),
@@ -2247,7 +2247,7 @@ INSERT INTO `product_option` (`product_option_id`, `product_id`, `option_id`, `o
 /*!40000 ALTER TABLE `product_option` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.product_option_value
+-- Dumping structure for table trangia.product_option_value
 DROP TABLE IF EXISTS `product_option_value`;
 CREATE TABLE IF NOT EXISTS `product_option_value` (
   `product_option_value_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -2266,7 +2266,7 @@ CREATE TABLE IF NOT EXISTS `product_option_value` (
   PRIMARY KEY (`product_option_value_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.product_option_value: 4 rows
+-- Dumping data for table trangia.product_option_value: 4 rows
 /*!40000 ALTER TABLE `product_option_value` DISABLE KEYS */;
 INSERT INTO `product_option_value` (`product_option_value_id`, `product_option_id`, `product_id`, `option_id`, `option_value_id`, `quantity`, `subtract`, `price`, `price_prefix`, `points`, `points_prefix`, `weight`, `weight_prefix`) VALUES
 	(19, 228, 51, 14, 53, 10, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
@@ -2276,7 +2276,7 @@ INSERT INTO `product_option_value` (`product_option_value_id`, `product_option_i
 /*!40000 ALTER TABLE `product_option_value` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.product_related
+-- Dumping structure for table trangia.product_related
 DROP TABLE IF EXISTS `product_related`;
 CREATE TABLE IF NOT EXISTS `product_related` (
   `product_id` int(11) NOT NULL,
@@ -2284,12 +2284,12 @@ CREATE TABLE IF NOT EXISTS `product_related` (
   PRIMARY KEY (`product_id`,`related_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.product_related: 0 rows
+-- Dumping data for table trangia.product_related: 0 rows
 /*!40000 ALTER TABLE `product_related` DISABLE KEYS */;
 /*!40000 ALTER TABLE `product_related` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.product_reward
+-- Dumping structure for table trangia.product_reward
 DROP TABLE IF EXISTS `product_reward`;
 CREATE TABLE IF NOT EXISTS `product_reward` (
   `product_reward_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -2299,7 +2299,7 @@ CREATE TABLE IF NOT EXISTS `product_reward` (
   PRIMARY KEY (`product_reward_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=560 DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.product_reward: 2 rows
+-- Dumping data for table trangia.product_reward: 2 rows
 /*!40000 ALTER TABLE `product_reward` DISABLE KEYS */;
 INSERT INTO `product_reward` (`product_reward_id`, `product_id`, `customer_group_id`, `points`) VALUES
 	(559, 51, 1, 0),
@@ -2307,7 +2307,7 @@ INSERT INTO `product_reward` (`product_reward_id`, `product_id`, `customer_group
 /*!40000 ALTER TABLE `product_reward` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.product_special
+-- Dumping structure for table trangia.product_special
 DROP TABLE IF EXISTS `product_special`;
 CREATE TABLE IF NOT EXISTS `product_special` (
   `product_special_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -2321,14 +2321,14 @@ CREATE TABLE IF NOT EXISTS `product_special` (
   KEY `product_id` (`product_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=447 DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.product_special: 1 rows
+-- Dumping data for table trangia.product_special: 1 rows
 /*!40000 ALTER TABLE `product_special` DISABLE KEYS */;
 INSERT INTO `product_special` (`product_special_id`, `product_id`, `customer_group_id`, `priority`, `price`, `date_start`, `date_end`) VALUES
 	(446, 51, 1, 0, 250000.0000, '2013-03-18', '2013-03-20');
 /*!40000 ALTER TABLE `product_special` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.product_to_category
+-- Dumping structure for table trangia.product_to_category
 DROP TABLE IF EXISTS `product_to_category`;
 CREATE TABLE IF NOT EXISTS `product_to_category` (
   `product_id` int(11) NOT NULL,
@@ -2336,7 +2336,7 @@ CREATE TABLE IF NOT EXISTS `product_to_category` (
   PRIMARY KEY (`product_id`,`category_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.product_to_category: 2 rows
+-- Dumping data for table trangia.product_to_category: 2 rows
 /*!40000 ALTER TABLE `product_to_category` DISABLE KEYS */;
 INSERT INTO `product_to_category` (`product_id`, `category_id`) VALUES
 	(50, 66),
@@ -2344,7 +2344,7 @@ INSERT INTO `product_to_category` (`product_id`, `category_id`) VALUES
 /*!40000 ALTER TABLE `product_to_category` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.product_to_download
+-- Dumping structure for table trangia.product_to_download
 DROP TABLE IF EXISTS `product_to_download`;
 CREATE TABLE IF NOT EXISTS `product_to_download` (
   `product_id` int(11) NOT NULL,
@@ -2352,12 +2352,12 @@ CREATE TABLE IF NOT EXISTS `product_to_download` (
   PRIMARY KEY (`product_id`,`download_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.product_to_download: 0 rows
+-- Dumping data for table trangia.product_to_download: 0 rows
 /*!40000 ALTER TABLE `product_to_download` DISABLE KEYS */;
 /*!40000 ALTER TABLE `product_to_download` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.product_to_layout
+-- Dumping structure for table trangia.product_to_layout
 DROP TABLE IF EXISTS `product_to_layout`;
 CREATE TABLE IF NOT EXISTS `product_to_layout` (
   `product_id` int(11) NOT NULL,
@@ -2366,12 +2366,12 @@ CREATE TABLE IF NOT EXISTS `product_to_layout` (
   PRIMARY KEY (`product_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.product_to_layout: 0 rows
+-- Dumping data for table trangia.product_to_layout: 0 rows
 /*!40000 ALTER TABLE `product_to_layout` DISABLE KEYS */;
 /*!40000 ALTER TABLE `product_to_layout` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.product_to_store
+-- Dumping structure for table trangia.product_to_store
 DROP TABLE IF EXISTS `product_to_store`;
 CREATE TABLE IF NOT EXISTS `product_to_store` (
   `product_id` int(11) NOT NULL,
@@ -2379,7 +2379,7 @@ CREATE TABLE IF NOT EXISTS `product_to_store` (
   PRIMARY KEY (`product_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.product_to_store: 2 rows
+-- Dumping data for table trangia.product_to_store: 2 rows
 /*!40000 ALTER TABLE `product_to_store` DISABLE KEYS */;
 INSERT INTO `product_to_store` (`product_id`, `store_id`) VALUES
 	(50, 0),
@@ -2387,7 +2387,7 @@ INSERT INTO `product_to_store` (`product_id`, `store_id`) VALUES
 /*!40000 ALTER TABLE `product_to_store` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.return
+-- Dumping structure for table trangia.return
 DROP TABLE IF EXISTS `return`;
 CREATE TABLE IF NOT EXISTS `return` (
   `return_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -2412,12 +2412,12 @@ CREATE TABLE IF NOT EXISTS `return` (
   PRIMARY KEY (`return_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.return: 0 rows
+-- Dumping data for table trangia.return: 0 rows
 /*!40000 ALTER TABLE `return` DISABLE KEYS */;
 /*!40000 ALTER TABLE `return` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.return_action
+-- Dumping structure for table trangia.return_action
 DROP TABLE IF EXISTS `return_action`;
 CREATE TABLE IF NOT EXISTS `return_action` (
   `return_action_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -2426,7 +2426,7 @@ CREATE TABLE IF NOT EXISTS `return_action` (
   PRIMARY KEY (`return_action_id`,`language_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.return_action: 6 rows
+-- Dumping data for table trangia.return_action: 6 rows
 /*!40000 ALTER TABLE `return_action` DISABLE KEYS */;
 INSERT INTO `return_action` (`return_action_id`, `language_id`, `name`) VALUES
 	(1, 1, 'Refunded'),
@@ -2438,7 +2438,7 @@ INSERT INTO `return_action` (`return_action_id`, `language_id`, `name`) VALUES
 /*!40000 ALTER TABLE `return_action` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.return_history
+-- Dumping structure for table trangia.return_history
 DROP TABLE IF EXISTS `return_history`;
 CREATE TABLE IF NOT EXISTS `return_history` (
   `return_history_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -2450,12 +2450,12 @@ CREATE TABLE IF NOT EXISTS `return_history` (
   PRIMARY KEY (`return_history_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.return_history: 0 rows
+-- Dumping data for table trangia.return_history: 0 rows
 /*!40000 ALTER TABLE `return_history` DISABLE KEYS */;
 /*!40000 ALTER TABLE `return_history` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.return_reason
+-- Dumping structure for table trangia.return_reason
 DROP TABLE IF EXISTS `return_reason`;
 CREATE TABLE IF NOT EXISTS `return_reason` (
   `return_reason_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -2464,7 +2464,7 @@ CREATE TABLE IF NOT EXISTS `return_reason` (
   PRIMARY KEY (`return_reason_id`,`language_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.return_reason: 10 rows
+-- Dumping data for table trangia.return_reason: 10 rows
 /*!40000 ALTER TABLE `return_reason` DISABLE KEYS */;
 INSERT INTO `return_reason` (`return_reason_id`, `language_id`, `name`) VALUES
 	(1, 1, 'Dead On Arrival'),
@@ -2480,7 +2480,7 @@ INSERT INTO `return_reason` (`return_reason_id`, `language_id`, `name`) VALUES
 /*!40000 ALTER TABLE `return_reason` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.return_status
+-- Dumping structure for table trangia.return_status
 DROP TABLE IF EXISTS `return_status`;
 CREATE TABLE IF NOT EXISTS `return_status` (
   `return_status_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -2489,7 +2489,7 @@ CREATE TABLE IF NOT EXISTS `return_status` (
   PRIMARY KEY (`return_status_id`,`language_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.return_status: 6 rows
+-- Dumping data for table trangia.return_status: 6 rows
 /*!40000 ALTER TABLE `return_status` DISABLE KEYS */;
 INSERT INTO `return_status` (`return_status_id`, `language_id`, `name`) VALUES
 	(1, 1, 'Pending'),
@@ -2501,7 +2501,7 @@ INSERT INTO `return_status` (`return_status_id`, `language_id`, `name`) VALUES
 /*!40000 ALTER TABLE `return_status` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.review
+-- Dumping structure for table trangia.review
 DROP TABLE IF EXISTS `review`;
 CREATE TABLE IF NOT EXISTS `review` (
   `review_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -2517,12 +2517,12 @@ CREATE TABLE IF NOT EXISTS `review` (
   KEY `product_id` (`product_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.review: 0 rows
+-- Dumping data for table trangia.review: 0 rows
 /*!40000 ALTER TABLE `review` DISABLE KEYS */;
 /*!40000 ALTER TABLE `review` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.setting
+-- Dumping structure for table trangia.setting
 DROP TABLE IF EXISTS `setting`;
 CREATE TABLE IF NOT EXISTS `setting` (
   `setting_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -2534,7 +2534,7 @@ CREATE TABLE IF NOT EXISTS `setting` (
   PRIMARY KEY (`setting_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=1821 DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.setting: 228 rows
+-- Dumping data for table trangia.setting: 228 rows
 /*!40000 ALTER TABLE `setting` DISABLE KEYS */;
 INSERT INTO `setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `serialized`) VALUES
 	(1, 0, 'shipping', 'shipping_sort_order', '3', 0),
@@ -2613,7 +2613,7 @@ INSERT INTO `setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `seria
 	(1790, 0, 'config', 'config_ftp_password', '', 0),
 	(1789, 0, 'config', 'config_ftp_username', '', 0),
 	(1788, 0, 'config', 'config_ftp_port', '21', 0),
-	(1787, 0, 'config', 'config_ftp_host', 'zodia.lc', 0),
+	(1787, 0, 'config', 'config_ftp_host', 'trangia.lc', 0),
 	(1786, 0, 'config', 'config_image_cart_height', '47', 0),
 	(1785, 0, 'config', 'config_image_cart_width', '47', 0),
 	(1784, 0, 'config', 'config_image_wishlist_height', '47', 0),
@@ -2633,7 +2633,7 @@ INSERT INTO `setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `seria
 	(1770, 0, 'config', 'config_image_category_height', '80', 0),
 	(1769, 0, 'config', 'config_image_category_width', '80', 0),
 	(1768, 0, 'config', 'config_icon', 'data/cart.png', 0),
-	(1767, 0, 'config', 'config_logo', 'data/zodia.png', 0),
+	(1767, 0, 'config', 'config_logo', 'data/trangia.png', 0),
 	(1766, 0, 'config', 'config_return_status_id', '2', 0),
 	(1765, 0, 'config', 'config_return_id', '0', 0),
 	(1764, 0, 'config', 'config_commission', '5', 0),
@@ -2737,7 +2737,7 @@ INSERT INTO `setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `seria
 	(1608, 0, 'pp_pro', 'pp_pro_test', '1', 0),
 	(1594, 0, 'pp_standard', 'pp_standard_sort_order', '1', 0),
 	(1437, 0, 'deals', 'deals_module', 'a:1:{i:0;a:5:{s:5:"limit";s:1:"5";s:9:"layout_id";s:1:"6";s:8:"position";s:11:"content_top";s:6:"status";s:1:"1";s:10:"sort_order";s:0:"";}}', 1),
-	(1436, 0, 'deals', 'thumb', 'http://zodia.lc/image/cache/data/sanpham/Collagen___CTM_P_50c6a1c2068bc_200x200-100x100.jpg', 0),
+	(1436, 0, 'deals', 'thumb', 'http://trangia.lc/image/cache/data/sanpham/Collagen___CTM_P_50c6a1c2068bc_200x200-100x100.jpg', 0),
 	(1435, 0, 'deals', 'name', ' Collagen + CTM Pomegranate Liquid', 0),
 	(1434, 0, 'deals', 'date_end', '2013-03-20', 0),
 	(1433, 0, 'deals', 'date_start', '2013-03-18', 0),
@@ -2768,7 +2768,7 @@ INSERT INTO `setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `seria
 /*!40000 ALTER TABLE `setting` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.stock_status
+-- Dumping structure for table trangia.stock_status
 DROP TABLE IF EXISTS `stock_status`;
 CREATE TABLE IF NOT EXISTS `stock_status` (
   `stock_status_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -2777,7 +2777,7 @@ CREATE TABLE IF NOT EXISTS `stock_status` (
   PRIMARY KEY (`stock_status_id`,`language_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.stock_status: 8 rows
+-- Dumping data for table trangia.stock_status: 8 rows
 /*!40000 ALTER TABLE `stock_status` DISABLE KEYS */;
 INSERT INTO `stock_status` (`stock_status_id`, `language_id`, `name`) VALUES
 	(7, 1, 'In Stock'),
@@ -2791,7 +2791,7 @@ INSERT INTO `stock_status` (`stock_status_id`, `language_id`, `name`) VALUES
 /*!40000 ALTER TABLE `stock_status` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.store
+-- Dumping structure for table trangia.store
 DROP TABLE IF EXISTS `store`;
 CREATE TABLE IF NOT EXISTS `store` (
   `store_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -2801,12 +2801,12 @@ CREATE TABLE IF NOT EXISTS `store` (
   PRIMARY KEY (`store_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.store: 0 rows
+-- Dumping data for table trangia.store: 0 rows
 /*!40000 ALTER TABLE `store` DISABLE KEYS */;
 /*!40000 ALTER TABLE `store` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.tax_class
+-- Dumping structure for table trangia.tax_class
 DROP TABLE IF EXISTS `tax_class`;
 CREATE TABLE IF NOT EXISTS `tax_class` (
   `tax_class_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -2817,7 +2817,7 @@ CREATE TABLE IF NOT EXISTS `tax_class` (
   PRIMARY KEY (`tax_class_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.tax_class: 2 rows
+-- Dumping data for table trangia.tax_class: 2 rows
 /*!40000 ALTER TABLE `tax_class` DISABLE KEYS */;
 INSERT INTO `tax_class` (`tax_class_id`, `title`, `description`, `date_added`, `date_modified`) VALUES
 	(9, 'Taxable Goods', 'Taxed Stuff', '2009-01-06 23:21:53', '2011-09-23 14:07:50'),
@@ -2825,7 +2825,7 @@ INSERT INTO `tax_class` (`tax_class_id`, `title`, `description`, `date_added`, `
 /*!40000 ALTER TABLE `tax_class` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.tax_rate
+-- Dumping structure for table trangia.tax_rate
 DROP TABLE IF EXISTS `tax_rate`;
 CREATE TABLE IF NOT EXISTS `tax_rate` (
   `tax_rate_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -2838,7 +2838,7 @@ CREATE TABLE IF NOT EXISTS `tax_rate` (
   PRIMARY KEY (`tax_rate_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=88 DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.tax_rate: 2 rows
+-- Dumping data for table trangia.tax_rate: 2 rows
 /*!40000 ALTER TABLE `tax_rate` DISABLE KEYS */;
 INSERT INTO `tax_rate` (`tax_rate_id`, `geo_zone_id`, `name`, `rate`, `type`, `date_added`, `date_modified`) VALUES
 	(86, 3, 'VAT (17.5%)', 17.5000, 'P', '2011-03-09 21:17:10', '2011-09-22 22:24:29'),
@@ -2846,7 +2846,7 @@ INSERT INTO `tax_rate` (`tax_rate_id`, `geo_zone_id`, `name`, `rate`, `type`, `d
 /*!40000 ALTER TABLE `tax_rate` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.tax_rate_to_customer_group
+-- Dumping structure for table trangia.tax_rate_to_customer_group
 DROP TABLE IF EXISTS `tax_rate_to_customer_group`;
 CREATE TABLE IF NOT EXISTS `tax_rate_to_customer_group` (
   `tax_rate_id` int(11) NOT NULL,
@@ -2854,7 +2854,7 @@ CREATE TABLE IF NOT EXISTS `tax_rate_to_customer_group` (
   PRIMARY KEY (`tax_rate_id`,`customer_group_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.tax_rate_to_customer_group: 2 rows
+-- Dumping data for table trangia.tax_rate_to_customer_group: 2 rows
 /*!40000 ALTER TABLE `tax_rate_to_customer_group` DISABLE KEYS */;
 INSERT INTO `tax_rate_to_customer_group` (`tax_rate_id`, `customer_group_id`) VALUES
 	(86, 1),
@@ -2862,7 +2862,7 @@ INSERT INTO `tax_rate_to_customer_group` (`tax_rate_id`, `customer_group_id`) VA
 /*!40000 ALTER TABLE `tax_rate_to_customer_group` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.tax_rule
+-- Dumping structure for table trangia.tax_rule
 DROP TABLE IF EXISTS `tax_rule`;
 CREATE TABLE IF NOT EXISTS `tax_rule` (
   `tax_rule_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -2873,7 +2873,7 @@ CREATE TABLE IF NOT EXISTS `tax_rule` (
   PRIMARY KEY (`tax_rule_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=129 DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.tax_rule: 4 rows
+-- Dumping data for table trangia.tax_rule: 4 rows
 /*!40000 ALTER TABLE `tax_rule` DISABLE KEYS */;
 INSERT INTO `tax_rule` (`tax_rule_id`, `tax_class_id`, `tax_rate_id`, `based`, `priority`) VALUES
 	(121, 10, 86, 'payment', 1),
@@ -2883,7 +2883,7 @@ INSERT INTO `tax_rule` (`tax_rule_id`, `tax_class_id`, `tax_rate_id`, `based`, `
 /*!40000 ALTER TABLE `tax_rule` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.url_alias
+-- Dumping structure for table trangia.url_alias
 DROP TABLE IF EXISTS `url_alias`;
 CREATE TABLE IF NOT EXISTS `url_alias` (
   `url_alias_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -2892,7 +2892,7 @@ CREATE TABLE IF NOT EXISTS `url_alias` (
   PRIMARY KEY (`url_alias_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=812 DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.url_alias: 21 rows
+-- Dumping data for table trangia.url_alias: 21 rows
 /*!40000 ALTER TABLE `url_alias` DISABLE KEYS */;
 INSERT INTO `url_alias` (`url_alias_id`, `query`, `keyword`) VALUES
 	(799, 'category_id=67', 'ho-tro-tim-mach'),
@@ -2919,7 +2919,7 @@ INSERT INTO `url_alias` (`url_alias_id`, `query`, `keyword`) VALUES
 /*!40000 ALTER TABLE `url_alias` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.user
+-- Dumping structure for table trangia.user
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS `user` (
   `user_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -2937,14 +2937,14 @@ CREATE TABLE IF NOT EXISTS `user` (
   PRIMARY KEY (`user_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.user: 1 rows
+-- Dumping data for table trangia.user: 1 rows
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 INSERT INTO `user` (`user_id`, `user_group_id`, `username`, `password`, `salt`, `firstname`, `lastname`, `email`, `code`, `ip`, `status`, `date_added`) VALUES
 	(1, 1, 'admin', '88ea63d4716bfdd27c4631eb828af5ab6488fbf0', 'ada0ce526', '', '', 'rongandat@gmail.com', '', '127.0.0.1', 1, '2013-01-22 17:35:51');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.user_group
+-- Dumping structure for table trangia.user_group
 DROP TABLE IF EXISTS `user_group`;
 CREATE TABLE IF NOT EXISTS `user_group` (
   `user_group_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -2953,7 +2953,7 @@ CREATE TABLE IF NOT EXISTS `user_group` (
   PRIMARY KEY (`user_group_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.user_group: 2 rows
+-- Dumping data for table trangia.user_group: 2 rows
 /*!40000 ALTER TABLE `user_group` DISABLE KEYS */;
 INSERT INTO `user_group` (`user_group_id`, `name`, `permission`) VALUES
 	(1, 'Top Administrator', 'a:2:{s:6:"access";a:154:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:14:"catalog/filter";i:5;s:19:"catalog/information";i:6;s:20:"catalog/manufacturer";i:7;s:12:"catalog/news";i:8;s:21:"catalog/news_category";i:9;s:20:"catalog/news_comment";i:10;s:14:"catalog/option";i:11;s:15:"catalog/product";i:12;s:14:"catalog/review";i:13;s:18:"common/filemanager";i:14;s:13:"design/banner";i:15;s:13:"design/layout";i:16;s:14:"extension/feed";i:17;s:17:"extension/manager";i:18;s:16:"extension/module";i:19;s:17:"extension/payment";i:20;s:18:"extension/shipping";i:21;s:15:"extension/total";i:22;s:16:"feed/google_base";i:23;s:19:"feed/google_sitemap";i:24;s:20:"localisation/country";i:25;s:21:"localisation/currency";i:26;s:21:"localisation/geo_zone";i:27;s:21:"localisation/language";i:28;s:25:"localisation/length_class";i:29;s:25:"localisation/order_status";i:30;s:26:"localisation/return_action";i:31;s:26:"localisation/return_reason";i:32;s:26:"localisation/return_status";i:33;s:25:"localisation/stock_status";i:34;s:22:"localisation/tax_class";i:35;s:21:"localisation/tax_rate";i:36;s:25:"localisation/weight_class";i:37;s:17:"localisation/zone";i:38;s:14:"module/account";i:39;s:16:"module/affiliate";i:40;s:13:"module/banner";i:41;s:17:"module/bestseller";i:42;s:15:"module/carousel";i:43;s:15:"module/category";i:44;s:16:"module/fblikebox";i:45;s:15:"module/featured";i:46;s:13:"module/filter";i:47;s:18:"module/google_talk";i:48;s:18:"module/information";i:49;s:13:"module/latest";i:50;s:20:"module/news_category";i:51;s:19:"module/newsfeatured";i:52;s:17:"module/newslatest";i:53;s:16:"module/slideshow";i:54;s:14:"module/special";i:55;s:12:"module/store";i:56;s:18:"module/tnt_newscat";i:57;s:20:"module/vqmod_manager";i:58;s:14:"module/welcome";i:59;s:24:"payment/authorizenet_aim";i:60;s:21:"payment/bank_transfer";i:61;s:14:"payment/cheque";i:62;s:11:"payment/cod";i:63;s:21:"payment/free_checkout";i:64;s:22:"payment/klarna_account";i:65;s:22:"payment/klarna_invoice";i:66;s:14:"payment/liqpay";i:67;s:20:"payment/moneybookers";i:68;s:14:"payment/nochex";i:69;s:15:"payment/paymate";i:70;s:16:"payment/paypoint";i:71;s:13:"payment/payza";i:72;s:26:"payment/perpetual_payments";i:73;s:14:"payment/pp_pro";i:74;s:17:"payment/pp_pro_uk";i:75;s:19:"payment/pp_standard";i:76;s:15:"payment/sagepay";i:77;s:22:"payment/sagepay_direct";i:78;s:18:"payment/sagepay_us";i:79;s:19:"payment/twocheckout";i:80;s:28:"payment/web_payment_software";i:81;s:16:"payment/worldpay";i:82;s:27:"report/affiliate_commission";i:83;s:22:"report/customer_credit";i:84;s:22:"report/customer_online";i:85;s:21:"report/customer_order";i:86;s:22:"report/customer_reward";i:87;s:24:"report/product_purchased";i:88;s:21:"report/product_viewed";i:89;s:18:"report/sale_coupon";i:90;s:17:"report/sale_order";i:91;s:18:"report/sale_return";i:92;s:20:"report/sale_shipping";i:93;s:15:"report/sale_tax";i:94;s:14:"sale/affiliate";i:95;s:12:"sale/contact";i:96;s:11:"sale/coupon";i:97;s:17:"sale/custom_field";i:98;s:13:"sale/customer";i:99;s:20:"sale/customer_ban_ip";i:100;s:19:"sale/customer_group";i:101;s:10:"sale/order";i:102;s:11:"sale/return";i:103;s:12:"sale/voucher";i:104;s:18:"sale/voucher_theme";i:105;s:15:"setting/setting";i:106;s:13:"setting/store";i:107;s:16:"shipping/auspost";i:108;s:17:"shipping/citylink";i:109;s:14:"shipping/fedex";i:110;s:13:"shipping/flat";i:111;s:13:"shipping/free";i:112;s:13:"shipping/item";i:113;s:23:"shipping/parcelforce_48";i:114;s:15:"shipping/pickup";i:115;s:19:"shipping/royal_mail";i:116;s:12:"shipping/ups";i:117;s:13:"shipping/usps";i:118;s:15:"shipping/weight";i:119;s:11:"tool/backup";i:120;s:14:"tool/error_log";i:121;s:12:"total/coupon";i:122;s:12:"total/credit";i:123;s:14:"total/handling";i:124;s:16:"total/klarna_fee";i:125;s:19:"total/low_order_fee";i:126;s:12:"total/reward";i:127;s:14:"total/shipping";i:128;s:15:"total/sub_total";i:129;s:9:"total/tax";i:130;s:11:"total/total";i:131;s:13:"total/voucher";i:132;s:9:"user/user";i:133;s:20:"user/user_permission";i:134;s:20:"module/vqmod_manager";i:135;s:20:"module/vqmod_manager";i:136;s:13:"module/latest";i:137;s:14:"module/visitor";i:138;s:14:"module/visitor";i:139;s:14:"module/visitor";i:140;s:14:"module/visitor";i:141;s:14:"module/visitor";i:142;s:14:"module/visitor";i:143;s:14:"module/visitor";i:144;s:22:"module/visitor_counter";i:145;s:14:"module/visitor";i:146;s:14:"module/visitor";i:147;s:16:"module/tnt_yahoo";i:148;s:14:"module/special";i:149;s:12:"module/deals";i:150;s:14:"payment/pp_pro";i:151;s:17:"payment/pp_pro_uk";i:152;s:19:"payment/pp_standard";i:153;s:14:"payment/pp_pro";}s:6:"modify";a:154:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:14:"catalog/filter";i:5;s:19:"catalog/information";i:6;s:20:"catalog/manufacturer";i:7;s:12:"catalog/news";i:8;s:21:"catalog/news_category";i:9;s:20:"catalog/news_comment";i:10;s:14:"catalog/option";i:11;s:15:"catalog/product";i:12;s:14:"catalog/review";i:13;s:18:"common/filemanager";i:14;s:13:"design/banner";i:15;s:13:"design/layout";i:16;s:14:"extension/feed";i:17;s:17:"extension/manager";i:18;s:16:"extension/module";i:19;s:17:"extension/payment";i:20;s:18:"extension/shipping";i:21;s:15:"extension/total";i:22;s:16:"feed/google_base";i:23;s:19:"feed/google_sitemap";i:24;s:20:"localisation/country";i:25;s:21:"localisation/currency";i:26;s:21:"localisation/geo_zone";i:27;s:21:"localisation/language";i:28;s:25:"localisation/length_class";i:29;s:25:"localisation/order_status";i:30;s:26:"localisation/return_action";i:31;s:26:"localisation/return_reason";i:32;s:26:"localisation/return_status";i:33;s:25:"localisation/stock_status";i:34;s:22:"localisation/tax_class";i:35;s:21:"localisation/tax_rate";i:36;s:25:"localisation/weight_class";i:37;s:17:"localisation/zone";i:38;s:14:"module/account";i:39;s:16:"module/affiliate";i:40;s:13:"module/banner";i:41;s:17:"module/bestseller";i:42;s:15:"module/carousel";i:43;s:15:"module/category";i:44;s:16:"module/fblikebox";i:45;s:15:"module/featured";i:46;s:13:"module/filter";i:47;s:18:"module/google_talk";i:48;s:18:"module/information";i:49;s:13:"module/latest";i:50;s:20:"module/news_category";i:51;s:19:"module/newsfeatured";i:52;s:17:"module/newslatest";i:53;s:16:"module/slideshow";i:54;s:14:"module/special";i:55;s:12:"module/store";i:56;s:18:"module/tnt_newscat";i:57;s:20:"module/vqmod_manager";i:58;s:14:"module/welcome";i:59;s:24:"payment/authorizenet_aim";i:60;s:21:"payment/bank_transfer";i:61;s:14:"payment/cheque";i:62;s:11:"payment/cod";i:63;s:21:"payment/free_checkout";i:64;s:22:"payment/klarna_account";i:65;s:22:"payment/klarna_invoice";i:66;s:14:"payment/liqpay";i:67;s:20:"payment/moneybookers";i:68;s:14:"payment/nochex";i:69;s:15:"payment/paymate";i:70;s:16:"payment/paypoint";i:71;s:13:"payment/payza";i:72;s:26:"payment/perpetual_payments";i:73;s:14:"payment/pp_pro";i:74;s:17:"payment/pp_pro_uk";i:75;s:19:"payment/pp_standard";i:76;s:15:"payment/sagepay";i:77;s:22:"payment/sagepay_direct";i:78;s:18:"payment/sagepay_us";i:79;s:19:"payment/twocheckout";i:80;s:28:"payment/web_payment_software";i:81;s:16:"payment/worldpay";i:82;s:27:"report/affiliate_commission";i:83;s:22:"report/customer_credit";i:84;s:22:"report/customer_online";i:85;s:21:"report/customer_order";i:86;s:22:"report/customer_reward";i:87;s:24:"report/product_purchased";i:88;s:21:"report/product_viewed";i:89;s:18:"report/sale_coupon";i:90;s:17:"report/sale_order";i:91;s:18:"report/sale_return";i:92;s:20:"report/sale_shipping";i:93;s:15:"report/sale_tax";i:94;s:14:"sale/affiliate";i:95;s:12:"sale/contact";i:96;s:11:"sale/coupon";i:97;s:17:"sale/custom_field";i:98;s:13:"sale/customer";i:99;s:20:"sale/customer_ban_ip";i:100;s:19:"sale/customer_group";i:101;s:10:"sale/order";i:102;s:11:"sale/return";i:103;s:12:"sale/voucher";i:104;s:18:"sale/voucher_theme";i:105;s:15:"setting/setting";i:106;s:13:"setting/store";i:107;s:16:"shipping/auspost";i:108;s:17:"shipping/citylink";i:109;s:14:"shipping/fedex";i:110;s:13:"shipping/flat";i:111;s:13:"shipping/free";i:112;s:13:"shipping/item";i:113;s:23:"shipping/parcelforce_48";i:114;s:15:"shipping/pickup";i:115;s:19:"shipping/royal_mail";i:116;s:12:"shipping/ups";i:117;s:13:"shipping/usps";i:118;s:15:"shipping/weight";i:119;s:11:"tool/backup";i:120;s:14:"tool/error_log";i:121;s:12:"total/coupon";i:122;s:12:"total/credit";i:123;s:14:"total/handling";i:124;s:16:"total/klarna_fee";i:125;s:19:"total/low_order_fee";i:126;s:12:"total/reward";i:127;s:14:"total/shipping";i:128;s:15:"total/sub_total";i:129;s:9:"total/tax";i:130;s:11:"total/total";i:131;s:13:"total/voucher";i:132;s:9:"user/user";i:133;s:20:"user/user_permission";i:134;s:20:"module/vqmod_manager";i:135;s:20:"module/vqmod_manager";i:136;s:13:"module/latest";i:137;s:14:"module/visitor";i:138;s:14:"module/visitor";i:139;s:14:"module/visitor";i:140;s:14:"module/visitor";i:141;s:14:"module/visitor";i:142;s:14:"module/visitor";i:143;s:14:"module/visitor";i:144;s:22:"module/visitor_counter";i:145;s:14:"module/visitor";i:146;s:14:"module/visitor";i:147;s:16:"module/tnt_yahoo";i:148;s:14:"module/special";i:149;s:12:"module/deals";i:150;s:14:"payment/pp_pro";i:151;s:17:"payment/pp_pro_uk";i:152;s:19:"payment/pp_standard";i:153;s:14:"payment/pp_pro";}}'),
@@ -2961,7 +2961,7 @@ INSERT INTO `user_group` (`user_group_id`, `name`, `permission`) VALUES
 /*!40000 ALTER TABLE `user_group` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.visitor_counter
+-- Dumping structure for table trangia.visitor_counter
 DROP TABLE IF EXISTS `visitor_counter`;
 CREATE TABLE IF NOT EXISTS `visitor_counter` (
   `prodid` int(11) NOT NULL DEFAULT '0',
@@ -2970,14 +2970,14 @@ CREATE TABLE IF NOT EXISTS `visitor_counter` (
   PRIMARY KEY (`prodid`,`word`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.visitor_counter: ~1 rows (approximately)
+-- Dumping data for table trangia.visitor_counter: ~1 rows (approximately)
 /*!40000 ALTER TABLE `visitor_counter` DISABLE KEYS */;
 INSERT INTO `visitor_counter` (`prodid`, `word`, `count`) VALUES
 	(1, '127.0.0.1', 1);
 /*!40000 ALTER TABLE `visitor_counter` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.voucher
+-- Dumping structure for table trangia.voucher
 DROP TABLE IF EXISTS `voucher`;
 CREATE TABLE IF NOT EXISTS `voucher` (
   `voucher_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -2995,12 +2995,12 @@ CREATE TABLE IF NOT EXISTS `voucher` (
   PRIMARY KEY (`voucher_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.voucher: 0 rows
+-- Dumping data for table trangia.voucher: 0 rows
 /*!40000 ALTER TABLE `voucher` DISABLE KEYS */;
 /*!40000 ALTER TABLE `voucher` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.voucher_history
+-- Dumping structure for table trangia.voucher_history
 DROP TABLE IF EXISTS `voucher_history`;
 CREATE TABLE IF NOT EXISTS `voucher_history` (
   `voucher_history_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -3011,12 +3011,12 @@ CREATE TABLE IF NOT EXISTS `voucher_history` (
   PRIMARY KEY (`voucher_history_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.voucher_history: 0 rows
+-- Dumping data for table trangia.voucher_history: 0 rows
 /*!40000 ALTER TABLE `voucher_history` DISABLE KEYS */;
 /*!40000 ALTER TABLE `voucher_history` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.voucher_theme
+-- Dumping structure for table trangia.voucher_theme
 DROP TABLE IF EXISTS `voucher_theme`;
 CREATE TABLE IF NOT EXISTS `voucher_theme` (
   `voucher_theme_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -3024,7 +3024,7 @@ CREATE TABLE IF NOT EXISTS `voucher_theme` (
   PRIMARY KEY (`voucher_theme_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.voucher_theme: 3 rows
+-- Dumping data for table trangia.voucher_theme: 3 rows
 /*!40000 ALTER TABLE `voucher_theme` DISABLE KEYS */;
 INSERT INTO `voucher_theme` (`voucher_theme_id`, `image`) VALUES
 	(8, 'data/demo/canon_eos_5d_2.jpg'),
@@ -3033,7 +3033,7 @@ INSERT INTO `voucher_theme` (`voucher_theme_id`, `image`) VALUES
 /*!40000 ALTER TABLE `voucher_theme` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.voucher_theme_description
+-- Dumping structure for table trangia.voucher_theme_description
 DROP TABLE IF EXISTS `voucher_theme_description`;
 CREATE TABLE IF NOT EXISTS `voucher_theme_description` (
   `voucher_theme_id` int(11) NOT NULL,
@@ -3042,7 +3042,7 @@ CREATE TABLE IF NOT EXISTS `voucher_theme_description` (
   PRIMARY KEY (`voucher_theme_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.voucher_theme_description: 6 rows
+-- Dumping data for table trangia.voucher_theme_description: 6 rows
 /*!40000 ALTER TABLE `voucher_theme_description` DISABLE KEYS */;
 INSERT INTO `voucher_theme_description` (`voucher_theme_id`, `language_id`, `name`) VALUES
 	(6, 1, 'Christmas'),
@@ -3054,7 +3054,7 @@ INSERT INTO `voucher_theme_description` (`voucher_theme_id`, `language_id`, `nam
 /*!40000 ALTER TABLE `voucher_theme_description` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.weight_class
+-- Dumping structure for table trangia.weight_class
 DROP TABLE IF EXISTS `weight_class`;
 CREATE TABLE IF NOT EXISTS `weight_class` (
   `weight_class_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -3062,7 +3062,7 @@ CREATE TABLE IF NOT EXISTS `weight_class` (
   PRIMARY KEY (`weight_class_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.weight_class: 4 rows
+-- Dumping data for table trangia.weight_class: 4 rows
 /*!40000 ALTER TABLE `weight_class` DISABLE KEYS */;
 INSERT INTO `weight_class` (`weight_class_id`, `value`) VALUES
 	(1, 1.00000000),
@@ -3072,7 +3072,7 @@ INSERT INTO `weight_class` (`weight_class_id`, `value`) VALUES
 /*!40000 ALTER TABLE `weight_class` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.weight_class_description
+-- Dumping structure for table trangia.weight_class_description
 DROP TABLE IF EXISTS `weight_class_description`;
 CREATE TABLE IF NOT EXISTS `weight_class_description` (
   `weight_class_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -3082,7 +3082,7 @@ CREATE TABLE IF NOT EXISTS `weight_class_description` (
   PRIMARY KEY (`weight_class_id`,`language_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.weight_class_description: 8 rows
+-- Dumping data for table trangia.weight_class_description: 8 rows
 /*!40000 ALTER TABLE `weight_class_description` DISABLE KEYS */;
 INSERT INTO `weight_class_description` (`weight_class_id`, `language_id`, `title`, `unit`) VALUES
 	(1, 1, 'Kilogram', 'kg'),
@@ -3096,7 +3096,7 @@ INSERT INTO `weight_class_description` (`weight_class_id`, `language_id`, `title
 /*!40000 ALTER TABLE `weight_class_description` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.zone
+-- Dumping structure for table trangia.zone
 DROP TABLE IF EXISTS `zone`;
 CREATE TABLE IF NOT EXISTS `zone` (
   `zone_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -3107,7 +3107,7 @@ CREATE TABLE IF NOT EXISTS `zone` (
   PRIMARY KEY (`zone_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4033 DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.zone: 3,985 rows
+-- Dumping data for table trangia.zone: 3,985 rows
 /*!40000 ALTER TABLE `zone` DISABLE KEYS */;
 INSERT INTO `zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 	(1, 1, 'Badakhshan', 'BDS', 1),
@@ -7098,7 +7098,7 @@ INSERT INTO `zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 /*!40000 ALTER TABLE `zone` ENABLE KEYS */;
 
 
--- Dumping structure for table zodia.zone_to_geo_zone
+-- Dumping structure for table trangia.zone_to_geo_zone
 DROP TABLE IF EXISTS `zone_to_geo_zone`;
 CREATE TABLE IF NOT EXISTS `zone_to_geo_zone` (
   `zone_to_geo_zone_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -7110,7 +7110,7 @@ CREATE TABLE IF NOT EXISTS `zone_to_geo_zone` (
   PRIMARY KEY (`zone_to_geo_zone_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=66 DEFAULT CHARSET=utf8;
 
--- Dumping data for table zodia.zone_to_geo_zone: 2 rows
+-- Dumping data for table trangia.zone_to_geo_zone: 2 rows
 /*!40000 ALTER TABLE `zone_to_geo_zone` DISABLE KEYS */;
 INSERT INTO `zone_to_geo_zone` (`zone_to_geo_zone_id`, `country_id`, `zone_id`, `geo_zone_id`, `date_added`, `date_modified`) VALUES
 	(57, 222, 0, 3, '2010-02-26 22:33:24', '0000-00-00 00:00:00'),
