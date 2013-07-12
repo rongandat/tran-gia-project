@@ -81,7 +81,7 @@ label {
 }
 #column-right {
     float: right;
-    width: 300px;
+    width: 210px;
     padding-right: 10px;    
 }
 #content {
@@ -92,7 +92,19 @@ label {
     margin-left: 195px;
 }
 #column-right + #content {
+    margin-right: 230px;
+}
+#column-banner-left,#content{
+    padding-left: 10px;
+}
+#column-banner-right + #column-banner-left {
     margin-right: 320px;
+
+}
+#column-banner-right {
+    float: right;
+    width: 300px;
+    padding-right: 10px;    
 }
 /* header */
 #header {
@@ -213,7 +225,7 @@ label {
     -khtml-border-radius: 7px 7px 0px 0px;
     border-radius: 7px 7px 0px 0px;
     position: relative;
-    
+
 }
 #header #cart.active .content {
     display: block;
@@ -730,19 +742,48 @@ a.button:hover, input.button:hover {
     background: #FFFFFF;
     padding: 10px;
 }
+
+#column-right .box .box-content {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #F1F1F1;
+    margin: 0;
+    padding: 0;
+}
+
+#column-right .box .box-content .middle{
+    padding: 5px 10px;
+}
+
+
+#column-right .box .box-heading{
+    background: url("../image/sidebar.png") no-repeat scroll left top transparent;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 25px;
+    text-align: left;
+    text-transform: uppercase;
+}
+#column-right .box .box-heading h1{
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+}
 /* box products */
 .box-product {
     width: 100%;
     overflow: auto;
 }
 .box-product > div {
-    width: 217px;
+    width: 180px;
     display: inline-block;
     vertical-align: top;
-    margin-right: 20px;
-    margin-bottom: 20px;
+    margin-right: 10px;
+    margin-bottom: 10px;
     border: 1px solid #f1f1f1;
-    min-height: 270px !important;
+    min-height: 250px !important;
 }
 .box-product > div.first {
     margin-left: 0px;
@@ -798,7 +839,7 @@ a.button:hover, input.button:hover {
     margin-bottom: 4px;
 }
 /* box category */
-ul.box-category, ul.box-category ul {
+/*ul.box-category, ul.box-category ul {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -834,7 +875,29 @@ ul.box-category > li ul > li > a {
 }
 ul.box-category > li ul > li > a.active {
     font-weight: bold;
+}*/
+ul.box-category{
+    margin: 0 0px 0 3px;
+    padding: 0;
 }
+ul.box-category > li {
+    border-bottom: 1px dotted #E8E8E8;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+
+ul.box-category > li a{
+    background: url("../image/li-sibar.png") no-repeat scroll left top transparent;
+    color: #FFFFFF;
+    display: block;
+    font-weight: bold;
+    line-height: 22px;
+    margin: 0;
+    padding: 3px 0 3px 40px;
+    text-decoration: none;
+}
+
 /* box filter */
 ul.box-filter, ul.box-filter ul {
     list-style: none;
@@ -1782,10 +1845,39 @@ ul.box-filter > li ul {
 .ja-last a.mostread-image{
     float: left;
     padding-right: 5px;
-    
+
 }
 
 .ja-last .box-right{
     float: left;
     padding: 5px 0 0 55px;
+}
+
+
+.box-news-content > div {
+    border: 1px solid #F1F1F1;
+    display: block;
+    float: left;
+    height: 190px;
+    margin-bottom: 10px;
+    text-align: center;
+    width: 165px;
+    margin-right: 3px;
+}
+.box-news-content > div:first-child{
+    margin-left: 3px;
+}   
+.box-news-content div.image{
+    display: block;
+}
+
+.box-news-content div.name {
+    display: block;
+    text-align: center;
+}
+
+.box-news-content div.name a{
+    text-decoration: none;
+     color: #FF0000;
+    line-height: 25px;
 }

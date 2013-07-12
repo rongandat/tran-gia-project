@@ -4,9 +4,9 @@
         <div class="box-product">
             <?php foreach ($products as $key => $product) { ?>
                 <?php
-                if ($key + 1 == 1 || $key + 1 == 4 || $key + 1 == 7 || $key + 1 == 10 || $key + 1 == 13 || $key + 1 == 16 || $key + 1 == 19 || $key + 1 == 22 || $key + 1 == 25) {
+                if ($key % 5 == 0) {
                     $class = "first";
-                } elseif ($key + 1 == 3 || $key + 1 == 6 || $key + 1 == 9 || $key + 1 == 12 || $key + 1 == 15 || $key + 1 == 18 || $key + 1 == 21 || $key + 1 == 24 || $key + 1 == 27) {
+                } elseif ($key % 5 == 3) {
                     $class = "last";
                 } else {
                     $class = "";

@@ -80,3 +80,10 @@
 
         <div id="container">
             <div id="notification"></div>
+
+            <div id="topbanner">
+                <?php echo $banner_top_right; ?><?php echo $banner_top_left; ?>
+            </div>
+            <div class="clear"></div>
+            <?php echo $banner_center; ?>
+            <div class="clear"></div>

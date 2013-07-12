@@ -81,6 +81,21 @@
                                         <?php } else { ?>
                                             <option value="column_right"><?php echo $text_column_right; ?></option>
                                         <?php } ?>
+                                        <?php if ($module['position'] == 'banner_top_right') { ?>
+                                            <option value="banner_top_right" selected="selected"><?php echo $text_banner_right; ?></option>
+                                        <?php } else { ?>
+                                            <option value="banner_top_right"><?php echo $text_banner_right; ?></option>
+                                        <?php } ?>
+                                        <?php if ($module['position'] == 'banner_top_left') { ?>
+                                            <option value="banner_top_left" selected="selected"><?php echo $text_banner_left; ?></option>
+                                        <?php } else { ?>
+                                            <option value="banner_top_left"><?php echo $text_banner_left; ?></option>
+                                        <?php } ?>
+                                        <?php if ($module['position'] == 'banner_center') { ?>
+                                            <option value="banner_center" selected="selected"><?php echo $text_banner_bottom; ?></option>
+                                        <?php } else { ?>
+                                            <option value="banner_center"><?php echo $text_banner_bottom; ?></option>
+                                        <?php } ?>
                                     </select></td>
                                 <td class="left"><select name="newslatest_module[<?php echo $module_row; ?>][description]">
                                         <?php if ($module['description']) { ?>
@@ -141,11 +156,14 @@
         html += '    </select></td>';
         html += '    <td class="left"><select name="newslatest_module[' + module_row + '][position]">';
         html += '      <option value="column_banner_left"><?php echo $text_column_banner_left; ?></option>';
-	html += '      <option value="column_banner_right"><?php echo $text_column_banner_right; ?></option>';
+        html += '      <option value="column_banner_right"><?php echo $text_column_banner_right; ?></option>';
         html += '      <option value="content_top"><?php echo $text_content_top; ?></option>';
         html += '      <option value="content_bottom"><?php echo $text_content_bottom; ?></option>';
         html += '      <option value="column_left"><?php echo $text_column_left; ?></option>';
         html += '      <option value="column_right"><?php echo $text_column_right; ?></option>';
+        html += '      <option value="banner_top_left"><?php echo $text_banner_left; ?></option>';
+        html += '      <option value="text_banner_right"><?php echo $text_banner_right; ?></option>';
+        html += '      <option value="banner_center"><?php echo $text_banner_bottom; ?></option>';
         html += '    </select></td>';
         html += '    <td class="left"><select name="newslatest_module[' + module_row + '][description]">';
         html += '      <option value="1" selected="selected"><?php echo $text_enabled; ?></option>';

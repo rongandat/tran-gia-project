@@ -62,7 +62,7 @@ class ControllerModulenewsfeatured extends Controller {
 					'name'    	 => $news_info['name'],
 					'short_description'	=> $short_description,
 					'rating'     => $rating,
-					'image' 		=> HTTP_IMAGE . $news_info['image'],
+//					'image' 		=> HTTP_IMAGE . $news_info['image'],
 					'width'       => $width,
 					'height'       => $height,
 					'comments'    => sprintf($this->language->get('text_comments'), (int)$news_info['comment']),

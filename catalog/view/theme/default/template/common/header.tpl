@@ -95,3 +95,10 @@ $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></
 </div>
 <?php } ?>
 <div id="notification"></div>
+
+<div id="topbanner">
+    <?php echo $banner_top_left; ?><?php echo $banner_top_right; ?>
+</div>
+<div class="clear"></div>
+<?php echo $banner_center; ?>
+<div class="clear"></div>

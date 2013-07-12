@@ -1,3 +1,5 @@
+<script type="text/javascript" src="catalog/view/javascript/jquery/nivo-slider/jquery.nivo.slider.pack.js"></script>
+<link rel="stylesheet" type="text/css" href="catalog/view/theme/trangia/stylesheet/slideshow.css" />
 <div class="slideshow">
   <div id="slideshow<?php echo $module; ?>" class="nivoSlider" style="width: <?php echo $width; ?>px; height: <?php echo $height; ?>px;">
     <?php foreach ($banners as $banner) { ?>

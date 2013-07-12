@@ -9,7 +9,9 @@ $_['text_content_top']    = 'Đầu nội dung ';
 $_['text_content_bottom'] = 'Cuối nội dung';
 $_['text_column_left']    = 'Cột trái';
 $_['text_column_right']   = 'Cột phải';
-
+$_['text_banner_left']   = 'Banner trái';
+$_['text_banner_right']   = 'Banner phải';
+$_['text_banner_bottom']   = 'Banner dưới';
 // Entry
 $_['entry_code']          = 'Mã Google Talk:<br /><span class="help">truy cập <a onclick="window.open(\'http://www.google.com/talk/service/badge/New\');"><u>tạo một Google Talk chatback badge</u></a> và sao chép rồi dán các mã được tạo ra vào hộp văn bản.</span>'; 
 $_['entry_layout']        = 'Bố cục:';

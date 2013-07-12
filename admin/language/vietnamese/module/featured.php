@@ -9,7 +9,9 @@ $_['text_content_top']    = 'Đầu nội dung ';
 $_['text_content_bottom'] = 'Cuối nội dung';
 $_['text_column_left']    = 'Cột trái';
 $_['text_column_right']   = 'Cột phải';
-
+$_['text_banner_left']   = 'Banner trái';
+$_['text_banner_right']   = 'Banner phải';
+$_['text_banner_bottom']   = 'Banner dưới';
 // Entry
 $_['entry_product']       = 'Sản phẩm:';
 $_['entry_limit']         = 'Giới hạn:';

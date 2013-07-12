@@ -29,7 +29,9 @@ class ControllerModulenewslatest extends Controller {
 		$this->data['text_column_right'] = $this->language->get('text_column_right');
                 $this->data['text_column_banner_left'] = $this->language->get('text_column_banner_left');
 		$this->data['text_column_banner_right'] = $this->language->get('text_column_banner_right');
-
+                $this->data['text_banner_left'] = $this->language->get('text_banner_left');
+		$this->data['text_banner_right'] = $this->language->get('text_banner_right');
+		$this->data['text_banner_bottom'] = $this->language->get('text_banner_bottom');
 		
 		$this->data['entry_limit'] = $this->language->get('entry_limit');
 		$this->data['entry_image'] = $this->language->get('entry_image');

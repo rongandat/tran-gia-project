@@ -25,6 +25,9 @@ class ControllerModuleSlideshow extends Controller {
 		$this->data['text_content_bottom'] = $this->language->get('text_content_bottom');		
 		$this->data['text_column_left'] = $this->language->get('text_column_left');
 		$this->data['text_column_right'] = $this->language->get('text_column_right');
+                $this->data['text_banner_left'] = $this->language->get('text_banner_left');
+		$this->data['text_banner_right'] = $this->language->get('text_banner_right');
+		$this->data['text_banner_bottom'] = $this->language->get('text_banner_bottom');
 
 		$this->data['entry_banner'] = $this->language->get('entry_banner');
 		$this->data['entry_dimension'] = $this->language->get('entry_dimension'); 
@@ -32,6 +35,7 @@ class ControllerModuleSlideshow extends Controller {
 		$this->data['entry_position'] = $this->language->get('entry_position');
 		$this->data['entry_status'] = $this->language->get('entry_status');
 		$this->data['entry_sort_order'] = $this->language->get('entry_sort_order');
+		
 		
 		$this->data['button_save'] = $this->language->get('button_save');
 		$this->data['button_cancel'] = $this->language->get('button_cancel');

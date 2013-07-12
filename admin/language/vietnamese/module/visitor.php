@@ -12,7 +12,9 @@ $_['text_module']		= 'Module';
 $_['text_success']		= 'Module Thống kê lưu thành công!';
 $_['text_left']			= 'Trái';
 $_['text_right']		= 'Phải';
-
+$_['text_banner_left']   = 'Banner trái';
+$_['text_banner_right']   = 'Banner phải';
+$_['text_banner_bottom']   = 'Banner dưới';
 // Entry
 	// standard
 $_['entry_position']	= 'Vị trí';

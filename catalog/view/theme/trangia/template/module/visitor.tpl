@@ -13,7 +13,6 @@
         <h1><?php echo $heading_title; ?></h1>
     </div>
     <div class="box-content">
-        <div class="box-product">
             <div class="middle">
                 <div>
                     <img src="<?php echo $imgPath; ?>today.png" width="16" height="16" alt="" />
@@ -35,11 +34,11 @@
                     <img src="<?php echo $imgPath; ?>all.png" width="16" height="16" alt="" />
                     &nbsp;<?php echo $data['all']; ?>&nbsp;<?php echo $text_all; ?>
                 </div>
+                <hr style="color:#fff; width:94%; margin:10px 0;">
                 <div style="padding: 5px 22px;">
                     <?php echo $data['online'] . ' ' . $text_online; ?>
                 </div>
                 <?php echo $oxfooter; ?>
-            </div>
         </div>
     </div>
 </div>
