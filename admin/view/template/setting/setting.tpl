@@ -60,6 +60,10 @@
               <td><?php echo $entry_fax; ?></td>
               <td><input type="text" name="config_fax" value="<?php echo $config_fax; ?>" /></td>
             </tr>
+            <tr>
+              <td><?php echo $entry_information; ?></td>
+              <td><input size="100" type="text" name="config_information" value="<?php echo $config_information; ?>" /></td>
+            </tr>
           </table>
         </div>
         <div id="tab-store">

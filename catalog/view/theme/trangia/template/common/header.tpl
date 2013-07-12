@@ -73,7 +73,7 @@
                 <input type="text" name="search" placeholder="<?php echo $text_search; ?>" value="<?php echo $search; ?>" />
             </div>
             <div class="mquery">
-                <marquee width="100%" scrollamount="2" scrolldelay="50" onmouseout="this.start()" onmouseover="this.stop()" behavior="scroll" direction="left"><?php echo $text_maquery; ?></marquee>
+                <marquee width="100%" scrollamount="2" scrolldelay="50" onmouseout="this.start()" onmouseover="this.stop()" behavior="scroll" direction="left"><?php echo $text_config_information; ?></marquee>
             </div>
             <?php echo $cart; ?>
         </div>

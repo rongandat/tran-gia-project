@@ -92,7 +92,7 @@ $_['entry_error_display']       = 'Hiển thị lỗi:';
 $_['entry_error_log']           = 'Lịch sử lỗi:';
 $_['entry_error_filename']      = 'Lịch sử lỗi tập tin:';
 $_['entry_google_analytics']    = 'Mã Google Analytics:<br /><span class="help">Đăng nhập của bạn <a onclick="window.open(\'http://www.google.com/analytics/\');"><u>Google Analytics</u></a> tài khoản và sau khi tạo bản sao hồ sơ web site của bạn và dán mã phân tích vào lĩnh vực này.</span>';
-
+$_['entry_information']      = 'Thông tin cửa hàng:';
 // Error
 $_['error_warning']             = 'Cảnh báo: Dữ liệu bắt buộc chưa được nhập vào. Kiểm tra các ô trống!';
 $_['error_permission']        = 'Cảnh báo: Bạn không được phép thay đổi các cài đặt!';

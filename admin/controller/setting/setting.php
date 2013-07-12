@@ -140,6 +140,7 @@ class ControllerSettingSetting extends Controller {
 		$this->data['entry_error_log'] = $this->language->get('entry_error_log');
 		$this->data['entry_error_filename'] = $this->language->get('entry_error_filename');
 		$this->data['entry_google_analytics'] = $this->language->get('entry_google_analytics');
+		$this->data['entry_information'] = $this->language->get('entry_information');
 		
 		$this->data['button_save'] = $this->language->get('button_save');
 		$this->data['button_cancel'] = $this->language->get('button_cancel');
@@ -378,6 +379,12 @@ class ControllerSettingSetting extends Controller {
 			$this->data['config_fax'] = $this->request->post['config_fax'];
 		} else {
 			$this->data['config_fax'] = $this->config->get('config_fax');
+		}
+                
+		if (isset($this->request->post['config_information'])) {
+			$this->data['config_information'] = $this->request->post['config_information'];
+		} else {
+			$this->data['config_information'] = $this->config->get('config_information');
 		}
 
 		if (isset($this->request->post['config_title'])) {
