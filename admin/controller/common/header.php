@@ -102,6 +102,9 @@ class ControllerCommonHeader extends Controller {
 		$this->data['text_weight_class'] = $this->language->get('text_weight_class');
 		$this->data['text_length_class'] = $this->language->get('text_length_class');
 		$this->data['text_zone'] = $this->language->get('text_zone');
+                $this->data['text_news'] = $this->language->get('text_news');
+		$this->data['text_news_category'] = $this->language->get('text_news_category');
+		$this->data['text_news_comment'] = $this->language->get('text_news_comment');
 		
 		if (!$this->user->isLogged() || !isset($this->request->get['token']) || !isset($this->session->data['token']) || ($this->request->get['token'] != $this->session->data['token'])) {
 			$this->data['logged'] = '';
@@ -124,7 +127,7 @@ class ControllerCommonHeader extends Controller {
 			$this->data['customer_fields'] = $this->url->link('sale/customer_field', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['customer_group'] = $this->url->link('sale/customer_group', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['customer_ban_ip'] = $this->url->link('sale/customer_ban_ip', 'token=' . $this->session->data['token'], 'SSL');
-			$this->data['custom_field'] = $this->url->link('sale/custom_field', 'token=' . $this->session->data['token'], 'SSL');
+			$this->data['custom_field'] = $this->url->link('design/custom_field', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['download'] = $this->url->link('catalog/download', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['error_log'] = $this->url->link('tool/error_log', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['feed'] = $this->url->link('extension/feed', 'token=' . $this->session->data['token'], 'SSL');	
@@ -174,7 +177,9 @@ class ControllerCommonHeader extends Controller {
 			$this->data['weight_class'] = $this->url->link('localisation/weight_class', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['length_class'] = $this->url->link('localisation/length_class', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['zone'] = $this->url->link('localisation/zone', 'token=' . $this->session->data['token'], 'SSL');
-			
+			$this->data['news'] = $this->url->link('catalog/news', 'token=' . $this->session->data['token'], 'SSL');
+			$this->data['news_category'] = $this->url->link('catalog/news_category', 'token=' . $this->session->data['token'], 'SSL');
+			$this->data['news_comment'] = $this->url->link('catalog/news_comment', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['stores'] = array();
 			
 			$this->load->model('setting/store');

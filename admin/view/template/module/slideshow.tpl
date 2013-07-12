@@ -31,8 +31,7 @@
           <?php foreach ($modules as $module) { ?>
           <tbody id="module-row<?php echo $module_row; ?>">
             <tr>
-              <td class="left">
-                  <select name="slideshow_module[<?php echo $module_row; ?>][banner_id]">
+              <td class="left"><select name="slideshow_module[<?php echo $module_row; ?>][banner_id]">
                   <?php foreach ($banners as $banner) { ?>
                   <?php if ($banner['banner_id'] == $module['banner_id']) { ?>
                   <option value="<?php echo $banner['banner_id']; ?>" selected="selected"><?php echo $banner['name']; ?></option>
@@ -56,16 +55,6 @@
                   <?php } ?>
                 </select></td>
               <td class="left"><select name="slideshow_module[<?php echo $module_row; ?>][position]">
-                  <?php if ($module['position'] == 'column_banner_left') { ?>
-                  <option value="column_banner_left" selected="selected"><?php echo $text_column_banner_left; ?></option>
-                  <?php } else { ?>
-                  <option value="column_banner_left"><?php echo $text_column_banner_left; ?></option>
-                  <?php } ?>
-                  <?php if ($module['position'] == 'column_banner_right') { ?>
-                  <option value="column_banner_right" selected="selected"><?php echo $text_column_banner_right; ?></option>
-                  <?php } else { ?>
-                  <option value="column_banner_right"><?php echo $text_column_banner_right; ?></option>
-                  <?php } ?>
                   <?php if ($module['position'] == 'content_top') { ?>
                   <option value="content_top" selected="selected"><?php echo $text_content_top; ?></option>
                   <?php } else { ?>
@@ -131,8 +120,6 @@ function addModule() {
 	<?php } ?>
 	html += '    </select></td>';
 	html += '    <td class="left"><select name="slideshow_module[' + module_row + '][position]">';
-	html += '      <option value="column_banner_left"><?php echo $text_column_banner_left; ?></option>';
-	html += '      <option value="column_banner_right"><?php echo $text_column_banner_right; ?></option>';
 	html += '      <option value="content_top"><?php echo $text_content_top; ?></option>';
 	html += '      <option value="content_bottom"><?php echo $text_content_bottom; ?></option>';
 	html += '      <option value="column_left"><?php echo $text_column_left; ?></option>';

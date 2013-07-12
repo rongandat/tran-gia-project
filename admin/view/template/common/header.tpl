@@ -75,6 +75,13 @@ $(document).ready(function(){
               <li><a href="<?php echo $attribute_group; ?>"><?php echo $text_attribute_group; ?></a></li>
             </ul>
           </li>
+          <li><a class="parent"><?php echo $text_news; ?></a>
+            <ul>
+              <li><a href="<?php echo $news; ?>"><?php echo $text_news; ?></a></li>
+              <li><a href="<?php echo $news_category; ?>"><?php echo $text_news_category; ?></a></li>
+              <li><a href="<?php echo $news_comment; ?>"><?php echo $text_news_comment; ?></a></li>
+            </ul>
+          </li>
           <li><a href="<?php echo $option; ?>"><?php echo $text_option; ?></a></li>
           <li><a href="<?php echo $manufacturer; ?>"><?php echo $text_manufacturer; ?></a></li>
           <li><a href="<?php echo $download; ?>"><?php echo $text_download; ?></a></li>

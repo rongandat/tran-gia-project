@@ -60,6 +60,7 @@ class ControllerModulenewslatest extends Controller {
 
             $this->data['newss'][] = array(
                 'news_id' => $result['news_id'],
+                'date_added' => $result['date_added'],
                 'thumb' => $image,
                 'width' => $width,
                 'height' => $height,

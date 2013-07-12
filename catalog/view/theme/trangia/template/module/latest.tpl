@@ -1,11 +1,18 @@
 <div class="box">
-    <div class="box-heading">
-        <h1><?php echo $heading_title; ?></h1>
-    </div>
-    <div class="box-content">
+    <div class="box-heading"><?php echo $heading_title; ?></div>
+    <div class="box-content ngocfix">
         <div class="box-product">
-            <?php foreach ($products as $product) { ?>
-                <div>
+            <?php foreach ($products as $key => $product) { ?>
+                <?php
+                if ($key + 1 == 1 || $key + 1 == 4 || $key + 1 == 7 || $key + 1 == 10 || $key + 1 == 13 || $key + 1 == 16 || $key + 1 == 19 || $key + 1 == 22 || $key + 1 == 25) {
+                    $class = "first";
+                } elseif ($key + 1 == 3 || $key + 1 == 6 || $key + 1 == 9 || $key + 1 == 12 || $key + 1 == 15 || $key + 1 == 18 || $key + 1 == 21 || $key + 1 == 24 || $key + 1 == 27) {
+                    $class = "last";
+                } else {
+                    $class = "";
+                }
+                ?>
+                <div class="<?php echo $class; ?>">
                     <?php if ($product['thumb']) { ?>
                         <div class="image"><a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" /></a></div>
                     <?php } ?>

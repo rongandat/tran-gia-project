@@ -3,22 +3,20 @@
 -- Server version:               5.5.16 - MySQL Community Server (GPL)
 -- Server OS:                    Win32
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2013-07-11 21:20:01
+-- Date/time:                    2013-07-12 17:37:58
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET NAMES utf8 */;
 /*!40014 SET FOREIGN_KEY_CHECKS=0 */;
 
--- Dumping database structure for trangia
-DROP DATABASE IF EXISTS `trangia`;
-CREATE DATABASE IF NOT EXISTS `trangia` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `trangia`;
+-- Dumping database structure for amthuctrangia
+CREATE DATABASE IF NOT EXISTS `amthuctrangia` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `amthuctrangia`;
 
 
--- Dumping structure for table trangia.address
-DROP TABLE IF EXISTS `address`;
-CREATE TABLE IF NOT EXISTS `address` (
+-- Dumping structure for table amthuctrangia.oc_address
+CREATE TABLE IF NOT EXISTS `oc_address` (
   `address_id` int(11) NOT NULL AUTO_INCREMENT,
   `customer_id` int(11) NOT NULL,
   `firstname` varchar(32) NOT NULL,
@@ -34,19 +32,16 @@ CREATE TABLE IF NOT EXISTS `address` (
   `zone_id` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`address_id`),
   KEY `customer_id` (`customer_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.address: 2 rows
-/*!40000 ALTER TABLE `address` DISABLE KEYS */;
-INSERT INTO `address` (`address_id`, `customer_id`, `firstname`, `lastname`, `company`, `company_id`, `tax_id`, `address_1`, `address_2`, `city`, `postcode`, `country_id`, `zone_id`) VALUES
-	(1, 1, 'Khiem', 'Pham', 'CYA', '34', '', '2343242', '423', '242', '4242', 230, 3776),
-	(2, 2, 'Khiem', 'Pham', '', '', '', 'dasda', '', 'ddada', 'dada', 230, 3776);
-/*!40000 ALTER TABLE `address` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_address: 0 rows
+DELETE FROM `oc_address`;
+/*!40000 ALTER TABLE `oc_address` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oc_address` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.affiliate
-DROP TABLE IF EXISTS `affiliate`;
-CREATE TABLE IF NOT EXISTS `affiliate` (
+-- Dumping structure for table amthuctrangia.oc_affiliate
+CREATE TABLE IF NOT EXISTS `oc_affiliate` (
   `affiliate_id` int(11) NOT NULL AUTO_INCREMENT,
   `firstname` varchar(32) NOT NULL,
   `lastname` varchar(32) NOT NULL,
@@ -81,14 +76,14 @@ CREATE TABLE IF NOT EXISTS `affiliate` (
   PRIMARY KEY (`affiliate_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.affiliate: 0 rows
-/*!40000 ALTER TABLE `affiliate` DISABLE KEYS */;
-/*!40000 ALTER TABLE `affiliate` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_affiliate: 0 rows
+DELETE FROM `oc_affiliate`;
+/*!40000 ALTER TABLE `oc_affiliate` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oc_affiliate` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.affiliate_transaction
-DROP TABLE IF EXISTS `affiliate_transaction`;
-CREATE TABLE IF NOT EXISTS `affiliate_transaction` (
+-- Dumping structure for table amthuctrangia.oc_affiliate_transaction
+CREATE TABLE IF NOT EXISTS `oc_affiliate_transaction` (
   `affiliate_transaction_id` int(11) NOT NULL AUTO_INCREMENT,
   `affiliate_id` int(11) NOT NULL,
   `order_id` int(11) NOT NULL,
@@ -98,23 +93,24 @@ CREATE TABLE IF NOT EXISTS `affiliate_transaction` (
   PRIMARY KEY (`affiliate_transaction_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.affiliate_transaction: 0 rows
-/*!40000 ALTER TABLE `affiliate_transaction` DISABLE KEYS */;
-/*!40000 ALTER TABLE `affiliate_transaction` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_affiliate_transaction: 0 rows
+DELETE FROM `oc_affiliate_transaction`;
+/*!40000 ALTER TABLE `oc_affiliate_transaction` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oc_affiliate_transaction` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.attribute
-DROP TABLE IF EXISTS `attribute`;
-CREATE TABLE IF NOT EXISTS `attribute` (
+-- Dumping structure for table amthuctrangia.oc_attribute
+CREATE TABLE IF NOT EXISTS `oc_attribute` (
   `attribute_id` int(11) NOT NULL AUTO_INCREMENT,
   `attribute_group_id` int(11) NOT NULL,
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`attribute_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.attribute: 11 rows
-/*!40000 ALTER TABLE `attribute` DISABLE KEYS */;
-INSERT INTO `attribute` (`attribute_id`, `attribute_group_id`, `sort_order`) VALUES
+-- Dumping data for table amthuctrangia.oc_attribute: 11 rows
+DELETE FROM `oc_attribute`;
+/*!40000 ALTER TABLE `oc_attribute` DISABLE KEYS */;
+INSERT INTO `oc_attribute` (`attribute_id`, `attribute_group_id`, `sort_order`) VALUES
 	(1, 6, 1),
 	(2, 6, 5),
 	(3, 6, 3),
@@ -126,21 +122,21 @@ INSERT INTO `attribute` (`attribute_id`, `attribute_group_id`, `sort_order`) VAL
 	(9, 3, 6),
 	(10, 3, 7),
 	(11, 3, 8);
-/*!40000 ALTER TABLE `attribute` ENABLE KEYS */;
+/*!40000 ALTER TABLE `oc_attribute` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.attribute_description
-DROP TABLE IF EXISTS `attribute_description`;
-CREATE TABLE IF NOT EXISTS `attribute_description` (
+-- Dumping structure for table amthuctrangia.oc_attribute_description
+CREATE TABLE IF NOT EXISTS `oc_attribute_description` (
   `attribute_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
   `name` varchar(64) NOT NULL,
   PRIMARY KEY (`attribute_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.attribute_description: 22 rows
-/*!40000 ALTER TABLE `attribute_description` DISABLE KEYS */;
-INSERT INTO `attribute_description` (`attribute_id`, `language_id`, `name`) VALUES
+-- Dumping data for table amthuctrangia.oc_attribute_description: 11 rows
+DELETE FROM `oc_attribute_description`;
+/*!40000 ALTER TABLE `oc_attribute_description` DISABLE KEYS */;
+INSERT INTO `oc_attribute_description` (`attribute_id`, `language_id`, `name`) VALUES
 	(1, 1, 'Description'),
 	(2, 1, 'No. of Cores'),
 	(4, 1, 'test 1'),
@@ -151,98 +147,104 @@ INSERT INTO `attribute_description` (`attribute_id`, `language_id`, `name`) VALU
 	(9, 1, 'test 6'),
 	(10, 1, 'test 7'),
 	(11, 1, 'test 8'),
-	(3, 1, 'Clockspeed'),
-	(1, 2, 'Description'),
-	(2, 2, 'No. of Cores'),
-	(4, 2, 'test 1'),
-	(5, 2, 'test 2'),
-	(6, 2, 'test 3'),
-	(7, 2, 'test 4'),
-	(8, 2, 'test 5'),
-	(9, 2, 'test 6'),
-	(10, 2, 'test 7'),
-	(11, 2, 'test 8'),
-	(3, 2, 'Clockspeed');
-/*!40000 ALTER TABLE `attribute_description` ENABLE KEYS */;
+	(3, 1, 'Clockspeed');
+/*!40000 ALTER TABLE `oc_attribute_description` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.attribute_group
-DROP TABLE IF EXISTS `attribute_group`;
-CREATE TABLE IF NOT EXISTS `attribute_group` (
+-- Dumping structure for table amthuctrangia.oc_attribute_group
+CREATE TABLE IF NOT EXISTS `oc_attribute_group` (
   `attribute_group_id` int(11) NOT NULL AUTO_INCREMENT,
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`attribute_group_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.attribute_group: 4 rows
-/*!40000 ALTER TABLE `attribute_group` DISABLE KEYS */;
-INSERT INTO `attribute_group` (`attribute_group_id`, `sort_order`) VALUES
+-- Dumping data for table amthuctrangia.oc_attribute_group: 4 rows
+DELETE FROM `oc_attribute_group`;
+/*!40000 ALTER TABLE `oc_attribute_group` DISABLE KEYS */;
+INSERT INTO `oc_attribute_group` (`attribute_group_id`, `sort_order`) VALUES
 	(3, 2),
 	(4, 1),
 	(5, 3),
 	(6, 4);
-/*!40000 ALTER TABLE `attribute_group` ENABLE KEYS */;
+/*!40000 ALTER TABLE `oc_attribute_group` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.attribute_group_description
-DROP TABLE IF EXISTS `attribute_group_description`;
-CREATE TABLE IF NOT EXISTS `attribute_group_description` (
+-- Dumping structure for table amthuctrangia.oc_attribute_group_description
+CREATE TABLE IF NOT EXISTS `oc_attribute_group_description` (
   `attribute_group_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
   `name` varchar(64) NOT NULL,
   PRIMARY KEY (`attribute_group_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.attribute_group_description: 8 rows
-/*!40000 ALTER TABLE `attribute_group_description` DISABLE KEYS */;
-INSERT INTO `attribute_group_description` (`attribute_group_id`, `language_id`, `name`) VALUES
+-- Dumping data for table amthuctrangia.oc_attribute_group_description: 4 rows
+DELETE FROM `oc_attribute_group_description`;
+/*!40000 ALTER TABLE `oc_attribute_group_description` DISABLE KEYS */;
+INSERT INTO `oc_attribute_group_description` (`attribute_group_id`, `language_id`, `name`) VALUES
 	(3, 1, 'Memory'),
 	(4, 1, 'Technical'),
 	(5, 1, 'Motherboard'),
-	(6, 1, 'Processor'),
-	(3, 2, 'Memory'),
-	(4, 2, 'Technical'),
-	(5, 2, 'Motherboard'),
-	(6, 2, 'Processor');
-/*!40000 ALTER TABLE `attribute_group_description` ENABLE KEYS */;
+	(6, 1, 'Processor');
+/*!40000 ALTER TABLE `oc_attribute_group_description` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.banner
-DROP TABLE IF EXISTS `banner`;
-CREATE TABLE IF NOT EXISTS `banner` (
+-- Dumping structure for table amthuctrangia.oc_banner
+CREATE TABLE IF NOT EXISTS `oc_banner` (
   `banner_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) NOT NULL,
   `status` tinyint(1) NOT NULL,
   PRIMARY KEY (`banner_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.banner: 1 rows
-/*!40000 ALTER TABLE `banner` DISABLE KEYS */;
-INSERT INTO `banner` (`banner_id`, `name`, `status`) VALUES
-	(9, 'Slide', 1);
-/*!40000 ALTER TABLE `banner` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_banner: 5 rows
+DELETE FROM `oc_banner`;
+/*!40000 ALTER TABLE `oc_banner` DISABLE KEYS */;
+INSERT INTO `oc_banner` (`banner_id`, `name`, `status`) VALUES
+	(6, 'HP Products', 1),
+	(7, 'Samsung Tab', 1),
+	(8, 'Manufacturers', 1),
+	(9, 'Slide', 1),
+	(10, 'Đối tác', 1);
+/*!40000 ALTER TABLE `oc_banner` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.banner_image
-DROP TABLE IF EXISTS `banner_image`;
-CREATE TABLE IF NOT EXISTS `banner_image` (
+-- Dumping structure for table amthuctrangia.oc_banner_image
+CREATE TABLE IF NOT EXISTS `oc_banner_image` (
   `banner_image_id` int(11) NOT NULL AUTO_INCREMENT,
   `banner_id` int(11) NOT NULL,
   `link` varchar(255) NOT NULL,
   `image` varchar(255) NOT NULL,
   PRIMARY KEY (`banner_image_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=87 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=89 DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.banner_image: 1 rows
-/*!40000 ALTER TABLE `banner_image` DISABLE KEYS */;
-INSERT INTO `banner_image` (`banner_image_id`, `banner_id`, `link`, `image`) VALUES
-	(86, 9, '', 'data/slide.png');
-/*!40000 ALTER TABLE `banner_image` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_banner_image: 19 rows
+DELETE FROM `oc_banner_image`;
+/*!40000 ALTER TABLE `oc_banner_image` DISABLE KEYS */;
+INSERT INTO `oc_banner_image` (`banner_image_id`, `banner_id`, `link`, `image`) VALUES
+	(54, 7, 'index.php?route=product/product&amp;path=57&amp;product_id=49', 'data/demo/samsung_banner.jpg'),
+	(77, 6, 'index.php?route=product/manufacturer/info&amp;manufacturer_id=7', 'data/demo/hp_banner.jpg'),
+	(75, 8, 'index.php?route=product/manufacturer/info&amp;manufacturer_id=5', 'data/demo/htc_logo.jpg'),
+	(73, 8, 'index.php?route=product/manufacturer/info&amp;manufacturer_id=8', 'data/demo/apple_logo.jpg'),
+	(74, 8, 'index.php?route=product/manufacturer/info&amp;manufacturer_id=9', 'data/demo/canon_logo.jpg'),
+	(71, 8, 'index.php?route=product/manufacturer/info&amp;manufacturer_id=10', 'data/demo/sony_logo.jpg'),
+	(72, 8, 'index.php?route=product/manufacturer/info&amp;manufacturer_id=6', 'data/demo/palm_logo.jpg'),
+	(76, 8, 'index.php?route=product/manufacturer/info&amp;manufacturer_id=7', 'data/demo/hp_logo.jpg'),
+	(78, 9, 'â', 'data/banner2.jpg'),
+	(79, 9, 'aa', 'data/banner3.jpg'),
+	(80, 10, '', 'data/manu (1).jpg'),
+	(81, 10, '', 'data/manu (1).png'),
+	(82, 10, '', 'data/manu (2).jpg'),
+	(83, 10, '', 'data/manu (3).jpg'),
+	(84, 10, '', 'data/manu (4).jpg'),
+	(85, 10, '', 'data/manu (5).jpg'),
+	(86, 10, '', 'data/manu (6).jpg'),
+	(87, 10, '', 'data/manu (7).jpg'),
+	(88, 10, '', 'data/manu (8).jpg');
+/*!40000 ALTER TABLE `oc_banner_image` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.banner_image_description
-DROP TABLE IF EXISTS `banner_image_description`;
-CREATE TABLE IF NOT EXISTS `banner_image_description` (
+-- Dumping structure for table amthuctrangia.oc_banner_image_description
+CREATE TABLE IF NOT EXISTS `oc_banner_image_description` (
   `banner_image_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
   `banner_id` int(11) NOT NULL,
@@ -250,17 +252,34 @@ CREATE TABLE IF NOT EXISTS `banner_image_description` (
   PRIMARY KEY (`banner_image_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.banner_image_description: 2 rows
-/*!40000 ALTER TABLE `banner_image_description` DISABLE KEYS */;
-INSERT INTO `banner_image_description` (`banner_image_id`, `language_id`, `banner_id`, `title`) VALUES
-	(86, 2, 9, 'slide1'),
-	(86, 1, 9, 'slide1');
-/*!40000 ALTER TABLE `banner_image_description` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_banner_image_description: 19 rows
+DELETE FROM `oc_banner_image_description`;
+/*!40000 ALTER TABLE `oc_banner_image_description` DISABLE KEYS */;
+INSERT INTO `oc_banner_image_description` (`banner_image_id`, `language_id`, `banner_id`, `title`) VALUES
+	(54, 1, 7, 'Samsung Tab 10.1'),
+	(77, 1, 6, 'HP Banner'),
+	(75, 1, 8, 'HTC'),
+	(74, 1, 8, 'Canon'),
+	(73, 1, 8, 'Apple'),
+	(72, 1, 8, 'Palm'),
+	(71, 1, 8, 'Sony'),
+	(76, 1, 8, 'Hewlett-Packard'),
+	(78, 1, 9, 'aa'),
+	(79, 1, 9, 'aaa'),
+	(80, 1, 10, 'Acb'),
+	(81, 1, 10, 'Michu'),
+	(82, 1, 10, 'AGribank'),
+	(83, 1, 10, 'VIB'),
+	(84, 1, 10, 'cho limex'),
+	(85, 1, 10, 'local food'),
+	(86, 1, 10, 'Tấn huy food'),
+	(87, 1, 10, 'Mecofood'),
+	(88, 1, 10, 'T&amp;T Food');
+/*!40000 ALTER TABLE `oc_banner_image_description` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.category
-DROP TABLE IF EXISTS `category`;
-CREATE TABLE IF NOT EXISTS `category` (
+-- Dumping structure for table amthuctrangia.oc_category
+CREATE TABLE IF NOT EXISTS `oc_category` (
   `category_id` int(11) NOT NULL AUTO_INCREMENT,
   `image` varchar(255) DEFAULT NULL,
   `parent_id` int(11) NOT NULL DEFAULT '0',
@@ -271,23 +290,23 @@ CREATE TABLE IF NOT EXISTS `category` (
   `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`category_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=69 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=65 DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.category: 6 rows
-/*!40000 ALTER TABLE `category` DISABLE KEYS */;
-INSERT INTO `category` (`category_id`, `image`, `parent_id`, `top`, `column`, `sort_order`, `status`, `date_added`, `date_modified`) VALUES
-	(67, '', 0, 1, 1, 0, 1, '2013-01-25 21:20:02', '2013-01-25 21:31:50'),
-	(66, '', 0, 1, 1, 0, 1, '2013-01-25 21:19:14', '2013-01-25 21:32:03'),
-	(59, NULL, 0, 0, 1, 1, 1, '2013-01-25 20:58:43', '2013-01-25 20:58:43'),
-	(60, NULL, 0, 0, 1, 1, 1, '2013-01-25 21:00:40', '2013-01-25 21:00:40'),
-	(61, NULL, 0, 0, 1, 1, 1, '2013-01-25 21:01:03', '2013-01-25 21:01:03'),
-	(68, '', 67, 0, 1, 0, 1, '2013-06-22 08:55:30', '2013-06-22 08:55:30');
-/*!40000 ALTER TABLE `category` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_category: 6 rows
+DELETE FROM `oc_category`;
+/*!40000 ALTER TABLE `oc_category` DISABLE KEYS */;
+INSERT INTO `oc_category` (`category_id`, `image`, `parent_id`, `top`, `column`, `sort_order`, `status`, `date_added`, `date_modified`) VALUES
+	(61, '', 0, 0, 1, 0, 1, '2013-07-12 16:33:03', '2013-07-12 16:33:03'),
+	(62, '', 0, 0, 1, 0, 1, '2013-07-12 16:33:12', '2013-07-12 16:33:12'),
+	(60, '', 0, 0, 1, 0, 1, '2013-07-12 16:32:47', '2013-07-12 16:32:47'),
+	(63, '', 0, 0, 1, 0, 1, '2013-07-12 16:33:20', '2013-07-12 16:33:20'),
+	(64, '', 0, 0, 1, 0, 1, '2013-07-12 16:33:34', '2013-07-12 16:33:34'),
+	(59, '', 0, 0, 1, 0, 1, '2013-07-12 16:32:37', '2013-07-12 16:32:37');
+/*!40000 ALTER TABLE `oc_category` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.category_description
-DROP TABLE IF EXISTS `category_description`;
-CREATE TABLE IF NOT EXISTS `category_description` (
+-- Dumping structure for table amthuctrangia.oc_category_description
+CREATE TABLE IF NOT EXISTS `oc_category_description` (
   `category_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -298,89 +317,89 @@ CREATE TABLE IF NOT EXISTS `category_description` (
   KEY `name` (`name`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.category_description: 8 rows
-/*!40000 ALTER TABLE `category_description` DISABLE KEYS */;
-INSERT INTO `category_description` (`category_id`, `language_id`, `name`, `description`, `meta_description`, `meta_keyword`) VALUES
-	(66, 2, 'hỗ trợ xương khớp', '', 'hỗ trợ xương khớp', 'hỗ trợ xương khớp'),
-	(66, 1, 'hỗ trợ xương khớp', '', 'hỗ trợ xương khớp', 'hỗ trợ xương khớp'),
-	(67, 2, 'Hỗ trợ tim mạch', '', 'Hỗ trợ tim mạch', 'Hỗ trợ tim mạch'),
-	(67, 1, 'Hỗ trợ tim mạch', '', 'Hỗ trợ tim mạch', 'Hỗ trợ tim mạch'),
-	(0, 1, 'Há» trá»£ xÆ°Æ¡ng khá»p', '', '', ''),
-	(0, 2, 'Há» trá»£ xÆ°Æ¡ng khá»p', '', '', ''),
-	(68, 2, 'dsub category', '', 'dsub category', 'dsub category'),
-	(68, 1, 'dsub category', '', 'dsub category', 'dsub category');
-/*!40000 ALTER TABLE `category_description` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_category_description: 6 rows
+DELETE FROM `oc_category_description`;
+/*!40000 ALTER TABLE `oc_category_description` DISABLE KEYS */;
+INSERT INTO `oc_category_description` (`category_id`, `language_id`, `name`, `description`, `meta_description`, `meta_keyword`) VALUES
+	(60, 1, 'Món ăn từ miến', '', '', ''),
+	(61, 1, 'Bánh đa làng chiều', '', '', ''),
+	(62, 1, 'Tin tức', '', '', ''),
+	(63, 1, 'Sản phẩm', '', '', ''),
+	(64, 1, 'Giới thiệu làng nghề', '', '', ''),
+	(59, 1, 'Món ăn từ nem', '', '', '');
+/*!40000 ALTER TABLE `oc_category_description` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.category_filter
-DROP TABLE IF EXISTS `category_filter`;
-CREATE TABLE IF NOT EXISTS `category_filter` (
+-- Dumping structure for table amthuctrangia.oc_category_filter
+CREATE TABLE IF NOT EXISTS `oc_category_filter` (
   `category_id` int(11) NOT NULL,
   `filter_id` int(11) NOT NULL,
   PRIMARY KEY (`category_id`,`filter_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.category_filter: 0 rows
-/*!40000 ALTER TABLE `category_filter` DISABLE KEYS */;
-/*!40000 ALTER TABLE `category_filter` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_category_filter: 0 rows
+DELETE FROM `oc_category_filter`;
+/*!40000 ALTER TABLE `oc_category_filter` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oc_category_filter` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.category_path
-DROP TABLE IF EXISTS `category_path`;
-CREATE TABLE IF NOT EXISTS `category_path` (
+-- Dumping structure for table amthuctrangia.oc_category_path
+CREATE TABLE IF NOT EXISTS `oc_category_path` (
   `category_id` int(11) NOT NULL,
   `path_id` int(11) NOT NULL,
   `level` int(11) NOT NULL,
   PRIMARY KEY (`category_id`,`path_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.category_path: 7 rows
-/*!40000 ALTER TABLE `category_path` DISABLE KEYS */;
-INSERT INTO `category_path` (`category_id`, `path_id`, `level`) VALUES
-	(67, 67, 0),
-	(66, 66, 0),
-	(59, 59, 0),
-	(60, 60, 0),
+-- Dumping data for table amthuctrangia.oc_category_path: 6 rows
+DELETE FROM `oc_category_path`;
+/*!40000 ALTER TABLE `oc_category_path` DISABLE KEYS */;
+INSERT INTO `oc_category_path` (`category_id`, `path_id`, `level`) VALUES
 	(61, 61, 0),
-	(68, 68, 1),
-	(68, 67, 0);
-/*!40000 ALTER TABLE `category_path` ENABLE KEYS */;
+	(60, 60, 0),
+	(64, 64, 0),
+	(63, 63, 0),
+	(62, 62, 0),
+	(59, 59, 0);
+/*!40000 ALTER TABLE `oc_category_path` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.category_to_layout
-DROP TABLE IF EXISTS `category_to_layout`;
-CREATE TABLE IF NOT EXISTS `category_to_layout` (
+-- Dumping structure for table amthuctrangia.oc_category_to_layout
+CREATE TABLE IF NOT EXISTS `oc_category_to_layout` (
   `category_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
   `layout_id` int(11) NOT NULL,
   PRIMARY KEY (`category_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.category_to_layout: 0 rows
-/*!40000 ALTER TABLE `category_to_layout` DISABLE KEYS */;
-/*!40000 ALTER TABLE `category_to_layout` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_category_to_layout: 0 rows
+DELETE FROM `oc_category_to_layout`;
+/*!40000 ALTER TABLE `oc_category_to_layout` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oc_category_to_layout` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.category_to_store
-DROP TABLE IF EXISTS `category_to_store`;
-CREATE TABLE IF NOT EXISTS `category_to_store` (
+-- Dumping structure for table amthuctrangia.oc_category_to_store
+CREATE TABLE IF NOT EXISTS `oc_category_to_store` (
   `category_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
   PRIMARY KEY (`category_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.category_to_store: 3 rows
-/*!40000 ALTER TABLE `category_to_store` DISABLE KEYS */;
-INSERT INTO `category_to_store` (`category_id`, `store_id`) VALUES
-	(66, 0),
-	(67, 0),
-	(68, 0);
-/*!40000 ALTER TABLE `category_to_store` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_category_to_store: 6 rows
+DELETE FROM `oc_category_to_store`;
+/*!40000 ALTER TABLE `oc_category_to_store` DISABLE KEYS */;
+INSERT INTO `oc_category_to_store` (`category_id`, `store_id`) VALUES
+	(59, 0),
+	(60, 0),
+	(61, 0),
+	(62, 0),
+	(63, 0),
+	(64, 0);
+/*!40000 ALTER TABLE `oc_category_to_store` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.country
-DROP TABLE IF EXISTS `country`;
-CREATE TABLE IF NOT EXISTS `country` (
+-- Dumping structure for table amthuctrangia.oc_country
+CREATE TABLE IF NOT EXISTS `oc_country` (
   `country_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(128) NOT NULL,
   `iso_code_2` varchar(2) NOT NULL,
@@ -391,9 +410,10 @@ CREATE TABLE IF NOT EXISTS `country` (
   PRIMARY KEY (`country_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=252 DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.country: 249 rows
-/*!40000 ALTER TABLE `country` DISABLE KEYS */;
-INSERT INTO `country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `address_format`, `postcode_required`, `status`) VALUES
+-- Dumping data for table amthuctrangia.oc_country: 249 rows
+DELETE FROM `oc_country`;
+/*!40000 ALTER TABLE `oc_country` DISABLE KEYS */;
+INSERT INTO `oc_country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `address_format`, `postcode_required`, `status`) VALUES
 	(1, 'Afghanistan', 'AF', 'AFG', '', 0, 1),
 	(2, 'Albania', 'AL', 'ALB', '', 0, 1),
 	(3, 'Algeria', 'DZ', 'DZA', '', 0, 1),
@@ -643,12 +663,11 @@ INSERT INTO `country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `addres
 	(249, 'St. Barthelemy', 'BL', 'BLM', '', 0, 1),
 	(250, 'St. Martin (French part)', 'MF', 'MAF', '', 0, 1),
 	(251, 'Canary Islands', 'IC', 'ICA', '', 0, 1);
-/*!40000 ALTER TABLE `country` ENABLE KEYS */;
+/*!40000 ALTER TABLE `oc_country` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.coupon
-DROP TABLE IF EXISTS `coupon`;
-CREATE TABLE IF NOT EXISTS `coupon` (
+-- Dumping structure for table amthuctrangia.oc_coupon
+CREATE TABLE IF NOT EXISTS `oc_coupon` (
   `coupon_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(128) NOT NULL,
   `code` varchar(10) NOT NULL,
@@ -666,31 +685,31 @@ CREATE TABLE IF NOT EXISTS `coupon` (
   PRIMARY KEY (`coupon_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.coupon: 3 rows
-/*!40000 ALTER TABLE `coupon` DISABLE KEYS */;
-INSERT INTO `coupon` (`coupon_id`, `name`, `code`, `type`, `discount`, `logged`, `shipping`, `total`, `date_start`, `date_end`, `uses_total`, `uses_customer`, `status`, `date_added`) VALUES
+-- Dumping data for table amthuctrangia.oc_coupon: 3 rows
+DELETE FROM `oc_coupon`;
+/*!40000 ALTER TABLE `oc_coupon` DISABLE KEYS */;
+INSERT INTO `oc_coupon` (`coupon_id`, `name`, `code`, `type`, `discount`, `logged`, `shipping`, `total`, `date_start`, `date_end`, `uses_total`, `uses_customer`, `status`, `date_added`) VALUES
 	(4, '-10% Discount', '2222', 'P', 10.0000, 0, 0, 0.0000, '2011-01-01', '2012-01-01', 10, '10', 1, '2009-01-27 13:55:03'),
 	(5, 'Free Shipping', '3333', 'P', 0.0000, 0, 1, 100.0000, '2009-03-01', '2009-08-31', 10, '10', 1, '2009-03-14 21:13:53'),
 	(6, '-10.00 Discount', '1111', 'F', 10.0000, 0, 0, 10.0000, '1970-11-01', '2020-11-01', 100000, '10000', 1, '2009-03-14 21:15:18');
-/*!40000 ALTER TABLE `coupon` ENABLE KEYS */;
+/*!40000 ALTER TABLE `oc_coupon` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.coupon_category
-DROP TABLE IF EXISTS `coupon_category`;
-CREATE TABLE IF NOT EXISTS `coupon_category` (
+-- Dumping structure for table amthuctrangia.oc_coupon_category
+CREATE TABLE IF NOT EXISTS `oc_coupon_category` (
   `coupon_id` int(11) NOT NULL,
   `category_id` int(11) NOT NULL,
   PRIMARY KEY (`coupon_id`,`category_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.coupon_category: 0 rows
-/*!40000 ALTER TABLE `coupon_category` DISABLE KEYS */;
-/*!40000 ALTER TABLE `coupon_category` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_coupon_category: 0 rows
+DELETE FROM `oc_coupon_category`;
+/*!40000 ALTER TABLE `oc_coupon_category` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oc_coupon_category` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.coupon_history
-DROP TABLE IF EXISTS `coupon_history`;
-CREATE TABLE IF NOT EXISTS `coupon_history` (
+-- Dumping structure for table amthuctrangia.oc_coupon_history
+CREATE TABLE IF NOT EXISTS `oc_coupon_history` (
   `coupon_history_id` int(11) NOT NULL AUTO_INCREMENT,
   `coupon_id` int(11) NOT NULL,
   `order_id` int(11) NOT NULL,
@@ -700,28 +719,28 @@ CREATE TABLE IF NOT EXISTS `coupon_history` (
   PRIMARY KEY (`coupon_history_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.coupon_history: 0 rows
-/*!40000 ALTER TABLE `coupon_history` DISABLE KEYS */;
-/*!40000 ALTER TABLE `coupon_history` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_coupon_history: 0 rows
+DELETE FROM `oc_coupon_history`;
+/*!40000 ALTER TABLE `oc_coupon_history` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oc_coupon_history` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.coupon_product
-DROP TABLE IF EXISTS `coupon_product`;
-CREATE TABLE IF NOT EXISTS `coupon_product` (
+-- Dumping structure for table amthuctrangia.oc_coupon_product
+CREATE TABLE IF NOT EXISTS `oc_coupon_product` (
   `coupon_product_id` int(11) NOT NULL AUTO_INCREMENT,
   `coupon_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
   PRIMARY KEY (`coupon_product_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.coupon_product: 0 rows
-/*!40000 ALTER TABLE `coupon_product` DISABLE KEYS */;
-/*!40000 ALTER TABLE `coupon_product` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_coupon_product: 0 rows
+DELETE FROM `oc_coupon_product`;
+/*!40000 ALTER TABLE `oc_coupon_product` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oc_coupon_product` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.currency
-DROP TABLE IF EXISTS `currency`;
-CREATE TABLE IF NOT EXISTS `currency` (
+-- Dumping structure for table amthuctrangia.oc_currency
+CREATE TABLE IF NOT EXISTS `oc_currency` (
   `currency_id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(32) NOT NULL,
   `code` varchar(3) NOT NULL,
@@ -732,20 +751,20 @@ CREATE TABLE IF NOT EXISTS `currency` (
   `status` tinyint(1) NOT NULL,
   `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`currency_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.currency: 3 rows
-/*!40000 ALTER TABLE `currency` DISABLE KEYS */;
-INSERT INTO `currency` (`currency_id`, `title`, `code`, `symbol_left`, `symbol_right`, `decimal_place`, `value`, `status`, `date_modified`) VALUES
-	(4, 'VNĐ', 'VND', '', ' VNĐ', '', 1.00000000, 1, '2013-07-11 16:01:15'),
-	(2, 'US Dollar', 'USD', '$', '', '2', 1.00000000, 1, '2013-01-25 13:36:43'),
-	(3, 'Euro', 'EUR', '', '€', '2', 0.00000350, 1, '2013-01-25 19:29:01');
-/*!40000 ALTER TABLE `currency` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_currency: 3 rows
+DELETE FROM `oc_currency`;
+/*!40000 ALTER TABLE `oc_currency` DISABLE KEYS */;
+INSERT INTO `oc_currency` (`currency_id`, `title`, `code`, `symbol_left`, `symbol_right`, `decimal_place`, `value`, `status`, `date_modified`) VALUES
+	(1, 'Pound Sterling', 'GBP', '£', '', '2', 0.66070002, 1, '2013-07-12 10:20:46'),
+	(2, 'US Dollar', 'USD', '$', '', '2', 1.00000000, 1, '2013-07-12 10:21:17'),
+	(3, 'Euro', 'EUR', '', '€', '2', 0.76679999, 1, '2013-07-12 10:20:46');
+/*!40000 ALTER TABLE `oc_currency` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.customer
-DROP TABLE IF EXISTS `customer`;
-CREATE TABLE IF NOT EXISTS `customer` (
+-- Dumping structure for table amthuctrangia.oc_customer
+CREATE TABLE IF NOT EXISTS `oc_customer` (
   `customer_id` int(11) NOT NULL AUTO_INCREMENT,
   `store_id` int(11) NOT NULL DEFAULT '0',
   `firstname` varchar(32) NOT NULL,
@@ -766,33 +785,30 @@ CREATE TABLE IF NOT EXISTS `customer` (
   `token` varchar(255) NOT NULL,
   `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`customer_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.customer: 2 rows
-/*!40000 ALTER TABLE `customer` DISABLE KEYS */;
-INSERT INTO `customer` (`customer_id`, `store_id`, `firstname`, `lastname`, `email`, `telephone`, `fax`, `password`, `salt`, `cart`, `wishlist`, `newsletter`, `address_id`, `customer_group_id`, `ip`, `status`, `approved`, `token`, `date_added`) VALUES
-	(1, 0, 'Khiem', 'Pham', 'rongandat@gmail.com', '123456789', '0165235952', '6b8c18dcc4811558b4e82e54376e224963e863df', 'd2fb62120', 'a:1:{i:51;i:1;}', '', 0, 1, 1, '127.0.0.1', 1, 1, '', '2013-03-19 10:55:25'),
-	(2, 0, 'Khiem', 'Pham', 'khiemktqd@gmail.com', '111111', '', '95cbd54d778a023b51e42aac56b8161ed3bd32b0', '11388b67e', 'a:1:{s:51:"51:YToyOntpOjIyNztzOjI6IjE4IjtpOjIyODtzOjI6IjIwIjt9";i:1;}', '', 0, 2, 1, '127.0.0.1', 1, 1, '', '2013-06-25 16:54:47');
-/*!40000 ALTER TABLE `customer` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_customer: 0 rows
+DELETE FROM `oc_customer`;
+/*!40000 ALTER TABLE `oc_customer` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oc_customer` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.customer_ban_ip
-DROP TABLE IF EXISTS `customer_ban_ip`;
-CREATE TABLE IF NOT EXISTS `customer_ban_ip` (
+-- Dumping structure for table amthuctrangia.oc_customer_ban_ip
+CREATE TABLE IF NOT EXISTS `oc_customer_ban_ip` (
   `customer_ban_ip_id` int(11) NOT NULL AUTO_INCREMENT,
   `ip` varchar(40) NOT NULL,
   PRIMARY KEY (`customer_ban_ip_id`),
   KEY `ip` (`ip`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.customer_ban_ip: 0 rows
-/*!40000 ALTER TABLE `customer_ban_ip` DISABLE KEYS */;
-/*!40000 ALTER TABLE `customer_ban_ip` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_customer_ban_ip: 0 rows
+DELETE FROM `oc_customer_ban_ip`;
+/*!40000 ALTER TABLE `oc_customer_ban_ip` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oc_customer_ban_ip` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.customer_field
-DROP TABLE IF EXISTS `customer_field`;
-CREATE TABLE IF NOT EXISTS `customer_field` (
+-- Dumping structure for table amthuctrangia.oc_customer_field
+CREATE TABLE IF NOT EXISTS `oc_customer_field` (
   `customer_id` int(11) NOT NULL,
   `custom_field_id` int(11) NOT NULL,
   `custom_field_value_id` int(11) NOT NULL,
@@ -802,14 +818,14 @@ CREATE TABLE IF NOT EXISTS `customer_field` (
   PRIMARY KEY (`customer_id`,`custom_field_id`,`custom_field_value_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.customer_field: 0 rows
-/*!40000 ALTER TABLE `customer_field` DISABLE KEYS */;
-/*!40000 ALTER TABLE `customer_field` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_customer_field: 0 rows
+DELETE FROM `oc_customer_field`;
+/*!40000 ALTER TABLE `oc_customer_field` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oc_customer_field` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.customer_group
-DROP TABLE IF EXISTS `customer_group`;
-CREATE TABLE IF NOT EXISTS `customer_group` (
+-- Dumping structure for table amthuctrangia.oc_customer_group
+CREATE TABLE IF NOT EXISTS `oc_customer_group` (
   `customer_group_id` int(11) NOT NULL AUTO_INCREMENT,
   `approval` int(1) NOT NULL,
   `company_id_display` int(1) NOT NULL,
@@ -820,16 +836,16 @@ CREATE TABLE IF NOT EXISTS `customer_group` (
   PRIMARY KEY (`customer_group_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.customer_group: 1 rows
-/*!40000 ALTER TABLE `customer_group` DISABLE KEYS */;
-INSERT INTO `customer_group` (`customer_group_id`, `approval`, `company_id_display`, `company_id_required`, `tax_id_display`, `tax_id_required`, `sort_order`) VALUES
+-- Dumping data for table amthuctrangia.oc_customer_group: 1 rows
+DELETE FROM `oc_customer_group`;
+/*!40000 ALTER TABLE `oc_customer_group` DISABLE KEYS */;
+INSERT INTO `oc_customer_group` (`customer_group_id`, `approval`, `company_id_display`, `company_id_required`, `tax_id_display`, `tax_id_required`, `sort_order`) VALUES
 	(1, 0, 1, 0, 0, 1, 1);
-/*!40000 ALTER TABLE `customer_group` ENABLE KEYS */;
+/*!40000 ALTER TABLE `oc_customer_group` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.customer_group_description
-DROP TABLE IF EXISTS `customer_group_description`;
-CREATE TABLE IF NOT EXISTS `customer_group_description` (
+-- Dumping structure for table amthuctrangia.oc_customer_group_description
+CREATE TABLE IF NOT EXISTS `oc_customer_group_description` (
   `customer_group_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
   `name` varchar(32) NOT NULL,
@@ -837,17 +853,16 @@ CREATE TABLE IF NOT EXISTS `customer_group_description` (
   PRIMARY KEY (`customer_group_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.customer_group_description: 2 rows
-/*!40000 ALTER TABLE `customer_group_description` DISABLE KEYS */;
-INSERT INTO `customer_group_description` (`customer_group_id`, `language_id`, `name`, `description`) VALUES
-	(1, 1, 'Default', 'test'),
-	(1, 2, 'Default', 'test');
-/*!40000 ALTER TABLE `customer_group_description` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_customer_group_description: 1 rows
+DELETE FROM `oc_customer_group_description`;
+/*!40000 ALTER TABLE `oc_customer_group_description` DISABLE KEYS */;
+INSERT INTO `oc_customer_group_description` (`customer_group_id`, `language_id`, `name`, `description`) VALUES
+	(1, 1, 'Default', 'test');
+/*!40000 ALTER TABLE `oc_customer_group_description` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.customer_history
-DROP TABLE IF EXISTS `customer_history`;
-CREATE TABLE IF NOT EXISTS `customer_history` (
+-- Dumping structure for table amthuctrangia.oc_customer_history
+CREATE TABLE IF NOT EXISTS `oc_customer_history` (
   `customer_history_id` int(11) NOT NULL AUTO_INCREMENT,
   `customer_id` int(11) NOT NULL,
   `comment` text NOT NULL,
@@ -855,33 +870,30 @@ CREATE TABLE IF NOT EXISTS `customer_history` (
   PRIMARY KEY (`customer_history_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.customer_history: 0 rows
-/*!40000 ALTER TABLE `customer_history` DISABLE KEYS */;
-/*!40000 ALTER TABLE `customer_history` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_customer_history: 0 rows
+DELETE FROM `oc_customer_history`;
+/*!40000 ALTER TABLE `oc_customer_history` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oc_customer_history` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.customer_ip
-DROP TABLE IF EXISTS `customer_ip`;
-CREATE TABLE IF NOT EXISTS `customer_ip` (
+-- Dumping structure for table amthuctrangia.oc_customer_ip
+CREATE TABLE IF NOT EXISTS `oc_customer_ip` (
   `customer_ip_id` int(11) NOT NULL AUTO_INCREMENT,
   `customer_id` int(11) NOT NULL,
   `ip` varchar(40) NOT NULL,
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`customer_ip_id`),
   KEY `ip` (`ip`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.customer_ip: 2 rows
-/*!40000 ALTER TABLE `customer_ip` DISABLE KEYS */;
-INSERT INTO `customer_ip` (`customer_ip_id`, `customer_id`, `ip`, `date_added`) VALUES
-	(1, 1, '127.0.0.1', '2013-03-19 10:55:31'),
-	(2, 2, '127.0.0.1', '2013-06-25 16:54:51');
-/*!40000 ALTER TABLE `customer_ip` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_customer_ip: 0 rows
+DELETE FROM `oc_customer_ip`;
+/*!40000 ALTER TABLE `oc_customer_ip` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oc_customer_ip` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.customer_online
-DROP TABLE IF EXISTS `customer_online`;
-CREATE TABLE IF NOT EXISTS `customer_online` (
+-- Dumping structure for table amthuctrangia.oc_customer_online
+CREATE TABLE IF NOT EXISTS `oc_customer_online` (
   `ip` varchar(40) NOT NULL,
   `customer_id` int(11) NOT NULL,
   `url` text NOT NULL,
@@ -890,14 +902,14 @@ CREATE TABLE IF NOT EXISTS `customer_online` (
   PRIMARY KEY (`ip`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.customer_online: 0 rows
-/*!40000 ALTER TABLE `customer_online` DISABLE KEYS */;
-/*!40000 ALTER TABLE `customer_online` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_customer_online: 0 rows
+DELETE FROM `oc_customer_online`;
+/*!40000 ALTER TABLE `oc_customer_online` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oc_customer_online` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.customer_reward
-DROP TABLE IF EXISTS `customer_reward`;
-CREATE TABLE IF NOT EXISTS `customer_reward` (
+-- Dumping structure for table amthuctrangia.oc_customer_reward
+CREATE TABLE IF NOT EXISTS `oc_customer_reward` (
   `customer_reward_id` int(11) NOT NULL AUTO_INCREMENT,
   `customer_id` int(11) NOT NULL DEFAULT '0',
   `order_id` int(11) NOT NULL DEFAULT '0',
@@ -907,14 +919,14 @@ CREATE TABLE IF NOT EXISTS `customer_reward` (
   PRIMARY KEY (`customer_reward_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.customer_reward: 0 rows
-/*!40000 ALTER TABLE `customer_reward` DISABLE KEYS */;
-/*!40000 ALTER TABLE `customer_reward` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_customer_reward: 0 rows
+DELETE FROM `oc_customer_reward`;
+/*!40000 ALTER TABLE `oc_customer_reward` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oc_customer_reward` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.customer_transaction
-DROP TABLE IF EXISTS `customer_transaction`;
-CREATE TABLE IF NOT EXISTS `customer_transaction` (
+-- Dumping structure for table amthuctrangia.oc_customer_transaction
+CREATE TABLE IF NOT EXISTS `oc_customer_transaction` (
   `customer_transaction_id` int(11) NOT NULL AUTO_INCREMENT,
   `customer_id` int(11) NOT NULL,
   `order_id` int(11) NOT NULL,
@@ -924,14 +936,14 @@ CREATE TABLE IF NOT EXISTS `customer_transaction` (
   PRIMARY KEY (`customer_transaction_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.customer_transaction: 0 rows
-/*!40000 ALTER TABLE `customer_transaction` DISABLE KEYS */;
-/*!40000 ALTER TABLE `customer_transaction` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_customer_transaction: 0 rows
+DELETE FROM `oc_customer_transaction`;
+/*!40000 ALTER TABLE `oc_customer_transaction` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oc_customer_transaction` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.custom_field
-DROP TABLE IF EXISTS `custom_field`;
-CREATE TABLE IF NOT EXISTS `custom_field` (
+-- Dumping structure for table amthuctrangia.oc_custom_field
+CREATE TABLE IF NOT EXISTS `oc_custom_field` (
   `custom_field_id` int(11) NOT NULL AUTO_INCREMENT,
   `type` varchar(32) NOT NULL,
   `value` text NOT NULL,
@@ -942,55 +954,55 @@ CREATE TABLE IF NOT EXISTS `custom_field` (
   PRIMARY KEY (`custom_field_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.custom_field: 0 rows
-/*!40000 ALTER TABLE `custom_field` DISABLE KEYS */;
-/*!40000 ALTER TABLE `custom_field` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_custom_field: 0 rows
+DELETE FROM `oc_custom_field`;
+/*!40000 ALTER TABLE `oc_custom_field` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oc_custom_field` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.custom_field_description
-DROP TABLE IF EXISTS `custom_field_description`;
-CREATE TABLE IF NOT EXISTS `custom_field_description` (
+-- Dumping structure for table amthuctrangia.oc_custom_field_description
+CREATE TABLE IF NOT EXISTS `oc_custom_field_description` (
   `custom_field_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
   `name` varchar(128) NOT NULL,
   PRIMARY KEY (`custom_field_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.custom_field_description: 0 rows
-/*!40000 ALTER TABLE `custom_field_description` DISABLE KEYS */;
-/*!40000 ALTER TABLE `custom_field_description` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_custom_field_description: 0 rows
+DELETE FROM `oc_custom_field_description`;
+/*!40000 ALTER TABLE `oc_custom_field_description` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oc_custom_field_description` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.custom_field_to_customer_group
-DROP TABLE IF EXISTS `custom_field_to_customer_group`;
-CREATE TABLE IF NOT EXISTS `custom_field_to_customer_group` (
+-- Dumping structure for table amthuctrangia.oc_custom_field_to_customer_group
+CREATE TABLE IF NOT EXISTS `oc_custom_field_to_customer_group` (
   `custom_field_id` int(11) NOT NULL,
   `customer_group_id` int(11) NOT NULL,
   PRIMARY KEY (`custom_field_id`,`customer_group_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.custom_field_to_customer_group: 0 rows
-/*!40000 ALTER TABLE `custom_field_to_customer_group` DISABLE KEYS */;
-/*!40000 ALTER TABLE `custom_field_to_customer_group` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_custom_field_to_customer_group: 0 rows
+DELETE FROM `oc_custom_field_to_customer_group`;
+/*!40000 ALTER TABLE `oc_custom_field_to_customer_group` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oc_custom_field_to_customer_group` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.custom_field_value
-DROP TABLE IF EXISTS `custom_field_value`;
-CREATE TABLE IF NOT EXISTS `custom_field_value` (
+-- Dumping structure for table amthuctrangia.oc_custom_field_value
+CREATE TABLE IF NOT EXISTS `oc_custom_field_value` (
   `custom_field_value_id` int(11) NOT NULL AUTO_INCREMENT,
   `custom_field_id` int(11) NOT NULL,
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`custom_field_value_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.custom_field_value: 0 rows
-/*!40000 ALTER TABLE `custom_field_value` DISABLE KEYS */;
-/*!40000 ALTER TABLE `custom_field_value` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_custom_field_value: 0 rows
+DELETE FROM `oc_custom_field_value`;
+/*!40000 ALTER TABLE `oc_custom_field_value` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oc_custom_field_value` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.custom_field_value_description
-DROP TABLE IF EXISTS `custom_field_value_description`;
-CREATE TABLE IF NOT EXISTS `custom_field_value_description` (
+-- Dumping structure for table amthuctrangia.oc_custom_field_value_description
+CREATE TABLE IF NOT EXISTS `oc_custom_field_value_description` (
   `custom_field_value_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
   `custom_field_id` int(11) NOT NULL,
@@ -998,14 +1010,14 @@ CREATE TABLE IF NOT EXISTS `custom_field_value_description` (
   PRIMARY KEY (`custom_field_value_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.custom_field_value_description: 0 rows
-/*!40000 ALTER TABLE `custom_field_value_description` DISABLE KEYS */;
-/*!40000 ALTER TABLE `custom_field_value_description` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_custom_field_value_description: 0 rows
+DELETE FROM `oc_custom_field_value_description`;
+/*!40000 ALTER TABLE `oc_custom_field_value_description` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oc_custom_field_value_description` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.download
-DROP TABLE IF EXISTS `download`;
-CREATE TABLE IF NOT EXISTS `download` (
+-- Dumping structure for table amthuctrangia.oc_download
+CREATE TABLE IF NOT EXISTS `oc_download` (
   `download_id` int(11) NOT NULL AUTO_INCREMENT,
   `filename` varchar(128) NOT NULL,
   `mask` varchar(128) NOT NULL,
@@ -1014,37 +1026,38 @@ CREATE TABLE IF NOT EXISTS `download` (
   PRIMARY KEY (`download_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.download: 0 rows
-/*!40000 ALTER TABLE `download` DISABLE KEYS */;
-/*!40000 ALTER TABLE `download` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_download: 0 rows
+DELETE FROM `oc_download`;
+/*!40000 ALTER TABLE `oc_download` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oc_download` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.download_description
-DROP TABLE IF EXISTS `download_description`;
-CREATE TABLE IF NOT EXISTS `download_description` (
+-- Dumping structure for table amthuctrangia.oc_download_description
+CREATE TABLE IF NOT EXISTS `oc_download_description` (
   `download_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
   `name` varchar(64) NOT NULL,
   PRIMARY KEY (`download_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.download_description: 0 rows
-/*!40000 ALTER TABLE `download_description` DISABLE KEYS */;
-/*!40000 ALTER TABLE `download_description` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_download_description: 0 rows
+DELETE FROM `oc_download_description`;
+/*!40000 ALTER TABLE `oc_download_description` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oc_download_description` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.extension
-DROP TABLE IF EXISTS `extension`;
-CREATE TABLE IF NOT EXISTS `extension` (
+-- Dumping structure for table amthuctrangia.oc_extension
+CREATE TABLE IF NOT EXISTS `oc_extension` (
   `extension_id` int(11) NOT NULL AUTO_INCREMENT,
   `type` varchar(32) NOT NULL,
   `code` varchar(32) NOT NULL,
   PRIMARY KEY (`extension_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=456 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=430 DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.extension: 29 rows
-/*!40000 ALTER TABLE `extension` DISABLE KEYS */;
-INSERT INTO `extension` (`extension_id`, `type`, `code`) VALUES
+-- Dumping data for table amthuctrangia.oc_extension: 21 rows
+DELETE FROM `oc_extension`;
+/*!40000 ALTER TABLE `oc_extension` DISABLE KEYS */;
+INSERT INTO `oc_extension` (`extension_id`, `type`, `code`) VALUES
 	(23, 'payment', 'cod'),
 	(22, 'total', 'shipping'),
 	(57, 'total', 'sub_total'),
@@ -1063,37 +1076,28 @@ INSERT INTO `extension` (`extension_id`, `type`, `code`) VALUES
 	(393, 'total', 'reward'),
 	(398, 'total', 'voucher'),
 	(407, 'payment', 'free_checkout'),
-	(427, 'module', 'featured'),
+	(429, 'module', 'latest'),
 	(419, 'module', 'slideshow'),
-	(455, 'payment', 'pp_pro'),
-	(433, 'module', 'newslatest'),
-	(434, 'module', 'news_category'),
-	(438, 'module', 'latest'),
-	(449, 'module', 'tnt_yahoo'),
-	(448, 'module', 'visitor'),
-	(450, 'module', 'special'),
-	(453, 'payment', 'pp_pro_uk'),
-	(454, 'payment', 'pp_standard');
-/*!40000 ALTER TABLE `extension` ENABLE KEYS */;
+	(428, 'module', 'newslatest');
+/*!40000 ALTER TABLE `oc_extension` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.filter
-DROP TABLE IF EXISTS `filter`;
-CREATE TABLE IF NOT EXISTS `filter` (
+-- Dumping structure for table amthuctrangia.oc_filter
+CREATE TABLE IF NOT EXISTS `oc_filter` (
   `filter_id` int(11) NOT NULL AUTO_INCREMENT,
   `filter_group_id` int(11) NOT NULL,
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`filter_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.filter: 0 rows
-/*!40000 ALTER TABLE `filter` DISABLE KEYS */;
-/*!40000 ALTER TABLE `filter` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_filter: 0 rows
+DELETE FROM `oc_filter`;
+/*!40000 ALTER TABLE `oc_filter` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oc_filter` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.filter_description
-DROP TABLE IF EXISTS `filter_description`;
-CREATE TABLE IF NOT EXISTS `filter_description` (
+-- Dumping structure for table amthuctrangia.oc_filter_description
+CREATE TABLE IF NOT EXISTS `oc_filter_description` (
   `filter_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
   `filter_group_id` int(11) NOT NULL,
@@ -1101,41 +1105,41 @@ CREATE TABLE IF NOT EXISTS `filter_description` (
   PRIMARY KEY (`filter_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.filter_description: 0 rows
-/*!40000 ALTER TABLE `filter_description` DISABLE KEYS */;
-/*!40000 ALTER TABLE `filter_description` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_filter_description: 0 rows
+DELETE FROM `oc_filter_description`;
+/*!40000 ALTER TABLE `oc_filter_description` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oc_filter_description` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.filter_group
-DROP TABLE IF EXISTS `filter_group`;
-CREATE TABLE IF NOT EXISTS `filter_group` (
+-- Dumping structure for table amthuctrangia.oc_filter_group
+CREATE TABLE IF NOT EXISTS `oc_filter_group` (
   `filter_group_id` int(11) NOT NULL AUTO_INCREMENT,
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`filter_group_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.filter_group: 0 rows
-/*!40000 ALTER TABLE `filter_group` DISABLE KEYS */;
-/*!40000 ALTER TABLE `filter_group` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_filter_group: 0 rows
+DELETE FROM `oc_filter_group`;
+/*!40000 ALTER TABLE `oc_filter_group` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oc_filter_group` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.filter_group_description
-DROP TABLE IF EXISTS `filter_group_description`;
-CREATE TABLE IF NOT EXISTS `filter_group_description` (
+-- Dumping structure for table amthuctrangia.oc_filter_group_description
+CREATE TABLE IF NOT EXISTS `oc_filter_group_description` (
   `filter_group_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
   `name` varchar(64) NOT NULL,
   PRIMARY KEY (`filter_group_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.filter_group_description: 0 rows
-/*!40000 ALTER TABLE `filter_group_description` DISABLE KEYS */;
-/*!40000 ALTER TABLE `filter_group_description` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_filter_group_description: 0 rows
+DELETE FROM `oc_filter_group_description`;
+/*!40000 ALTER TABLE `oc_filter_group_description` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oc_filter_group_description` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.geo_zone
-DROP TABLE IF EXISTS `geo_zone`;
-CREATE TABLE IF NOT EXISTS `geo_zone` (
+-- Dumping structure for table amthuctrangia.oc_geo_zone
+CREATE TABLE IF NOT EXISTS `oc_geo_zone` (
   `geo_zone_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(32) NOT NULL,
   `description` varchar(255) NOT NULL,
@@ -1144,37 +1148,39 @@ CREATE TABLE IF NOT EXISTS `geo_zone` (
   PRIMARY KEY (`geo_zone_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.geo_zone: 2 rows
-/*!40000 ALTER TABLE `geo_zone` DISABLE KEYS */;
-INSERT INTO `geo_zone` (`geo_zone_id`, `name`, `description`, `date_modified`, `date_added`) VALUES
+-- Dumping data for table amthuctrangia.oc_geo_zone: 2 rows
+DELETE FROM `oc_geo_zone`;
+/*!40000 ALTER TABLE `oc_geo_zone` DISABLE KEYS */;
+INSERT INTO `oc_geo_zone` (`geo_zone_id`, `name`, `description`, `date_modified`, `date_added`) VALUES
 	(3, 'UK VAT Zone', 'UK VAT', '2010-02-26 22:33:24', '2009-01-06 23:26:25'),
 	(4, 'UK Shipping', 'UK Shipping Zones', '2010-12-15 15:18:13', '2009-06-23 01:14:53');
-/*!40000 ALTER TABLE `geo_zone` ENABLE KEYS */;
+/*!40000 ALTER TABLE `oc_geo_zone` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.information
-DROP TABLE IF EXISTS `information`;
-CREATE TABLE IF NOT EXISTS `information` (
+-- Dumping structure for table amthuctrangia.oc_information
+CREATE TABLE IF NOT EXISTS `oc_information` (
   `information_id` int(11) NOT NULL AUTO_INCREMENT,
   `bottom` int(1) NOT NULL DEFAULT '0',
   `sort_order` int(3) NOT NULL DEFAULT '0',
   `status` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`information_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.information: 4 rows
-/*!40000 ALTER TABLE `information` DISABLE KEYS */;
-INSERT INTO `information` (`information_id`, `bottom`, `sort_order`, `status`) VALUES
-	(3, 1, 3, 0),
+-- Dumping data for table amthuctrangia.oc_information: 6 rows
+DELETE FROM `oc_information`;
+/*!40000 ALTER TABLE `oc_information` DISABLE KEYS */;
+INSERT INTO `oc_information` (`information_id`, `bottom`, `sort_order`, `status`) VALUES
+	(3, 1, 3, 1),
 	(4, 1, 1, 1),
 	(5, 1, 4, 1),
-	(6, 1, 2, 0);
-/*!40000 ALTER TABLE `information` ENABLE KEYS */;
+	(6, 1, 2, 1),
+	(7, 0, 0, 1),
+	(8, 0, 0, 1);
+/*!40000 ALTER TABLE `oc_information` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.information_description
-DROP TABLE IF EXISTS `information_description`;
-CREATE TABLE IF NOT EXISTS `information_description` (
+-- Dumping structure for table amthuctrangia.oc_information_description
+CREATE TABLE IF NOT EXISTS `oc_information_description` (
   `information_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
   `title` varchar(64) NOT NULL,
@@ -1182,55 +1188,58 @@ CREATE TABLE IF NOT EXISTS `information_description` (
   PRIMARY KEY (`information_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.information_description: 8 rows
-/*!40000 ALTER TABLE `information_description` DISABLE KEYS */;
-INSERT INTO `information_description` (`information_id`, `language_id`, `title`, `description`) VALUES
-	(4, 1, 'About Us', '&lt;p&gt;\r\n	About Us&lt;/p&gt;\r\n'),
-	(5, 1, 'Terms &amp; Conditions', '&lt;p&gt;\r\n	Terms &amp;amp; Conditions&lt;/p&gt;\r\n'),
-	(3, 2, 'Privacy Policy', '&lt;p&gt;Privacy Policy&lt;/p&gt;\r\n'),
-	(6, 2, 'Delivery Information', '&lt;p&gt;Delivery Information&lt;/p&gt;\r\n'),
-	(4, 2, 'About Us', '&lt;p&gt;\r\n	About Us&lt;/p&gt;\r\n'),
-	(5, 2, 'Terms &amp; Conditions', '&lt;p&gt;\r\n	Terms &amp;amp; Conditions&lt;/p&gt;\r\n'),
-	(3, 1, 'Privacy Policy', '&lt;p&gt;Privacy Policy&lt;/p&gt;\r\n'),
-	(6, 1, 'Delivery Information', '&lt;p&gt;Delivery Information&lt;/p&gt;\r\n');
-/*!40000 ALTER TABLE `information_description` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_information_description: 6 rows
+DELETE FROM `oc_information_description`;
+/*!40000 ALTER TABLE `oc_information_description` DISABLE KEYS */;
+INSERT INTO `oc_information_description` (`information_id`, `language_id`, `title`, `description`) VALUES
+	(4, 1, 'Giới thiệu', '&lt;p&gt;About Us&lt;/p&gt;\r\n'),
+	(5, 1, 'Chính sách phân phối', '&lt;p&gt;Terms &amp;amp; Conditions&lt;/p&gt;\r\n'),
+	(3, 1, 'Tìm đối tác', '&lt;p&gt;Privacy Policy&lt;/p&gt;\r\n'),
+	(6, 1, 'Nhà phân phối', '&lt;p&gt;Delivery Information&lt;/p&gt;\r\n'),
+	(7, 1, 'Tuyển dụng', '&lt;p&gt;Tuyển dụng&lt;/p&gt;\r\n'),
+	(8, 1, 'Sản phẩm', '&lt;p&gt;sản phẩm&lt;/p&gt;\r\n');
+/*!40000 ALTER TABLE `oc_information_description` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.information_to_layout
-DROP TABLE IF EXISTS `information_to_layout`;
-CREATE TABLE IF NOT EXISTS `information_to_layout` (
+-- Dumping structure for table amthuctrangia.oc_information_to_layout
+CREATE TABLE IF NOT EXISTS `oc_information_to_layout` (
   `information_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
   `layout_id` int(11) NOT NULL,
   PRIMARY KEY (`information_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.information_to_layout: 0 rows
-/*!40000 ALTER TABLE `information_to_layout` DISABLE KEYS */;
-/*!40000 ALTER TABLE `information_to_layout` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_information_to_layout: 2 rows
+DELETE FROM `oc_information_to_layout`;
+/*!40000 ALTER TABLE `oc_information_to_layout` DISABLE KEYS */;
+INSERT INTO `oc_information_to_layout` (`information_id`, `store_id`, `layout_id`) VALUES
+	(7, 0, 0),
+	(8, 0, 0);
+/*!40000 ALTER TABLE `oc_information_to_layout` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.information_to_store
-DROP TABLE IF EXISTS `information_to_store`;
-CREATE TABLE IF NOT EXISTS `information_to_store` (
+-- Dumping structure for table amthuctrangia.oc_information_to_store
+CREATE TABLE IF NOT EXISTS `oc_information_to_store` (
   `information_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
   PRIMARY KEY (`information_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.information_to_store: 4 rows
-/*!40000 ALTER TABLE `information_to_store` DISABLE KEYS */;
-INSERT INTO `information_to_store` (`information_id`, `store_id`) VALUES
+-- Dumping data for table amthuctrangia.oc_information_to_store: 6 rows
+DELETE FROM `oc_information_to_store`;
+/*!40000 ALTER TABLE `oc_information_to_store` DISABLE KEYS */;
+INSERT INTO `oc_information_to_store` (`information_id`, `store_id`) VALUES
 	(3, 0),
 	(4, 0),
 	(5, 0),
-	(6, 0);
-/*!40000 ALTER TABLE `information_to_store` ENABLE KEYS */;
+	(6, 0),
+	(7, 0),
+	(8, 0);
+/*!40000 ALTER TABLE `oc_information_to_store` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.language
-DROP TABLE IF EXISTS `language`;
-CREATE TABLE IF NOT EXISTS `language` (
+-- Dumping structure for table amthuctrangia.oc_language
+CREATE TABLE IF NOT EXISTS `oc_language` (
   `language_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(32) NOT NULL,
   `code` varchar(5) NOT NULL,
@@ -1242,27 +1251,27 @@ CREATE TABLE IF NOT EXISTS `language` (
   `status` tinyint(1) NOT NULL,
   PRIMARY KEY (`language_id`),
   KEY `name` (`name`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.language: 2 rows
-/*!40000 ALTER TABLE `language` DISABLE KEYS */;
-INSERT INTO `language` (`language_id`, `name`, `code`, `locale`, `image`, `directory`, `filename`, `sort_order`, `status`) VALUES
-	(1, 'English', 'en', 'en_US.UTF-8,en_US,en-gb,english', 'gb.png', 'english', 'english', 2, 1),
-	(2, 'vietnamese', 'vi', 'vi_VN.UTF-8,vi_VN,vi-vn,vietnamese', 'vn.png', 'vietnamese', 'vietnamese', 1, 1);
-/*!40000 ALTER TABLE `language` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_language: 1 rows
+DELETE FROM `oc_language`;
+/*!40000 ALTER TABLE `oc_language` DISABLE KEYS */;
+INSERT INTO `oc_language` (`language_id`, `name`, `code`, `locale`, `image`, `directory`, `filename`, `sort_order`, `status`) VALUES
+	(1, 'English', 'en', 'en_US.UTF-8,en_US,en-gb,english', 'gb.png', 'english', 'english', 1, 1);
+/*!40000 ALTER TABLE `oc_language` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.layout
-DROP TABLE IF EXISTS `layout`;
-CREATE TABLE IF NOT EXISTS `layout` (
+-- Dumping structure for table amthuctrangia.oc_layout
+CREATE TABLE IF NOT EXISTS `oc_layout` (
   `layout_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) NOT NULL,
   PRIMARY KEY (`layout_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.layout: 12 rows
-/*!40000 ALTER TABLE `layout` DISABLE KEYS */;
-INSERT INTO `layout` (`layout_id`, `name`) VALUES
+-- Dumping data for table amthuctrangia.oc_layout: 11 rows
+DELETE FROM `oc_layout`;
+/*!40000 ALTER TABLE `oc_layout` DISABLE KEYS */;
+INSERT INTO `oc_layout` (`layout_id`, `name`) VALUES
 	(1, 'Home'),
 	(2, 'Product'),
 	(3, 'Category'),
@@ -1273,24 +1282,23 @@ INSERT INTO `layout` (`layout_id`, `name`) VALUES
 	(8, 'Contact'),
 	(9, 'Sitemap'),
 	(10, 'Affiliate'),
-	(11, 'Information'),
-	(12, 'Tin tức');
-/*!40000 ALTER TABLE `layout` ENABLE KEYS */;
+	(11, 'Information');
+/*!40000 ALTER TABLE `oc_layout` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.layout_route
-DROP TABLE IF EXISTS `layout_route`;
-CREATE TABLE IF NOT EXISTS `layout_route` (
+-- Dumping structure for table amthuctrangia.oc_layout_route
+CREATE TABLE IF NOT EXISTS `oc_layout_route` (
   `layout_route_id` int(11) NOT NULL AUTO_INCREMENT,
   `layout_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
   `route` varchar(255) NOT NULL,
   PRIMARY KEY (`layout_route_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=34 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.layout_route: 11 rows
-/*!40000 ALTER TABLE `layout_route` DISABLE KEYS */;
-INSERT INTO `layout_route` (`layout_route_id`, `layout_id`, `store_id`, `route`) VALUES
+-- Dumping data for table amthuctrangia.oc_layout_route: 10 rows
+DELETE FROM `oc_layout_route`;
+/*!40000 ALTER TABLE `oc_layout_route` DISABLE KEYS */;
+INSERT INTO `oc_layout_route` (`layout_route_id`, `layout_id`, `store_id`, `route`) VALUES
 	(30, 6, 0, 'account'),
 	(17, 10, 0, 'affiliate/'),
 	(29, 3, 0, 'product/category'),
@@ -1300,31 +1308,29 @@ INSERT INTO `layout_route` (`layout_route_id`, `layout_id`, `store_id`, `route`)
 	(22, 5, 0, 'product/manufacturer'),
 	(23, 7, 0, 'checkout/'),
 	(31, 8, 0, 'information/contact'),
-	(32, 9, 0, 'information/sitemap'),
-	(33, 12, 0, 'news/news');
-/*!40000 ALTER TABLE `layout_route` ENABLE KEYS */;
+	(32, 9, 0, 'information/sitemap');
+/*!40000 ALTER TABLE `oc_layout_route` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.length_class
-DROP TABLE IF EXISTS `length_class`;
-CREATE TABLE IF NOT EXISTS `length_class` (
+-- Dumping structure for table amthuctrangia.oc_length_class
+CREATE TABLE IF NOT EXISTS `oc_length_class` (
   `length_class_id` int(11) NOT NULL AUTO_INCREMENT,
   `value` decimal(15,8) NOT NULL,
   PRIMARY KEY (`length_class_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.length_class: 3 rows
-/*!40000 ALTER TABLE `length_class` DISABLE KEYS */;
-INSERT INTO `length_class` (`length_class_id`, `value`) VALUES
+-- Dumping data for table amthuctrangia.oc_length_class: 3 rows
+DELETE FROM `oc_length_class`;
+/*!40000 ALTER TABLE `oc_length_class` DISABLE KEYS */;
+INSERT INTO `oc_length_class` (`length_class_id`, `value`) VALUES
 	(1, 1.00000000),
 	(2, 10.00000000),
 	(3, 0.39370000);
-/*!40000 ALTER TABLE `length_class` ENABLE KEYS */;
+/*!40000 ALTER TABLE `oc_length_class` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.length_class_description
-DROP TABLE IF EXISTS `length_class_description`;
-CREATE TABLE IF NOT EXISTS `length_class_description` (
+-- Dumping structure for table amthuctrangia.oc_length_class_description
+CREATE TABLE IF NOT EXISTS `oc_length_class_description` (
   `length_class_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) NOT NULL,
   `title` varchar(32) NOT NULL,
@@ -1332,21 +1338,18 @@ CREATE TABLE IF NOT EXISTS `length_class_description` (
   PRIMARY KEY (`length_class_id`,`language_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.length_class_description: 6 rows
-/*!40000 ALTER TABLE `length_class_description` DISABLE KEYS */;
-INSERT INTO `length_class_description` (`length_class_id`, `language_id`, `title`, `unit`) VALUES
+-- Dumping data for table amthuctrangia.oc_length_class_description: 3 rows
+DELETE FROM `oc_length_class_description`;
+/*!40000 ALTER TABLE `oc_length_class_description` DISABLE KEYS */;
+INSERT INTO `oc_length_class_description` (`length_class_id`, `language_id`, `title`, `unit`) VALUES
 	(1, 1, 'Centimeter', 'cm'),
 	(2, 1, 'Millimeter', 'mm'),
-	(3, 1, 'Inch', 'in'),
-	(1, 2, 'Centimeter', 'cm'),
-	(2, 2, 'Millimeter', 'mm'),
-	(3, 2, 'Inch', 'in');
-/*!40000 ALTER TABLE `length_class_description` ENABLE KEYS */;
+	(3, 1, 'Inch', 'in');
+/*!40000 ALTER TABLE `oc_length_class_description` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.manufacturer
-DROP TABLE IF EXISTS `manufacturer`;
-CREATE TABLE IF NOT EXISTS `manufacturer` (
+-- Dumping structure for table amthuctrangia.oc_manufacturer
+CREATE TABLE IF NOT EXISTS `oc_manufacturer` (
   `manufacturer_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) NOT NULL,
   `image` varchar(255) DEFAULT NULL,
@@ -1354,41 +1357,41 @@ CREATE TABLE IF NOT EXISTS `manufacturer` (
   PRIMARY KEY (`manufacturer_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.manufacturer: 6 rows
-/*!40000 ALTER TABLE `manufacturer` DISABLE KEYS */;
-INSERT INTO `manufacturer` (`manufacturer_id`, `name`, `image`, `sort_order`) VALUES
+-- Dumping data for table amthuctrangia.oc_manufacturer: 6 rows
+DELETE FROM `oc_manufacturer`;
+/*!40000 ALTER TABLE `oc_manufacturer` DISABLE KEYS */;
+INSERT INTO `oc_manufacturer` (`manufacturer_id`, `name`, `image`, `sort_order`) VALUES
 	(5, 'HTC', 'data/demo/htc_logo.jpg', 0),
 	(6, 'Palm', 'data/demo/palm_logo.jpg', 0),
 	(7, 'Hewlett-Packard', 'data/demo/hp_logo.jpg', 0),
 	(8, 'Apple', 'data/demo/apple_logo.jpg', 0),
 	(9, 'Canon', 'data/demo/canon_logo.jpg', 0),
 	(10, 'Sony', 'data/demo/sony_logo.jpg', 0);
-/*!40000 ALTER TABLE `manufacturer` ENABLE KEYS */;
+/*!40000 ALTER TABLE `oc_manufacturer` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.manufacturer_to_store
-DROP TABLE IF EXISTS `manufacturer_to_store`;
-CREATE TABLE IF NOT EXISTS `manufacturer_to_store` (
+-- Dumping structure for table amthuctrangia.oc_manufacturer_to_store
+CREATE TABLE IF NOT EXISTS `oc_manufacturer_to_store` (
   `manufacturer_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
   PRIMARY KEY (`manufacturer_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.manufacturer_to_store: 6 rows
-/*!40000 ALTER TABLE `manufacturer_to_store` DISABLE KEYS */;
-INSERT INTO `manufacturer_to_store` (`manufacturer_id`, `store_id`) VALUES
+-- Dumping data for table amthuctrangia.oc_manufacturer_to_store: 6 rows
+DELETE FROM `oc_manufacturer_to_store`;
+/*!40000 ALTER TABLE `oc_manufacturer_to_store` DISABLE KEYS */;
+INSERT INTO `oc_manufacturer_to_store` (`manufacturer_id`, `store_id`) VALUES
 	(5, 0),
 	(6, 0),
 	(7, 0),
 	(8, 0),
 	(9, 0),
 	(10, 0);
-/*!40000 ALTER TABLE `manufacturer_to_store` ENABLE KEYS */;
+/*!40000 ALTER TABLE `oc_manufacturer_to_store` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.news
-DROP TABLE IF EXISTS `news`;
-CREATE TABLE IF NOT EXISTS `news` (
+-- Dumping structure for table amthuctrangia.oc_news
+CREATE TABLE IF NOT EXISTS `oc_news` (
   `news_id` int(11) NOT NULL AUTO_INCREMENT,
   `image` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `date_available` date NOT NULL,
@@ -1400,21 +1403,23 @@ CREATE TABLE IF NOT EXISTS `news` (
   `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `viewed` int(5) NOT NULL DEFAULT '0',
   PRIMARY KEY (`news_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Dumping data for table trangia.news: 4 rows
-/*!40000 ALTER TABLE `news` DISABLE KEYS */;
-INSERT INTO `news` (`news_id`, `image`, `date_available`, `sort_order`, `comment`, `approved`, `status`, `date_added`, `date_modified`, `viewed`) VALUES
-	(1, '', '2013-01-22', 1, 1, 1, 1, '2013-01-23 22:35:07', '0000-00-00 00:00:00', 11),
-	(2, '', '2013-01-22', 1, 1, 1, 1, '2013-01-23 22:36:05', '0000-00-00 00:00:00', 0),
-	(3, '', '2013-01-23', 1, 1, 1, 1, '2013-01-24 19:56:45', '2013-01-24 19:58:20', 0),
-	(4, '', '2013-01-23', 1, 1, 1, 1, '2013-01-24 19:57:41', '2013-01-24 19:58:37', 0);
-/*!40000 ALTER TABLE `news` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_news: 6 rows
+DELETE FROM `oc_news`;
+/*!40000 ALTER TABLE `oc_news` DISABLE KEYS */;
+INSERT INTO `oc_news` (`news_id`, `image`, `date_available`, `sort_order`, `comment`, `approved`, `status`, `date_added`, `date_modified`, `viewed`) VALUES
+	(11, 'data/logo.jpg', '2013-07-11', 1, 1, 1, 1, '2013-07-12 16:21:00', '0000-00-00 00:00:00', 0),
+	(12, 'data/min trn gia.jpg', '2013-07-11', 1, 1, 1, 1, '2013-07-12 16:22:00', '0000-00-00 00:00:00', 0),
+	(13, 'data/banh da moi5 1.jpg', '2013-07-11', 1, 1, 1, 1, '2013-07-12 16:22:43', '0000-00-00 00:00:00', 0),
+	(14, 'data/B__nh___a_Nem_C__50af8e230ca5b_180x160.jpg', '2013-07-11', 1, 1, 1, 1, '2013-07-12 16:23:36', '0000-00-00 00:00:00', 0),
+	(15, 'data/1.jpg', '2013-07-11', 1, 1, 1, 1, '2013-07-12 16:24:17', '0000-00-00 00:00:00', 0),
+	(16, 'data/nem nan.jpg', '2013-07-11', 1, 1, 1, 1, '2013-07-12 16:24:59', '0000-00-00 00:00:00', 0);
+/*!40000 ALTER TABLE `oc_news` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.news_category
-DROP TABLE IF EXISTS `news_category`;
-CREATE TABLE IF NOT EXISTS `news_category` (
+-- Dumping structure for table amthuctrangia.oc_news_category
+CREATE TABLE IF NOT EXISTS `oc_news_category` (
   `news_category_id` int(11) NOT NULL AUTO_INCREMENT,
   `image` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `parent_id` int(11) NOT NULL DEFAULT '0',
@@ -1425,19 +1430,22 @@ CREATE TABLE IF NOT EXISTS `news_category` (
   `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`news_category_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Dumping data for table trangia.news_category: 2 rows
-/*!40000 ALTER TABLE `news_category` DISABLE KEYS */;
-INSERT INTO `news_category` (`news_category_id`, `image`, `parent_id`, `top`, `column`, `sort_order`, `status`, `date_added`, `date_modified`) VALUES
-	(1, '', 0, 0, 1, 0, 1, '2013-01-23 22:33:42', '2013-01-23 22:33:42'),
-	(2, '', 0, 0, 1, 0, 1, '2013-01-23 22:33:58', '2013-01-23 22:33:58');
-/*!40000 ALTER TABLE `news_category` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_news_category: 5 rows
+DELETE FROM `oc_news_category`;
+/*!40000 ALTER TABLE `oc_news_category` DISABLE KEYS */;
+INSERT INTO `oc_news_category` (`news_category_id`, `image`, `parent_id`, `top`, `column`, `sort_order`, `status`, `date_added`, `date_modified`) VALUES
+	(3, '', 7, 0, 1, 0, 1, '2013-07-12 11:18:25', '2013-07-12 13:12:57'),
+	(4, '', 7, 0, 1, 0, 1, '2013-07-12 11:18:48', '2013-07-12 13:12:39'),
+	(5, '', 7, 0, 1, 0, 1, '2013-07-12 11:19:06', '2013-07-12 13:13:08'),
+	(6, '', 7, 0, 1, 0, 1, '2013-07-12 11:19:30', '2013-07-12 13:12:48'),
+	(7, '', 0, 1, 1, 0, 1, '2013-07-12 13:12:13', '2013-07-12 13:12:13');
+/*!40000 ALTER TABLE `oc_news_category` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.news_category_description
-DROP TABLE IF EXISTS `news_category_description`;
-CREATE TABLE IF NOT EXISTS `news_category_description` (
+-- Dumping structure for table amthuctrangia.oc_news_category_description
+CREATE TABLE IF NOT EXISTS `oc_news_category_description` (
   `news_category_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
   `name` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
@@ -1448,49 +1456,53 @@ CREATE TABLE IF NOT EXISTS `news_category_description` (
   KEY `name` (`name`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Dumping data for table trangia.news_category_description: 4 rows
-/*!40000 ALTER TABLE `news_category_description` DISABLE KEYS */;
-INSERT INTO `news_category_description` (`news_category_id`, `language_id`, `name`, `description`, `meta_description`, `meta_keyword`) VALUES
-	(1, 1, 'Tin Khuyến mại', '', '', ''),
-	(1, 2, 'Tin Khuyến mại', '', '', ''),
-	(2, 1, 'Tin tuyển dụng', '', '', ''),
-	(2, 2, 'Tin tuyển dụng', '', '', '');
-/*!40000 ALTER TABLE `news_category_description` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_news_category_description: 5 rows
+DELETE FROM `oc_news_category_description`;
+/*!40000 ALTER TABLE `oc_news_category_description` DISABLE KEYS */;
+INSERT INTO `oc_news_category_description` (`news_category_id`, `language_id`, `name`, `description`, `meta_description`, `meta_keyword`) VALUES
+	(3, 2, 'Sao Việt với Jumpsuits', '', '', ''),
+	(4, 2, 'Bí quyết mặc đẹp', '', '', ''),
+	(5, 2, 'Tổng hợp', '', '', ''),
+	(6, 2, 'Tin khuyến mãi', '', '', ''),
+	(7, 2, 'Tin tức', '', '', '');
+/*!40000 ALTER TABLE `oc_news_category_description` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.news_category_to_layout
-DROP TABLE IF EXISTS `news_category_to_layout`;
-CREATE TABLE IF NOT EXISTS `news_category_to_layout` (
+-- Dumping structure for table amthuctrangia.oc_news_category_to_layout
+CREATE TABLE IF NOT EXISTS `oc_news_category_to_layout` (
   `news_category_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
   `layout_id` int(11) NOT NULL,
   PRIMARY KEY (`news_category_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Dumping data for table trangia.news_category_to_layout: 0 rows
-/*!40000 ALTER TABLE `news_category_to_layout` DISABLE KEYS */;
-/*!40000 ALTER TABLE `news_category_to_layout` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_news_category_to_layout: 0 rows
+DELETE FROM `oc_news_category_to_layout`;
+/*!40000 ALTER TABLE `oc_news_category_to_layout` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oc_news_category_to_layout` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.news_category_to_store
-DROP TABLE IF EXISTS `news_category_to_store`;
-CREATE TABLE IF NOT EXISTS `news_category_to_store` (
+-- Dumping structure for table amthuctrangia.oc_news_category_to_store
+CREATE TABLE IF NOT EXISTS `oc_news_category_to_store` (
   `news_category_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
   PRIMARY KEY (`news_category_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Dumping data for table trangia.news_category_to_store: 2 rows
-/*!40000 ALTER TABLE `news_category_to_store` DISABLE KEYS */;
-INSERT INTO `news_category_to_store` (`news_category_id`, `store_id`) VALUES
-	(1, 0),
-	(2, 0);
-/*!40000 ALTER TABLE `news_category_to_store` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_news_category_to_store: 5 rows
+DELETE FROM `oc_news_category_to_store`;
+/*!40000 ALTER TABLE `oc_news_category_to_store` DISABLE KEYS */;
+INSERT INTO `oc_news_category_to_store` (`news_category_id`, `store_id`) VALUES
+	(3, 0),
+	(4, 0),
+	(5, 0),
+	(6, 0),
+	(7, 0);
+/*!40000 ALTER TABLE `oc_news_category_to_store` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.news_comment
-DROP TABLE IF EXISTS `news_comment`;
-CREATE TABLE IF NOT EXISTS `news_comment` (
+-- Dumping structure for table amthuctrangia.oc_news_comment
+CREATE TABLE IF NOT EXISTS `oc_news_comment` (
   `comment_id` int(11) NOT NULL AUTO_INCREMENT,
   `news_id` int(11) NOT NULL,
   `customer_id` int(11) NOT NULL,
@@ -1504,14 +1516,14 @@ CREATE TABLE IF NOT EXISTS `news_comment` (
   KEY `product_id` (`news_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Dumping data for table trangia.news_comment: 0 rows
-/*!40000 ALTER TABLE `news_comment` DISABLE KEYS */;
-/*!40000 ALTER TABLE `news_comment` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_news_comment: 0 rows
+DELETE FROM `oc_news_comment`;
+/*!40000 ALTER TABLE `oc_news_comment` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oc_news_comment` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.news_description
-DROP TABLE IF EXISTS `news_description`;
-CREATE TABLE IF NOT EXISTS `news_description` (
+-- Dumping structure for table amthuctrangia.oc_news_description
+CREATE TABLE IF NOT EXISTS `oc_news_description` (
   `news_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) NOT NULL,
   `name` varchar(255) COLLATE utf8_bin NOT NULL,
@@ -1521,38 +1533,36 @@ CREATE TABLE IF NOT EXISTS `news_description` (
   `meta_keyword` varchar(255) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`news_id`,`language_id`),
   KEY `name` (`name`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Dumping data for table trangia.news_description: 8 rows
-/*!40000 ALTER TABLE `news_description` DISABLE KEYS */;
-INSERT INTO `news_description` (`news_id`, `language_id`, `name`, `short_description`, `description`, `meta_description`, `meta_keyword`) VALUES
-	(1, 1, 'Tuyển dụng nhân viên bán hàng', 'Tuyển dụng nhân viên bán hàng', '&lt;p&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas feugiat consequat diam. Maecenas metus. Vivamus diam purus, cursus a, commodo non, facilisis vitae, nulla. Aenean dictum lacinia tortor. Nunc iaculis, nibh non iaculis aliquam, orci felis euismod neque, sed ornare massa mauris sed velit. Nulla pretium mi et risus. Fusce mi pede, tempor id, cursus ac, ullamcorper nec, enim. Sed tortor. Curabitur molestie. Duis velit augue, condimentum at, ultrices a, luctus ut, orci. Donec pellentesque egestas eros. Integer cursus, augue in cursus faucibus, eros pede bibendum sem, in tempus tellus justo quis ligula. Etiam eget tortor. Vestibulum rutrum, est ut placerat elementum, lectus nisl aliquam velit, tempor aliquam eros nunc nonummy metus. In eros metus, gravida a, gravida sed, lobortis id, turpis. Ut ultrices, ipsum at venenatis fringilla, sem nulla lacinia tellus, eget aliquet turpis mauris non enim. Nam turpis. Suspendisse lacinia. Curabitur ac tortor ut ipsum egestas elementum. Nunc imperdiet gravida mauris.&lt;/p&gt;\r\n', '', ''),
-	(1, 2, 'Tuyển dụng nhân viên bán hàng', 'Tuyển dụng nhân viên bán hàng', '&lt;p&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas feugiat consequat diam. Maecenas metus. Vivamus diam purus, cursus a, commodo non, facilisis vitae, nulla. Aenean dictum lacinia tortor. Nunc iaculis, nibh non iaculis aliquam, orci felis euismod neque, sed ornare massa mauris sed velit. Nulla pretium mi et risus. Fusce mi pede, tempor id, cursus ac, ullamcorper nec, enim. Sed tortor. Curabitur molestie. Duis velit augue, condimentum at, ultrices a, luctus ut, orci. Donec pellentesque egestas eros. Integer cursus, augue in cursus faucibus, eros pede bibendum sem, in tempus tellus justo quis ligula. Etiam eget tortor. Vestibulum rutrum, est ut placerat elementum, lectus nisl aliquam velit, tempor aliquam eros nunc nonummy metus. In eros metus, gravida a, gravida sed, lobortis id, turpis. Ut ultrices, ipsum at venenatis fringilla, sem nulla lacinia tellus, eget aliquet turpis mauris non enim. Nam turpis. Suspendisse lacinia. Curabitur ac tortor ut ipsum egestas elementum. Nunc imperdiet gravida mauris.&lt;/p&gt;\r\n', '', ''),
-	(2, 1, 'Khuyến mại lớn đầu năm', '', '&lt;p&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas feugiat consequat diam. Maecenas metus. Vivamus diam purus, cursus a, commodo non, facilisis vitae, nulla. Aenean dictum lacinia tortor. Nunc iaculis, nibh non iaculis aliquam, orci felis euismod neque, sed ornare massa mauris sed velit. Nulla pretium mi et risus. Fusce mi pede, tempor id, cursus ac, ullamcorper nec, enim. Sed tortor. Curabitur molestie. Duis velit augue, condimentum at, ultrices a, luctus ut, orci. Donec pellentesque egestas eros. Integer cursus, augue in cursus faucibus, eros pede bibendum sem, in tempus tellus justo quis ligula. Etiam eget tortor. Vestibulum rutrum, est ut placerat elementum, lectus nisl aliquam velit, tempor aliquam eros nunc nonummy metus. In eros metus, gravida a, gravida sed, lobortis id, turpis. Ut ultrices, ipsum at venenatis fringilla, sem nulla lacinia tellus, eget aliquet turpis mauris non enim. Nam turpis. Suspendisse lacinia. Curabitur ac tortor ut ipsum egestas elementum. Nunc imperdiet gravida mauris.&lt;/p&gt;\r\n', '', ''),
-	(2, 2, 'Khuyến mại lớn đầu năm', '', '&lt;p&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas feugiat consequat diam. Maecenas metus. Vivamus diam purus, cursus a, commodo non, facilisis vitae, nulla. Aenean dictum lacinia tortor. Nunc iaculis, nibh non iaculis aliquam, orci felis euismod neque, sed ornare massa mauris sed velit. Nulla pretium mi et risus. Fusce mi pede, tempor id, cursus ac, ullamcorper nec, enim. Sed tortor. Curabitur molestie. Duis velit augue, condimentum at, ultrices a, luctus ut, orci. Donec pellentesque egestas eros. Integer cursus, augue in cursus faucibus, eros pede bibendum sem, in tempus tellus justo quis ligula. Etiam eget tortor. Vestibulum rutrum, est ut placerat elementum, lectus nisl aliquam velit, tempor aliquam eros nunc nonummy metus. In eros metus, gravida a, gravida sed, lobortis id, turpis. Ut ultrices, ipsum at venenatis fringilla, sem nulla lacinia tellus, eget aliquet turpis mauris non enim. Nam turpis. Suspendisse lacinia. Curabitur ac tortor ut ipsum egestas elementum. Nunc imperdiet gravida mauris.&lt;/p&gt;\r\n', '', ''),
-	(3, 1, 'Tư vấn tiêu dùng', 'Lorem ipsum dolor sit amet, consectetuer ', '&lt;p&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas feugiat consequat diam. Maecenas metus. Vivamus diam purus, cursus a, commodo non, facilisis vitae, nulla. Aenean dictum lacinia tortor. Nunc iaculis, nibh non iaculis aliquam, orci felis euismod neque, sed ornare massa mauris sed velit. Nulla pretium mi et risus. Fusce mi pede, tempor id, cursus ac, ullamcorper nec, enim. Sed tortor. Curabitur molestie. Duis velit augue, condimentum at, ultrices a, luctus ut, orci. Donec pellentesque egestas eros. Integer cursus, augue in cursus faucibus, eros pede bibendum sem, in tempus tellus justo quis ligula. Etiam eget tortor. Vestibulum rutrum, est ut placerat elementum, lectus nisl aliquam velit, tempor aliquam eros nunc nonummy metus. In eros metus, gravida a, gravida sed, lobortis id, turpis. Ut ultrices, ipsum at venenatis fringilla, sem nulla lacinia tellus, eget aliquet turpis mauris non enim. Nam turpis. Suspendisse lacinia. Curabitur ac tortor ut ipsum egestas elementum. Nunc imperdiet gravida mauris.&lt;/p&gt;\r\n', '', ''),
-	(3, 2, 'Tư vấn tiêu dùng', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas feugiat consequat diam', '&lt;p&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas feugiat consequat diam. Maecenas metus. Vivamus diam purus, cursus a, commodo non, facilisis vitae, nulla. Aenean dictum lacinia tortor. Nunc iaculis, nibh non iaculis aliquam, orci felis euismod neque, sed ornare massa mauris sed velit. Nulla pretium mi et risus. Fusce mi pede, tempor id, cursus ac, ullamcorper nec, enim. Sed tortor. Curabitur molestie. Duis velit augue, condimentum at, ultrices a, luctus ut, orci. Donec pellentesque egestas eros. Integer cursus, augue in cursus faucibus, eros pede bibendum sem, in tempus tellus justo quis ligula. Etiam eget tortor. Vestibulum rutrum, est ut placerat elementum, lectus nisl aliquam velit, tempor aliquam eros nunc nonummy metus. In eros metus, gravida a, gravida sed, lobortis id, turpis. Ut ultrices, ipsum at venenatis fringilla, sem nulla lacinia tellus, eget aliquet turpis mauris non enim. Nam turpis. Suspendisse lacinia. Curabitur ac tortor ut ipsum egestas elementum. Nunc imperdiet gravida mauris.&lt;/p&gt;\r\n', '', ''),
-	(4, 2, 'Chăm sóc sức khỏe', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas feugiat consequat diam.', '&lt;p&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas feugiat consequat diam. Maecenas metus. Vivamus diam purus, cursus a, commodo non, facilisis vitae, nulla. Aenean dictum lacinia tortor. Nunc iaculis, nibh non iaculis aliquam, orci felis euismod neque, sed ornare massa mauris sed velit. Nulla pretium mi et risus. Fusce mi pede, tempor id, cursus ac, ullamcorper nec, enim. Sed tortor. Curabitur molestie. Duis velit augue, condimentum at, ultrices a, luctus ut, orci. Donec pellentesque egestas eros. Integer cursus, augue in cursus faucibus, eros pede bibendum sem, in tempus tellus justo quis ligula. Etiam eget tortor. Vestibulum rutrum, est ut placerat elementum, lectus nisl aliquam velit, tempor aliquam eros nunc nonummy metus. In eros metus, gravida a, gravida sed, lobortis id, turpis. Ut ultrices, ipsum at venenatis fringilla, sem nulla lacinia tellus, eget aliquet turpis mauris non enim. Nam turpis. Suspendisse lacinia. Curabitur ac tortor ut ipsum egestas elementum. Nunc imperdiet gravida mauris.&lt;/p&gt;\r\n', '', ''),
-	(4, 1, 'Chăm sóc sức khỏe', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. ', '&lt;p&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas feugiat consequat diam. Maecenas metus. Vivamus diam purus, cursus a, commodo non, facilisis vitae, nulla. Aenean dictum lacinia tortor. Nunc iaculis, nibh non iaculis aliquam, orci felis euismod neque, sed ornare massa mauris sed velit. Nulla pretium mi et risus. Fusce mi pede, tempor id, cursus ac, ullamcorper nec, enim. Sed tortor. Curabitur molestie. Duis velit augue, condimentum at, ultrices a, luctus ut, orci. Donec pellentesque egestas eros. Integer cursus, augue in cursus faucibus, eros pede bibendum sem, in tempus tellus justo quis ligula. Etiam eget tortor. Vestibulum rutrum, est ut placerat elementum, lectus nisl aliquam velit, tempor aliquam eros nunc nonummy metus. In eros metus, gravida a, gravida sed, lobortis id, turpis. Ut ultrices, ipsum at venenatis fringilla, sem nulla lacinia tellus, eget aliquet turpis mauris non enim. Nam turpis. Suspendisse lacinia. Curabitur ac tortor ut ipsum egestas elementum. Nunc imperdiet gravida mauris.&lt;/p&gt;\r\n', '', '');
-/*!40000 ALTER TABLE `news_description` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_news_description: 6 rows
+DELETE FROM `oc_news_description`;
+/*!40000 ALTER TABLE `oc_news_description` DISABLE KEYS */;
+INSERT INTO `oc_news_description` (`news_id`, `language_id`, `name`, `short_description`, `description`, `meta_description`, `meta_keyword`) VALUES
+	(11, 1, '﻿ Lễ Ký kết hợp đồng Xuất khẩu Bánh Đa Nem sang Úc', 'Vừa qua vào ngày 28 tháng 6 năm 2013 đã diễn ra lễ ký kết hợp đồng hợp tác đầu tiên giữa Công Ty Cổ Phần Thương Mại và Đầu Tư Trần Gia và Công Ty Cổ Phần Sao Vy Vân có trụ sở tại Sài Gòn. Sản phẩm hợp tác là Bánh Đa Nem Xuất Khẩu 22 đi sang thị trường Úc.\r\n ', '&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: center;&quot;&gt;&lt;img border=&quot;0&quot; src=&quot;http://amthuctrangia.vn/images/stories/Anhchung/logo.jpg&quot; style=&quot;margin: 2px 10px 2px 2px; padding: 2px; list-style-type: none; border: 1px solid rgb(241, 241, 241);&quot; /&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;&lt;strong style=&quot;margin: 0px; padding: 0px; list-style-type: none;&quot;&gt;Chi tiết đơn hàng như sau:&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;* Tên sản phẩm: Bánh Đa Nem Xuất Khẩu&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;* Kích thước: 22 mm&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;* Trọng lượng: 250gr&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;* Khối lượng đặt hàng tháng 6: 1,3 tấn&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;* Vận chuyển: Bằng đường Tàu Hỏa vào Sài Gòn và từ Sài Gòn sang Úc là bằng đường Thủy, Tập kết hàng tại Cảng Tân Cảng - Sài Gòn&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;Đây là bước hợp tác đầu tiên giữa 2 công ty và sẽ là cơ sở hợp tác lâu dài giữa 2 công ty 2 ngày và cũng là thể hiện được chất lượng sản phẩm Bánh Đa Nem do Công Ty Trần Gia Sản xuất có thương hiệu nổi tiếng là Bánh Đa Nem Làng Chều.&lt;/p&gt;\r\n', '', ''),
+	(12, 1, '﻿ Mẫu miến dong mới của Trần Gia', 'Công Ty Cổ Phần Thương Mại và Đầu Tư Trần Gia vừa cho ra mắt sản phẩm miến mới, đó là miến dong làng so - Đặc sản Hà Nội. Miến dong làng So được làm từ tinh bột của củ dong giềng - Được trồng trên các vùng đồi núi cao của Bắc Cạn, Cao Bằng.\r\nMiến dong làng So có màu xanh nâu lục, sợi dài khoảng 20-25cm, nhỏ, mảnh đều. Đây là loại miến mộc sạch không sử dụng hóa chất phẩm màu độc hại và được được người tiêu dùng khắp cả nước tin tưởng và sử dụng.', '&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;Vị miến giòn dai, nấu lâu cũng chỉ mềm hơn chút ít mà không nát. Người ta có thể dùng miến làng So cho các món nấu, xào, trộn. Miến xào lòng gà, miến xào hải sản như vạng, ngao, tôm, cua bể cùng với nấm hương thường là món ăn khiến không ai không xuýt xoa khi thưởng thức.&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;Với nhu cầu được sử dụng miến dong sạch, Công ty cổ phần thương mại và đầu tư Trần Gia đã hợp tác với ban đại diện hiệp hội&amp;nbsp;&lt;a href=&quot;http://amthuctrangia.vn/tin-tuc/159-mien-dong-tran-gia.html&quot; style=&quot;margin: 0px; padding: 0px; list-style-type: none; text-decoration: none; color: rgb(0, 0, 143); font-weight: bold;&quot; target=&quot;_blank&quot; title=&quot;mien-dong-lang-so&quot;&gt;miến dong làng So&lt;/a&gt;&amp;nbsp;cho ra đời&amp;nbsp;&lt;a href=&quot;http://amthuctrangia.vn/tin-tuc/159-mien-dong-tran-gia.html&quot; style=&quot;margin: 0px; padding: 0px; list-style-type: none; text-decoration: none; color: rgb(0, 0, 143); font-weight: bold;&quot; target=&quot;_blank&quot; title=&quot;mien-dong-lang-so&quot;&gt;miến dong làng So&lt;/a&gt;&amp;nbsp;- Thương hiệu Trần Gia. Đặc biệt,&amp;nbsp;&lt;a href=&quot;http://amthuctrangia.vn/tin-tuc/159-mien-dong-tran-gia.html&quot; style=&quot;margin: 0px; padding: 0px; list-style-type: none; text-decoration: none; color: rgb(0, 0, 143); font-weight: bold;&quot; target=&quot;_blank&quot; title=&quot;mien-dong-lang-so&quot;&gt;miến dong làng So&lt;/a&gt;&amp;nbsp;thương hiệu Trần Gia đã được trao cúp thương hiệu &quot; SẢN PHẨM VÌ SỨC KHỎE NGƯỜI VIỆT &quot; Do người tiêu dùng bình chọn 2012. Sau đây là hình ảnh bao bì của sản phẩm:&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: center;&quot;&gt;&lt;img alt=&quot;mien-dong-lang-so&quot; border=&quot;0&quot; src=&quot;http://amthuctrangia.vn/images/stories/Anhchung/min%20trn%20gia.jpg&quot; style=&quot;margin: 2px 10px 2px 2px; padding: 2px; list-style-type: none; border: 0px;&quot; /&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;Quý anh chị có nhu cầu làm nhà phân phối sản phẩm này xin vui lòng gửi email vào :&amp;nbsp;&lt;a href=&quot;mailto:thucphamtrangia@gmail.com&quot; style=&quot;margin: 0px; padding: 0px; list-style-type: none; text-decoration: none; color: rgb(0, 0, 143); font-weight: bold;&quot;&gt;thucphamtrangia@gmail.com&lt;/a&gt;hoặc gọi điện trực tiếp tới số: 0977.999.544.&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;&lt;strong style=&quot;margin: 0px; padding: 0px; list-style-type: none;&quot;&gt;&lt;em style=&quot;margin: 0px; padding: 0px; list-style-type: none;&quot;&gt;Xin chân thành cảm ơn!&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;\r\n', '', ''),
+	(13, 1, '﻿ Mẫu Bánh Đa Nem Nan 15 lá', 'Hiện tại, Trần Gia đã và đang phân phối loại bánh đa nem ăn hàng ngày nem Nan. Đây là loại bánh mỏng, mềm và dễ cuốn rất được người tiêu dùng trong nước ưu chuộng.\r\nThông số của sản phẩm như sau:\r\n- Kích thước: 220 mm\r\n- Số lượng: 15 lá/ túi\r\n ', '&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Hình thức đóng gói: Túi PP trắng trong ( Chất liệu an toàn cho người tiêu dùng)&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Thành phần: 100% tinh bột gạo và muối&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Cộng dụng: Dùng làm nem rán hoặc nem cuốn&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Hạn sử dụng: 6 tháng kể từ ngày sản xuất&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Đặc điểm nhận biết: Được đóng vào túi nilong PP trắng trong và gắn 2 đầu. Bên trong có bỏ tem có phông nền vàng nhạt và hình ảnh gia đình đăng dùng cơm phía bên tay trái trên cùng.&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Giá bán lẻ: 5.000 VNĐ/ túi&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Giá nhà phân phối: liên hệ 0977.999.544&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: center;&quot;&gt;&lt;img border=&quot;0&quot; src=&quot;http://amthuctrangia.vn/images/stories/Anhchung/banh%20da%20moi5%201.jpg&quot; style=&quot;margin: 2px 10px 2px 2px; padding: 2px; list-style-type: none; border: 1px solid rgb(241, 241, 241);&quot; /&gt;&lt;/p&gt;\r\n', '', ''),
+	(14, 1, ' Các chính sách hỗ trợ nhà phân phối', 'Để nhà phân phối nhanh chóng tiếp cận thị trường được tốt, ngoài việc đảm bảo chất lượng sản phẩm cũng như hình thức bao bì sản phẩm đẹp cuốn hút khách hàng. Trần Gia sẽ có những chính sách hỗ trợ cho các nhà phân phối như sau:', '&lt;p style=&quot;list-style-type:none;&quot;&gt;&lt;strong style=&quot;list-style-type:none;&quot;&gt;1. Hỗ Trợ trong 2 tháng đầu làm thị trường&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36pt;list-style-type:none;&quot;&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;-&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;Tư vấn các chính sách làm thị trường cho các nhà phân phối&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36pt;list-style-type:none;&quot;&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;-&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;Hỗ trợ trích thưởng trên tổng doanh thu (Trích vào cuối tháng) để nhà phân phối thưởng cho nhân viên làm thị trường. Mức trích thưởng tùy vào thỏa thuận của 2 bên.&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36pt;list-style-type:none;&quot;&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;-&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;Nhập lại sản phẩm nếu nhà phân phối bán không hết hàng&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36pt;list-style-type:none;&quot;&gt;&lt;strong style=&quot;list-style-type:none;&quot;&gt;2. Trong suốt quá trình hợp tác&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36pt;list-style-type:none;&quot;&gt;&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36pt;list-style-type:none;&quot;&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;-&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;Đổi hàng mới cho những lô hàng: hết hạn hoặc sắp hết hạn sử dụng, hàng bị ẩm mốc do thời tiết….)&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36pt;list-style-type:none;&quot;&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;-&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;Thường xuyên chia sẻ thông tin và hỗ trợ kịp thời tới các nhà phân phối.&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36pt;list-style-type:none;&quot;&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;-&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;Cam&lt;/span&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;&amp;nbsp;kết hỗ trợ tối đa do biến động của thị trường và cam kết không tăng giá bán quá 10% vào các dịp lễ tết. (mặt hàng khô thường tăng từ 50 – 100% vào các dịp lễ tết).&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36pt;list-style-type:none;&quot;&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;-&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;Chính sách thưởng cuối năm: Nhà sản xuất sẽ có những hình thưc thưởng cuối năm nếu nhà phân phối vượt chỉ tiêu nhập hàng. Mức thưởng và mức chỉ tiêu sẽ được nhà sản xuất quy định trong bản hợp đồng với các nhà phân phối&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36pt;list-style-type:none;&quot;&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;-&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;Chính sách độc quyền phân phối sản phẩm: Nhà phân phối sẽ có cơ hội độc quyền phân phối sản phẩm các mặt hàng do Trần Gia sản xuất tại 1 đia bàn hoặc nhiều địa bàn (Điều kiện được quy định bên dưới).&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36pt;list-style-type:none;&quot;&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;-&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;Hỗ trợ phân phối và marketing: Nhà sản xuất sẽ đăng thông tin của nhà phân phối và hệ thống website của công ty và các các chiến lược marketing online của công ty thường niên. Dựa trên nguồn khách hàng đăng ký nhập hàng, nhà sản xuất sẽ dựa trên hệ thống nhà phân phối để liên hệ với các nhà phân phối chuyển hàng tới các khách hàng đã đặt hàng với nhà sản xuất.&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36pt;list-style-type:none;&quot;&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;-&amp;nbsp; &lt;/span&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;Được cung cấp các thông tin về hàng hóa, chính sách và các chiến lược marketing cũng như các tài liệu thúc đẩy bán hàng.&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;list-style-type:none;&quot;&gt;&lt;strong style=&quot;list-style-type:none;&quot;&gt;3. Các điều kiện để trở thành nhà phân phối độc quyền&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:18pt;list-style-type:none;&quot;&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;Để trở thành nhà phân phối độc quyền tại 1 địa bàn của các sản phẩm Trần Gia thì nhà phân phối phải đảm bảo các điều kiện sau:&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36pt;list-style-type:none;&quot;&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;-&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;Doanh số đảm bảo hàng tháng theo thỏa thuận của nhà phân phối và nhà sản xuất, mức doanh số tùy thuộc và từng địa bàn mà nhà phân phối lựa chọn.&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36pt;list-style-type:none;&quot;&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;-&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;Có nguồn tài chính ổn định&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36pt;list-style-type:none;&quot;&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;-&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;Có xe chở hàng trọng tải 500kg trở lên&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36pt;list-style-type:none;&quot;&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;-&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;Có đội ngũ nhân viên làm thị trường&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36pt;list-style-type:none;&quot;&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;-&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;Có kho bãi và đảm bảo về thoáng mát không ẩm mốc&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36pt;list-style-type:none;&quot;&gt;&lt;strong style=&quot;list-style-type:none;&quot;&gt;&lt;em style=&quot;list-style-type:none;&quot;&gt;Các nhà phân phối cần thêm thông tin gì hoặc có ý kiên về các chính sách mà Trần Gia đã đề ra xin vui lòng liên hệ với đại diện của công ty theo số điện thoại: 0977.999.544 hoặc qua email:&lt;a href=&quot;mailto:thucphamtrangia@gmail.com&quot; style=&quot;list-style-type:none;&quot;&gt;thucphamtrangia@gmail.com&lt;/a&gt;.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36pt;list-style-type:none;&quot;&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;&lt;strong style=&quot;list-style-type:none;&quot;&gt;Xin chân thành cảm ơn!&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;\r\n', '', ''),
+	(15, 1, '﻿ Mẫu Bánh Đa Nem Ăn Sống', 'Hiện tại, Trần Gia đã và đang phân phối loại bánh đa nem ăn hàng ngày nem Nan. Đây là loại bánh mỏng, mềm và dễ cuốn rất được người tiêu dùng trong nước ưu chuộng.\r\nThông số của sản phẩm như sau:\r\n- Kích thước: 140 mm x 190mm\r\n- Số lượng: 10 lá/ túi', '&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Hình thức đóng gói: Túi PP trắng trong ( Chất liệu an toàn cho người tiêu dùng)&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Thành phần: 100% tinh bột gạo và muối&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Cộng dụng: Dùng làm nem nem cuốn&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Hạn sử dụng: 6 tháng kể từ ngày sản xuất&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Đặc điểm nhận biết: Được đóng vào túi nilong PP trắng trong và gắn 2 đầu. Bên ngoài dán tem chất liệu decan 2 màu đỏ và xanh có in hình logo của công ty.&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Giá bán lẻ: 2.000 VNĐ/ túi&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Giá nhà phân phối: liên hệ 0977.999.544&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: center;&quot;&gt;&lt;strong style=&quot;margin: 0px; padding: 0px; list-style-type: none;&quot;&gt;HÌNH ẢNH SẢN PHẨM&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: center;&quot;&gt;&lt;img border=&quot;0&quot; src=&quot;http://amthuctrangia.vn/images/stories/Anhchung/1.jpg&quot; style=&quot;margin: 2px 10px 2px 2px; padding: 2px; list-style-type: none; border: 1px solid rgb(241, 241, 241);&quot; /&gt;&lt;/p&gt;\r\n', '', ''),
+	(16, 1, '﻿ Bánh Đa Nem Nan size 22 loại 20 lá', 'Hiện tại, Trần Gia đã và đang phân phối loại bánh đa nem ăn hàng ngày nem Nan. Đây là loại bánh mỏng, mềm và dễ cuốn rất được người tiêu dùng trong nước ưu chuộng.\r\nThông số của sản phẩm như sau:\r\n- Kích thước: 220 mm\r\n- Số lượng: 20 lá/ túi\r\n ', '&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Hình thức đóng gói: Túi PP trắng trong ( Chất liệu an toàn cho người tiêu dùng)&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Thành phần: 100% tinh bột gạo và muối&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Cộng dụng: Dùng làm nem rán hoặc nem cuốn&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Hạn sử dụng: 6 tháng kể từ ngày sản xuất&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Đặc điểm nhận biết: Được đóng vào túi nilong PP trắng trong và gắn 2 đầu. Bên trong có bỏ tem có phông nền vàng đậm và cành Hoa Đào điểm phía trên bên trái. Hình ảnh pháo hoa được in chìm nổi vào phía bên trên của tem. Loại bánh đủ 20 tấm và đều in hình logo màu xanh của nhà sản xuất.&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Giá bán lẻ: 6.000 VNĐ/ túi&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Giá nhà phân phối: liên hệ 0977.999.544&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: center;&quot;&gt;&lt;strong style=&quot;margin: 0px; padding: 0px; list-style-type: none;&quot;&gt;HÌNH ẢNH SẢN PHẨM&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: center;&quot;&gt;&lt;img border=&quot;0&quot; height=&quot;640&quot; src=&quot;http://amthuctrangia.vn/images/stories/Anhchung/nem%20nan.jpg&quot; style=&quot;margin: 2px 10px 2px 2px; padding: 2px; list-style-type: none; border: 1px solid rgb(241, 241, 241);&quot; width=&quot;456&quot; /&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: center;&quot;&gt;&amp;nbsp;&lt;/p&gt;\r\n', '', '');
+/*!40000 ALTER TABLE `oc_news_description` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.news_related
-DROP TABLE IF EXISTS `news_related`;
-CREATE TABLE IF NOT EXISTS `news_related` (
+-- Dumping structure for table amthuctrangia.oc_news_related
+CREATE TABLE IF NOT EXISTS `oc_news_related` (
   `news_id` int(11) NOT NULL,
   `related_id` int(11) NOT NULL,
   PRIMARY KEY (`news_id`,`related_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Dumping data for table trangia.news_related: 0 rows
-/*!40000 ALTER TABLE `news_related` DISABLE KEYS */;
-/*!40000 ALTER TABLE `news_related` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_news_related: 0 rows
+DELETE FROM `oc_news_related`;
+/*!40000 ALTER TABLE `oc_news_related` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oc_news_related` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.news_tag
-DROP TABLE IF EXISTS `news_tag`;
-CREATE TABLE IF NOT EXISTS `news_tag` (
+-- Dumping structure for table amthuctrangia.oc_news_tag
+CREATE TABLE IF NOT EXISTS `oc_news_tag` (
   `news_tag_id` int(11) NOT NULL AUTO_INCREMENT,
   `news_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1560,122 +1570,143 @@ CREATE TABLE IF NOT EXISTS `news_tag` (
   PRIMARY KEY (`news_tag_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Dumping data for table trangia.news_tag: 0 rows
-/*!40000 ALTER TABLE `news_tag` DISABLE KEYS */;
-/*!40000 ALTER TABLE `news_tag` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_news_tag: 0 rows
+DELETE FROM `oc_news_tag`;
+/*!40000 ALTER TABLE `oc_news_tag` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oc_news_tag` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.news_to_category
-DROP TABLE IF EXISTS `news_to_category`;
-CREATE TABLE IF NOT EXISTS `news_to_category` (
+-- Dumping structure for table amthuctrangia.oc_news_to_category
+CREATE TABLE IF NOT EXISTS `oc_news_to_category` (
   `news_id` int(11) NOT NULL,
   `news_category_id` int(11) NOT NULL,
   PRIMARY KEY (`news_id`,`news_category_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Dumping data for table trangia.news_to_category: 4 rows
-/*!40000 ALTER TABLE `news_to_category` DISABLE KEYS */;
-INSERT INTO `news_to_category` (`news_id`, `news_category_id`) VALUES
-	(1, 2),
-	(2, 2),
-	(3, 1),
-	(4, 1);
-/*!40000 ALTER TABLE `news_to_category` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_news_to_category: 0 rows
+DELETE FROM `oc_news_to_category`;
+/*!40000 ALTER TABLE `oc_news_to_category` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oc_news_to_category` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.news_to_layout
-DROP TABLE IF EXISTS `news_to_layout`;
-CREATE TABLE IF NOT EXISTS `news_to_layout` (
+-- Dumping structure for table amthuctrangia.oc_news_to_layout
+CREATE TABLE IF NOT EXISTS `oc_news_to_layout` (
   `news_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
   `layout_id` int(11) NOT NULL,
   PRIMARY KEY (`news_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Dumping data for table trangia.news_to_layout: 0 rows
-/*!40000 ALTER TABLE `news_to_layout` DISABLE KEYS */;
-/*!40000 ALTER TABLE `news_to_layout` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_news_to_layout: 0 rows
+DELETE FROM `oc_news_to_layout`;
+/*!40000 ALTER TABLE `oc_news_to_layout` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oc_news_to_layout` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.news_to_store
-DROP TABLE IF EXISTS `news_to_store`;
-CREATE TABLE IF NOT EXISTS `news_to_store` (
+-- Dumping structure for table amthuctrangia.oc_news_to_store
+CREATE TABLE IF NOT EXISTS `oc_news_to_store` (
   `news_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`news_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Dumping data for table trangia.news_to_store: 4 rows
-/*!40000 ALTER TABLE `news_to_store` DISABLE KEYS */;
-INSERT INTO `news_to_store` (`news_id`, `store_id`) VALUES
-	(1, 0),
-	(2, 0),
-	(3, 0),
-	(4, 0);
-/*!40000 ALTER TABLE `news_to_store` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_news_to_store: 6 rows
+DELETE FROM `oc_news_to_store`;
+/*!40000 ALTER TABLE `oc_news_to_store` DISABLE KEYS */;
+INSERT INTO `oc_news_to_store` (`news_id`, `store_id`) VALUES
+	(11, 0),
+	(12, 0),
+	(13, 0),
+	(14, 0),
+	(15, 0),
+	(16, 0);
+/*!40000 ALTER TABLE `oc_news_to_store` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.option
-DROP TABLE IF EXISTS `option`;
-CREATE TABLE IF NOT EXISTS `option` (
+-- Dumping structure for table amthuctrangia.oc_option
+CREATE TABLE IF NOT EXISTS `oc_option` (
   `option_id` int(11) NOT NULL AUTO_INCREMENT,
   `type` varchar(32) NOT NULL,
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`option_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.option: 2 rows
-/*!40000 ALTER TABLE `option` DISABLE KEYS */;
-INSERT INTO `option` (`option_id`, `type`, `sort_order`) VALUES
-	(14, 'radio', 2),
-	(13, 'image', 1);
-/*!40000 ALTER TABLE `option` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_option: 11 rows
+DELETE FROM `oc_option`;
+/*!40000 ALTER TABLE `oc_option` DISABLE KEYS */;
+INSERT INTO `oc_option` (`option_id`, `type`, `sort_order`) VALUES
+	(1, 'radio', 2),
+	(2, 'checkbox', 3),
+	(4, 'text', 4),
+	(5, 'select', 1),
+	(6, 'textarea', 5),
+	(7, 'file', 6),
+	(8, 'date', 7),
+	(9, 'time', 8),
+	(10, 'datetime', 9),
+	(11, 'select', 1),
+	(12, 'date', 1);
+/*!40000 ALTER TABLE `oc_option` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.option_description
-DROP TABLE IF EXISTS `option_description`;
-CREATE TABLE IF NOT EXISTS `option_description` (
+-- Dumping structure for table amthuctrangia.oc_option_description
+CREATE TABLE IF NOT EXISTS `oc_option_description` (
   `option_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
   `name` varchar(128) NOT NULL,
   PRIMARY KEY (`option_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.option_description: 4 rows
-/*!40000 ALTER TABLE `option_description` DISABLE KEYS */;
-INSERT INTO `option_description` (`option_id`, `language_id`, `name`) VALUES
-	(14, 1, 'Kích thước'),
-	(14, 2, 'Kích thước'),
-	(13, 2, 'Màu Sắc'),
-	(13, 1, 'Màu Sắc');
-/*!40000 ALTER TABLE `option_description` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_option_description: 11 rows
+DELETE FROM `oc_option_description`;
+/*!40000 ALTER TABLE `oc_option_description` DISABLE KEYS */;
+INSERT INTO `oc_option_description` (`option_id`, `language_id`, `name`) VALUES
+	(1, 1, 'Radio'),
+	(2, 1, 'Checkbox'),
+	(4, 1, 'Text'),
+	(6, 1, 'Textarea'),
+	(8, 1, 'Date'),
+	(7, 1, 'File'),
+	(5, 1, 'Select'),
+	(9, 1, 'Time'),
+	(10, 1, 'Date &amp; Time'),
+	(12, 1, 'Delivery Date'),
+	(11, 1, 'Size');
+/*!40000 ALTER TABLE `oc_option_description` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.option_value
-DROP TABLE IF EXISTS `option_value`;
-CREATE TABLE IF NOT EXISTS `option_value` (
+-- Dumping structure for table amthuctrangia.oc_option_value
+CREATE TABLE IF NOT EXISTS `oc_option_value` (
   `option_value_id` int(11) NOT NULL AUTO_INCREMENT,
   `option_id` int(11) NOT NULL,
   `image` varchar(255) NOT NULL,
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`option_value_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=55 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=49 DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.option_value: 6 rows
-/*!40000 ALTER TABLE `option_value` DISABLE KEYS */;
-INSERT INTO `option_value` (`option_value_id`, `option_id`, `image`, `sort_order`) VALUES
-	(54, 14, 'no_image.jpg', 0),
-	(53, 14, 'no_image.jpg', 0),
-	(52, 14, 'no_image.jpg', 0),
-	(49, 13, 'data/mausac/ea0001.png', 1),
-	(50, 13, 'data/mausac/ea0001.png', 2),
-	(51, 13, 'data/mausac/ea0001.png', 3);
-/*!40000 ALTER TABLE `option_value` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_option_value: 14 rows
+DELETE FROM `oc_option_value`;
+/*!40000 ALTER TABLE `oc_option_value` DISABLE KEYS */;
+INSERT INTO `oc_option_value` (`option_value_id`, `option_id`, `image`, `sort_order`) VALUES
+	(43, 1, '', 3),
+	(32, 1, '', 1),
+	(45, 2, '', 4),
+	(44, 2, '', 3),
+	(42, 5, '', 4),
+	(41, 5, '', 3),
+	(39, 5, '', 1),
+	(40, 5, '', 2),
+	(31, 1, '', 2),
+	(23, 2, '', 1),
+	(24, 2, '', 2),
+	(46, 11, '', 1),
+	(47, 11, '', 2),
+	(48, 11, '', 3);
+/*!40000 ALTER TABLE `oc_option_value` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.option_value_description
-DROP TABLE IF EXISTS `option_value_description`;
-CREATE TABLE IF NOT EXISTS `option_value_description` (
+-- Dumping structure for table amthuctrangia.oc_option_value_description
+CREATE TABLE IF NOT EXISTS `oc_option_value_description` (
   `option_value_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
   `option_id` int(11) NOT NULL,
@@ -1683,27 +1714,29 @@ CREATE TABLE IF NOT EXISTS `option_value_description` (
   PRIMARY KEY (`option_value_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.option_value_description: 12 rows
-/*!40000 ALTER TABLE `option_value_description` DISABLE KEYS */;
-INSERT INTO `option_value_description` (`option_value_id`, `language_id`, `option_id`, `name`) VALUES
-	(54, 1, 14, 'XL'),
-	(54, 2, 14, 'XL'),
-	(53, 1, 14, 'L'),
-	(53, 2, 14, 'L'),
-	(52, 1, 14, 'M'),
-	(52, 2, 14, 'M'),
-	(51, 1, 13, 'Tím'),
-	(51, 2, 13, 'Tím'),
-	(50, 1, 13, 'Đỏ'),
-	(50, 2, 13, 'Đỏ'),
-	(49, 1, 13, 'Xanh'),
-	(49, 2, 13, 'Xanh');
-/*!40000 ALTER TABLE `option_value_description` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_option_value_description: 14 rows
+DELETE FROM `oc_option_value_description`;
+/*!40000 ALTER TABLE `oc_option_value_description` DISABLE KEYS */;
+INSERT INTO `oc_option_value_description` (`option_value_id`, `language_id`, `option_id`, `name`) VALUES
+	(43, 1, 1, 'Large'),
+	(32, 1, 1, 'Small'),
+	(45, 1, 2, 'Checkbox 4'),
+	(44, 1, 2, 'Checkbox 3'),
+	(31, 1, 1, 'Medium'),
+	(42, 1, 5, 'Yellow'),
+	(41, 1, 5, 'Green'),
+	(39, 1, 5, 'Red'),
+	(40, 1, 5, 'Blue'),
+	(23, 1, 2, 'Checkbox 1'),
+	(24, 1, 2, 'Checkbox 2'),
+	(48, 1, 11, 'Large'),
+	(47, 1, 11, 'Medium'),
+	(46, 1, 11, 'Small');
+/*!40000 ALTER TABLE `oc_option_value_description` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.order
-DROP TABLE IF EXISTS `order`;
-CREATE TABLE IF NOT EXISTS `order` (
+-- Dumping structure for table amthuctrangia.oc_order
+CREATE TABLE IF NOT EXISTS `oc_order` (
   `order_id` int(11) NOT NULL AUTO_INCREMENT,
   `invoice_no` int(11) NOT NULL DEFAULT '0',
   `invoice_prefix` varchar(26) NOT NULL,
@@ -1763,27 +1796,16 @@ CREATE TABLE IF NOT EXISTS `order` (
   `date_added` datetime NOT NULL,
   `date_modified` datetime NOT NULL,
   PRIMARY KEY (`order_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.order: 10 rows
-/*!40000 ALTER TABLE `order` DISABLE KEYS */;
-INSERT INTO `order` (`order_id`, `invoice_no`, `invoice_prefix`, `store_id`, `store_name`, `store_url`, `customer_id`, `customer_group_id`, `firstname`, `lastname`, `email`, `telephone`, `fax`, `payment_firstname`, `payment_lastname`, `payment_company`, `payment_company_id`, `payment_tax_id`, `payment_address_1`, `payment_address_2`, `payment_city`, `payment_postcode`, `payment_country`, `payment_country_id`, `payment_zone`, `payment_zone_id`, `payment_address_format`, `payment_method`, `payment_code`, `shipping_firstname`, `shipping_lastname`, `shipping_company`, `shipping_address_1`, `shipping_address_2`, `shipping_city`, `shipping_postcode`, `shipping_country`, `shipping_country_id`, `shipping_zone`, `shipping_zone_id`, `shipping_address_format`, `shipping_method`, `shipping_code`, `comment`, `total`, `order_status_id`, `affiliate_id`, `commission`, `language_id`, `currency_id`, `currency_code`, `currency_value`, `ip`, `forwarded_ip`, `user_agent`, `accept_language`, `date_added`, `date_modified`) VALUES
-	(1, 0, 'INV-2012-00', 0, 'Thực phẩm chức năng hàng đầu Việt Nam', 'http://trangia.lc/', 0, 1, '43534', '53453', 'rong@gmail.com', '234234', '', '43534', '53453', '', '', '', '423423423', '', '42342', '423424', 'United Kingdom', 222, 'Cheshire', 3529, '', 'Thu tiền khi giao hàng', 'cod', '43534', '53453', '', '423423423', '', '42342', '423424', 'United Kingdom', 222, 'Cheshire', 3529, '', 'Phí vận chuyển cố định', 'flat.flat', '', 799007.8750, 0, 0, 0.0000, 2, 4, 'VND', 1.00000000, '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 6.1; rv:18.0) Gecko/20100101 Firefox/18.0', 'vi-vn,vi;q=0.8,en-us;q=0.5,en;q=0.3', '2013-01-31 14:38:19', '2013-01-31 14:38:19'),
-	(2, 0, 'INV-2012-00', 0, 'Thực phẩm chức năng hàng đầu Việt Nam', 'http://trangia.lc/', 0, 1, '43534', '53453', 'rong@gmail.com', '234234', '', '43534', '53453', '', '', '', '423423423', '', '42342', '423424', 'United Kingdom', 222, 'Cheshire', 3529, '', 'Thu tiền khi giao hàng', 'cod', '43534', '53453', '', '423423423', '', '42342', '423424', 'United Kingdom', 222, 'Cheshire', 3529, '', 'Phí vận chuyển cố định', 'flat.flat', '', 799007.8750, 0, 0, 0.0000, 2, 4, 'VND', 1.00000000, '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 6.1; rv:18.0) Gecko/20100101 Firefox/18.0', 'vi-vn,vi;q=0.8,en-us;q=0.5,en;q=0.3', '2013-01-31 14:40:14', '2013-01-31 14:40:14'),
-	(3, 0, 'INV-2012-00', 0, 'Thực phẩm chức năng hàng đầu Việt Nam', 'http://trangia.lc/', 1, 1, 'Khiem', 'Pham', 'rongandat@gmail.com', '123456789', '0165235952', 'Khiem', 'Pham', 'CYA', '34', '', '2343242', '423', '242', '4242', 'Viet Nam', 230, 'Ha Noi', 3776, '', 'Thu tiền khi giao hàng', 'cod', 'Khiem', 'Pham', 'CYA', '2343242', '423', '242', '4242', 'Viet Nam', 230, 'Ha Noi', 3776, '', 'Phí vận chuyển cố định', 'flat.flat', '', 250005.0000, 0, 0, 0.0000, 2, 4, 'VND', 1.00000000, '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 6.1; rv:19.0) Gecko/20100101 Firefox/19.0', 'vi-vn,vi;q=0.8,en-us;q=0.5,en;q=0.3', '2013-03-19 10:55:41', '2013-03-19 10:55:41'),
-	(4, 0, 'INV-2012-00', 0, 'My Pham', 'http://trangia.lc/', 1, 1, 'Khiem', 'Pham', 'rongandat@gmail.com', '123456789', '0165235952', 'Khiem', 'Pham', 'CYA', '34', '', '2343242', '423', '242', '4242', 'Viet Nam', 230, 'Ha Noi', 3776, '', 'Credit hoặc Debit Card (Xử lý an toàn thanh toán vĩnh viễn)', 'pp_pro', 'Khiem', 'Pham', 'CYA', '2343242', '423', '242', '4242', 'Viet Nam', 230, 'Ha Noi', 3776, '', 'Phí vận chuyển cố định', 'flat.flat', '', 1299005.0000, 0, 0, 0.0000, 2, 4, 'VND', 1.00000000, '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 6.1; rv:20.0) Gecko/20100101 Firefox/20.0', 'vi-vn,vi;q=0.8,en-us;q=0.5,en;q=0.3', '2013-04-26 14:14:51', '2013-04-26 14:14:51'),
-	(5, 0, 'INV-2012-00', 0, 'My Pham', 'http://trangia.lc/', 1, 1, 'Khiem', 'Pham', 'rongandat@gmail.com', '123456789', '0165235952', 'Khiem', 'Pham', 'CYA', '34', '', '2343242', '423', '242', '4242', 'Viet Nam', 230, 'Ha Noi', 3776, '', 'Credit hoặc Debit Card (Xử lý an toàn thanh toán vĩnh viễn)', 'pp_pro', 'Khiem', 'Pham', 'CYA', '2343242', '423', '242', '4242', 'Viet Nam', 230, 'Ha Noi', 3776, '', 'Phí vận chuyển cố định', 'flat.flat', '', 1299005.0000, 0, 0, 0.0000, 2, 4, 'VND', 1.00000000, '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 6.1; rv:20.0) Gecko/20100101 Firefox/20.0', 'vi-vn,vi;q=0.8,en-us;q=0.5,en;q=0.3', '2013-04-26 14:17:38', '2013-04-26 14:17:38'),
-	(6, 0, 'INV-2012-00', 0, 'My Pham', 'http://trangia.lc/', 1, 1, 'Khiem', 'Pham', 'rongandat@gmail.com', '123456789', '0165235952', 'Khiem', 'Pham', 'CYA', '34', '', '2343242', '423', '242', '4242', 'Viet Nam', 230, 'Ha Noi', 3776, '', 'Thu tiền khi giao hàng', 'cod', 'Khiem', 'Pham', 'CYA', '2343242', '423', '242', '4242', 'Viet Nam', 230, 'Ha Noi', 3776, '', 'Phí vận chuyển cố định', 'flat.flat', '', 1299005.0000, 1, 0, 0.0000, 2, 4, 'VND', 1.00000000, '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 6.1; rv:20.0) Gecko/20100101 Firefox/20.0', 'vi-vn,vi;q=0.8,en-us;q=0.5,en;q=0.3', '2013-04-26 14:17:53', '2013-04-26 14:17:54'),
-	(7, 0, 'INV-2012-00', 0, 'My Pham', 'http://trangia.lc/', 1, 1, 'Khiem', 'Pham', 'rongandat@gmail.com', '123456789', '0165235952', 'Khiem', 'Pham', 'CYA', '34', '', '2343242', '423', '242', '4242', 'Viet Nam', 230, 'Ha Noi', 3776, '', 'Thu tiền khi giao hàng', 'cod', 'Khiem', 'Pham', 'CYA', '2343242', '423', '242', '4242', 'Viet Nam', 230, 'Ha Noi', 3776, '', 'Phí vận chuyển cố định', 'flat.flat', '', 500005.0000, 0, 0, 0.0000, 2, 4, 'VND', 1.00000000, '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 6.1; rv:20.0) Gecko/20100101 Firefox/20.0', 'vi-vn,vi;q=0.8,en-us;q=0.5,en;q=0.3', '2013-04-26 14:19:22', '2013-04-26 14:19:22'),
-	(8, 0, 'INV-2012-00', 0, 'My Pham', 'http://trangia.lc/', 1, 1, 'Khiem', 'Pham', 'rongandat@gmail.com', '123456789', '0165235952', 'Khiem', 'Pham', 'CYA', '34', '', '2343242', '423', '242', '4242', 'Viet Nam', 230, 'Ha Noi', 3776, '', 'Thu tiền khi giao hàng', 'cod', 'Khiem', 'Pham', 'CYA', '2343242', '423', '242', '4242', 'Viet Nam', 230, 'Ha Noi', 3776, '', 'Phí vận chuyển cố định', 'flat.flat', '', 500005.0000, 0, 0, 0.0000, 2, 4, 'VND', 1.00000000, '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 6.1; rv:20.0) Gecko/20100101 Firefox/20.0', 'vi-vn,vi;q=0.8,en-us;q=0.5,en;q=0.3', '2013-04-26 14:20:00', '2013-04-26 14:20:00'),
-	(9, 0, 'INV-2012-00', 0, 'My Pham', 'http://trangia.lc/', 1, 1, 'Khiem', 'Pham', 'rongandat@gmail.com', '123456789', '0165235952', 'Khiem', 'Pham', 'CYA', '34', '', '2343242', '423', '242', '4242', 'Viet Nam', 230, 'Ha Noi', 3776, '', 'Thu tiền khi giao hàng', 'cod', 'Khiem', 'Pham', 'CYA', '2343242', '423', '242', '4242', 'Viet Nam', 230, 'Ha Noi', 3776, '', 'Phí vận chuyển cố định', 'flat.flat', '', 500005.0000, 0, 0, 0.0000, 2, 4, 'VND', 1.00000000, '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 6.1; rv:20.0) Gecko/20100101 Firefox/20.0', 'vi-vn,vi;q=0.8,en-us;q=0.5,en;q=0.3', '2013-04-26 14:31:52', '2013-04-26 14:31:52'),
-	(10, 0, 'INV-2012-00', 0, 'My Pham', 'http://trangia.lc/', 1, 1, 'Khiem', 'Pham', 'rongandat@gmail.com', '123456789', '0165235952', 'Khiem', 'Pham', 'CYA', '34', '', '2343242', '423', '242', '4242', 'Viet Nam', 230, 'Ha Noi', 3776, '', 'Credit hoặc Debit Card (Xử lý an toàn thanh toán vĩnh viễn)', 'pp_pro', 'Khiem', 'Pham', 'CYA', '2343242', '423', '242', '4242', 'Viet Nam', 230, 'Ha Noi', 3776, '', 'Phí vận chuyển cố định', 'flat.flat', '', 500005.0000, 0, 0, 0.0000, 2, 4, 'VND', 1.00000000, '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 6.1; rv:20.0) Gecko/20100101 Firefox/20.0', 'vi-vn,vi;q=0.8,en-us;q=0.5,en;q=0.3', '2013-04-26 14:32:18', '2013-04-26 14:32:18');
-/*!40000 ALTER TABLE `order` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_order: 0 rows
+DELETE FROM `oc_order`;
+/*!40000 ALTER TABLE `oc_order` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oc_order` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.order_download
-DROP TABLE IF EXISTS `order_download`;
-CREATE TABLE IF NOT EXISTS `order_download` (
+-- Dumping structure for table amthuctrangia.oc_order_download
+CREATE TABLE IF NOT EXISTS `oc_order_download` (
   `order_download_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
   `order_product_id` int(11) NOT NULL,
@@ -1794,14 +1816,14 @@ CREATE TABLE IF NOT EXISTS `order_download` (
   PRIMARY KEY (`order_download_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.order_download: 0 rows
-/*!40000 ALTER TABLE `order_download` DISABLE KEYS */;
-/*!40000 ALTER TABLE `order_download` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_order_download: 0 rows
+DELETE FROM `oc_order_download`;
+/*!40000 ALTER TABLE `oc_order_download` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oc_order_download` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.order_field
-DROP TABLE IF EXISTS `order_field`;
-CREATE TABLE IF NOT EXISTS `order_field` (
+-- Dumping structure for table amthuctrangia.oc_order_field
+CREATE TABLE IF NOT EXISTS `oc_order_field` (
   `order_id` int(11) NOT NULL,
   `custom_field_id` int(11) NOT NULL,
   `custom_field_value_id` int(11) NOT NULL,
@@ -1811,14 +1833,14 @@ CREATE TABLE IF NOT EXISTS `order_field` (
   PRIMARY KEY (`order_id`,`custom_field_id`,`custom_field_value_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.order_field: 0 rows
-/*!40000 ALTER TABLE `order_field` DISABLE KEYS */;
-/*!40000 ALTER TABLE `order_field` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_order_field: 0 rows
+DELETE FROM `oc_order_field`;
+/*!40000 ALTER TABLE `oc_order_field` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oc_order_field` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.order_fraud
-DROP TABLE IF EXISTS `order_fraud`;
-CREATE TABLE IF NOT EXISTS `order_fraud` (
+-- Dumping structure for table amthuctrangia.oc_order_fraud
+CREATE TABLE IF NOT EXISTS `oc_order_fraud` (
   `order_id` int(11) NOT NULL,
   `customer_id` int(11) NOT NULL,
   `country_match` varchar(3) NOT NULL,
@@ -1875,14 +1897,14 @@ CREATE TABLE IF NOT EXISTS `order_fraud` (
   PRIMARY KEY (`order_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.order_fraud: 0 rows
-/*!40000 ALTER TABLE `order_fraud` DISABLE KEYS */;
-/*!40000 ALTER TABLE `order_fraud` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_order_fraud: 0 rows
+DELETE FROM `oc_order_fraud`;
+/*!40000 ALTER TABLE `oc_order_fraud` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oc_order_fraud` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.order_history
-DROP TABLE IF EXISTS `order_history`;
-CREATE TABLE IF NOT EXISTS `order_history` (
+-- Dumping structure for table amthuctrangia.oc_order_history
+CREATE TABLE IF NOT EXISTS `oc_order_history` (
   `order_history_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
   `order_status_id` int(5) NOT NULL,
@@ -1890,18 +1912,16 @@ CREATE TABLE IF NOT EXISTS `order_history` (
   `comment` text NOT NULL,
   `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`order_history_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.order_history: 1 rows
-/*!40000 ALTER TABLE `order_history` DISABLE KEYS */;
-INSERT INTO `order_history` (`order_history_id`, `order_id`, `order_status_id`, `notify`, `comment`, `date_added`) VALUES
-	(1, 6, 1, 1, '', '2013-04-26 14:17:54');
-/*!40000 ALTER TABLE `order_history` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_order_history: 0 rows
+DELETE FROM `oc_order_history`;
+/*!40000 ALTER TABLE `oc_order_history` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oc_order_history` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.order_option
-DROP TABLE IF EXISTS `order_option`;
-CREATE TABLE IF NOT EXISTS `order_option` (
+-- Dumping structure for table amthuctrangia.oc_order_option
+CREATE TABLE IF NOT EXISTS `oc_order_option` (
   `order_option_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
   `order_product_id` int(11) NOT NULL,
@@ -1913,14 +1933,14 @@ CREATE TABLE IF NOT EXISTS `order_option` (
   PRIMARY KEY (`order_option_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.order_option: 0 rows
-/*!40000 ALTER TABLE `order_option` DISABLE KEYS */;
-/*!40000 ALTER TABLE `order_option` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_order_option: 0 rows
+DELETE FROM `oc_order_option`;
+/*!40000 ALTER TABLE `oc_order_option` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oc_order_option` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.order_product
-DROP TABLE IF EXISTS `order_product`;
-CREATE TABLE IF NOT EXISTS `order_product` (
+-- Dumping structure for table amthuctrangia.oc_order_product
+CREATE TABLE IF NOT EXISTS `oc_order_product` (
   `order_product_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
@@ -1932,41 +1952,26 @@ CREATE TABLE IF NOT EXISTS `order_product` (
   `tax` decimal(15,4) NOT NULL DEFAULT '0.0000',
   `reward` int(8) NOT NULL,
   PRIMARY KEY (`order_product_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.order_product: 15 rows
-/*!40000 ALTER TABLE `order_product` DISABLE KEYS */;
-INSERT INTO `order_product` (`order_product_id`, `order_id`, `product_id`, `name`, `model`, `quantity`, `price`, `total`, `tax`, `reward`) VALUES
-	(1, 1, 50, 'Neocell Collagen Type 2', ' Neocell Collagen Type 2', 1, 799000.0000, 799000.0000, 0.0000, 0),
-	(2, 1, 51, ' Collagen + CTM Pomegranate Liquid', ' Collagen + CTM Pomegranate Liquid', 1, 0.0000, 0.0000, 0.0000, 0),
-	(3, 2, 50, 'Neocell Collagen Type 2', ' Neocell Collagen Type 2', 1, 799000.0000, 799000.0000, 0.0000, 0),
-	(4, 2, 51, ' Collagen + CTM Pomegranate Liquid', ' Collagen + CTM Pomegranate Liquid', 1, 0.0000, 0.0000, 0.0000, 0),
-	(5, 3, 51, ' Collagen + CTM Pomegranate Liquid', ' Collagen + CTM Pomegranate Liquid', 1, 250000.0000, 250000.0000, 0.0000, 0),
-	(6, 4, 50, 'Neocell Collagen Type 2', ' Neocell Collagen Type 2', 1, 799000.0000, 799000.0000, 0.0000, 0),
-	(7, 4, 51, ' Collagen + CTM Pomegranate Liquid', ' Collagen + CTM Pomegranate Liquid', 1, 500000.0000, 500000.0000, 0.0000, 0),
-	(8, 5, 50, 'Neocell Collagen Type 2', ' Neocell Collagen Type 2', 1, 799000.0000, 799000.0000, 0.0000, 0),
-	(9, 5, 51, ' Collagen + CTM Pomegranate Liquid', ' Collagen + CTM Pomegranate Liquid', 1, 500000.0000, 500000.0000, 0.0000, 0),
-	(10, 6, 50, 'Neocell Collagen Type 2', ' Neocell Collagen Type 2', 1, 799000.0000, 799000.0000, 0.0000, 0),
-	(11, 6, 51, ' Collagen + CTM Pomegranate Liquid', ' Collagen + CTM Pomegranate Liquid', 1, 500000.0000, 500000.0000, 0.0000, 0),
-	(12, 7, 51, ' Collagen + CTM Pomegranate Liquid', ' Collagen + CTM Pomegranate Liquid', 1, 500000.0000, 500000.0000, 0.0000, 0),
-	(13, 8, 51, ' Collagen + CTM Pomegranate Liquid', ' Collagen + CTM Pomegranate Liquid', 1, 500000.0000, 500000.0000, 0.0000, 0),
-	(14, 9, 51, ' Collagen + CTM Pomegranate Liquid', ' Collagen + CTM Pomegranate Liquid', 1, 500000.0000, 500000.0000, 0.0000, 0),
-	(15, 10, 51, ' Collagen + CTM Pomegranate Liquid', ' Collagen + CTM Pomegranate Liquid', 1, 500000.0000, 500000.0000, 0.0000, 0);
-/*!40000 ALTER TABLE `order_product` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_order_product: 0 rows
+DELETE FROM `oc_order_product`;
+/*!40000 ALTER TABLE `oc_order_product` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oc_order_product` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.order_status
-DROP TABLE IF EXISTS `order_status`;
-CREATE TABLE IF NOT EXISTS `order_status` (
+-- Dumping structure for table amthuctrangia.oc_order_status
+CREATE TABLE IF NOT EXISTS `oc_order_status` (
   `order_status_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) NOT NULL,
   `name` varchar(32) NOT NULL,
   PRIMARY KEY (`order_status_id`,`language_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.order_status: 28 rows
-/*!40000 ALTER TABLE `order_status` DISABLE KEYS */;
-INSERT INTO `order_status` (`order_status_id`, `language_id`, `name`) VALUES
+-- Dumping data for table amthuctrangia.oc_order_status: 14 rows
+DELETE FROM `oc_order_status`;
+/*!40000 ALTER TABLE `oc_order_status` DISABLE KEYS */;
+INSERT INTO `oc_order_status` (`order_status_id`, `language_id`, `name`) VALUES
 	(2, 1, 'Processing'),
 	(3, 1, 'Shipped'),
 	(7, 1, 'Canceled'),
@@ -1980,27 +1985,12 @@ INSERT INTO `order_status` (`order_status_id`, `language_id`, `name`) VALUES
 	(1, 1, 'Pending'),
 	(16, 1, 'Voided'),
 	(15, 1, 'Processed'),
-	(14, 1, 'Expired'),
-	(2, 2, 'Processing'),
-	(3, 2, 'Shipped'),
-	(7, 2, 'Canceled'),
-	(5, 2, 'Complete'),
-	(8, 2, 'Denied'),
-	(9, 2, 'Canceled Reversal'),
-	(10, 2, 'Failed'),
-	(11, 2, 'Refunded'),
-	(12, 2, 'Reversed'),
-	(13, 2, 'Chargeback'),
-	(1, 2, 'Pending'),
-	(16, 2, 'Voided'),
-	(15, 2, 'Processed'),
-	(14, 2, 'Expired');
-/*!40000 ALTER TABLE `order_status` ENABLE KEYS */;
+	(14, 1, 'Expired');
+/*!40000 ALTER TABLE `oc_order_status` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.order_total
-DROP TABLE IF EXISTS `order_total`;
-CREATE TABLE IF NOT EXISTS `order_total` (
+-- Dumping structure for table amthuctrangia.oc_order_total
+CREATE TABLE IF NOT EXISTS `oc_order_total` (
   `order_total_id` int(10) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
   `code` varchar(32) NOT NULL,
@@ -2010,51 +2000,16 @@ CREATE TABLE IF NOT EXISTS `order_total` (
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`order_total_id`),
   KEY `idx_orders_total_orders_id` (`order_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=35 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.order_total: 34 rows
-/*!40000 ALTER TABLE `order_total` DISABLE KEYS */;
-INSERT INTO `order_total` (`order_total_id`, `order_id`, `code`, `title`, `text`, `value`, `sort_order`) VALUES
-	(1, 1, 'sub_total', 'Thành tiền:', '799.000 VNĐ', 799000.0000, 1),
-	(2, 1, 'shipping', 'Phí vận chuyển cố định', '5 VNĐ', 5.0000, 3),
-	(3, 1, 'tax', 'Eco Tax (-2.00)', '2 VNĐ', 2.0000, 5),
-	(4, 1, 'tax', 'VAT (17.5%)', '1 VNĐ', 0.8750, 5),
-	(5, 1, 'total', 'Tổng cộng :', '799.008 VNĐ', 799007.8750, 9),
-	(6, 2, 'sub_total', 'Thành tiền:', '799.000 VNĐ', 799000.0000, 1),
-	(7, 2, 'shipping', 'Phí vận chuyển cố định', '5 VNĐ', 5.0000, 3),
-	(8, 2, 'tax', 'Eco Tax (-2.00)', '2 VNĐ', 2.0000, 5),
-	(9, 2, 'tax', 'VAT (17.5%)', '1 VNĐ', 0.8750, 5),
-	(10, 2, 'total', 'Tổng cộng :', '799.008 VNĐ', 799007.8750, 9),
-	(11, 3, 'sub_total', 'Thành tiền:', '250.000 VNĐ', 250000.0000, 1),
-	(12, 3, 'shipping', 'Phí vận chuyển cố định', '5 VNĐ', 5.0000, 3),
-	(13, 3, 'total', 'Tổng cộng :', '250.005 VNĐ', 250005.0000, 9),
-	(14, 4, 'sub_total', 'Thành tiền:', '1.299.000 VNĐ', 1299000.0000, 1),
-	(15, 4, 'shipping', 'Phí vận chuyển cố định', '5 VNĐ', 5.0000, 3),
-	(16, 4, 'total', 'Tổng cộng :', '1.299.005 VNĐ', 1299005.0000, 9),
-	(17, 5, 'sub_total', 'Thành tiền:', '1.299.000 VNĐ', 1299000.0000, 1),
-	(18, 5, 'shipping', 'Phí vận chuyển cố định', '5 VNĐ', 5.0000, 3),
-	(19, 5, 'total', 'Tổng cộng :', '1.299.005 VNĐ', 1299005.0000, 9),
-	(20, 6, 'sub_total', 'Thành tiền:', '1.299.000 VNĐ', 1299000.0000, 1),
-	(21, 6, 'shipping', 'Phí vận chuyển cố định', '5 VNĐ', 5.0000, 3),
-	(22, 6, 'total', 'Tổng cộng :', '1.299.005 VNĐ', 1299005.0000, 9),
-	(23, 7, 'sub_total', 'Thành tiền:', '500.000 VNĐ', 500000.0000, 1),
-	(24, 7, 'shipping', 'Phí vận chuyển cố định', '5 VNĐ', 5.0000, 3),
-	(25, 7, 'total', 'Tổng cộng :', '500.005 VNĐ', 500005.0000, 9),
-	(26, 8, 'sub_total', 'Thành tiền:', '500.000 VNĐ', 500000.0000, 1),
-	(27, 8, 'shipping', 'Phí vận chuyển cố định', '5 VNĐ', 5.0000, 3),
-	(28, 8, 'total', 'Tổng cộng :', '500.005 VNĐ', 500005.0000, 9),
-	(29, 9, 'sub_total', 'Thành tiền:', '500.000 VNĐ', 500000.0000, 1),
-	(30, 9, 'shipping', 'Phí vận chuyển cố định', '5 VNĐ', 5.0000, 3),
-	(31, 9, 'total', 'Tổng cộng :', '500.005 VNĐ', 500005.0000, 9),
-	(32, 10, 'sub_total', 'Thành tiền:', '500.000 VNĐ', 500000.0000, 1),
-	(33, 10, 'shipping', 'Phí vận chuyển cố định', '5 VNĐ', 5.0000, 3),
-	(34, 10, 'total', 'Tổng cộng :', '500.005 VNĐ', 500005.0000, 9);
-/*!40000 ALTER TABLE `order_total` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_order_total: 0 rows
+DELETE FROM `oc_order_total`;
+/*!40000 ALTER TABLE `oc_order_total` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oc_order_total` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.order_voucher
-DROP TABLE IF EXISTS `order_voucher`;
-CREATE TABLE IF NOT EXISTS `order_voucher` (
+-- Dumping structure for table amthuctrangia.oc_order_voucher
+CREATE TABLE IF NOT EXISTS `oc_order_voucher` (
   `order_voucher_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
   `voucher_id` int(11) NOT NULL,
@@ -2070,14 +2025,14 @@ CREATE TABLE IF NOT EXISTS `order_voucher` (
   PRIMARY KEY (`order_voucher_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.order_voucher: 0 rows
-/*!40000 ALTER TABLE `order_voucher` DISABLE KEYS */;
-/*!40000 ALTER TABLE `order_voucher` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_order_voucher: 0 rows
+DELETE FROM `oc_order_voucher`;
+/*!40000 ALTER TABLE `oc_order_voucher` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oc_order_voucher` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.product
-DROP TABLE IF EXISTS `product`;
-CREATE TABLE IF NOT EXISTS `product` (
+-- Dumping structure for table amthuctrangia.oc_product
+CREATE TABLE IF NOT EXISTS `oc_product` (
   `product_id` int(11) NOT NULL AUTO_INCREMENT,
   `model` varchar(64) NOT NULL,
   `sku` varchar(64) NOT NULL,
@@ -2110,19 +2065,23 @@ CREATE TABLE IF NOT EXISTS `product` (
   `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `viewed` int(5) NOT NULL DEFAULT '0',
   PRIMARY KEY (`product_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=52 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=56 DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.product: 2 rows
-/*!40000 ALTER TABLE `product` DISABLE KEYS */;
-INSERT INTO `product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `isbn`, `mpn`, `location`, `quantity`, `stock_status_id`, `image`, `manufacturer_id`, `shipping`, `price`, `points`, `tax_class_id`, `date_available`, `weight`, `weight_class_id`, `length`, `width`, `height`, `length_class_id`, `subtract`, `minimum`, `sort_order`, `status`, `date_added`, `date_modified`, `viewed`) VALUES
-	(50, ' Neocell Collagen Type 2', '', '', '', '', '', '', '', 0, 7, 'data/sanpham/589b7d7ad40999ec363d0e32a211802f.jpg', 0, 1, 799000.0000, 0, 0, '2013-01-24', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, '2013-01-25 21:25:30', '2013-03-19 11:28:56', 9),
-	(51, ' Collagen + CTM Pomegranate Liquid', '', '', '', '', '', '', '', 100, 7, 'data/sanpham/Collagen___CTM_P_50c6a1c2068bc_200x200.jpg', 0, 1, 500000.0000, 0, 0, '2013-01-24', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, '2013-01-25 21:27:27', '2013-06-25 16:53:43', 8);
-/*!40000 ALTER TABLE `product` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_product: 6 rows
+DELETE FROM `oc_product`;
+/*!40000 ALTER TABLE `oc_product` DISABLE KEYS */;
+INSERT INTO `oc_product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `isbn`, `mpn`, `location`, `quantity`, `stock_status_id`, `image`, `manufacturer_id`, `shipping`, `price`, `points`, `tax_class_id`, `date_available`, `weight`, `weight_class_id`, `length`, `width`, `height`, `length_class_id`, `subtract`, `minimum`, `sort_order`, `status`, `date_added`, `date_modified`, `viewed`) VALUES
+	(54, 'banhdanem05', '', '', '', '', '', '', '', 1, 5, 'data/B__nh___a_Nem_Vu_50af8bfedbd83.jpg', 0, 1, 6000.0000, 0, 0, '2013-07-11', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, '2013-07-12 17:28:14', '0000-00-00 00:00:00', 0),
+	(55, 'banhdanem06', '', '', '', '', '', '', '', 1, 5, 'data/B__nh___a_Vu__ng_50af8c7fd0e7a.jpg', 0, 1, 6000.0000, 0, 0, '2013-07-11', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, '2013-07-12 17:29:10', '0000-00-00 00:00:00', 0),
+	(50, 'banhdanem01', '', '', '', '', '', '', '', 1, 5, 'data/banh hinh chu nhat.jpg', 0, 1, 150000.0000, 0, 0, '2013-07-11', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, '2013-07-12 17:22:31', '0000-00-00 00:00:00', 0),
+	(51, 'banhdanem02', '', '', '', '', '', '', '', 1, 5, 'data/B__nh___a_Nem_C__50af8e6cc7d3a.jpg', 0, 1, 150000.0000, 0, 0, '2013-07-11', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, '2013-07-12 17:23:59', '0000-00-00 00:00:00', 0),
+	(52, 'banhdanem03', '', '', '', '', '', '', '', 1, 5, 'data/B__nh___a_Nem_C__50af8e2316aad.jpg', 0, 1, 20000.0000, 0, 0, '2013-07-11', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, '2013-07-12 17:25:15', '0000-00-00 00:00:00', 0),
+	(53, 'banhdanem04', '', '', '', '', '', '', '', 1, 5, 'data/16can.jpg', 0, 1, 15000.0000, 0, 0, '2013-07-11', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, '2013-07-12 17:27:04', '0000-00-00 00:00:00', 0);
+/*!40000 ALTER TABLE `oc_product` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.product_attribute
-DROP TABLE IF EXISTS `product_attribute`;
-CREATE TABLE IF NOT EXISTS `product_attribute` (
+-- Dumping structure for table amthuctrangia.oc_product_attribute
+CREATE TABLE IF NOT EXISTS `oc_product_attribute` (
   `product_id` int(11) NOT NULL,
   `attribute_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -2130,14 +2089,14 @@ CREATE TABLE IF NOT EXISTS `product_attribute` (
   PRIMARY KEY (`product_id`,`attribute_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.product_attribute: 0 rows
-/*!40000 ALTER TABLE `product_attribute` DISABLE KEYS */;
-/*!40000 ALTER TABLE `product_attribute` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_product_attribute: 0 rows
+DELETE FROM `oc_product_attribute`;
+/*!40000 ALTER TABLE `oc_product_attribute` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oc_product_attribute` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.product_description
-DROP TABLE IF EXISTS `product_description`;
-CREATE TABLE IF NOT EXISTS `product_description` (
+-- Dumping structure for table amthuctrangia.oc_product_description
+CREATE TABLE IF NOT EXISTS `oc_product_description` (
   `product_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -2149,19 +2108,21 @@ CREATE TABLE IF NOT EXISTS `product_description` (
   KEY `name` (`name`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.product_description: 4 rows
-/*!40000 ALTER TABLE `product_description` DISABLE KEYS */;
-INSERT INTO `product_description` (`product_id`, `language_id`, `name`, `description`, `meta_description`, `meta_keyword`, `tag`) VALUES
-	(51, 2, ' Collagen + CTM Pomegranate Liquid', '&lt;p&gt;\r\n	&lt;span style=&quot;color:#008000;&quot;&gt;&lt;strong&gt;Tác dụng:&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;span style=&quot;color:#008000;&quot;&gt;Collagen +C&lt;sup&gt;TM&lt;/sup&gt; Pomegranate liquid là một sản phẩm có sự kết hợp giữa khả năng chống oxy hóa mạnh của lựu và trà xanh, lợi ích với sức khỏe của Collagel + C&lt;sup&gt;TM&lt;/sup&gt; và lợi ích nhờ sự hấp thu muối khoáng.&lt;/span&gt;&lt;/p&gt;\r\n&lt;p&gt;\r\n	Trong cơ thể, collagen có vai trò liên kết tượng tự như chất keo, giúp tăng cường sự chắc chắn, giữ cho các bộ phận trên cơ thể kết hợp cùng nhau và ở đúng vị trí. Từ 25 tuổi trờ đi, sự tái cấu trúc Collagen chậm dần làm giảm lượng Collagen trong cơ thể dấn đến những triệu chứng dễ nhận thấy như da nhăn, chảy xệ, đau khớp, và móng giòn dể gãy.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Việc bổ sung Collagen giúp:&lt;/strong&gt;&lt;/p&gt;\r\n&lt;p&gt;\r\n	- Làm giảm các vết nhăn, xóa mờ vết thâm, tăng cường sản sinh ra các tế bào da mới giúp làn da hồi sinh nhanh chóng trở nên săn chắc và mịn màng hơn.&lt;/p&gt;\r\n&lt;p style=&quot;text-align: center;&quot;&gt;\r\n	&lt;img alt=&quot;cogai copy&quot; height=&quot;313&quot; src=&quot;http://phady.com.vn/images/stories/images/cogai_copy.jpg&quot; width=&quot;500&quot; /&gt;&lt;/p&gt;\r\n&lt;p&gt;\r\n	- Giúp xương chắc khỏe hơn và phòng chống các bệnh như loãng xương, xốp xương, đau thắt lưng, thoát vị đĩa đệm và một số bệnh về xương, sụn khác.&lt;/p&gt;\r\n&lt;p style=&quot;text-align: center;&quot;&gt;\r\n	&lt;img alt=&quot;tap-the-duc&quot; height=&quot;340&quot; src=&quot;http://phady.com.vn/images/stories/images/tap-the-duc.jpg&quot; width=&quot;500&quot; /&gt;&lt;/p&gt;\r\n&lt;p&gt;\r\n	- Giúp cho tóc và móng chân-tay bóng mượt, mịn màng, chắc khỏe, hạn chết rụng tóc thông qua việc cung cấp chất dinh dưỡng hỗ trợ cho hoạt động của chất sừng trong tóc, móng chân, móng tay&lt;/p&gt;\r\n&lt;p style=&quot;text-align: center;&quot;&gt;\r\n	&lt;img alt=&quot;1457115018 1&quot; height=&quot;360&quot; src=&quot;http://phady.com.vn/images/stories/images/1457115018_1.jpg&quot; width=&quot;480&quot; /&gt;&lt;/p&gt;\r\n&lt;p&gt;\r\n	Vitamin C tham gia tạo colagen và một số thành phần khác tạo nên mô liên kết ở xương. Ngoài ra, vitamin C còn hết sức cần thiết cho sự lành vết thương, sự mạnh khỏe của nướu răng, và ngăn ngừa các mảng bám ở da.&lt;/p&gt;\r\n&lt;p&gt;\r\n	Sodium (muối Natri): tăng cường lưu thông của tuyến mồ hôi và bã nhờn, giúp hấp thu và đào thải chất độc ra khỏi da, giảm kích thước lỗ chân long, giúp da mềm mại mà không có cảm giác nhờn. Ngoài ra muối còn giúp làm giảm ngứa đầu, giảm gàu và rụng tóc, loại bỏ mảng bám, làm nướu răng khỏe mạnh&lt;/p&gt;\r\n&lt;p&gt;\r\n	Sự bổ sung kết hợp giữa Collagen và các thành phần vitamin C, dịch chiết từ hỗn hợp trái cây có khả năng chống oxy hóa mạnh giúp:&lt;/p&gt;\r\n&lt;p&gt;\r\n	-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Tăng cường sức khoẻ da, giúp giảm nếp nhăn, chống lão hoá, làm đẹp da.&lt;/p&gt;\r\n&lt;p&gt;\r\n	-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Tăng cường nuôi dưỡng sự đàn hồi cho gân, dây chằng, xương.&lt;/p&gt;\r\n&lt;p&gt;\r\n	- &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;Làm đẹp, tăng độ chắc khoẻ của móng và tóc.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;&amp;nbsp;Đối tượng sử dụng:&lt;/strong&gt;&lt;/p&gt;\r\n&lt;p&gt;\r\n	Người bị khô da, da nhăn, da bị giảm độ đàn hồi, bị lão hoá. Người bị rụng tóc, móng bị chẻ yếu giòn dễ gãy. Người bị chấn thương gân, dây chằng.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Hướng dẫn cách dùng:&lt;/strong&gt;&lt;/p&gt;\r\n&lt;p&gt;\r\n	Mỗi ngày uống 1 thìa canh (15ml), sử dụng trực tiếp hoặc pha loãng với 180ml nước hoa quả hoặc trà thảo dược. Uống vào buổi sáng, lúc đói, 30 phút trước khi ăn sáng.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Hướng dẫn bảo quản:&lt;/strong&gt; &amp;nbsp;Bảo quản ở nơi khô, mát, nhiệt độ dưới 30&lt;sup&gt;o&lt;/sup&gt;C. Khi mở nắp bảo quản lạnh.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Hạn sử dụng:&lt;/strong&gt; 02 năm kể từ ngày sản xuất. HSD xem in trên bao bì, nhãn sản phẩm.Khi mở nắp sử dụng tối đa trong vòng 02 tháng, bảo quản lạnh.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Quy cách đóng gói:&lt;/strong&gt; Chai thủy tinh 16 fl.Oz (tương đương 473 ml)&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Số đăng ký:&lt;/strong&gt; 6112/2012/ATTP-XNCB&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Lưu ý:&lt;/strong&gt; &lt;em&gt;Sản phẩm này không phải là thuốc, không có tác dụng thay thế thuốc chữa bệnh. Phụ nữ có thai và cho con bú, người đang điều trị thuốc khác nên tham khảo ý kiến của bác sĩ trước khi sử dụng.&lt;/em&gt;&lt;/p&gt;\r\n', 'Collagen + CTM Pomegranate Liquid\r\n', 'Collagen + CTM Pomegranate Liquid\r\n', ''),
-	(51, 1, ' Collagen + CTM Pomegranate Liquid', '&lt;p&gt;\r\n	&lt;strong&gt;Tác dụng:&lt;/strong&gt;&lt;/p&gt;\r\n&lt;p&gt;\r\n	Collagen +C&lt;sup&gt;TM&lt;/sup&gt; Pomegranate liquid là một sản phẩm có sự kết hợp giữa khả năng chống oxy hóa mạnh của lựu và trà xanh, lợi ích với sức khỏe của Collagel + C&lt;sup&gt;TM&lt;/sup&gt; và lợi ích nhờ sự hấp thu muối khoáng.&lt;/p&gt;\r\n&lt;p&gt;\r\n	Trong cơ thể, collagen có vai trò liên kết tượng tự như chất keo, giúp tăng cường sự chắc chắn, giữ cho các bộ phận trên cơ thể kết hợp cùng nhau và ở đúng vị trí. Từ 25 tuổi trờ đi, sự tái cấu trúc Collagen chậm dần làm giảm lượng Collagen trong cơ thể dấn đến những triệu chứng dễ nhận thấy như da nhăn, chảy xệ, đau khớp, và móng giòn dể gãy.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Việc bổ sung Collagen giúp:&lt;/strong&gt;&lt;/p&gt;\r\n&lt;p&gt;\r\n	- Làm giảm các vết nhăn, xóa mờ vết thâm, tăng cường sản sinh ra các tế bào da mới giúp làn da hồi sinh nhanh chóng trở nên săn chắc và mịn màng hơn.&lt;/p&gt;\r\n&lt;p style=&quot;text-align: center;&quot;&gt;\r\n	&lt;img alt=&quot;cogai copy&quot; height=&quot;313&quot; src=&quot;http://phady.com.vn/images/stories/images/cogai_copy.jpg&quot; width=&quot;500&quot; /&gt;&lt;/p&gt;\r\n&lt;p&gt;\r\n	- Giúp xương chắc khỏe hơn và phòng chống các bệnh như loãng xương, xốp xương, đau thắt lưng, thoát vị đĩa đệm và một số bệnh về xương, sụn khác.&lt;/p&gt;\r\n&lt;p style=&quot;text-align: center;&quot;&gt;\r\n	&lt;img alt=&quot;tap-the-duc&quot; height=&quot;340&quot; src=&quot;http://phady.com.vn/images/stories/images/tap-the-duc.jpg&quot; width=&quot;500&quot; /&gt;&lt;/p&gt;\r\n&lt;p&gt;\r\n	- Giúp cho tóc và móng chân-tay bóng mượt, mịn màng, chắc khỏe, hạn chết rụng tóc thông qua việc cung cấp chất dinh dưỡng hỗ trợ cho hoạt động của chất sừng trong tóc, móng chân, móng tay&lt;/p&gt;\r\n&lt;p style=&quot;text-align: center;&quot;&gt;\r\n	&lt;img alt=&quot;1457115018 1&quot; height=&quot;360&quot; src=&quot;http://phady.com.vn/images/stories/images/1457115018_1.jpg&quot; width=&quot;480&quot; /&gt;&lt;/p&gt;\r\n&lt;p&gt;\r\n	Vitamin C tham gia tạo colagen và một số thành phần khác tạo nên mô liên kết ở xương. Ngoài ra, vitamin C còn hết sức cần thiết cho sự lành vết thương, sự mạnh khỏe của nướu răng, và ngăn ngừa các mảng bám ở da.&lt;/p&gt;\r\n&lt;p&gt;\r\n	Sodium (muối Natri): tăng cường lưu thông của tuyến mồ hôi và bã nhờn, giúp hấp thu và đào thải chất độc ra khỏi da, giảm kích thước lỗ chân long, giúp da mềm mại mà không có cảm giác nhờn. Ngoài ra muối còn giúp làm giảm ngứa đầu, giảm gàu và rụng tóc, loại bỏ mảng bám, làm nướu răng khỏe mạnh&lt;/p&gt;\r\n&lt;p&gt;\r\n	Sự bổ sung kết hợp giữa Collagen và các thành phần vitamin C, dịch chiết từ hỗn hợp trái cây có khả năng chống oxy hóa mạnh giúp:&lt;/p&gt;\r\n&lt;p&gt;\r\n	-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Tăng cường sức khoẻ da, giúp giảm nếp nhăn, chống lão hoá, làm đẹp da.&lt;/p&gt;\r\n&lt;p&gt;\r\n	-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Tăng cường nuôi dưỡng sự đàn hồi cho gân, dây chằng, xương.&lt;/p&gt;\r\n&lt;p&gt;\r\n	- &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;Làm đẹp, tăng độ chắc khoẻ của móng và tóc.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;&amp;nbsp;Đối tượng sử dụng:&lt;/strong&gt;&lt;/p&gt;\r\n&lt;p&gt;\r\n	Người bị khô da, da nhăn, da bị giảm độ đàn hồi, bị lão hoá. Người bị rụng tóc, móng bị chẻ yếu giòn dễ gãy. Người bị chấn thương gân, dây chằng.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Hướng dẫn cách dùng:&lt;/strong&gt;&lt;/p&gt;\r\n&lt;p&gt;\r\n	Mỗi ngày uống 1 thìa canh (15ml), sử dụng trực tiếp hoặc pha loãng với 180ml nước hoa quả hoặc trà thảo dược. Uống vào buổi sáng, lúc đói, 30 phút trước khi ăn sáng.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Hướng dẫn bảo quản:&lt;/strong&gt; &amp;nbsp;Bảo quản ở nơi khô, mát, nhiệt độ dưới 30&lt;sup&gt;o&lt;/sup&gt;C. Khi mở nắp bảo quản lạnh.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Hạn sử dụng:&lt;/strong&gt; 02 năm kể từ ngày sản xuất. HSD xem in trên bao bì, nhãn sản phẩm.Khi mở nắp sử dụng tối đa trong vòng 02 tháng, bảo quản lạnh.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Quy cách đóng gói:&lt;/strong&gt; Chai thủy tinh 16 fl.Oz (tương đương 473 ml)&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Số đăng ký:&lt;/strong&gt; 6112/2012/ATTP-XNCB&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Lưu ý:&lt;/strong&gt; &lt;em&gt;Sản phẩm này không phải là thuốc, không có tác dụng thay thế thuốc chữa bệnh. Phụ nữ có thai và cho con bú, người đang điều trị thuốc khác nên tham khảo ý kiến của bác sĩ trước khi sử dụng.&lt;/em&gt;&lt;/p&gt;\r\n', 'Collagen + CTM Pomegranate Liquid\r\n', 'Collagen + CTM Pomegranate Liquid\r\n', ''),
-	(50, 2, 'Neocell Collagen Type 2', '&lt;p&gt;\r\n	Sụn khớp là cấu trúc quan trọng của khớp, đóng vai trò chính trong sự vận động của mỗi người; sự bền chắc, dẻo dai, đàn hồi của sụn khớp được quyết định bởi một thành phần có tên gọi là collagen type 2. Collagen type 2 đóng vai trog rất quan trọng đối với khớp và các bệnh liên quan đến khớp.&lt;/p&gt;\r\n&lt;p&gt;\r\n	Từ sau 25 tuổi trở đi, khả năng tái tạo collagen trong mô sụn chậm dần với tốc độ 1,5% mỗi năm. Sự giảm tổng hợp collagen do lão hóa sẽ dấn đến những vấn đề về xương khớp như cứng khớp, khó vận động, viêm đau xương khớp.&lt;/p&gt;\r\n&lt;p&gt;\r\n	Hiện nay, việc bổ sung collagen type 2 vào sụn một cách tự nhiên là biện pháp hữu hiệu để bảo vệ và chữa các bệnh viêm khớp một cách an toàn, hiệu quả hơn, nhằm thay thế cho các phương pháp điều trị bệnh khớp ít có tác dụng trước đây.&lt;/p&gt;\r\n&lt;p style=&quot;text-align: center;&quot;&gt;\r\n	&lt;img alt=&quot;collagen type 2-xuong-khop-&quot; height=&quot;198&quot; src=&quot;http://phady.com.vn/images/stories/images/collagen%20type%202-xuong-khop-.jpg&quot; width=&quot;238&quot; /&gt;&lt;/p&gt;\r\n&lt;p&gt;\r\n	Collagen type 2&amp;nbsp; là hàng rào bảo vệ sụn chống lại yếu tố dị hóa, bảo vệ tế bào sụn và tế bào màng hoạt dịch chống lại các gốc tự do, chồng lại các ezyme tiêu hóa protein sụn như collagenase, elase. Bên cạnh đó, Collagen type 2 còn có tác dụng giảm đau do ức chế sự tổng hợp prostaglandin E2- yếu tố khởi phát quá trình viêm và đau, giảm sinh tổng hợp bradykinin và ức chế cảm thụ đau; đồng thời có tác dụng chống viêm thể hiện&lt;/p&gt;\r\n&lt;p&gt;\r\n	Khi dùng Collagen type 2 qua đường uống, khoảng 53% các sợi collagen sẽ tạo thành các acid amin cần thiết cho tái tạo sụn khớp. Lượng còn lại (47%) vẫn giữ được tính nguyên vẹn cấu trúc và đi đến ruột non để tương tác với các mô lympho đường ruột (GALT), tạo ra sự dung nạp miễn dịch, giúp hệ miễn dịch cơ thể điều chỉnh các phản ứng viêm, hạn chế sự xâm lấn của các yếu tố có hại lên mô sụn, tạo điều kiện thuận lợi cho việc tái tạo, sửa chữa sụn khớp góp phần giảm thoái hóa khớp.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Neocell Collagen type 2&lt;/strong&gt; là sản phẩm cung cấp Collagen type 2 không biến tính được chiết xuất từ sụn ức gà Stenal. Quá trình chiết xuất diễn ra với nhiệt độ thấp nhằm tạo ra Collagen type 2 không biến tính, giữ nguyên vẹn cấu trúc chuỗi axit amin giúp đảm bảo hoạt động sinh học đạt kết quả tối đa. Hàm lượng 600mg Collagen type 2 trong mỗi viên nang là liều bổ sung tự nhiên Collagen đầy đủ để nuôi dưỡng, bảo vệ và phục hồi khớp.&lt;/p&gt;\r\n&lt;p&gt;\r\n	Ngoài ra, trong công thức của&amp;nbsp;&lt;strong&gt;Neocell collagen type 2&lt;/strong&gt;&amp;nbsp;còn có chứa các thành phần carbonhydrat khác như acid hyaluronic, glucosamine và chondroitin - những thành phần quan trọng trong việc hỗ trợ và duy trì chức năng khỏe mạnh của&amp;nbsp; khớp.&lt;/p&gt;\r\n&lt;p style=&quot;text-align: center;&quot;&gt;\r\n	&lt;img alt=&quot;collagen type 2 copy&quot; height=&quot;294&quot; src=&quot;http://phady.com.vn/images/stories/images/collagen%20type%202%20copy.jpg&quot; width=&quot;598&quot; /&gt;&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Neocell Collagen type 2&lt;/strong&gt; bổ sung đầy đủ các dưỡng chất cần thiết và phù hợp với sụn khớp giúp:&lt;/p&gt;\r\n&lt;p&gt;\r\n	- Kiến tạo, nuôi dưỡng và duy trì sức khỏe của sụn khớp.&lt;/p&gt;\r\n&lt;p&gt;\r\n	- Tăng tái tạo màng sụn khớp, tăng tiết dịch khớp, giúp khớp vận động linh hoạt.&lt;/p&gt;\r\n&lt;p&gt;\r\n	- Ngăn ngừa thoái hóa xương, khớp, khô khớp và viêm đa khớp.&lt;/p&gt;\r\n&lt;p&gt;\r\n	- Tăng độ đàn hồi và độ ẩm cho da.&lt;/p&gt;\r\n&lt;p&gt;\r\n	- Hỗ trợ điều trị các triệu chứng đau khớp do thoái hoá khớp, khô khớp, tổn thương khớp.&lt;/p&gt;\r\n&lt;p&gt;\r\n	- Hỗ trợ trong các trường hợp viêm khớp mãn tính.&lt;/p&gt;\r\n&lt;p&gt;\r\n	- Giảm các triệu chứng đau mỏi khớp, cứng khớp vào buổi sáng&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Đối tượng sử dụng:&lt;/strong&gt; Người bị viêm khớp, thoái hoá khớp, viêm khớp dạng thấp, khô khớp, bị chấn thương về sụn khớp, đề phòng thoái hoá khớp. Người da khô và nhăn..&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Hướng dẫn sử dụng:&lt;/strong&gt; Uống 4-6 viên/ngày với khoảng 180ml nước cam hoặc vitamin C. Tốt hơn nên uống vào buổi sáng lúc đói trước bữa ăn 20 phút.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Hướng dẫn bảo quản:&lt;/strong&gt; Bảo quản ở nơi khô, mát, nhiệt độ dưới 30&lt;sup&gt;o&lt;/sup&gt;C.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Hạn sử dụng:&lt;/strong&gt; Hạn sử dụng 03 năm kể từ ngày sản xuất. Hạn sử dụng ghi ở trên bao bì/nhãn sản phẩm.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Quy cách đóng gói:&lt;/strong&gt; 120 viên nang.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Số đăng kí: 6110/2012/ATTP-XNCB&lt;/strong&gt;&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Lưu ý:&lt;/strong&gt; Sản phẩm này không phải là thuốc, không có tác dụng thay thế thuốc chữa bệnh. Phụ nữ có thai hoặc cho con bú, người đang điều trị thuốc khác nên tham khảo ý kiến của bác sĩ trước khi sử dụng.&lt;/p&gt;\r\n', 'Neocell Collagen Type 2\r\n', 'Neocell Collagen Type 2\r\n', ''),
-	(50, 1, 'Neocell Collagen Type 2', '&lt;p&gt;\r\n	Sụn khớp là cấu trúc quan trọng của khớp, đóng vai trò chính trong sự vận động của mỗi người; sự bền chắc, dẻo dai, đàn hồi của sụn khớp được quyết định bởi một thành phần có tên gọi là collagen type 2. Collagen type 2 đóng vai trog rất quan trọng đối với khớp và các bệnh liên quan đến khớp.&lt;/p&gt;\r\n&lt;p&gt;\r\n	Từ sau 25 tuổi trở đi, khả năng tái tạo collagen trong mô sụn chậm dần với tốc độ 1,5% mỗi năm. Sự giảm tổng hợp collagen do lão hóa sẽ dấn đến những vấn đề về xương khớp như cứng khớp, khó vận động, viêm đau xương khớp.&lt;/p&gt;\r\n&lt;p&gt;\r\n	Hiện nay, việc bổ sung collagen type 2 vào sụn một cách tự nhiên là biện pháp hữu hiệu để bảo vệ và chữa các bệnh viêm khớp một cách an toàn, hiệu quả hơn, nhằm thay thế cho các phương pháp điều trị bệnh khớp ít có tác dụng trước đây.&lt;/p&gt;\r\n&lt;p style=&quot;text-align: center;&quot;&gt;\r\n	&lt;img alt=&quot;collagen type 2-xuong-khop-&quot; height=&quot;198&quot; src=&quot;http://phady.com.vn/images/stories/images/collagen%20type%202-xuong-khop-.jpg&quot; width=&quot;238&quot; /&gt;&lt;/p&gt;\r\n&lt;p&gt;\r\n	Collagen type 2&amp;nbsp; là hàng rào bảo vệ sụn chống lại yếu tố dị hóa, bảo vệ tế bào sụn và tế bào màng hoạt dịch chống lại các gốc tự do, chồng lại các ezyme tiêu hóa protein sụn như collagenase, elase. Bên cạnh đó, Collagen type 2 còn có tác dụng giảm đau do ức chế sự tổng hợp prostaglandin E2- yếu tố khởi phát quá trình viêm và đau, giảm sinh tổng hợp bradykinin và ức chế cảm thụ đau; đồng thời có tác dụng chống viêm thể hiện&lt;/p&gt;\r\n&lt;p&gt;\r\n	Khi dùng Collagen type 2 qua đường uống, khoảng 53% các sợi collagen sẽ tạo thành các acid amin cần thiết cho tái tạo sụn khớp. Lượng còn lại (47%) vẫn giữ được tính nguyên vẹn cấu trúc và đi đến ruột non để tương tác với các mô lympho đường ruột (GALT), tạo ra sự dung nạp miễn dịch, giúp hệ miễn dịch cơ thể điều chỉnh các phản ứng viêm, hạn chế sự xâm lấn của các yếu tố có hại lên mô sụn, tạo điều kiện thuận lợi cho việc tái tạo, sửa chữa sụn khớp góp phần giảm thoái hóa khớp.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Neocell Collagen type 2&lt;/strong&gt; là sản phẩm cung cấp Collagen type 2 không biến tính được chiết xuất từ sụn ức gà Stenal. Quá trình chiết xuất diễn ra với nhiệt độ thấp nhằm tạo ra Collagen type 2 không biến tính, giữ nguyên vẹn cấu trúc chuỗi axit amin giúp đảm bảo hoạt động sinh học đạt kết quả tối đa. Hàm lượng 600mg Collagen type 2 trong mỗi viên nang là liều bổ sung tự nhiên Collagen đầy đủ để nuôi dưỡng, bảo vệ và phục hồi khớp.&lt;/p&gt;\r\n&lt;p&gt;\r\n	Ngoài ra, trong công thức của&amp;nbsp;&lt;strong&gt;Neocell collagen type 2&lt;/strong&gt;&amp;nbsp;còn có chứa các thành phần carbonhydrat khác như acid hyaluronic, glucosamine và chondroitin - những thành phần quan trọng trong việc hỗ trợ và duy trì chức năng khỏe mạnh của&amp;nbsp; khớp.&lt;/p&gt;\r\n&lt;p style=&quot;text-align: center;&quot;&gt;\r\n	&lt;img alt=&quot;collagen type 2 copy&quot; height=&quot;294&quot; src=&quot;http://phady.com.vn/images/stories/images/collagen%20type%202%20copy.jpg&quot; width=&quot;598&quot; /&gt;&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Neocell Collagen type 2&lt;/strong&gt; bổ sung đầy đủ các dưỡng chất cần thiết và phù hợp với sụn khớp giúp:&lt;/p&gt;\r\n&lt;p&gt;\r\n	- Kiến tạo, nuôi dưỡng và duy trì sức khỏe của sụn khớp.&lt;/p&gt;\r\n&lt;p&gt;\r\n	- Tăng tái tạo màng sụn khớp, tăng tiết dịch khớp, giúp khớp vận động linh hoạt.&lt;/p&gt;\r\n&lt;p&gt;\r\n	- Ngăn ngừa thoái hóa xương, khớp, khô khớp và viêm đa khớp.&lt;/p&gt;\r\n&lt;p&gt;\r\n	- Tăng độ đàn hồi và độ ẩm cho da.&lt;/p&gt;\r\n&lt;p&gt;\r\n	- Hỗ trợ điều trị các triệu chứng đau khớp do thoái hoá khớp, khô khớp, tổn thương khớp.&lt;/p&gt;\r\n&lt;p&gt;\r\n	- Hỗ trợ trong các trường hợp viêm khớp mãn tính.&lt;/p&gt;\r\n&lt;p&gt;\r\n	- Giảm các triệu chứng đau mỏi khớp, cứng khớp vào buổi sáng&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Đối tượng sử dụng:&lt;/strong&gt; Người bị viêm khớp, thoái hoá khớp, viêm khớp dạng thấp, khô khớp, bị chấn thương về sụn khớp, đề phòng thoái hoá khớp. Người da khô và nhăn..&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Hướng dẫn sử dụng:&lt;/strong&gt; Uống 4-6 viên/ngày với khoảng 180ml nước cam hoặc vitamin C. Tốt hơn nên uống vào buổi sáng lúc đói trước bữa ăn 20 phút.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Hướng dẫn bảo quản:&lt;/strong&gt; Bảo quản ở nơi khô, mát, nhiệt độ dưới 30&lt;sup&gt;o&lt;/sup&gt;C.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Hạn sử dụng:&lt;/strong&gt; Hạn sử dụng 03 năm kể từ ngày sản xuất. Hạn sử dụng ghi ở trên bao bì/nhãn sản phẩm.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Quy cách đóng gói:&lt;/strong&gt; 120 viên nang.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Số đăng kí: 6110/2012/ATTP-XNCB&lt;/strong&gt;&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Lưu ý:&lt;/strong&gt; Sản phẩm này không phải là thuốc, không có tác dụng thay thế thuốc chữa bệnh. Phụ nữ có thai hoặc cho con bú, người đang điều trị thuốc khác nên tham khảo ý kiến của bác sĩ trước khi sử dụng.&lt;/p&gt;\r\n', ' Neocell Collagen Type 2', ' Neocell Collagen Type 2', '');
-/*!40000 ALTER TABLE `product_description` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_product_description: 6 rows
+DELETE FROM `oc_product_description`;
+/*!40000 ALTER TABLE `oc_product_description` DISABLE KEYS */;
+INSERT INTO `oc_product_description` (`product_id`, `language_id`, `name`, `description`, `meta_description`, `meta_keyword`, `tag`) VALUES
+	(50, 1, 'Bánh Đa Nem Chữ Nhật', '&lt;p&gt;&lt;span style=&quot;margin: 0px; padding: 0px; list-style-type: none; font-family: Arial, Helvetica, sans-serif; text-align: justify; font-size: 18px; color: rgb(255, 0, 0); font-weight: bold;&quot;&gt;THÔNG TIN CHI TIẾT&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;Bánh đa nem Làng Chều - Thương Hiệu Trần Gia với tiêu chí cung cấp bữa ăn ngon cho mọi gia đình Việt thành phần:&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- 100 % Tinh Bột Gạo và muối&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Không chất bảo quản, không hóa chất độc hại&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Kích thước: 160mm - 220mm&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Số lượng tấm: 20 tấm/ túi&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Hạn sử dụng: 6 tháng kể từ ngày sản xuất&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Công dụng: Dùng làm nem cuốn hoặc nem rán&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Hướng dẫn sử dụng: Làm mềm vỏ trước khi cuốn, gói. Đặc biệt ngon hơn khi làm mềm bằng nước dấm pha loãng hoặc cà chua.&lt;/p&gt;\r\n', '', '', ''),
+	(51, 1, 'Bánh Đa Nem Cân 22', '&lt;p&gt;&lt;span style=&quot;margin: 0px; padding: 0px; list-style-type: none; font-family: Arial, Helvetica, sans-serif; text-align: justify; font-size: 18px; color: rgb(255, 0, 0); font-weight: bold;&quot;&gt;THÔNG TIN CHI TIẾT&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;Bánh đa nem Làng Chều - Thương Hiệu Trần Gia với tiêu chí cung cấp bữa ăn ngon cho mọi gia đình Việt thành phần:&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- 100 % Tinh Bột Gạo và muối&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Không chất bảo quản, không hóa chất độc hại&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Kích thước: 220mm&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Số lượng tấm: 100 tấm/ túi&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Hạn sử dụng: 6 tháng kể từ ngày sản xuất&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Công dụng: Dùng làm nem cuốn hoặc nem rán&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Hướng dẫn sử dụng: Làm mềm vỏ trước khi cuốn, gói. Đặc biệt ngon hơn khi làm mềm bằng nước dấm pha loãng hoặc cà chua.&lt;/p&gt;\r\n', '', '', ''),
+	(52, 1, ' Bánh Đa Nem Xuất Khẩu 22', '&lt;p&gt;&lt;span style=&quot;margin: 0px; padding: 0px; list-style-type: none; font-family: Arial, Helvetica, sans-serif; text-align: justify; font-size: 18px; color: rgb(255, 0, 0); font-weight: bold;&quot;&gt;THÔNG TIN CHI TIẾT&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;Bánh đa nem Làng Chều - Thương Hiệu Trần Gia với tiêu chí cung cấp bữa ăn ngon cho mọi gia đình Việt thành phần:&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- 100 % Tinh Bột Gạo và muối&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Không chất bảo quản, không hóa chất độc hại&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Kích thước: 220mm&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Trọng lượng: 250gr ( 40-45 tấm)&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Hạn sử dụng: 6 tháng kể từ ngày sản xuất&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Công dụng: Dùng làm nem nem rán&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Hướng dẫn sử dụng: Làm mềm vỏ trước khi cuốn, gói. Đặc biệt ngon hơn khi làm mềm bằng nước dấm pha loãng hoặc cà chua.&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Sản phẩm chuyên dùng để đi xuất khẩu.&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;&amp;nbsp;&lt;/p&gt;\r\n', '', '', ''),
+	(53, 1, 'Bánh Đa Nem Cân 16', '&lt;p&gt;&lt;span style=&quot;margin: 0px; padding: 0px; list-style-type: none; font-family: Arial, Helvetica, sans-serif; text-align: justify; font-size: 18px; color: rgb(255, 0, 0); font-weight: bold;&quot;&gt;THÔNG TIN CHI TIẾT&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;Bánh đa nem Làng Chều - Thương Hiệu Trần Gia với tiêu chí cung cấp bữa ăn ngon cho mọi gia đình Việt thành phần:&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- 100 % Tinh Bột Gạo và muối&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Không chất bảo quản, không hóa chất độc hại&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Kích thước: 160mm - 220mm&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Số lượng tấm: 100 tấm/ túi&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Hạn sử dụng: 6 tháng kể từ ngày sản xuất&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Công dụng: Dùng làm nem cuốn hoặc nem rán&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Hướng dẫn sử dụng: Làm mềm vỏ trước khi cuốn, gói. Đặc biệt ngon hơn khi làm mềm bằng nước dấm pha loãng hoặc cà chua.&lt;/p&gt;\r\n', '', '', ''),
+	(54, 1, ' Bánh Đa Nem Vuông size 18', '&lt;p&gt;&lt;span style=&quot;margin: 0px; padding: 0px; list-style-type: none; font-family: Arial, Helvetica, sans-serif; text-align: justify; font-size: 18px; color: rgb(255, 0, 0); font-weight: bold;&quot;&gt;THÔNG TIN CHI TIẾT&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;Bánh đa nem Làng Chều - Thương Hiệu Trần Gia với tiêu chí cung cấp bữa ăn ngon cho mọi gia đình Việt thành phần:&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- 100 % Tinh Bột Gạo và muối&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Không chất bảo quản, không hóa chất độc hại&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Kích thước: 180mm&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Số lượng tấm: 20 tấm/ túi&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Hạn sử dụng: 6 tháng kể từ ngày sản xuất&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Công dụng: Dùng làm nem cuốn hoặc nem rán&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Hướng dẫn sử dụng: Làm mềm vỏ trước khi cuốn, gói. Đặc biệt ngon hơn khi làm mềm bằng nước dấm pha loãng hoặc cà chua.&lt;/p&gt;\r\n', '', '', ''),
+	(55, 1, 'Bánh Đa Vuông size 22', '&lt;p&gt;&lt;span style=&quot;margin: 0px; padding: 0px; list-style-type: none; font-family: Arial, Helvetica, sans-serif; text-align: justify; font-size: 18px; color: rgb(255, 0, 0); font-weight: bold;&quot;&gt;THÔNG TIN CHI TIẾT&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;Bánh đa nem Làng Chều - Thương Hiệu Trần Gia với tiêu chí cung cấp bữa ăn ngon cho mọi gia đình Việt thành phần:&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- 100 % Tinh Bột Gạo và muối&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Không chất bảo quản, không hóa chất độc hại&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Kích thước: 220mm&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Số lượng tấm: 20 tấm/ túi&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Hạn sử dụng: 6 tháng kể từ ngày sản xuất&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Công dụng: Dùng làm nem cuốn hoặc nem rán&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Hướng dẫn sử dụng: Làm mềm vỏ trước khi cuốn, gói. Đặc biệt ngon hơn khi làm mềm bằng nước dấm pha loãng hoặc cà chua.&lt;/p&gt;\r\n', '', '', '');
+/*!40000 ALTER TABLE `oc_product_description` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.product_discount
-DROP TABLE IF EXISTS `product_discount`;
-CREATE TABLE IF NOT EXISTS `product_discount` (
+-- Dumping structure for table amthuctrangia.oc_product_discount
+CREATE TABLE IF NOT EXISTS `oc_product_discount` (
   `product_discount_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_id` int(11) NOT NULL,
   `customer_group_id` int(11) NOT NULL,
@@ -2172,31 +2133,29 @@ CREATE TABLE IF NOT EXISTS `product_discount` (
   `date_end` date NOT NULL DEFAULT '0000-00-00',
   PRIMARY KEY (`product_discount_id`),
   KEY `product_id` (`product_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=442 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=441 DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.product_discount: 1 rows
-/*!40000 ALTER TABLE `product_discount` DISABLE KEYS */;
-INSERT INTO `product_discount` (`product_discount_id`, `product_id`, `customer_group_id`, `quantity`, `priority`, `price`, `date_start`, `date_end`) VALUES
-	(441, 50, 1, 100, 0, 20000.0000, '2013-03-18', '2013-03-21');
-/*!40000 ALTER TABLE `product_discount` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_product_discount: 0 rows
+DELETE FROM `oc_product_discount`;
+/*!40000 ALTER TABLE `oc_product_discount` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oc_product_discount` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.product_filter
-DROP TABLE IF EXISTS `product_filter`;
-CREATE TABLE IF NOT EXISTS `product_filter` (
+-- Dumping structure for table amthuctrangia.oc_product_filter
+CREATE TABLE IF NOT EXISTS `oc_product_filter` (
   `product_id` int(11) NOT NULL,
   `filter_id` int(11) NOT NULL,
   PRIMARY KEY (`product_id`,`filter_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.product_filter: 0 rows
-/*!40000 ALTER TABLE `product_filter` DISABLE KEYS */;
-/*!40000 ALTER TABLE `product_filter` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_product_filter: 0 rows
+DELETE FROM `oc_product_filter`;
+/*!40000 ALTER TABLE `oc_product_filter` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oc_product_filter` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.product_image
-DROP TABLE IF EXISTS `product_image`;
-CREATE TABLE IF NOT EXISTS `product_image` (
+-- Dumping structure for table amthuctrangia.oc_product_image
+CREATE TABLE IF NOT EXISTS `oc_product_image` (
   `product_image_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_id` int(11) NOT NULL,
   `image` varchar(255) DEFAULT NULL,
@@ -2204,33 +2163,30 @@ CREATE TABLE IF NOT EXISTS `product_image` (
   PRIMARY KEY (`product_image_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2352 DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.product_image: 0 rows
-/*!40000 ALTER TABLE `product_image` DISABLE KEYS */;
-/*!40000 ALTER TABLE `product_image` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_product_image: 0 rows
+DELETE FROM `oc_product_image`;
+/*!40000 ALTER TABLE `oc_product_image` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oc_product_image` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.product_option
-DROP TABLE IF EXISTS `product_option`;
-CREATE TABLE IF NOT EXISTS `product_option` (
+-- Dumping structure for table amthuctrangia.oc_product_option
+CREATE TABLE IF NOT EXISTS `oc_product_option` (
   `product_option_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_id` int(11) NOT NULL,
   `option_id` int(11) NOT NULL,
   `option_value` text NOT NULL,
   `required` tinyint(1) NOT NULL,
   PRIMARY KEY (`product_option_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=229 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=227 DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.product_option: 2 rows
-/*!40000 ALTER TABLE `product_option` DISABLE KEYS */;
-INSERT INTO `product_option` (`product_option_id`, `product_id`, `option_id`, `option_value`, `required`) VALUES
-	(227, 51, 13, '', 1),
-	(228, 51, 14, '', 1);
-/*!40000 ALTER TABLE `product_option` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_product_option: 0 rows
+DELETE FROM `oc_product_option`;
+/*!40000 ALTER TABLE `oc_product_option` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oc_product_option` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.product_option_value
-DROP TABLE IF EXISTS `product_option_value`;
-CREATE TABLE IF NOT EXISTS `product_option_value` (
+-- Dumping structure for table amthuctrangia.oc_product_option_value
+CREATE TABLE IF NOT EXISTS `oc_product_option_value` (
   `product_option_value_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_option_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
@@ -2245,52 +2201,51 @@ CREATE TABLE IF NOT EXISTS `product_option_value` (
   `weight` decimal(15,8) NOT NULL,
   `weight_prefix` varchar(1) NOT NULL,
   PRIMARY KEY (`product_option_value_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.product_option_value: 4 rows
-/*!40000 ALTER TABLE `product_option_value` DISABLE KEYS */;
-INSERT INTO `product_option_value` (`product_option_value_id`, `product_option_id`, `product_id`, `option_id`, `option_value_id`, `quantity`, `subtract`, `price`, `price_prefix`, `points`, `points_prefix`, `weight`, `weight_prefix`) VALUES
-	(19, 228, 51, 14, 53, 10, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
-	(20, 228, 51, 14, 52, 10, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
-	(17, 227, 51, 13, 51, 100, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
-	(18, 227, 51, 13, 49, 200, 1, 0.0000, '+', 0, '+', 0.00000000, '+');
-/*!40000 ALTER TABLE `product_option_value` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_product_option_value: 0 rows
+DELETE FROM `oc_product_option_value`;
+/*!40000 ALTER TABLE `oc_product_option_value` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oc_product_option_value` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.product_related
-DROP TABLE IF EXISTS `product_related`;
-CREATE TABLE IF NOT EXISTS `product_related` (
+-- Dumping structure for table amthuctrangia.oc_product_related
+CREATE TABLE IF NOT EXISTS `oc_product_related` (
   `product_id` int(11) NOT NULL,
   `related_id` int(11) NOT NULL,
   PRIMARY KEY (`product_id`,`related_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.product_related: 0 rows
-/*!40000 ALTER TABLE `product_related` DISABLE KEYS */;
-/*!40000 ALTER TABLE `product_related` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_product_related: 0 rows
+DELETE FROM `oc_product_related`;
+/*!40000 ALTER TABLE `oc_product_related` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oc_product_related` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.product_reward
-DROP TABLE IF EXISTS `product_reward`;
-CREATE TABLE IF NOT EXISTS `product_reward` (
+-- Dumping structure for table amthuctrangia.oc_product_reward
+CREATE TABLE IF NOT EXISTS `oc_product_reward` (
   `product_reward_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_id` int(11) NOT NULL DEFAULT '0',
   `customer_group_id` int(11) NOT NULL DEFAULT '0',
   `points` int(8) NOT NULL DEFAULT '0',
   PRIMARY KEY (`product_reward_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=560 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=552 DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.product_reward: 2 rows
-/*!40000 ALTER TABLE `product_reward` DISABLE KEYS */;
-INSERT INTO `product_reward` (`product_reward_id`, `product_id`, `customer_group_id`, `points`) VALUES
-	(559, 51, 1, 0),
-	(555, 50, 1, 0);
-/*!40000 ALTER TABLE `product_reward` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_product_reward: 6 rows
+DELETE FROM `oc_product_reward`;
+/*!40000 ALTER TABLE `oc_product_reward` DISABLE KEYS */;
+INSERT INTO `oc_product_reward` (`product_reward_id`, `product_id`, `customer_group_id`, `points`) VALUES
+	(550, 54, 1, 0),
+	(551, 55, 1, 0),
+	(549, 53, 1, 0),
+	(547, 51, 1, 0),
+	(546, 50, 1, 0),
+	(548, 52, 1, 0);
+/*!40000 ALTER TABLE `oc_product_reward` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.product_special
-DROP TABLE IF EXISTS `product_special`;
-CREATE TABLE IF NOT EXISTS `product_special` (
+-- Dumping structure for table amthuctrangia.oc_product_special
+CREATE TABLE IF NOT EXISTS `oc_product_special` (
   `product_special_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_id` int(11) NOT NULL,
   `customer_group_id` int(11) NOT NULL,
@@ -2300,77 +2255,83 @@ CREATE TABLE IF NOT EXISTS `product_special` (
   `date_end` date NOT NULL DEFAULT '0000-00-00',
   PRIMARY KEY (`product_special_id`),
   KEY `product_id` (`product_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=447 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=440 DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.product_special: 1 rows
-/*!40000 ALTER TABLE `product_special` DISABLE KEYS */;
-INSERT INTO `product_special` (`product_special_id`, `product_id`, `customer_group_id`, `priority`, `price`, `date_start`, `date_end`) VALUES
-	(446, 51, 1, 0, 250000.0000, '2013-03-18', '2013-03-20');
-/*!40000 ALTER TABLE `product_special` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_product_special: 0 rows
+DELETE FROM `oc_product_special`;
+/*!40000 ALTER TABLE `oc_product_special` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oc_product_special` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.product_to_category
-DROP TABLE IF EXISTS `product_to_category`;
-CREATE TABLE IF NOT EXISTS `product_to_category` (
+-- Dumping structure for table amthuctrangia.oc_product_to_category
+CREATE TABLE IF NOT EXISTS `oc_product_to_category` (
   `product_id` int(11) NOT NULL,
   `category_id` int(11) NOT NULL,
   PRIMARY KEY (`product_id`,`category_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.product_to_category: 2 rows
-/*!40000 ALTER TABLE `product_to_category` DISABLE KEYS */;
-INSERT INTO `product_to_category` (`product_id`, `category_id`) VALUES
-	(50, 66),
-	(51, 66);
-/*!40000 ALTER TABLE `product_to_category` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_product_to_category: 6 rows
+DELETE FROM `oc_product_to_category`;
+/*!40000 ALTER TABLE `oc_product_to_category` DISABLE KEYS */;
+INSERT INTO `oc_product_to_category` (`product_id`, `category_id`) VALUES
+	(50, 61),
+	(51, 61),
+	(52, 61),
+	(53, 61),
+	(54, 61),
+	(55, 61);
+/*!40000 ALTER TABLE `oc_product_to_category` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.product_to_download
-DROP TABLE IF EXISTS `product_to_download`;
-CREATE TABLE IF NOT EXISTS `product_to_download` (
+-- Dumping structure for table amthuctrangia.oc_product_to_download
+CREATE TABLE IF NOT EXISTS `oc_product_to_download` (
   `product_id` int(11) NOT NULL,
   `download_id` int(11) NOT NULL,
   PRIMARY KEY (`product_id`,`download_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.product_to_download: 0 rows
-/*!40000 ALTER TABLE `product_to_download` DISABLE KEYS */;
-/*!40000 ALTER TABLE `product_to_download` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_product_to_download: 0 rows
+DELETE FROM `oc_product_to_download`;
+/*!40000 ALTER TABLE `oc_product_to_download` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oc_product_to_download` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.product_to_layout
-DROP TABLE IF EXISTS `product_to_layout`;
-CREATE TABLE IF NOT EXISTS `product_to_layout` (
+-- Dumping structure for table amthuctrangia.oc_product_to_layout
+CREATE TABLE IF NOT EXISTS `oc_product_to_layout` (
   `product_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
   `layout_id` int(11) NOT NULL,
   PRIMARY KEY (`product_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.product_to_layout: 0 rows
-/*!40000 ALTER TABLE `product_to_layout` DISABLE KEYS */;
-/*!40000 ALTER TABLE `product_to_layout` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_product_to_layout: 0 rows
+DELETE FROM `oc_product_to_layout`;
+/*!40000 ALTER TABLE `oc_product_to_layout` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oc_product_to_layout` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.product_to_store
-DROP TABLE IF EXISTS `product_to_store`;
-CREATE TABLE IF NOT EXISTS `product_to_store` (
+-- Dumping structure for table amthuctrangia.oc_product_to_store
+CREATE TABLE IF NOT EXISTS `oc_product_to_store` (
   `product_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`product_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.product_to_store: 2 rows
-/*!40000 ALTER TABLE `product_to_store` DISABLE KEYS */;
-INSERT INTO `product_to_store` (`product_id`, `store_id`) VALUES
+-- Dumping data for table amthuctrangia.oc_product_to_store: 6 rows
+DELETE FROM `oc_product_to_store`;
+/*!40000 ALTER TABLE `oc_product_to_store` DISABLE KEYS */;
+INSERT INTO `oc_product_to_store` (`product_id`, `store_id`) VALUES
 	(50, 0),
-	(51, 0);
-/*!40000 ALTER TABLE `product_to_store` ENABLE KEYS */;
+	(51, 0),
+	(52, 0),
+	(53, 0),
+	(54, 0),
+	(55, 0);
+/*!40000 ALTER TABLE `oc_product_to_store` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.return
-DROP TABLE IF EXISTS `return`;
-CREATE TABLE IF NOT EXISTS `return` (
+-- Dumping structure for table amthuctrangia.oc_return
+CREATE TABLE IF NOT EXISTS `oc_return` (
   `return_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
@@ -2393,35 +2354,32 @@ CREATE TABLE IF NOT EXISTS `return` (
   PRIMARY KEY (`return_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.return: 0 rows
-/*!40000 ALTER TABLE `return` DISABLE KEYS */;
-/*!40000 ALTER TABLE `return` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_return: 0 rows
+DELETE FROM `oc_return`;
+/*!40000 ALTER TABLE `oc_return` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oc_return` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.return_action
-DROP TABLE IF EXISTS `return_action`;
-CREATE TABLE IF NOT EXISTS `return_action` (
+-- Dumping structure for table amthuctrangia.oc_return_action
+CREATE TABLE IF NOT EXISTS `oc_return_action` (
   `return_action_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) NOT NULL DEFAULT '0',
   `name` varchar(64) NOT NULL,
   PRIMARY KEY (`return_action_id`,`language_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.return_action: 6 rows
-/*!40000 ALTER TABLE `return_action` DISABLE KEYS */;
-INSERT INTO `return_action` (`return_action_id`, `language_id`, `name`) VALUES
+-- Dumping data for table amthuctrangia.oc_return_action: 3 rows
+DELETE FROM `oc_return_action`;
+/*!40000 ALTER TABLE `oc_return_action` DISABLE KEYS */;
+INSERT INTO `oc_return_action` (`return_action_id`, `language_id`, `name`) VALUES
 	(1, 1, 'Refunded'),
 	(2, 1, 'Credit Issued'),
-	(3, 1, 'Replacement Sent'),
-	(1, 2, 'Refunded'),
-	(2, 2, 'Credit Issued'),
-	(3, 2, 'Replacement Sent');
-/*!40000 ALTER TABLE `return_action` ENABLE KEYS */;
+	(3, 1, 'Replacement Sent');
+/*!40000 ALTER TABLE `oc_return_action` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.return_history
-DROP TABLE IF EXISTS `return_history`;
-CREATE TABLE IF NOT EXISTS `return_history` (
+-- Dumping structure for table amthuctrangia.oc_return_history
+CREATE TABLE IF NOT EXISTS `oc_return_history` (
   `return_history_id` int(11) NOT NULL AUTO_INCREMENT,
   `return_id` int(11) NOT NULL,
   `return_status_id` int(11) NOT NULL,
@@ -2431,60 +2389,52 @@ CREATE TABLE IF NOT EXISTS `return_history` (
   PRIMARY KEY (`return_history_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.return_history: 0 rows
-/*!40000 ALTER TABLE `return_history` DISABLE KEYS */;
-/*!40000 ALTER TABLE `return_history` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_return_history: 0 rows
+DELETE FROM `oc_return_history`;
+/*!40000 ALTER TABLE `oc_return_history` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oc_return_history` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.return_reason
-DROP TABLE IF EXISTS `return_reason`;
-CREATE TABLE IF NOT EXISTS `return_reason` (
+-- Dumping structure for table amthuctrangia.oc_return_reason
+CREATE TABLE IF NOT EXISTS `oc_return_reason` (
   `return_reason_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) NOT NULL DEFAULT '0',
   `name` varchar(128) NOT NULL,
   PRIMARY KEY (`return_reason_id`,`language_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.return_reason: 10 rows
-/*!40000 ALTER TABLE `return_reason` DISABLE KEYS */;
-INSERT INTO `return_reason` (`return_reason_id`, `language_id`, `name`) VALUES
+-- Dumping data for table amthuctrangia.oc_return_reason: 5 rows
+DELETE FROM `oc_return_reason`;
+/*!40000 ALTER TABLE `oc_return_reason` DISABLE KEYS */;
+INSERT INTO `oc_return_reason` (`return_reason_id`, `language_id`, `name`) VALUES
 	(1, 1, 'Dead On Arrival'),
 	(2, 1, 'Received Wrong Item'),
 	(3, 1, 'Order Error'),
 	(4, 1, 'Faulty, please supply details'),
-	(5, 1, 'Other, please supply details'),
-	(1, 2, 'Dead On Arrival'),
-	(2, 2, 'Received Wrong Item'),
-	(3, 2, 'Order Error'),
-	(4, 2, 'Faulty, please supply details'),
-	(5, 2, 'Other, please supply details');
-/*!40000 ALTER TABLE `return_reason` ENABLE KEYS */;
+	(5, 1, 'Other, please supply details');
+/*!40000 ALTER TABLE `oc_return_reason` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.return_status
-DROP TABLE IF EXISTS `return_status`;
-CREATE TABLE IF NOT EXISTS `return_status` (
+-- Dumping structure for table amthuctrangia.oc_return_status
+CREATE TABLE IF NOT EXISTS `oc_return_status` (
   `return_status_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) NOT NULL DEFAULT '0',
   `name` varchar(32) NOT NULL,
   PRIMARY KEY (`return_status_id`,`language_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.return_status: 6 rows
-/*!40000 ALTER TABLE `return_status` DISABLE KEYS */;
-INSERT INTO `return_status` (`return_status_id`, `language_id`, `name`) VALUES
+-- Dumping data for table amthuctrangia.oc_return_status: 3 rows
+DELETE FROM `oc_return_status`;
+/*!40000 ALTER TABLE `oc_return_status` DISABLE KEYS */;
+INSERT INTO `oc_return_status` (`return_status_id`, `language_id`, `name`) VALUES
 	(1, 1, 'Pending'),
 	(3, 1, 'Complete'),
-	(2, 1, 'Awaiting Products'),
-	(1, 2, 'Pending'),
-	(3, 2, 'Complete'),
-	(2, 2, 'Awaiting Products');
-/*!40000 ALTER TABLE `return_status` ENABLE KEYS */;
+	(2, 1, 'Awaiting Products');
+/*!40000 ALTER TABLE `oc_return_status` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.review
-DROP TABLE IF EXISTS `review`;
-CREATE TABLE IF NOT EXISTS `review` (
+-- Dumping structure for table amthuctrangia.oc_review
+CREATE TABLE IF NOT EXISTS `oc_review` (
   `review_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_id` int(11) NOT NULL,
   `customer_id` int(11) NOT NULL,
@@ -2498,14 +2448,14 @@ CREATE TABLE IF NOT EXISTS `review` (
   KEY `product_id` (`product_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.review: 0 rows
-/*!40000 ALTER TABLE `review` DISABLE KEYS */;
-/*!40000 ALTER TABLE `review` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_review: 0 rows
+DELETE FROM `oc_review`;
+/*!40000 ALTER TABLE `oc_review` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oc_review` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.setting
-DROP TABLE IF EXISTS `setting`;
-CREATE TABLE IF NOT EXISTS `setting` (
+-- Dumping structure for table amthuctrangia.oc_setting
+CREATE TABLE IF NOT EXISTS `oc_setting` (
   `setting_id` int(11) NOT NULL AUTO_INCREMENT,
   `store_id` int(11) NOT NULL DEFAULT '0',
   `group` varchar(32) NOT NULL,
@@ -2513,11 +2463,12 @@ CREATE TABLE IF NOT EXISTS `setting` (
   `value` text NOT NULL,
   `serialized` tinyint(1) NOT NULL,
   PRIMARY KEY (`setting_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2172 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=253 DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.setting: 206 rows
-/*!40000 ALTER TABLE `setting` DISABLE KEYS */;
-INSERT INTO `setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `serialized`) VALUES
+-- Dumping data for table amthuctrangia.oc_setting: 141 rows
+DELETE FROM `oc_setting`;
+/*!40000 ALTER TABLE `oc_setting` DISABLE KEYS */;
+INSERT INTO `oc_setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `serialized`) VALUES
 	(1, 0, 'shipping', 'shipping_sort_order', '3', 0),
 	(2, 0, 'sub_total', 'sub_total_sort_order', '1', 0),
 	(3, 0, 'sub_total', 'sub_total_status', '1', 0),
@@ -2539,235 +2490,165 @@ INSERT INTO `setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `seria
 	(35, 0, 'flat', 'flat_status', '1', 0),
 	(36, 0, 'flat', 'flat_geo_zone_id', '0', 0),
 	(37, 0, 'flat', 'flat_tax_class_id', '9', 0),
-	(2133, 0, 'news_category', 'news_category_module', 'a:1:{i:0;a:4:{s:9:"layout_id";s:2:"12";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:0:"";}}', 1),
-	(1416, 0, 'featured', 'featured_product', '50,51', 0),
-	(1417, 0, 'featured', 'featured_module', 'a:1:{i:0;a:7:{s:5:"limit";s:2:"12";s:11:"image_width";s:3:"205";s:12:"image_height";s:3:"170";s:9:"layout_id";s:1:"1";s:8:"position";s:11:"content_top";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"2";}}', 1),
+	(252, 0, 'carousel', 'carousel_module', 'a:1:{i:0;a:9:{s:9:"banner_id";s:2:"10";s:5:"limit";s:1:"5";s:6:"scroll";s:1:"3";s:5:"width";s:3:"100";s:6:"height";s:3:"100";s:9:"layout_id";s:1:"1";s:8:"position";s:14:"content_bottom";s:6:"status";s:1:"1";s:10:"sort_order";s:2:"-1";}}', 1),
 	(41, 0, 'flat', 'flat_cost', '5.00', 0),
 	(42, 0, 'credit', 'credit_sort_order', '7', 0),
 	(43, 0, 'credit', 'credit_status', '1', 0),
 	(53, 0, 'reward', 'reward_sort_order', '2', 0),
 	(54, 0, 'reward', 'reward_status', '1', 0),
 	(56, 0, 'affiliate', 'affiliate_module', 'a:1:{i:0;a:4:{s:9:"layout_id";s:2:"10";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
+	(241, 0, 'category', 'category_module', 'a:2:{i:0;a:4:{s:9:"layout_id";s:1:"1";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"3";}i:1;a:4:{s:9:"layout_id";s:1:"3";s:8:"position";s:11:"column_left";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
 	(60, 0, 'account', 'account_module', 'a:1:{i:0;a:4:{s:9:"layout_id";s:1:"6";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
-	(2125, 0, 'config', 'config_compression', '0', 0),
 	(94, 0, 'voucher', 'voucher_sort_order', '8', 0),
 	(95, 0, 'voucher', 'voucher_status', '1', 0),
-	(2124, 0, 'config', 'config_encryption', '2594d56d8ddb6370f6d15dc95405b3e3', 0),
-	(2123, 0, 'config', 'config_password', '1', 0),
-	(2122, 0, 'config', 'config_maintenance', '0', 0),
+	(225, 0, 'config', 'config_robots', 'abot\r\ndbot\r\nebot\r\nhbot\r\nkbot\r\nlbot\r\nmbot\r\nnbot\r\nobot\r\npbot\r\nrbot\r\nsbot\r\ntbot\r\nvbot\r\nybot\r\nzbot\r\nbot.\r\nbot/\r\n_bot\r\n.bot\r\n/bot\r\n-bot\r\n:bot\r\n(bot\r\ncrawl\r\nslurp\r\nspider\r\nseek\r\naccoona\r\nacoon\r\nadressendeutschland\r\nah-ha.com\r\nahoy\r\naltavista\r\nananzi\r\nanthill\r\nappie\r\narachnophilia\r\narale\r\naraneo\r\naranha\r\narchitext\r\naretha\r\narks\r\nasterias\r\natlocal\r\natn\r\natomz\r\naugurfind\r\nbackrub\r\nbannana_bot\r\nbaypup\r\nbdfetch\r\nbig brother\r\nbiglotron\r\nbjaaland\r\nblackwidow\r\nblaiz\r\nblog\r\nblo.\r\nbloodhound\r\nboitho\r\nbooch\r\nbradley\r\nbutterfly\r\ncalif\r\ncassandra\r\nccubee\r\ncfetch\r\ncharlotte\r\nchurl\r\ncienciaficcion\r\ncmc\r\ncollective\r\ncomagent\r\ncombine\r\ncomputingsite\r\ncsci\r\ncurl\r\ncusco\r\ndaumoa\r\ndeepindex\r\ndelorie\r\ndepspid\r\ndeweb\r\ndie blinde kuh\r\ndigger\r\nditto\r\ndmoz\r\ndocomo\r\ndownload express\r\ndtaagent\r\ndwcp\r\nebiness\r\nebingbong\r\ne-collector\r\nejupiter\r\nemacs-w3 search engine\r\nesther\r\nevliya celebi\r\nezresult\r\nfalcon\r\nfelix ide\r\nferret\r\nfetchrover\r\nfido\r\nfindlinks\r\nfireball\r\nfish search\r\nfouineur\r\nfunnelweb\r\ngazz\r\ngcreep\r\ngenieknows\r\ngetterroboplus\r\ngeturl\r\nglx\r\ngoforit\r\ngolem\r\ngrabber\r\ngrapnel\r\ngralon\r\ngriffon\r\ngromit\r\ngrub\r\ngulliver\r\nhamahakki\r\nharvest\r\nhavindex\r\nhelix\r\nheritrix\r\nhku www octopus\r\nhomerweb\r\nhtdig\r\nhtml index\r\nhtml_analyzer\r\nhtmlgobble\r\nhubater\r\nhyper-decontextualizer\r\nia_archiver\r\nibm_planetwide\r\nichiro\r\niconsurf\r\niltrovatore\r\nimage.kapsi.net\r\nimagelock\r\nincywincy\r\nindexer\r\ninfobee\r\ninformant\r\ningrid\r\ninktomisearch.com\r\ninspector web\r\nintelliagent\r\ninternet shinchakubin\r\nip3000\r\niron33\r\nisraeli-search\r\nivia\r\njack\r\njakarta\r\njavabee\r\njetbot\r\njumpstation\r\nkatipo\r\nkdd-explorer\r\nkilroy\r\nknowledge\r\nkototoi\r\nkretrieve\r\nlabelgrabber\r\nlachesis\r\nlarbin\r\nlegs\r\nlibwww\r\nlinkalarm\r\nlink validator\r\nlinkscan\r\nlockon\r\nlwp\r\nlycos\r\nmagpie\r\nmantraagent\r\nmapoftheinternet\r\nmarvin/\r\nmattie\r\nmediafox\r\nmediapartners\r\nmercator\r\nmerzscope\r\nmicrosoft url control\r\nminirank\r\nmiva\r\nmj12\r\nmnogosearch\r\nmoget\r\nmonster\r\nmoose\r\nmotor\r\nmultitext\r\nmuncher\r\nmuscatferret\r\nmwd.search\r\nmyweb\r\nnajdi\r\nnameprotect\r\nnationaldirectory\r\nnazilla\r\nncsa beta\r\nnec-meshexplorer\r\nnederland.zoek\r\nnetcarta webmap engine\r\nnetmechanic\r\nnetresearchserver\r\nnetscoop\r\nnewscan-online\r\nnhse\r\nnokia6682/\r\nnomad\r\nnoyona\r\nnutch\r\nnzexplorer\r\nobjectssearch\r\noccam\r\nomni\r\nopen text\r\nopenfind\r\nopenintelligencedata\r\norb search\r\nosis-project\r\npack rat\r\npageboy\r\npagebull\r\npage_verifier\r\npanscient\r\nparasite\r\npartnersite\r\npatric\r\npear.\r\npegasus\r\nperegrinator\r\npgp key agent\r\nphantom\r\nphpdig\r\npicosearch\r\npiltdownman\r\npimptrain\r\npinpoint\r\npioneer\r\npiranha\r\nplumtreewebaccessor\r\npogodak\r\npoirot\r\npompos\r\npoppelsdorf\r\npoppi\r\npopular iconoclast\r\npsycheclone\r\npublisher\r\npython\r\nrambler\r\nraven search\r\nroach\r\nroad runner\r\nroadhouse\r\nrobbie\r\nrobofox\r\nrobozilla\r\nrules\r\nsalty\r\nsbider\r\nscooter\r\nscoutjet\r\nscrubby\r\nsearch.\r\nsearchprocess\r\nsemanticdiscovery\r\nsenrigan\r\nsg-scout\r\nshai\'hulud\r\nshark\r\nshopwiki\r\nsidewinder\r\nsift\r\nsilk\r\nsimmany\r\nsite searcher\r\nsite valet\r\nsitetech-rover\r\nskymob.com\r\nsleek\r\nsmartwit\r\nsna-\r\nsnappy\r\nsnooper\r\nsohu\r\nspeedfind\r\nsphere\r\nsphider\r\nspinner\r\nspyder\r\nsteeler/\r\nsuke\r\nsuntek\r\nsupersnooper\r\nsurfnomore\r\nsven\r\nsygol\r\nszukacz\r\ntach black widow\r\ntarantula\r\ntempleton\r\n/teoma\r\nt-h-u-n-d-e-r-s-t-o-n-e\r\ntheophrastus\r\ntitan\r\ntitin\r\ntkwww\r\ntoutatis\r\nt-rex\r\ntutorgig\r\ntwiceler\r\ntwisted\r\nucsd\r\nudmsearch\r\nurl check\r\nupdated\r\nvagabondo\r\nvalkyrie\r\nverticrawl\r\nvictoria\r\nvision-search\r\nvolcano\r\nvoyager/\r\nvoyager-hc\r\nw3c_validator\r\nw3m2\r\nw3mir\r\nwalker\r\nwallpaper\r\nwanderer\r\nwauuu\r\nwavefire\r\nweb core\r\nweb hopper\r\nweb wombat\r\nwebbandit\r\nwebcatcher\r\nwebcopy\r\nwebfoot\r\nweblayers\r\nweblinker\r\nweblog monitor\r\nwebmirror\r\nwebmonkey\r\nwebquest\r\nwebreaper\r\nwebsitepulse\r\nwebsnarf\r\nwebstolperer\r\nwebvac\r\nwebwalk\r\nwebwatch\r\nwebwombat\r\nwebzinger\r\nwhizbang\r\nwhowhere\r\nwild ferret\r\nworldlight\r\nwwwc\r\nwwwster\r\nxenu\r\nxget\r\nxift\r\nxirq\r\nyandex\r\nyanga\r\nyeti\r\nyodao\r\nzao\r\nzippp\r\nzyborg', 0),
+	(224, 0, 'config', 'config_shared', '0', 0),
+	(223, 0, 'config', 'config_secure', '0', 0),
 	(103, 0, 'free_checkout', 'free_checkout_status', '1', 0),
 	(104, 0, 'free_checkout', 'free_checkout_order_status_id', '1', 0),
-	(2171, 0, 'slideshow', 'slideshow_module', 'a:1:{i:0;a:7:{s:9:"banner_id";s:1:"9";s:5:"width";s:3:"700";s:6:"height";s:3:"335";s:9:"layout_id";s:1:"1";s:8:"position";s:11:"content_top";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
-	(2159, 0, 'tnt_yahoo', 'tnt_skype_skypeid4', '', 0),
-	(2160, 0, 'tnt_yahoo', 'tnt_skype_mobile4', '', 0),
-	(2161, 0, 'tnt_yahoo', 'tnt_skype_image4', '', 0),
-	(2162, 0, 'tnt_yahoo', 'tnt_skype_skypeid5', '', 0),
-	(2163, 0, 'tnt_yahoo', 'tnt_skype_mobile5', '', 0),
-	(2164, 0, 'tnt_yahoo', 'tnt_skype_image5', '', 0),
-	(2165, 0, 'tnt_yahoo', 'tnt_yahoo_module', 'a:4:{i:0;a:4:{s:9:"layout_id";s:1:"1";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}i:1;a:4:{s:9:"layout_id";s:1:"3";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"2";}i:2;a:4:{s:9:"layout_id";s:1:"2";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"2";}i:3;a:4:{s:9:"layout_id";s:2:"12";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"2";}}', 1),
-	(2119, 0, 'config', 'config_seo_url', '0', 0),
-	(2120, 0, 'config', 'config_file_extension_allowed', 'txt\r\npng\r\njpe\r\njpeg\r\njpg\r\ngif\r\nbmp\r\nico\r\ntiff\r\ntif\r\nsvg\r\nsvgz\r\nzip\r\nrar\r\nmsi\r\ncab\r\nmp3\r\nqt\r\nmov\r\npdf\r\npsd\r\nai\r\neps\r\nps\r\ndoc\r\nrtf\r\nxls\r\nppt\r\nodt\r\nods', 0),
-	(2121, 0, 'config', 'config_file_mime_allowed', 'text/plain\r\nimage/png\r\nimage/jpeg\r\nimage/jpeg\r\nimage/jpeg\r\nimage/gif\r\nimage/bmp\r\nimage/vnd.microsoft.icon\r\nimage/tiff\r\nimage/tiff\r\nimage/svg+xml\r\nimage/svg+xml\r\napplication/zip\r\napplication/x-rar-compressed\r\napplication/x-msdownload\r\napplication/vnd.ms-cab-compressed\r\naudio/mpeg\r\nvideo/quicktime\r\nvideo/quicktime\r\napplication/pdf\r\nimage/vnd.adobe.photoshop\r\napplication/postscript\r\napplication/postscript\r\napplication/postscript\r\napplication/msword\r\napplication/rtf\r\napplication/vnd.ms-excel\r\napplication/vnd.ms-powerpoint\r\napplication/vnd.oasis.opendocument.text\r\napplication/vnd.oasis.opendocument.spreadsheet', 0),
-	(2118, 0, 'config', 'config_robots', 'abot\r\ndbot\r\nebot\r\nhbot\r\nkbot\r\nlbot\r\nmbot\r\nnbot\r\nobot\r\npbot\r\nrbot\r\nsbot\r\ntbot\r\nvbot\r\nybot\r\nzbot\r\nbot.\r\nbot/\r\n_bot\r\n.bot\r\n/bot\r\n-bot\r\n:bot\r\n(bot\r\ncrawl\r\nslurp\r\nspider\r\nseek\r\naccoona\r\nacoon\r\nadressendeutschland\r\nah-ha.com\r\nahoy\r\naltavista\r\nananzi\r\nanthill\r\nappie\r\narachnophilia\r\narale\r\naraneo\r\naranha\r\narchitext\r\naretha\r\narks\r\nasterias\r\natlocal\r\natn\r\natomz\r\naugurfind\r\nbackrub\r\nbannana_bot\r\nbaypup\r\nbdfetch\r\nbig brother\r\nbiglotron\r\nbjaaland\r\nblackwidow\r\nblaiz\r\nblog\r\nblo.\r\nbloodhound\r\nboitho\r\nbooch\r\nbradley\r\nbutterfly\r\ncalif\r\ncassandra\r\nccubee\r\ncfetch\r\ncharlotte\r\nchurl\r\ncienciaficcion\r\ncmc\r\ncollective\r\ncomagent\r\ncombine\r\ncomputingsite\r\ncsci\r\ncurl\r\ncusco\r\ndaumoa\r\ndeepindex\r\ndelorie\r\ndepspid\r\ndeweb\r\ndie blinde kuh\r\ndigger\r\nditto\r\ndmoz\r\ndocomo\r\ndownload express\r\ndtaagent\r\ndwcp\r\nebiness\r\nebingbong\r\ne-collector\r\nejupiter\r\nemacs-w3 search engine\r\nesther\r\nevliya celebi\r\nezresult\r\nfalcon\r\nfelix ide\r\nferret\r\nfetchrover\r\nfido\r\nfindlinks\r\nfireball\r\nfish search\r\nfouineur\r\nfunnelweb\r\ngazz\r\ngcreep\r\ngenieknows\r\ngetterroboplus\r\ngeturl\r\nglx\r\ngoforit\r\ngolem\r\ngrabber\r\ngrapnel\r\ngralon\r\ngriffon\r\ngromit\r\ngrub\r\ngulliver\r\nhamahakki\r\nharvest\r\nhavindex\r\nhelix\r\nheritrix\r\nhku www octopus\r\nhomerweb\r\nhtdig\r\nhtml index\r\nhtml_analyzer\r\nhtmlgobble\r\nhubater\r\nhyper-decontextualizer\r\nia_archiver\r\nibm_planetwide\r\nichiro\r\niconsurf\r\niltrovatore\r\nimage.kapsi.net\r\nimagelock\r\nincywincy\r\nindexer\r\ninfobee\r\ninformant\r\ningrid\r\ninktomisearch.com\r\ninspector web\r\nintelliagent\r\ninternet shinchakubin\r\nip3000\r\niron33\r\nisraeli-search\r\nivia\r\njack\r\njakarta\r\njavabee\r\njetbot\r\njumpstation\r\nkatipo\r\nkdd-explorer\r\nkilroy\r\nknowledge\r\nkototoi\r\nkretrieve\r\nlabelgrabber\r\nlachesis\r\nlarbin\r\nlegs\r\nlibwww\r\nlinkalarm\r\nlink validator\r\nlinkscan\r\nlockon\r\nlwp\r\nlycos\r\nmagpie\r\nmantraagent\r\nmapoftheinternet\r\nmarvin/\r\nmattie\r\nmediafox\r\nmediapartners\r\nmercator\r\nmerzscope\r\nmicrosoft url control\r\nminirank\r\nmiva\r\nmj12\r\nmnogosearch\r\nmoget\r\nmonster\r\nmoose\r\nmotor\r\nmultitext\r\nmuncher\r\nmuscatferret\r\nmwd.search\r\nmyweb\r\nnajdi\r\nnameprotect\r\nnationaldirectory\r\nnazilla\r\nncsa beta\r\nnec-meshexplorer\r\nnederland.zoek\r\nnetcarta webmap engine\r\nnetmechanic\r\nnetresearchserver\r\nnetscoop\r\nnewscan-online\r\nnhse\r\nnokia6682/\r\nnomad\r\nnoyona\r\nnutch\r\nnzexplorer\r\nobjectssearch\r\noccam\r\nomni\r\nopen text\r\nopenfind\r\nopenintelligencedata\r\norb search\r\nosis-project\r\npack rat\r\npageboy\r\npagebull\r\npage_verifier\r\npanscient\r\nparasite\r\npartnersite\r\npatric\r\npear.\r\npegasus\r\nperegrinator\r\npgp key agent\r\nphantom\r\nphpdig\r\npicosearch\r\npiltdownman\r\npimptrain\r\npinpoint\r\npioneer\r\npiranha\r\nplumtreewebaccessor\r\npogodak\r\npoirot\r\npompos\r\npoppelsdorf\r\npoppi\r\npopular iconoclast\r\npsycheclone\r\npublisher\r\npython\r\nrambler\r\nraven search\r\nroach\r\nroad runner\r\nroadhouse\r\nrobbie\r\nrobofox\r\nrobozilla\r\nrules\r\nsalty\r\nsbider\r\nscooter\r\nscoutjet\r\nscrubby\r\nsearch.\r\nsearchprocess\r\nsemanticdiscovery\r\nsenrigan\r\nsg-scout\r\nshai\'hulud\r\nshark\r\nshopwiki\r\nsidewinder\r\nsift\r\nsilk\r\nsimmany\r\nsite searcher\r\nsite valet\r\nsitetech-rover\r\nskymob.com\r\nsleek\r\nsmartwit\r\nsna-\r\nsnappy\r\nsnooper\r\nsohu\r\nspeedfind\r\nsphere\r\nsphider\r\nspinner\r\nspyder\r\nsteeler/\r\nsuke\r\nsuntek\r\nsupersnooper\r\nsurfnomore\r\nsven\r\nsygol\r\nszukacz\r\ntach black widow\r\ntarantula\r\ntempleton\r\n/teoma\r\nt-h-u-n-d-e-r-s-t-o-n-e\r\ntheophrastus\r\ntitan\r\ntitin\r\ntkwww\r\ntoutatis\r\nt-rex\r\ntutorgig\r\ntwiceler\r\ntwisted\r\nucsd\r\nudmsearch\r\nurl check\r\nupdated\r\nvagabondo\r\nvalkyrie\r\nverticrawl\r\nvictoria\r\nvision-search\r\nvolcano\r\nvoyager/\r\nvoyager-hc\r\nw3c_validator\r\nw3m2\r\nw3mir\r\nwalker\r\nwallpaper\r\nwanderer\r\nwauuu\r\nwavefire\r\nweb core\r\nweb hopper\r\nweb wombat\r\nwebbandit\r\nwebcatcher\r\nwebcopy\r\nwebfoot\r\nweblayers\r\nweblinker\r\nweblog monitor\r\nwebmirror\r\nwebmonkey\r\nwebquest\r\nwebreaper\r\nwebsitepulse\r\nwebsnarf\r\nwebstolperer\r\nwebvac\r\nwebwalk\r\nwebwatch\r\nwebwombat\r\nwebzinger\r\nwget\r\nwhizbang\r\nwhowhere\r\nwild ferret\r\nworldlight\r\nwwwc\r\nwwwster\r\nxenu\r\nxget\r\nxift\r\nxirq\r\nyandex\r\nyanga\r\nyeti\r\nyodao\r\nzao\r\nzippp\r\nzyborg', 0),
-	(2116, 0, 'config', 'config_secure', '1', 0),
-	(2117, 0, 'config', 'config_shared', '0', 0),
-	(2115, 0, 'config', 'config_fraud_status_id', '7', 0),
-	(2114, 0, 'config', 'config_fraud_score', '', 0),
-	(2113, 0, 'config', 'config_fraud_key', '', 0),
-	(2112, 0, 'config', 'config_fraud_detection', '0', 0),
-	(2111, 0, 'config', 'config_alert_emails', '', 0),
-	(2110, 0, 'config', 'config_account_mail', '0', 0),
-	(2109, 0, 'config', 'config_alert_mail', '0', 0),
-	(2108, 0, 'config', 'config_smtp_timeout', '5', 0),
-	(2107, 0, 'config', 'config_smtp_port', '25', 0),
-	(2106, 0, 'config', 'config_smtp_password', '', 0),
-	(2105, 0, 'config', 'config_smtp_username', '', 0),
-	(2104, 0, 'config', 'config_smtp_host', '', 0),
-	(2103, 0, 'config', 'config_mail_parameter', '', 0),
-	(2102, 0, 'config', 'config_mail_protocol', 'mail', 0),
-	(2101, 0, 'config', 'config_ftp_status', '0', 0),
-	(2100, 0, 'config', 'config_ftp_root', '', 0),
-	(2099, 0, 'config', 'config_ftp_password', '', 0),
-	(2098, 0, 'config', 'config_ftp_username', '', 0),
-	(2097, 0, 'config', 'config_ftp_port', '21', 0),
-	(2096, 0, 'config', 'config_ftp_host', 'trangia.lc', 0),
-	(2095, 0, 'config', 'config_image_cart_height', '47', 0),
-	(2093, 0, 'config', 'config_image_wishlist_height', '47', 0),
-	(2094, 0, 'config', 'config_image_cart_width', '47', 0),
-	(2092, 0, 'config', 'config_image_wishlist_width', '47', 0),
-	(2090, 0, 'config', 'config_image_compare_width', '90', 0),
-	(2091, 0, 'config', 'config_image_compare_height', '90', 0),
-	(2089, 0, 'config', 'config_image_related_height', '60', 0),
-	(2087, 0, 'config', 'config_image_additional_height', '74', 0),
-	(2088, 0, 'config', 'config_image_related_width', '60', 0),
-	(2086, 0, 'config', 'config_image_additional_width', '74', 0),
-	(2085, 0, 'config', 'config_image_product_height', '60', 0),
-	(1422, 0, 'newslatest', 'newslatest_module', 'a:1:{i:0;a:10:{s:5:"limit";s:1:"4";s:16:"limitdescription";s:3:"200";s:11:"image_width";s:2:"60";s:12:"image_height";s:2:"60";s:9:"layout_id";s:1:"1";s:8:"position";s:12:"column_right";s:11:"description";s:1:"1";s:11:"imagestatus";s:1:"1";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
-	(2084, 0, 'config', 'config_image_product_width', '60', 0),
-	(2083, 0, 'config', 'config_image_popup_height', '500', 0),
-	(2082, 0, 'config', 'config_image_popup_width', '500', 0),
-	(2081, 0, 'config', 'config_image_thumb_height', '228', 0),
-	(2080, 0, 'config', 'config_image_thumb_width', '228', 0),
-	(2079, 0, 'config', 'config_image_category_height', '80', 0),
-	(2078, 0, 'config', 'config_image_category_width', '80', 0),
-	(2077, 0, 'config', 'config_icon', 'data/cart.png', 0),
-	(2076, 0, 'config', 'config_logo', 'data/zodia.png', 0),
-	(2075, 0, 'config', 'config_return_status_id', '2', 0),
-	(2074, 0, 'config', 'config_return_id', '0', 0),
-	(2073, 0, 'config', 'config_commission', '5', 0),
-	(2072, 0, 'config', 'config_affiliate_id', '4', 0),
-	(2071, 0, 'config', 'config_stock_status_id', '5', 0),
-	(2070, 0, 'config', 'config_stock_checkout', '0', 0),
-	(2069, 0, 'config', 'config_stock_warning', '0', 0),
-	(2068, 0, 'config', 'config_stock_display', '0', 0),
-	(2066, 0, 'config', 'config_order_status_id', '1', 0),
-	(2067, 0, 'config', 'config_complete_status_id', '5', 0),
-	(2065, 0, 'config', 'config_invoice_prefix', 'INV-2012-00', 0),
-	(2063, 0, 'config', 'config_checkout_id', '5', 0),
-	(2064, 0, 'config', 'config_order_edit', '100', 0),
-	(2062, 0, 'config', 'config_guest_checkout', '1', 0),
-	(2131, 0, 'category', 'category_module', 'a:3:{i:0;a:4:{s:9:"layout_id";s:1:"3";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}i:1;a:4:{s:9:"layout_id";s:1:"2";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}i:2;a:4:{s:9:"layout_id";s:1:"1";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
-	(2132, 0, 'latest', 'latest_module', 'a:1:{i:0;a:7:{s:5:"limit";s:1:"5";s:11:"image_width";s:2:"60";s:12:"image_height";s:2:"60";s:9:"layout_id";s:1:"1";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"2";}}', 1),
-	(1415, 0, 'featured', 'product', '', 0),
-	(2158, 0, 'tnt_yahoo', 'tnt_skype_image3', '', 0),
-	(2157, 0, 'tnt_yahoo', 'tnt_skype_mobile3', '', 0),
-	(2156, 0, 'tnt_yahoo', 'tnt_skype_skypeid3', '', 0),
-	(2155, 0, 'tnt_yahoo', 'tnt_skype_image2', '1', 0),
-	(2154, 0, 'tnt_yahoo', 'tnt_skype_mobile2', '016940466027', 0),
-	(2153, 0, 'tnt_yahoo', 'tnt_skype_skypeid2', 'hoanganhquy2007', 0),
-	(2152, 0, 'tnt_yahoo', 'tnt_skype_image1', '3', 0),
-	(2151, 0, 'tnt_yahoo', 'tnt_skype_mobile1', '016940466027', 0),
-	(2150, 0, 'tnt_yahoo', 'tnt_skype_skypeid1', 'ngoalongkt', 0),
-	(2149, 0, 'tnt_yahoo', 'tnt_yahoo_image5', '', 0),
-	(2148, 0, 'tnt_yahoo', 'tnt_yahoo_mobile5', '', 0),
-	(2147, 0, 'tnt_yahoo', 'tnt_yahoo_yahooid5', '', 0),
-	(2146, 0, 'tnt_yahoo', 'tnt_yahoo_image4', '', 0),
-	(2145, 0, 'tnt_yahoo', 'tnt_yahoo_mobile4', '', 0),
-	(2144, 0, 'tnt_yahoo', 'tnt_yahoo_yahooid4', '', 0),
-	(2143, 0, 'tnt_yahoo', 'tnt_yahoo_image3', '', 0),
-	(2166, 0, 'visitor', 'visitor_expire', '60', 0),
-	(2167, 0, 'visitor', 'visitor_theme', 'Shopping', 0),
-	(2168, 0, 'visitor', 'visitor_module', 'a:7:{i:0;a:4:{s:9:"layout_id";s:1:"6";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:2:"10";}i:1;a:4:{s:9:"layout_id";s:1:"3";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:2:"10";}i:2;a:4:{s:9:"layout_id";s:1:"1";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:2:"10";}i:3;a:4:{s:9:"layout_id";s:1:"4";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:2:"10";}i:4;a:4:{s:9:"layout_id";s:1:"2";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:2:"10";}i:5;a:4:{s:9:"layout_id";s:2:"12";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:2:"10";}i:6;a:4:{s:9:"layout_id";s:1:"6";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:2:"10";}}', 1),
-	(2142, 0, 'tnt_yahoo', 'tnt_yahoo_mobile3', '', 0),
-	(2141, 0, 'tnt_yahoo', 'tnt_yahoo_yahooid3', '', 0),
-	(2140, 0, 'tnt_yahoo', 'tnt_yahoo_image2', '2', 0),
-	(2135, 0, 'tnt_yahoo', 'tnt_yahoo_yahooid1', 'doidondoc_tinhtieutan', 0),
-	(2136, 0, 'tnt_yahoo', 'tnt_yahoo_mobile1', '01694046627', 0),
-	(2137, 0, 'tnt_yahoo', 'tnt_yahoo_image1', '1', 0),
-	(2138, 0, 'tnt_yahoo', 'tnt_yahoo_yahooid2', 'ss_bk', 0),
-	(2139, 0, 'tnt_yahoo', 'tnt_yahoo_mobile2', '0125888222', 0),
-	(1593, 0, 'pp_standard', 'pp_standard_status', '1', 0),
-	(1592, 0, 'pp_standard', 'pp_standard_geo_zone_id', '0', 0),
-	(1591, 0, 'pp_standard', 'pp_standard_voided_status_id', '13', 0),
-	(1590, 0, 'pp_standard', 'pp_standard_reversed_status_id', '7', 0),
-	(1589, 0, 'pp_standard', 'pp_standard_refunded_status_id', '7', 0),
-	(1588, 0, 'pp_standard', 'pp_standard_processed_status_id', '7', 0),
-	(1587, 0, 'pp_standard', 'pp_standard_pending_status_id', '7', 0),
-	(1586, 0, 'pp_standard', 'pp_standard_failed_status_id', '7', 0),
-	(1585, 0, 'pp_standard', 'pp_standard_expired_status_id', '7', 0),
-	(1584, 0, 'pp_standard', 'pp_standard_denied_status_id', '13', 0),
-	(1582, 0, 'pp_standard', 'pp_standard_canceled_reversal_status_id', '13', 0),
-	(1583, 0, 'pp_standard', 'pp_standard_completed_status_id', '9', 0),
-	(1611, 0, 'pp_pro', 'pp_pro_order_status_id', '7', 0),
-	(1610, 0, 'pp_pro', 'pp_pro_total', '', 0),
-	(1609, 0, 'pp_pro', 'pp_pro_transaction', '0', 0),
-	(1608, 0, 'pp_pro', 'pp_pro_test', '1', 0),
-	(1594, 0, 'pp_standard', 'pp_standard_sort_order', '1', 0),
-	(2061, 0, 'config', 'config_cart_weight', '1', 0),
-	(2060, 0, 'config', 'config_account_id', '3', 0),
-	(2058, 0, 'config', 'config_customer_group_display', 'a:1:{i:0;s:1:"1";}', 1),
-	(2134, 0, 'special', 'special_module', 'a:1:{i:0;a:7:{s:5:"limit";s:1:"5";s:11:"image_width";s:2:"80";s:12:"image_height";s:2:"80";s:9:"layout_id";s:1:"1";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"2";}}', 1),
-	(1581, 0, 'pp_standard', 'pp_standard_total', '', 0),
-	(1580, 0, 'pp_standard', 'pp_standard_debug', '1', 0),
-	(1579, 0, 'pp_standard', 'pp_standard_transaction', '1', 0),
-	(1578, 0, 'pp_standard', 'pp_standard_test', '1', 0),
-	(1577, 0, 'pp_standard', 'pp_standard_email', 'rongandat@gmail.com', 0),
-	(1607, 0, 'pp_pro', 'pp_pro_signature', 'KhiemPham', 0),
-	(1606, 0, 'pp_pro', 'pp_pro_password', 'anhyeuem', 0),
-	(1605, 0, 'pp_pro', 'pp_pro_username', 'rongandat@gmail.com', 0),
-	(1612, 0, 'pp_pro', 'pp_pro_geo_zone_id', '0', 0),
-	(1613, 0, 'pp_pro', 'pp_pro_status', '1', 0),
-	(1614, 0, 'pp_pro', 'pp_pro_sort_order', '', 0),
-	(2059, 0, 'config', 'config_customer_price', '0', 0),
-	(2055, 0, 'config', 'config_tax_customer', 'shipping', 0),
-	(2056, 0, 'config', 'config_customer_online', '0', 0),
-	(2057, 0, 'config', 'config_customer_group_id', '1', 0),
-	(2054, 0, 'config', 'config_tax_default', 'shipping', 0),
-	(2053, 0, 'config', 'config_vat', '0', 0),
-	(2052, 0, 'config', 'config_tax', '1', 0),
-	(2051, 0, 'config', 'config_voucher_max', '1000', 0),
-	(2050, 0, 'config', 'config_voucher_min', '1', 0),
-	(2049, 0, 'config', 'config_download', '1', 0),
-	(2048, 0, 'config', 'config_review_status', '1', 0),
-	(2047, 0, 'config', 'config_product_count', '1', 0),
-	(2046, 0, 'config', 'config_admin_limit', '20', 0),
-	(2045, 0, 'config', 'config_catalog_limit', '15', 0),
-	(2044, 0, 'config', 'config_weight_class_id', '1', 0),
-	(2043, 0, 'config', 'config_length_class_id', '1', 0),
-	(2042, 0, 'config', 'config_currency_auto', '1', 0),
-	(2040, 0, 'config', 'config_admin_language', 'en', 0),
-	(2041, 0, 'config', 'config_currency', 'VND', 0),
-	(2039, 0, 'config', 'config_language', 'en', 0),
-	(2038, 0, 'config', 'config_zone_id', '3563', 0),
-	(2033, 0, 'config', 'config_title', 'My pham', 0),
-	(2034, 0, 'config', 'config_meta_description', 'Zodia', 0),
-	(2035, 0, 'config', 'config_template', 'trangia', 0),
-	(2036, 0, 'config', 'config_layout_id', '4', 0),
-	(2037, 0, 'config', 'config_country_id', '222', 0),
-	(2032, 0, 'config', 'config_fax', '', 0),
-	(2031, 0, 'config', 'config_telephone', '123456789', 0),
-	(2030, 0, 'config', 'config_email', 'rongandat@gmail.com', 0),
-	(2029, 0, 'config', 'config_address', 'Address 1', 0),
-	(2028, 0, 'config', 'config_owner', 'Zodia', 0),
-	(2027, 0, 'config', 'config_name', 'My Pham', 0),
-	(2126, 0, 'config', 'config_error_display', '1', 0),
-	(2127, 0, 'config', 'config_error_log', '1', 0),
-	(2128, 0, 'config', 'config_error_filename', 'error.txt', 0),
-	(2129, 0, 'config', 'config_google_analytics', '', 0);
-/*!40000 ALTER TABLE `setting` ENABLE KEYS */;
+	(222, 0, 'config', 'config_fraud_status_id', '7', 0),
+	(221, 0, 'config', 'config_fraud_score', '', 0),
+	(220, 0, 'config', 'config_fraud_key', '', 0),
+	(238, 0, 'slideshow', 'slideshow_module', 'a:1:{i:0;a:7:{s:9:"banner_id";s:1:"9";s:5:"width";s:3:"700";s:6:"height";s:3:"340";s:9:"layout_id";s:1:"1";s:8:"position";s:11:"content_top";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
+	(109, 0, 'banner', 'banner_module', 'a:1:{i:0;a:8:{s:9:"banner_id";s:1:"6";s:5:"width";s:3:"182";s:6:"height";s:3:"182";s:11:"resize_type";s:7:"default";s:9:"layout_id";s:1:"3";s:8:"position";s:11:"column_left";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"3";}}', 1),
+	(219, 0, 'config', 'config_fraud_detection', '0', 0),
+	(218, 0, 'config', 'config_alert_emails', '', 0),
+	(217, 0, 'config', 'config_account_mail', '0', 0),
+	(216, 0, 'config', 'config_alert_mail', '0', 0),
+	(215, 0, 'config', 'config_smtp_timeout', '5', 0),
+	(214, 0, 'config', 'config_smtp_port', '25', 0),
+	(213, 0, 'config', 'config_smtp_password', '', 0),
+	(212, 0, 'config', 'config_smtp_username', '', 0),
+	(211, 0, 'config', 'config_smtp_host', '', 0),
+	(210, 0, 'config', 'config_mail_parameter', '', 0),
+	(209, 0, 'config', 'config_mail_protocol', 'mail', 0),
+	(208, 0, 'config', 'config_ftp_status', '0', 0),
+	(207, 0, 'config', 'config_ftp_root', '', 0),
+	(206, 0, 'config', 'config_ftp_password', '', 0),
+	(205, 0, 'config', 'config_ftp_username', '', 0),
+	(138, 0, 'config', 'config_telephone', '123456789', 0),
+	(139, 0, 'config', 'config_fax', '', 0),
+	(140, 0, 'config', 'config_title', 'Your Store', 0),
+	(141, 0, 'config', 'config_meta_description', 'My Store', 0),
+	(142, 0, 'config', 'config_template', 'trangia', 0),
+	(143, 0, 'config', 'config_layout_id', '4', 0),
+	(144, 0, 'config', 'config_country_id', '222', 0),
+	(145, 0, 'config', 'config_zone_id', '3563', 0),
+	(146, 0, 'config', 'config_language', 'en', 0),
+	(147, 0, 'config', 'config_admin_language', 'en', 0),
+	(148, 0, 'config', 'config_currency', 'USD', 0),
+	(149, 0, 'config', 'config_currency_auto', '1', 0),
+	(150, 0, 'config', 'config_length_class_id', '1', 0),
+	(151, 0, 'config', 'config_weight_class_id', '1', 0),
+	(152, 0, 'config', 'config_catalog_limit', '15', 0),
+	(153, 0, 'config', 'config_admin_limit', '20', 0),
+	(154, 0, 'config', 'config_product_count', '1', 0),
+	(155, 0, 'config', 'config_review_status', '1', 0),
+	(156, 0, 'config', 'config_download', '1', 0),
+	(157, 0, 'config', 'config_voucher_min', '1', 0),
+	(158, 0, 'config', 'config_voucher_max', '1000', 0),
+	(159, 0, 'config', 'config_tax', '1', 0),
+	(160, 0, 'config', 'config_vat', '0', 0),
+	(161, 0, 'config', 'config_tax_default', 'shipping', 0),
+	(162, 0, 'config', 'config_tax_customer', 'shipping', 0),
+	(163, 0, 'config', 'config_customer_online', '0', 0),
+	(164, 0, 'config', 'config_customer_group_id', '1', 0),
+	(165, 0, 'config', 'config_customer_group_display', 'a:1:{i:0;s:1:"1";}', 1),
+	(166, 0, 'config', 'config_customer_price', '0', 0),
+	(167, 0, 'config', 'config_account_id', '3', 0),
+	(168, 0, 'config', 'config_cart_weight', '1', 0),
+	(169, 0, 'config', 'config_guest_checkout', '1', 0),
+	(170, 0, 'config', 'config_checkout_id', '5', 0),
+	(171, 0, 'config', 'config_order_edit', '100', 0),
+	(172, 0, 'config', 'config_invoice_prefix', 'INV-2013-00', 0),
+	(173, 0, 'config', 'config_order_status_id', '1', 0),
+	(174, 0, 'config', 'config_complete_status_id', '5', 0),
+	(175, 0, 'config', 'config_stock_display', '0', 0),
+	(176, 0, 'config', 'config_stock_warning', '0', 0),
+	(177, 0, 'config', 'config_stock_checkout', '0', 0),
+	(178, 0, 'config', 'config_stock_status_id', '5', 0),
+	(179, 0, 'config', 'config_affiliate_id', '4', 0),
+	(180, 0, 'config', 'config_commission', '5', 0),
+	(181, 0, 'config', 'config_return_id', '0', 0),
+	(182, 0, 'config', 'config_return_status_id', '2', 0),
+	(183, 0, 'config', 'config_logo', 'data/logo.png', 0),
+	(184, 0, 'config', 'config_icon', 'data/cart.png', 0),
+	(185, 0, 'config', 'config_image_category_width', '80', 0),
+	(186, 0, 'config', 'config_image_category_height', '80', 0),
+	(187, 0, 'config', 'config_image_thumb_width', '228', 0),
+	(188, 0, 'config', 'config_image_thumb_height', '228', 0),
+	(189, 0, 'config', 'config_image_popup_width', '500', 0),
+	(190, 0, 'config', 'config_image_popup_height', '500', 0),
+	(191, 0, 'config', 'config_image_product_width', '80', 0),
+	(192, 0, 'config', 'config_image_product_height', '80', 0),
+	(193, 0, 'config', 'config_image_additional_width', '74', 0),
+	(194, 0, 'config', 'config_image_additional_height', '74', 0),
+	(195, 0, 'config', 'config_image_related_width', '80', 0),
+	(196, 0, 'config', 'config_image_related_height', '80', 0),
+	(197, 0, 'config', 'config_image_compare_width', '90', 0),
+	(198, 0, 'config', 'config_image_compare_height', '90', 0),
+	(199, 0, 'config', 'config_image_wishlist_width', '47', 0),
+	(200, 0, 'config', 'config_image_wishlist_height', '47', 0),
+	(201, 0, 'config', 'config_image_cart_width', '47', 0),
+	(202, 0, 'config', 'config_image_cart_height', '47', 0),
+	(203, 0, 'config', 'config_ftp_host', 'localhost:8080', 0),
+	(204, 0, 'config', 'config_ftp_port', '21', 0),
+	(137, 0, 'config', 'config_email', 'admin@gmail.com', 0),
+	(136, 0, 'config', 'config_address', 'Address 1', 0),
+	(134, 0, 'config', 'config_name', 'Your Store', 0),
+	(135, 0, 'config', 'config_owner', 'Your Name', 0),
+	(226, 0, 'config', 'config_seo_url', '0', 0),
+	(227, 0, 'config', 'config_file_extension_allowed', 'txt\r\npng\r\njpe\r\njpeg\r\njpg\r\ngif\r\nbmp\r\nico\r\ntiff\r\ntif\r\nsvg\r\nsvgz\r\nzip\r\nrar\r\nmsi\r\ncab\r\nmp3\r\nqt\r\nmov\r\npdf\r\npsd\r\nai\r\neps\r\nps\r\ndoc\r\nrtf\r\nxls\r\nppt\r\nodt\r\nods', 0),
+	(228, 0, 'config', 'config_file_mime_allowed', 'text/plain\r\nimage/png\r\nimage/jpeg\r\nimage/jpeg\r\nimage/jpeg\r\nimage/gif\r\nimage/bmp\r\nimage/vnd.microsoft.icon\r\nimage/tiff\r\nimage/tiff\r\nimage/svg+xml\r\nimage/svg+xml\r\napplication/zip\r\napplication/x-rar-compressed\r\napplication/x-msdownload\r\napplication/vnd.ms-cab-compressed\r\naudio/mpeg\r\nvideo/quicktime\r\nvideo/quicktime\r\napplication/pdf\r\nimage/vnd.adobe.photoshop\r\napplication/postscript\r\napplication/postscript\r\napplication/postscript\r\napplication/msword\r\napplication/rtf\r\napplication/vnd.ms-excel\r\napplication/vnd.ms-powerpoint\r\napplication/vnd.oasis.opendocument.text\r\napplication/vnd.oasis.opendocument.spreadsheet', 0),
+	(229, 0, 'config', 'config_maintenance', '0', 0),
+	(230, 0, 'config', 'config_password', '1', 0),
+	(231, 0, 'config', 'config_encryption', '95930368d275edb5ae96acfffa532204', 0),
+	(232, 0, 'config', 'config_compression', '0', 0),
+	(233, 0, 'config', 'config_error_display', '1', 0),
+	(234, 0, 'config', 'config_error_log', '1', 0),
+	(235, 0, 'config', 'config_error_filename', 'error.txt', 0),
+	(236, 0, 'config', 'config_google_analytics', '', 0),
+	(240, 0, 'newslatest', 'newslatest_module', 'a:1:{i:0;a:10:{s:5:"limit";s:1:"5";s:16:"limitdescription";s:3:"200";s:11:"image_width";s:2:"30";s:12:"image_height";s:2:"30";s:9:"layout_id";s:1:"1";s:8:"position";s:12:"column_right";s:11:"description";s:1:"1";s:11:"imagestatus";s:1:"1";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
+	(248, 0, 'latest', 'latest_module', 'a:1:{i:0;a:7:{s:5:"limit";s:2:"12";s:11:"image_width";s:3:"180";s:12:"image_height";s:3:"180";s:9:"layout_id";s:1:"1";s:8:"position";s:11:"content_top";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"2";}}', 1);
+/*!40000 ALTER TABLE `oc_setting` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.stock_status
-DROP TABLE IF EXISTS `stock_status`;
-CREATE TABLE IF NOT EXISTS `stock_status` (
+-- Dumping structure for table amthuctrangia.oc_stock_status
+CREATE TABLE IF NOT EXISTS `oc_stock_status` (
   `stock_status_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) NOT NULL,
   `name` varchar(32) NOT NULL,
   PRIMARY KEY (`stock_status_id`,`language_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.stock_status: 8 rows
-/*!40000 ALTER TABLE `stock_status` DISABLE KEYS */;
-INSERT INTO `stock_status` (`stock_status_id`, `language_id`, `name`) VALUES
+-- Dumping data for table amthuctrangia.oc_stock_status: 4 rows
+DELETE FROM `oc_stock_status`;
+/*!40000 ALTER TABLE `oc_stock_status` DISABLE KEYS */;
+INSERT INTO `oc_stock_status` (`stock_status_id`, `language_id`, `name`) VALUES
 	(7, 1, 'In Stock'),
 	(8, 1, 'Pre-Order'),
 	(5, 1, 'Out Of Stock'),
-	(6, 1, '2 - 3 Days'),
-	(7, 2, 'In Stock'),
-	(8, 2, 'Pre-Order'),
-	(5, 2, 'Out Of Stock'),
-	(6, 2, '2 - 3 Days');
-/*!40000 ALTER TABLE `stock_status` ENABLE KEYS */;
+	(6, 1, '2 - 3 Days');
+/*!40000 ALTER TABLE `oc_stock_status` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.store
-DROP TABLE IF EXISTS `store`;
-CREATE TABLE IF NOT EXISTS `store` (
+-- Dumping structure for table amthuctrangia.oc_store
+CREATE TABLE IF NOT EXISTS `oc_store` (
   `store_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) NOT NULL,
   `url` varchar(255) NOT NULL,
   `ssl` varchar(255) NOT NULL,
   PRIMARY KEY (`store_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.store: 0 rows
-/*!40000 ALTER TABLE `store` DISABLE KEYS */;
-/*!40000 ALTER TABLE `store` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_store: 0 rows
+DELETE FROM `oc_store`;
+/*!40000 ALTER TABLE `oc_store` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oc_store` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.tax_class
-DROP TABLE IF EXISTS `tax_class`;
-CREATE TABLE IF NOT EXISTS `tax_class` (
+-- Dumping structure for table amthuctrangia.oc_tax_class
+CREATE TABLE IF NOT EXISTS `oc_tax_class` (
   `tax_class_id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(32) NOT NULL,
   `description` varchar(255) NOT NULL,
@@ -2776,17 +2657,17 @@ CREATE TABLE IF NOT EXISTS `tax_class` (
   PRIMARY KEY (`tax_class_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.tax_class: 2 rows
-/*!40000 ALTER TABLE `tax_class` DISABLE KEYS */;
-INSERT INTO `tax_class` (`tax_class_id`, `title`, `description`, `date_added`, `date_modified`) VALUES
+-- Dumping data for table amthuctrangia.oc_tax_class: 2 rows
+DELETE FROM `oc_tax_class`;
+/*!40000 ALTER TABLE `oc_tax_class` DISABLE KEYS */;
+INSERT INTO `oc_tax_class` (`tax_class_id`, `title`, `description`, `date_added`, `date_modified`) VALUES
 	(9, 'Taxable Goods', 'Taxed Stuff', '2009-01-06 23:21:53', '2011-09-23 14:07:50'),
 	(10, 'Downloadable Products', 'Downloadable', '2011-09-21 22:19:39', '2011-09-22 10:27:36');
-/*!40000 ALTER TABLE `tax_class` ENABLE KEYS */;
+/*!40000 ALTER TABLE `oc_tax_class` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.tax_rate
-DROP TABLE IF EXISTS `tax_rate`;
-CREATE TABLE IF NOT EXISTS `tax_rate` (
+-- Dumping structure for table amthuctrangia.oc_tax_rate
+CREATE TABLE IF NOT EXISTS `oc_tax_rate` (
   `tax_rate_id` int(11) NOT NULL AUTO_INCREMENT,
   `geo_zone_id` int(11) NOT NULL DEFAULT '0',
   `name` varchar(32) NOT NULL,
@@ -2797,33 +2678,33 @@ CREATE TABLE IF NOT EXISTS `tax_rate` (
   PRIMARY KEY (`tax_rate_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=88 DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.tax_rate: 2 rows
-/*!40000 ALTER TABLE `tax_rate` DISABLE KEYS */;
-INSERT INTO `tax_rate` (`tax_rate_id`, `geo_zone_id`, `name`, `rate`, `type`, `date_added`, `date_modified`) VALUES
+-- Dumping data for table amthuctrangia.oc_tax_rate: 2 rows
+DELETE FROM `oc_tax_rate`;
+/*!40000 ALTER TABLE `oc_tax_rate` DISABLE KEYS */;
+INSERT INTO `oc_tax_rate` (`tax_rate_id`, `geo_zone_id`, `name`, `rate`, `type`, `date_added`, `date_modified`) VALUES
 	(86, 3, 'VAT (17.5%)', 17.5000, 'P', '2011-03-09 21:17:10', '2011-09-22 22:24:29'),
 	(87, 3, 'Eco Tax (-2.00)', 2.0000, 'F', '2011-09-21 21:49:23', '2011-09-23 00:40:19');
-/*!40000 ALTER TABLE `tax_rate` ENABLE KEYS */;
+/*!40000 ALTER TABLE `oc_tax_rate` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.tax_rate_to_customer_group
-DROP TABLE IF EXISTS `tax_rate_to_customer_group`;
-CREATE TABLE IF NOT EXISTS `tax_rate_to_customer_group` (
+-- Dumping structure for table amthuctrangia.oc_tax_rate_to_customer_group
+CREATE TABLE IF NOT EXISTS `oc_tax_rate_to_customer_group` (
   `tax_rate_id` int(11) NOT NULL,
   `customer_group_id` int(11) NOT NULL,
   PRIMARY KEY (`tax_rate_id`,`customer_group_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.tax_rate_to_customer_group: 2 rows
-/*!40000 ALTER TABLE `tax_rate_to_customer_group` DISABLE KEYS */;
-INSERT INTO `tax_rate_to_customer_group` (`tax_rate_id`, `customer_group_id`) VALUES
+-- Dumping data for table amthuctrangia.oc_tax_rate_to_customer_group: 2 rows
+DELETE FROM `oc_tax_rate_to_customer_group`;
+/*!40000 ALTER TABLE `oc_tax_rate_to_customer_group` DISABLE KEYS */;
+INSERT INTO `oc_tax_rate_to_customer_group` (`tax_rate_id`, `customer_group_id`) VALUES
 	(86, 1),
 	(87, 1);
-/*!40000 ALTER TABLE `tax_rate_to_customer_group` ENABLE KEYS */;
+/*!40000 ALTER TABLE `oc_tax_rate_to_customer_group` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.tax_rule
-DROP TABLE IF EXISTS `tax_rule`;
-CREATE TABLE IF NOT EXISTS `tax_rule` (
+-- Dumping structure for table amthuctrangia.oc_tax_rule
+CREATE TABLE IF NOT EXISTS `oc_tax_rule` (
   `tax_rule_id` int(11) NOT NULL AUTO_INCREMENT,
   `tax_class_id` int(11) NOT NULL,
   `tax_rate_id` int(11) NOT NULL,
@@ -2832,55 +2713,36 @@ CREATE TABLE IF NOT EXISTS `tax_rule` (
   PRIMARY KEY (`tax_rule_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=129 DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.tax_rule: 4 rows
-/*!40000 ALTER TABLE `tax_rule` DISABLE KEYS */;
-INSERT INTO `tax_rule` (`tax_rule_id`, `tax_class_id`, `tax_rate_id`, `based`, `priority`) VALUES
+-- Dumping data for table amthuctrangia.oc_tax_rule: 4 rows
+DELETE FROM `oc_tax_rule`;
+/*!40000 ALTER TABLE `oc_tax_rule` DISABLE KEYS */;
+INSERT INTO `oc_tax_rule` (`tax_rule_id`, `tax_class_id`, `tax_rate_id`, `based`, `priority`) VALUES
 	(121, 10, 86, 'payment', 1),
 	(120, 10, 87, 'store', 0),
 	(128, 9, 86, 'shipping', 1),
 	(127, 9, 87, 'shipping', 2);
-/*!40000 ALTER TABLE `tax_rule` ENABLE KEYS */;
+/*!40000 ALTER TABLE `oc_tax_rule` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.url_alias
-DROP TABLE IF EXISTS `url_alias`;
-CREATE TABLE IF NOT EXISTS `url_alias` (
+-- Dumping structure for table amthuctrangia.oc_url_alias
+CREATE TABLE IF NOT EXISTS `oc_url_alias` (
   `url_alias_id` int(11) NOT NULL AUTO_INCREMENT,
   `query` varchar(255) NOT NULL,
   `keyword` varchar(255) NOT NULL,
   PRIMARY KEY (`url_alias_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=812 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=775 DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.url_alias: 21 rows
-/*!40000 ALTER TABLE `url_alias` DISABLE KEYS */;
-INSERT INTO `url_alias` (`url_alias_id`, `query`, `keyword`) VALUES
-	(799, 'category_id=67', 'ho-tro-tim-mach'),
-	(800, 'category_id=66', 'ho-tro-xuong-khop'),
+-- Dumping data for table amthuctrangia.oc_url_alias: 2 rows
+DELETE FROM `oc_url_alias`;
+/*!40000 ALTER TABLE `oc_url_alias` DISABLE KEYS */;
+INSERT INTO `oc_url_alias` (`url_alias_id`, `query`, `keyword`) VALUES
 	(730, 'manufacturer_id=8', 'apple'),
-	(772, 'information_id=4', 'about_us'),
-	(806, 'product_id=50', 'neocell-collagen-type-2'),
-	(774, 'news_category_id=1', 'tin-khuyen-mai'),
-	(775, 'news_category_id=2', 'tin-tuyen-dung'),
-	(776, 'news_id=1', 'tuyen-dung-nhan-vien-ban-hang.html'),
-	(777, 'news_id=2', 'khuyen-mai-lon-dau-nam.html'),
-	(780, 'news_id=3', 'tu-van-tieu-dung.html'),
-	(781, 'news_id=4', 'cham-soc-suc-khoe.html'),
-	(782, 'category_id=0', 's0-ha-tra-xng-khap'),
-	(783, 'category_id=0', 's0-ha-tra-xng-khap'),
-	(784, 'category_id=0', 's0-ha-tra-xng-khap'),
-	(785, 'category_id=0', 's0-ha-tra-xng-khap'),
-	(786, 'category_id=0', 's0-ha-tra-xng-khap'),
-	(787, 'category_id=0', 's0-ha-tra-xng-khap'),
-	(788, 'category_id=0', 's0-ha-tra-xng-khap'),
-	(789, 'category_id=0', 's0-ha-tra-xng-khap'),
-	(810, 'category_id=68', 'dsub-category'),
-	(811, 'product_id=51', 'collagen-ctm-pomegranate-liquid');
-/*!40000 ALTER TABLE `url_alias` ENABLE KEYS */;
+	(774, 'information_id=4', 'about_us');
+/*!40000 ALTER TABLE `oc_url_alias` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.user
-DROP TABLE IF EXISTS `user`;
-CREATE TABLE IF NOT EXISTS `user` (
+-- Dumping structure for table amthuctrangia.oc_user
+CREATE TABLE IF NOT EXISTS `oc_user` (
   `user_id` int(11) NOT NULL AUTO_INCREMENT,
   `user_group_id` int(11) NOT NULL,
   `username` varchar(20) NOT NULL,
@@ -2896,49 +2758,33 @@ CREATE TABLE IF NOT EXISTS `user` (
   PRIMARY KEY (`user_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.user: 1 rows
-/*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` (`user_id`, `user_group_id`, `username`, `password`, `salt`, `firstname`, `lastname`, `email`, `code`, `ip`, `status`, `date_added`) VALUES
-	(1, 1, 'admin', '1a29f9b21bf9b188121cd9cb8311678b6be2c533', 'ce662dd1f', 'Khiem', 'Pham', 'rongandat@gmail.com', '', '127.0.0.1', 1, '2013-01-22 17:35:51');
-/*!40000 ALTER TABLE `user` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_user: 1 rows
+DELETE FROM `oc_user`;
+/*!40000 ALTER TABLE `oc_user` DISABLE KEYS */;
+INSERT INTO `oc_user` (`user_id`, `user_group_id`, `username`, `password`, `salt`, `firstname`, `lastname`, `email`, `code`, `ip`, `status`, `date_added`) VALUES
+	(1, 1, 'admin', '965a87f397f23d137c6953d482296fc21ebc06c4', '9718b6cd1', '', '', 'admin@gmail.com', '', '::1', 1, '2013-07-12 15:19:47');
+/*!40000 ALTER TABLE `oc_user` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.user_group
-DROP TABLE IF EXISTS `user_group`;
-CREATE TABLE IF NOT EXISTS `user_group` (
+-- Dumping structure for table amthuctrangia.oc_user_group
+CREATE TABLE IF NOT EXISTS `oc_user_group` (
   `user_group_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) NOT NULL,
   `permission` text NOT NULL,
   PRIMARY KEY (`user_group_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.user_group: 2 rows
-/*!40000 ALTER TABLE `user_group` DISABLE KEYS */;
-INSERT INTO `user_group` (`user_group_id`, `name`, `permission`) VALUES
-	(1, 'Top Administrator', 'a:2:{s:6:"access";a:154:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:14:"catalog/filter";i:5;s:19:"catalog/information";i:6;s:20:"catalog/manufacturer";i:7;s:12:"catalog/news";i:8;s:21:"catalog/news_category";i:9;s:20:"catalog/news_comment";i:10;s:14:"catalog/option";i:11;s:15:"catalog/product";i:12;s:14:"catalog/review";i:13;s:18:"common/filemanager";i:14;s:13:"design/banner";i:15;s:13:"design/layout";i:16;s:14:"extension/feed";i:17;s:17:"extension/manager";i:18;s:16:"extension/module";i:19;s:17:"extension/payment";i:20;s:18:"extension/shipping";i:21;s:15:"extension/total";i:22;s:16:"feed/google_base";i:23;s:19:"feed/google_sitemap";i:24;s:20:"localisation/country";i:25;s:21:"localisation/currency";i:26;s:21:"localisation/geo_zone";i:27;s:21:"localisation/language";i:28;s:25:"localisation/length_class";i:29;s:25:"localisation/order_status";i:30;s:26:"localisation/return_action";i:31;s:26:"localisation/return_reason";i:32;s:26:"localisation/return_status";i:33;s:25:"localisation/stock_status";i:34;s:22:"localisation/tax_class";i:35;s:21:"localisation/tax_rate";i:36;s:25:"localisation/weight_class";i:37;s:17:"localisation/zone";i:38;s:14:"module/account";i:39;s:16:"module/affiliate";i:40;s:13:"module/banner";i:41;s:17:"module/bestseller";i:42;s:15:"module/carousel";i:43;s:15:"module/category";i:44;s:16:"module/fblikebox";i:45;s:15:"module/featured";i:46;s:13:"module/filter";i:47;s:18:"module/google_talk";i:48;s:18:"module/information";i:49;s:13:"module/latest";i:50;s:20:"module/news_category";i:51;s:19:"module/newsfeatured";i:52;s:17:"module/newslatest";i:53;s:16:"module/slideshow";i:54;s:14:"module/special";i:55;s:12:"module/store";i:56;s:18:"module/tnt_newscat";i:57;s:20:"module/vqmod_manager";i:58;s:14:"module/welcome";i:59;s:24:"payment/authorizenet_aim";i:60;s:21:"payment/bank_transfer";i:61;s:14:"payment/cheque";i:62;s:11:"payment/cod";i:63;s:21:"payment/free_checkout";i:64;s:22:"payment/klarna_account";i:65;s:22:"payment/klarna_invoice";i:66;s:14:"payment/liqpay";i:67;s:20:"payment/moneybookers";i:68;s:14:"payment/nochex";i:69;s:15:"payment/paymate";i:70;s:16:"payment/paypoint";i:71;s:13:"payment/payza";i:72;s:26:"payment/perpetual_payments";i:73;s:14:"payment/pp_pro";i:74;s:17:"payment/pp_pro_uk";i:75;s:19:"payment/pp_standard";i:76;s:15:"payment/sagepay";i:77;s:22:"payment/sagepay_direct";i:78;s:18:"payment/sagepay_us";i:79;s:19:"payment/twocheckout";i:80;s:28:"payment/web_payment_software";i:81;s:16:"payment/worldpay";i:82;s:27:"report/affiliate_commission";i:83;s:22:"report/customer_credit";i:84;s:22:"report/customer_online";i:85;s:21:"report/customer_order";i:86;s:22:"report/customer_reward";i:87;s:24:"report/product_purchased";i:88;s:21:"report/product_viewed";i:89;s:18:"report/sale_coupon";i:90;s:17:"report/sale_order";i:91;s:18:"report/sale_return";i:92;s:20:"report/sale_shipping";i:93;s:15:"report/sale_tax";i:94;s:14:"sale/affiliate";i:95;s:12:"sale/contact";i:96;s:11:"sale/coupon";i:97;s:17:"sale/custom_field";i:98;s:13:"sale/customer";i:99;s:20:"sale/customer_ban_ip";i:100;s:19:"sale/customer_group";i:101;s:10:"sale/order";i:102;s:11:"sale/return";i:103;s:12:"sale/voucher";i:104;s:18:"sale/voucher_theme";i:105;s:15:"setting/setting";i:106;s:13:"setting/store";i:107;s:16:"shipping/auspost";i:108;s:17:"shipping/citylink";i:109;s:14:"shipping/fedex";i:110;s:13:"shipping/flat";i:111;s:13:"shipping/free";i:112;s:13:"shipping/item";i:113;s:23:"shipping/parcelforce_48";i:114;s:15:"shipping/pickup";i:115;s:19:"shipping/royal_mail";i:116;s:12:"shipping/ups";i:117;s:13:"shipping/usps";i:118;s:15:"shipping/weight";i:119;s:11:"tool/backup";i:120;s:14:"tool/error_log";i:121;s:12:"total/coupon";i:122;s:12:"total/credit";i:123;s:14:"total/handling";i:124;s:16:"total/klarna_fee";i:125;s:19:"total/low_order_fee";i:126;s:12:"total/reward";i:127;s:14:"total/shipping";i:128;s:15:"total/sub_total";i:129;s:9:"total/tax";i:130;s:11:"total/total";i:131;s:13:"total/voucher";i:132;s:9:"user/user";i:133;s:20:"user/user_permission";i:134;s:20:"module/vqmod_manager";i:135;s:20:"module/vqmod_manager";i:136;s:13:"module/latest";i:137;s:14:"module/visitor";i:138;s:14:"module/visitor";i:139;s:14:"module/visitor";i:140;s:14:"module/visitor";i:141;s:14:"module/visitor";i:142;s:14:"module/visitor";i:143;s:14:"module/visitor";i:144;s:22:"module/visitor_counter";i:145;s:14:"module/visitor";i:146;s:14:"module/visitor";i:147;s:16:"module/tnt_yahoo";i:148;s:14:"module/special";i:149;s:12:"module/deals";i:150;s:14:"payment/pp_pro";i:151;s:17:"payment/pp_pro_uk";i:152;s:19:"payment/pp_standard";i:153;s:14:"payment/pp_pro";}s:6:"modify";a:154:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:14:"catalog/filter";i:5;s:19:"catalog/information";i:6;s:20:"catalog/manufacturer";i:7;s:12:"catalog/news";i:8;s:21:"catalog/news_category";i:9;s:20:"catalog/news_comment";i:10;s:14:"catalog/option";i:11;s:15:"catalog/product";i:12;s:14:"catalog/review";i:13;s:18:"common/filemanager";i:14;s:13:"design/banner";i:15;s:13:"design/layout";i:16;s:14:"extension/feed";i:17;s:17:"extension/manager";i:18;s:16:"extension/module";i:19;s:17:"extension/payment";i:20;s:18:"extension/shipping";i:21;s:15:"extension/total";i:22;s:16:"feed/google_base";i:23;s:19:"feed/google_sitemap";i:24;s:20:"localisation/country";i:25;s:21:"localisation/currency";i:26;s:21:"localisation/geo_zone";i:27;s:21:"localisation/language";i:28;s:25:"localisation/length_class";i:29;s:25:"localisation/order_status";i:30;s:26:"localisation/return_action";i:31;s:26:"localisation/return_reason";i:32;s:26:"localisation/return_status";i:33;s:25:"localisation/stock_status";i:34;s:22:"localisation/tax_class";i:35;s:21:"localisation/tax_rate";i:36;s:25:"localisation/weight_class";i:37;s:17:"localisation/zone";i:38;s:14:"module/account";i:39;s:16:"module/affiliate";i:40;s:13:"module/banner";i:41;s:17:"module/bestseller";i:42;s:15:"module/carousel";i:43;s:15:"module/category";i:44;s:16:"module/fblikebox";i:45;s:15:"module/featured";i:46;s:13:"module/filter";i:47;s:18:"module/google_talk";i:48;s:18:"module/information";i:49;s:13:"module/latest";i:50;s:20:"module/news_category";i:51;s:19:"module/newsfeatured";i:52;s:17:"module/newslatest";i:53;s:16:"module/slideshow";i:54;s:14:"module/special";i:55;s:12:"module/store";i:56;s:18:"module/tnt_newscat";i:57;s:20:"module/vqmod_manager";i:58;s:14:"module/welcome";i:59;s:24:"payment/authorizenet_aim";i:60;s:21:"payment/bank_transfer";i:61;s:14:"payment/cheque";i:62;s:11:"payment/cod";i:63;s:21:"payment/free_checkout";i:64;s:22:"payment/klarna_account";i:65;s:22:"payment/klarna_invoice";i:66;s:14:"payment/liqpay";i:67;s:20:"payment/moneybookers";i:68;s:14:"payment/nochex";i:69;s:15:"payment/paymate";i:70;s:16:"payment/paypoint";i:71;s:13:"payment/payza";i:72;s:26:"payment/perpetual_payments";i:73;s:14:"payment/pp_pro";i:74;s:17:"payment/pp_pro_uk";i:75;s:19:"payment/pp_standard";i:76;s:15:"payment/sagepay";i:77;s:22:"payment/sagepay_direct";i:78;s:18:"payment/sagepay_us";i:79;s:19:"payment/twocheckout";i:80;s:28:"payment/web_payment_software";i:81;s:16:"payment/worldpay";i:82;s:27:"report/affiliate_commission";i:83;s:22:"report/customer_credit";i:84;s:22:"report/customer_online";i:85;s:21:"report/customer_order";i:86;s:22:"report/customer_reward";i:87;s:24:"report/product_purchased";i:88;s:21:"report/product_viewed";i:89;s:18:"report/sale_coupon";i:90;s:17:"report/sale_order";i:91;s:18:"report/sale_return";i:92;s:20:"report/sale_shipping";i:93;s:15:"report/sale_tax";i:94;s:14:"sale/affiliate";i:95;s:12:"sale/contact";i:96;s:11:"sale/coupon";i:97;s:17:"sale/custom_field";i:98;s:13:"sale/customer";i:99;s:20:"sale/customer_ban_ip";i:100;s:19:"sale/customer_group";i:101;s:10:"sale/order";i:102;s:11:"sale/return";i:103;s:12:"sale/voucher";i:104;s:18:"sale/voucher_theme";i:105;s:15:"setting/setting";i:106;s:13:"setting/store";i:107;s:16:"shipping/auspost";i:108;s:17:"shipping/citylink";i:109;s:14:"shipping/fedex";i:110;s:13:"shipping/flat";i:111;s:13:"shipping/free";i:112;s:13:"shipping/item";i:113;s:23:"shipping/parcelforce_48";i:114;s:15:"shipping/pickup";i:115;s:19:"shipping/royal_mail";i:116;s:12:"shipping/ups";i:117;s:13:"shipping/usps";i:118;s:15:"shipping/weight";i:119;s:11:"tool/backup";i:120;s:14:"tool/error_log";i:121;s:12:"total/coupon";i:122;s:12:"total/credit";i:123;s:14:"total/handling";i:124;s:16:"total/klarna_fee";i:125;s:19:"total/low_order_fee";i:126;s:12:"total/reward";i:127;s:14:"total/shipping";i:128;s:15:"total/sub_total";i:129;s:9:"total/tax";i:130;s:11:"total/total";i:131;s:13:"total/voucher";i:132;s:9:"user/user";i:133;s:20:"user/user_permission";i:134;s:20:"module/vqmod_manager";i:135;s:20:"module/vqmod_manager";i:136;s:13:"module/latest";i:137;s:14:"module/visitor";i:138;s:14:"module/visitor";i:139;s:14:"module/visitor";i:140;s:14:"module/visitor";i:141;s:14:"module/visitor";i:142;s:14:"module/visitor";i:143;s:14:"module/visitor";i:144;s:22:"module/visitor_counter";i:145;s:14:"module/visitor";i:146;s:14:"module/visitor";i:147;s:16:"module/tnt_yahoo";i:148;s:14:"module/special";i:149;s:12:"module/deals";i:150;s:14:"payment/pp_pro";i:151;s:17:"payment/pp_pro_uk";i:152;s:19:"payment/pp_standard";i:153;s:14:"payment/pp_pro";}}'),
+-- Dumping data for table amthuctrangia.oc_user_group: 2 rows
+DELETE FROM `oc_user_group`;
+/*!40000 ALTER TABLE `oc_user_group` DISABLE KEYS */;
+INSERT INTO `oc_user_group` (`user_group_id`, `name`, `permission`) VALUES
+	(1, 'Top Administrator', 'a:2:{s:6:"access";a:133:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:14:"catalog/filter";i:5;s:19:"catalog/information";i:6;s:20:"catalog/manufacturer";i:7;s:12:"catalog/news";i:8;s:21:"catalog/news_category";i:9;s:20:"catalog/news_comment";i:10;s:14:"catalog/option";i:11;s:15:"catalog/product";i:12;s:14:"catalog/review";i:13;s:18:"common/filemanager";i:14;s:13:"design/banner";i:15;s:19:"design/custom_field";i:16;s:13:"design/layout";i:17;s:14:"extension/feed";i:18;s:17:"extension/manager";i:19;s:16:"extension/module";i:20;s:17:"extension/payment";i:21;s:18:"extension/shipping";i:22;s:15:"extension/total";i:23;s:16:"feed/google_base";i:24;s:19:"feed/google_sitemap";i:25;s:20:"localisation/country";i:26;s:21:"localisation/currency";i:27;s:21:"localisation/geo_zone";i:28;s:21:"localisation/language";i:29;s:25:"localisation/length_class";i:30;s:25:"localisation/order_status";i:31;s:26:"localisation/return_action";i:32;s:26:"localisation/return_reason";i:33;s:26:"localisation/return_status";i:34;s:25:"localisation/stock_status";i:35;s:22:"localisation/tax_class";i:36;s:21:"localisation/tax_rate";i:37;s:25:"localisation/weight_class";i:38;s:17:"localisation/zone";i:39;s:14:"module/account";i:40;s:16:"module/affiliate";i:41;s:13:"module/banner";i:42;s:17:"module/bestseller";i:43;s:15:"module/carousel";i:44;s:15:"module/category";i:45;s:15:"module/featured";i:46;s:13:"module/filter";i:47;s:18:"module/google_talk";i:48;s:18:"module/information";i:49;s:13:"module/latest";i:50;s:20:"module/news_category";i:51;s:19:"module/newsfeatured";i:52;s:17:"module/newslatest";i:53;s:16:"module/slideshow";i:54;s:14:"module/special";i:55;s:12:"module/store";i:56;s:14:"module/welcome";i:57;s:24:"payment/authorizenet_aim";i:58;s:21:"payment/bank_transfer";i:59;s:14:"payment/cheque";i:60;s:11:"payment/cod";i:61;s:21:"payment/free_checkout";i:62;s:22:"payment/klarna_account";i:63;s:22:"payment/klarna_invoice";i:64;s:14:"payment/liqpay";i:65;s:20:"payment/moneybookers";i:66;s:14:"payment/nochex";i:67;s:15:"payment/paymate";i:68;s:16:"payment/paypoint";i:69;s:13:"payment/payza";i:70;s:26:"payment/perpetual_payments";i:71;s:14:"payment/pp_pro";i:72;s:17:"payment/pp_pro_uk";i:73;s:19:"payment/pp_standard";i:74;s:15:"payment/sagepay";i:75;s:22:"payment/sagepay_direct";i:76;s:18:"payment/sagepay_us";i:77;s:19:"payment/twocheckout";i:78;s:28:"payment/web_payment_software";i:79;s:16:"payment/worldpay";i:80;s:27:"report/affiliate_commission";i:81;s:22:"report/customer_credit";i:82;s:22:"report/customer_online";i:83;s:21:"report/customer_order";i:84;s:22:"report/customer_reward";i:85;s:24:"report/product_purchased";i:86;s:21:"report/product_viewed";i:87;s:18:"report/sale_coupon";i:88;s:17:"report/sale_order";i:89;s:18:"report/sale_return";i:90;s:20:"report/sale_shipping";i:91;s:15:"report/sale_tax";i:92;s:14:"sale/affiliate";i:93;s:12:"sale/contact";i:94;s:11:"sale/coupon";i:95;s:13:"sale/customer";i:96;s:20:"sale/customer_ban_ip";i:97;s:19:"sale/customer_group";i:98;s:10:"sale/order";i:99;s:11:"sale/return";i:100;s:12:"sale/voucher";i:101;s:18:"sale/voucher_theme";i:102;s:15:"setting/setting";i:103;s:13:"setting/store";i:104;s:16:"shipping/auspost";i:105;s:17:"shipping/citylink";i:106;s:14:"shipping/fedex";i:107;s:13:"shipping/flat";i:108;s:13:"shipping/free";i:109;s:13:"shipping/item";i:110;s:23:"shipping/parcelforce_48";i:111;s:15:"shipping/pickup";i:112;s:19:"shipping/royal_mail";i:113;s:12:"shipping/ups";i:114;s:13:"shipping/usps";i:115;s:15:"shipping/weight";i:116;s:11:"tool/backup";i:117;s:14:"tool/error_log";i:118;s:12:"total/coupon";i:119;s:12:"total/credit";i:120;s:14:"total/handling";i:121;s:16:"total/klarna_fee";i:122;s:19:"total/low_order_fee";i:123;s:12:"total/reward";i:124;s:14:"total/shipping";i:125;s:15:"total/sub_total";i:126;s:9:"total/tax";i:127;s:11:"total/total";i:128;s:13:"total/voucher";i:129;s:9:"user/user";i:130;s:20:"user/user_permission";i:131;s:17:"module/newslatest";i:132;s:13:"module/latest";}s:6:"modify";a:133:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:14:"catalog/filter";i:5;s:19:"catalog/information";i:6;s:20:"catalog/manufacturer";i:7;s:12:"catalog/news";i:8;s:21:"catalog/news_category";i:9;s:20:"catalog/news_comment";i:10;s:14:"catalog/option";i:11;s:15:"catalog/product";i:12;s:14:"catalog/review";i:13;s:18:"common/filemanager";i:14;s:13:"design/banner";i:15;s:19:"design/custom_field";i:16;s:13:"design/layout";i:17;s:14:"extension/feed";i:18;s:17:"extension/manager";i:19;s:16:"extension/module";i:20;s:17:"extension/payment";i:21;s:18:"extension/shipping";i:22;s:15:"extension/total";i:23;s:16:"feed/google_base";i:24;s:19:"feed/google_sitemap";i:25;s:20:"localisation/country";i:26;s:21:"localisation/currency";i:27;s:21:"localisation/geo_zone";i:28;s:21:"localisation/language";i:29;s:25:"localisation/length_class";i:30;s:25:"localisation/order_status";i:31;s:26:"localisation/return_action";i:32;s:26:"localisation/return_reason";i:33;s:26:"localisation/return_status";i:34;s:25:"localisation/stock_status";i:35;s:22:"localisation/tax_class";i:36;s:21:"localisation/tax_rate";i:37;s:25:"localisation/weight_class";i:38;s:17:"localisation/zone";i:39;s:14:"module/account";i:40;s:16:"module/affiliate";i:41;s:13:"module/banner";i:42;s:17:"module/bestseller";i:43;s:15:"module/carousel";i:44;s:15:"module/category";i:45;s:15:"module/featured";i:46;s:13:"module/filter";i:47;s:18:"module/google_talk";i:48;s:18:"module/information";i:49;s:13:"module/latest";i:50;s:20:"module/news_category";i:51;s:19:"module/newsfeatured";i:52;s:17:"module/newslatest";i:53;s:16:"module/slideshow";i:54;s:14:"module/special";i:55;s:12:"module/store";i:56;s:14:"module/welcome";i:57;s:24:"payment/authorizenet_aim";i:58;s:21:"payment/bank_transfer";i:59;s:14:"payment/cheque";i:60;s:11:"payment/cod";i:61;s:21:"payment/free_checkout";i:62;s:22:"payment/klarna_account";i:63;s:22:"payment/klarna_invoice";i:64;s:14:"payment/liqpay";i:65;s:20:"payment/moneybookers";i:66;s:14:"payment/nochex";i:67;s:15:"payment/paymate";i:68;s:16:"payment/paypoint";i:69;s:13:"payment/payza";i:70;s:26:"payment/perpetual_payments";i:71;s:14:"payment/pp_pro";i:72;s:17:"payment/pp_pro_uk";i:73;s:19:"payment/pp_standard";i:74;s:15:"payment/sagepay";i:75;s:22:"payment/sagepay_direct";i:76;s:18:"payment/sagepay_us";i:77;s:19:"payment/twocheckout";i:78;s:28:"payment/web_payment_software";i:79;s:16:"payment/worldpay";i:80;s:27:"report/affiliate_commission";i:81;s:22:"report/customer_credit";i:82;s:22:"report/customer_online";i:83;s:21:"report/customer_order";i:84;s:22:"report/customer_reward";i:85;s:24:"report/product_purchased";i:86;s:21:"report/product_viewed";i:87;s:18:"report/sale_coupon";i:88;s:17:"report/sale_order";i:89;s:18:"report/sale_return";i:90;s:20:"report/sale_shipping";i:91;s:15:"report/sale_tax";i:92;s:14:"sale/affiliate";i:93;s:12:"sale/contact";i:94;s:11:"sale/coupon";i:95;s:13:"sale/customer";i:96;s:20:"sale/customer_ban_ip";i:97;s:19:"sale/customer_group";i:98;s:10:"sale/order";i:99;s:11:"sale/return";i:100;s:12:"sale/voucher";i:101;s:18:"sale/voucher_theme";i:102;s:15:"setting/setting";i:103;s:13:"setting/store";i:104;s:16:"shipping/auspost";i:105;s:17:"shipping/citylink";i:106;s:14:"shipping/fedex";i:107;s:13:"shipping/flat";i:108;s:13:"shipping/free";i:109;s:13:"shipping/item";i:110;s:23:"shipping/parcelforce_48";i:111;s:15:"shipping/pickup";i:112;s:19:"shipping/royal_mail";i:113;s:12:"shipping/ups";i:114;s:13:"shipping/usps";i:115;s:15:"shipping/weight";i:116;s:11:"tool/backup";i:117;s:14:"tool/error_log";i:118;s:12:"total/coupon";i:119;s:12:"total/credit";i:120;s:14:"total/handling";i:121;s:16:"total/klarna_fee";i:122;s:19:"total/low_order_fee";i:123;s:12:"total/reward";i:124;s:14:"total/shipping";i:125;s:15:"total/sub_total";i:126;s:9:"total/tax";i:127;s:11:"total/total";i:128;s:13:"total/voucher";i:129;s:9:"user/user";i:130;s:20:"user/user_permission";i:131;s:17:"module/newslatest";i:132;s:13:"module/latest";}}'),
 	(10, 'Demonstration', '');
-/*!40000 ALTER TABLE `user_group` ENABLE KEYS */;
+/*!40000 ALTER TABLE `oc_user_group` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.visitor_counter
-DROP TABLE IF EXISTS `visitor_counter`;
-CREATE TABLE IF NOT EXISTS `visitor_counter` (
-  `prodid` int(11) NOT NULL DEFAULT '0',
-  `word` char(25) NOT NULL DEFAULT '',
-  `count` int(11) DEFAULT NULL,
-  PRIMARY KEY (`prodid`,`word`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- Dumping data for table trangia.visitor_counter: ~1 rows (approximately)
-/*!40000 ALTER TABLE `visitor_counter` DISABLE KEYS */;
-INSERT INTO `visitor_counter` (`prodid`, `word`, `count`) VALUES
-	(1, '127.0.0.1', 1);
-/*!40000 ALTER TABLE `visitor_counter` ENABLE KEYS */;
-
-
--- Dumping structure for table trangia.voucher
-DROP TABLE IF EXISTS `voucher`;
-CREATE TABLE IF NOT EXISTS `voucher` (
+-- Dumping structure for table amthuctrangia.oc_voucher
+CREATE TABLE IF NOT EXISTS `oc_voucher` (
   `voucher_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
   `code` varchar(10) NOT NULL,
@@ -2954,14 +2800,14 @@ CREATE TABLE IF NOT EXISTS `voucher` (
   PRIMARY KEY (`voucher_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.voucher: 0 rows
-/*!40000 ALTER TABLE `voucher` DISABLE KEYS */;
-/*!40000 ALTER TABLE `voucher` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_voucher: 0 rows
+DELETE FROM `oc_voucher`;
+/*!40000 ALTER TABLE `oc_voucher` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oc_voucher` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.voucher_history
-DROP TABLE IF EXISTS `voucher_history`;
-CREATE TABLE IF NOT EXISTS `voucher_history` (
+-- Dumping structure for table amthuctrangia.oc_voucher_history
+CREATE TABLE IF NOT EXISTS `oc_voucher_history` (
   `voucher_history_id` int(11) NOT NULL AUTO_INCREMENT,
   `voucher_id` int(11) NOT NULL,
   `order_id` int(11) NOT NULL,
@@ -2970,70 +2816,67 @@ CREATE TABLE IF NOT EXISTS `voucher_history` (
   PRIMARY KEY (`voucher_history_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.voucher_history: 0 rows
-/*!40000 ALTER TABLE `voucher_history` DISABLE KEYS */;
-/*!40000 ALTER TABLE `voucher_history` ENABLE KEYS */;
+-- Dumping data for table amthuctrangia.oc_voucher_history: 0 rows
+DELETE FROM `oc_voucher_history`;
+/*!40000 ALTER TABLE `oc_voucher_history` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oc_voucher_history` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.voucher_theme
-DROP TABLE IF EXISTS `voucher_theme`;
-CREATE TABLE IF NOT EXISTS `voucher_theme` (
+-- Dumping structure for table amthuctrangia.oc_voucher_theme
+CREATE TABLE IF NOT EXISTS `oc_voucher_theme` (
   `voucher_theme_id` int(11) NOT NULL AUTO_INCREMENT,
   `image` varchar(255) NOT NULL,
   PRIMARY KEY (`voucher_theme_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.voucher_theme: 3 rows
-/*!40000 ALTER TABLE `voucher_theme` DISABLE KEYS */;
-INSERT INTO `voucher_theme` (`voucher_theme_id`, `image`) VALUES
+-- Dumping data for table amthuctrangia.oc_voucher_theme: 3 rows
+DELETE FROM `oc_voucher_theme`;
+/*!40000 ALTER TABLE `oc_voucher_theme` DISABLE KEYS */;
+INSERT INTO `oc_voucher_theme` (`voucher_theme_id`, `image`) VALUES
 	(8, 'data/demo/canon_eos_5d_2.jpg'),
 	(7, 'data/demo/gift-voucher-birthday.jpg'),
 	(6, 'data/demo/apple_logo.jpg');
-/*!40000 ALTER TABLE `voucher_theme` ENABLE KEYS */;
+/*!40000 ALTER TABLE `oc_voucher_theme` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.voucher_theme_description
-DROP TABLE IF EXISTS `voucher_theme_description`;
-CREATE TABLE IF NOT EXISTS `voucher_theme_description` (
+-- Dumping structure for table amthuctrangia.oc_voucher_theme_description
+CREATE TABLE IF NOT EXISTS `oc_voucher_theme_description` (
   `voucher_theme_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
   `name` varchar(32) NOT NULL,
   PRIMARY KEY (`voucher_theme_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.voucher_theme_description: 6 rows
-/*!40000 ALTER TABLE `voucher_theme_description` DISABLE KEYS */;
-INSERT INTO `voucher_theme_description` (`voucher_theme_id`, `language_id`, `name`) VALUES
+-- Dumping data for table amthuctrangia.oc_voucher_theme_description: 3 rows
+DELETE FROM `oc_voucher_theme_description`;
+/*!40000 ALTER TABLE `oc_voucher_theme_description` DISABLE KEYS */;
+INSERT INTO `oc_voucher_theme_description` (`voucher_theme_id`, `language_id`, `name`) VALUES
 	(6, 1, 'Christmas'),
 	(7, 1, 'Birthday'),
-	(8, 1, 'General'),
-	(6, 2, 'Christmas'),
-	(7, 2, 'Birthday'),
-	(8, 2, 'General');
-/*!40000 ALTER TABLE `voucher_theme_description` ENABLE KEYS */;
+	(8, 1, 'General');
+/*!40000 ALTER TABLE `oc_voucher_theme_description` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.weight_class
-DROP TABLE IF EXISTS `weight_class`;
-CREATE TABLE IF NOT EXISTS `weight_class` (
+-- Dumping structure for table amthuctrangia.oc_weight_class
+CREATE TABLE IF NOT EXISTS `oc_weight_class` (
   `weight_class_id` int(11) NOT NULL AUTO_INCREMENT,
   `value` decimal(15,8) NOT NULL DEFAULT '0.00000000',
   PRIMARY KEY (`weight_class_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.weight_class: 4 rows
-/*!40000 ALTER TABLE `weight_class` DISABLE KEYS */;
-INSERT INTO `weight_class` (`weight_class_id`, `value`) VALUES
+-- Dumping data for table amthuctrangia.oc_weight_class: 4 rows
+DELETE FROM `oc_weight_class`;
+/*!40000 ALTER TABLE `oc_weight_class` DISABLE KEYS */;
+INSERT INTO `oc_weight_class` (`weight_class_id`, `value`) VALUES
 	(1, 1.00000000),
 	(2, 1000.00000000),
 	(5, 2.20460000),
 	(6, 35.27400000);
-/*!40000 ALTER TABLE `weight_class` ENABLE KEYS */;
+/*!40000 ALTER TABLE `oc_weight_class` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.weight_class_description
-DROP TABLE IF EXISTS `weight_class_description`;
-CREATE TABLE IF NOT EXISTS `weight_class_description` (
+-- Dumping structure for table amthuctrangia.oc_weight_class_description
+CREATE TABLE IF NOT EXISTS `oc_weight_class_description` (
   `weight_class_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) NOT NULL,
   `title` varchar(32) NOT NULL,
@@ -3041,23 +2884,19 @@ CREATE TABLE IF NOT EXISTS `weight_class_description` (
   PRIMARY KEY (`weight_class_id`,`language_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.weight_class_description: 8 rows
-/*!40000 ALTER TABLE `weight_class_description` DISABLE KEYS */;
-INSERT INTO `weight_class_description` (`weight_class_id`, `language_id`, `title`, `unit`) VALUES
+-- Dumping data for table amthuctrangia.oc_weight_class_description: 4 rows
+DELETE FROM `oc_weight_class_description`;
+/*!40000 ALTER TABLE `oc_weight_class_description` DISABLE KEYS */;
+INSERT INTO `oc_weight_class_description` (`weight_class_id`, `language_id`, `title`, `unit`) VALUES
 	(1, 1, 'Kilogram', 'kg'),
 	(2, 1, 'Gram', 'g'),
 	(5, 1, 'Pound ', 'lb'),
-	(6, 1, 'Ounce', 'oz'),
-	(1, 2, 'Kilogram', 'kg'),
-	(2, 2, 'Gram', 'g'),
-	(5, 2, 'Pound ', 'lb'),
-	(6, 2, 'Ounce', 'oz');
-/*!40000 ALTER TABLE `weight_class_description` ENABLE KEYS */;
+	(6, 1, 'Ounce', 'oz');
+/*!40000 ALTER TABLE `oc_weight_class_description` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.zone
-DROP TABLE IF EXISTS `zone`;
-CREATE TABLE IF NOT EXISTS `zone` (
+-- Dumping structure for table amthuctrangia.oc_zone
+CREATE TABLE IF NOT EXISTS `oc_zone` (
   `zone_id` int(11) NOT NULL AUTO_INCREMENT,
   `country_id` int(11) NOT NULL,
   `name` varchar(128) NOT NULL,
@@ -3066,9 +2905,10 @@ CREATE TABLE IF NOT EXISTS `zone` (
   PRIMARY KEY (`zone_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4033 DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.zone: 3,985 rows
-/*!40000 ALTER TABLE `zone` DISABLE KEYS */;
-INSERT INTO `zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
+-- Dumping data for table amthuctrangia.oc_zone: 3,985 rows
+DELETE FROM `oc_zone`;
+/*!40000 ALTER TABLE `oc_zone` DISABLE KEYS */;
+INSERT INTO `oc_zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 	(1, 1, 'Badakhshan', 'BDS', 1),
 	(2, 1, 'Badghis', 'BDG', 1),
 	(3, 1, 'Baghlan', 'BGL', 1),
@@ -7054,12 +6894,11 @@ INSERT INTO `zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 	(4030, 248, 'Warrap', 'WR', 1),
 	(4031, 248, 'Western Bahr el-Ghazal', 'BW', 1),
 	(4032, 248, 'Western Equatoria', 'EW', 1);
-/*!40000 ALTER TABLE `zone` ENABLE KEYS */;
+/*!40000 ALTER TABLE `oc_zone` ENABLE KEYS */;
 
 
--- Dumping structure for table trangia.zone_to_geo_zone
-DROP TABLE IF EXISTS `zone_to_geo_zone`;
-CREATE TABLE IF NOT EXISTS `zone_to_geo_zone` (
+-- Dumping structure for table amthuctrangia.oc_zone_to_geo_zone
+CREATE TABLE IF NOT EXISTS `oc_zone_to_geo_zone` (
   `zone_to_geo_zone_id` int(11) NOT NULL AUTO_INCREMENT,
   `country_id` int(11) NOT NULL,
   `zone_id` int(11) NOT NULL DEFAULT '0',
@@ -7069,11 +6908,12 @@ CREATE TABLE IF NOT EXISTS `zone_to_geo_zone` (
   PRIMARY KEY (`zone_to_geo_zone_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=66 DEFAULT CHARSET=utf8;
 
--- Dumping data for table trangia.zone_to_geo_zone: 2 rows
-/*!40000 ALTER TABLE `zone_to_geo_zone` DISABLE KEYS */;
-INSERT INTO `zone_to_geo_zone` (`zone_to_geo_zone_id`, `country_id`, `zone_id`, `geo_zone_id`, `date_added`, `date_modified`) VALUES
+-- Dumping data for table amthuctrangia.oc_zone_to_geo_zone: 2 rows
+DELETE FROM `oc_zone_to_geo_zone`;
+/*!40000 ALTER TABLE `oc_zone_to_geo_zone` DISABLE KEYS */;
+INSERT INTO `oc_zone_to_geo_zone` (`zone_to_geo_zone_id`, `country_id`, `zone_id`, `geo_zone_id`, `date_added`, `date_modified`) VALUES
 	(57, 222, 0, 3, '2010-02-26 22:33:24', '0000-00-00 00:00:00'),
 	(65, 222, 0, 4, '2010-12-15 15:18:13', '0000-00-00 00:00:00');
-/*!40000 ALTER TABLE `zone_to_geo_zone` ENABLE KEYS */;
+/*!40000 ALTER TABLE `oc_zone_to_geo_zone` ENABLE KEYS */;
 /*!40014 SET FOREIGN_KEY_CHECKS=1 */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

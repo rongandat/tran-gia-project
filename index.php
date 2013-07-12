@@ -1,6 +1,6 @@
 <?php
 // Version
-define('VERSION', '1.5.5');
+define('VERSION', '1.5.5.1');
 
 // Configuration
 if (file_exists('config.php')) {
@@ -13,21 +13,17 @@ if (!defined('DIR_APPLICATION')) {
 	exit;
 }
 
-// VirtualQMOD
-require_once('./vqmod/vqmod.php');
-$vqmod = new VQMod();
-
-// VQMODDED Startup
-require_once($vqmod->modCheck(DIR_SYSTEM . 'startup.php'));
+// Startup
+require_once(DIR_SYSTEM . 'startup.php');
 
 // Application Classes
-require_once($vqmod->modCheck(DIR_SYSTEM . 'library/customer.php'));
-require_once($vqmod->modCheck(DIR_SYSTEM . 'library/affiliate.php'));
-require_once($vqmod->modCheck(DIR_SYSTEM . 'library/currency.php'));
-require_once($vqmod->modCheck(DIR_SYSTEM . 'library/tax.php'));
-require_once($vqmod->modCheck(DIR_SYSTEM . 'library/weight.php'));
-require_once($vqmod->modCheck(DIR_SYSTEM . 'library/length.php'));
-require_once($vqmod->modCheck(DIR_SYSTEM . 'library/cart.php'));
+require_once(DIR_SYSTEM . 'library/customer.php');
+require_once(DIR_SYSTEM . 'library/affiliate.php');
+require_once(DIR_SYSTEM . 'library/currency.php');
+require_once(DIR_SYSTEM . 'library/tax.php');
+require_once(DIR_SYSTEM . 'library/weight.php');
+require_once(DIR_SYSTEM . 'library/length.php');
+require_once(DIR_SYSTEM . 'library/cart.php');
 
 // Registry
 $registry = new Registry();

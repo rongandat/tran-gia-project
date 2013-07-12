@@ -1,5 +1,3 @@
-<script type="text/javascript" src="catalog/view/javascript/jquery/nivo-slider/jquery.nivo.slider.pack.js"></script>
-<link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/slideshow.css" />
 <div class="slideshow">
   <div id="slideshow<?php echo $module; ?>" class="nivoSlider" style="width: <?php echo $width; ?>px; height: <?php echo $height; ?>px;">
     <?php foreach ($banners as $banner) { ?>
@@ -13,6 +11,6 @@
 </div>
 <script type="text/javascript"><!--
 $(document).ready(function() {
-	$('#slideshow<?php echo $module; ?>').nivoSlider({pauseTime: 5000});
+	$('#slideshow<?php echo $module; ?>').nivoSlider();
 });
 --></script>

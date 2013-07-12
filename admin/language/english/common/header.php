@@ -81,4 +81,7 @@ $_['text_voucher_theme']               = 'Voucher Themes';
 $_['text_weight_class']                = 'Weight Classes';
 $_['text_length_class']                = 'Length Classes';
 $_['text_zone']                        = 'Zones';
+$_['text_news']        			= 'News';
+$_['text_news_category']  	= 'News Categories';
+$_['text_news_comment']  	= 'News Comments';
 ?>

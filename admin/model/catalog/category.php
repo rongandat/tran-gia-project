@@ -171,7 +171,7 @@ class ModelCatalogCategory extends Model {
 		$this->db->query("DELETE FROM " . DB_PREFIX . "url_alias WHERE query = 'category_id=" . (int)$category_id . "'");
 		
 		$this->cache->delete('category');
-	}  
+	} 
 	
 	// Function to repair any erroneous categories that are not in the category path table.
 	public function repairCategories($parent_id = 0) {

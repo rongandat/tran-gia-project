@@ -24,8 +24,6 @@
         <script type="text/javascript" src="catalog/view/javascript/jquery/ui/jquery-ui-1.8.16.custom.min.js"></script>
         <link rel="stylesheet" type="text/css" href="catalog/view/javascript/jquery/ui/themes/ui-lightness/jquery-ui-1.8.16.custom.css" />
         <script type="text/javascript" src="catalog/view/javascript/common.js"></script>
-        <script type="text/javascript" src="catalog/view/javascript/jquery/main.js"></script>
-
         <?php foreach ($scripts as $script) { ?>
             <script type="text/javascript" src="<?php echo $script; ?>"></script>
         <?php } ?>
@@ -44,75 +42,41 @@
                 $(document).ready(function() {
     <?php foreach ($stores as $store) { ?>
                 $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></iframe>');
-    <?php } ?>
-        });
-        //--></script>
+            <?php } ?>
+                    });
+                    //--></script>
         <?php } ?>
         <?php echo $google_analytics; ?>
     </head>
     <body>
-        <div id="container">
-            <div id="header">
-                <div class="banner_header">
-                    <?php if ($logo) { ?>
-                        <div id="logo"><a href="<?php echo $home; ?>"><img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" /></a></div>
-                    <?php } ?>
-                    <div id="welcome">
-                        <?php if (!$logged) { ?>
-                            <?php echo $text_welcome; ?>
-                        <?php } else { ?>
-                            <?php echo $text_logged; ?>
-                        <?php } ?>
-                    </div>
-                    <?php echo $cart; ?>
-                </div>
-                <div class="clear"></div>
-
+        <div id="header">
+            <div class="bnflash">
+                <embed src="<?php echo HTTP_SERVER; ?>image/banner.swf" alt="Banh da nem, banh da nem lang cheu" quality="high" type="application/x-shockwave-flash" wmode="transparent" width="1024" height="180" pluginspage="http://www.macromedia.com/go/getflashplayer" allowscriptaccess="always" __idm_id__="-1942421503">		
             </div>
-            <?php if ($categories) { ?>
-                <div id="menu">
-                    <ul>
-                        <?php foreach ($categories as $category) { ?>
-                            <li><a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a>
-                                <?php if ($category['children']) { ?>
-                                    <div>
-                                        <?php for ($i = 0; $i < count($category['children']);) { ?>
-                                            <ul>
-                                                <?php $j = $i + ceil(count($category['children']) / $category['column']); ?>
-                                                <?php for (; $i < $j; $i++) { ?>
-                                                    <?php if (isset($category['children'][$i])) { ?>
-                                                        <li><a href="<?php echo $category['children'][$i]['href']; ?>"><?php echo $category['children'][$i]['name']; ?></a></li>
-                                                    <?php } ?>
-                                                <?php } ?>
-                                            </ul>
-                                        <?php } ?>
-                                    </div>
+            <div id="topmenu">
+                <div id="links">
+                    <div class="moduletable_menu">
+                        <ul class="menu">
+                            <li  id="current" class="active item1"><a href="<?php echo $home; ?>"><span><?php echo $text_home; ?></span></a></li>
+                            <?php if ($informations) { ?>
+                                <?php foreach ($informations as $information) { ?>
+                                    <li><a href="<?php echo $information['href']; ?>"><?php echo $information['title']; ?></a></li>
                                 <?php } ?>
-                            </li>
-                        <?php } ?>
-                    </ul>
+                            <?php } ?>
+                            <li><a href="<?php echo $contact; ?>"><span><?php echo $text_contact; ?></span></a></li>
+                        </ul>
+                    </div>
                 </div>
-            <?php } ?>
-            <div id="notification"></div>
+            </div>
+            <div id="search" style="display: none;">
+                <div class="button-search"></div>
+                <input type="text" name="search" placeholder="<?php echo $text_search; ?>" value="<?php echo $search; ?>" />
+            </div>
+            <div class="mquery">
+                <marquee width="100%" scrollamount="2" scrolldelay="50" onmouseout="this.start()" onmouseover="this.stop()" behavior="scroll" direction="left"><?php echo $text_maquery; ?></marquee>
+            </div>
+            <?php echo $cart; ?>
+        </div>
 
-            <div class="center-containt">
-                <div id="Sly-menu1">
-                    <div id="bogo">		
-                        <div class="moduletable">
-                            <div class="marquee">
-                                <marquee width="100%" direction="left" behavior="scroll" onmouseover="this.stop()" onmouseout="this.start()" scrolldelay="50" scrollamount="2">
-                                    TRANGIA..,JSC Cảm ơn quý khách đã ghé thăm Website công ty, Kính chúc quý khách sức khỏe - thành đạt - hạnh phúc !</marquee>
-                            </div>		
-                        </div>
-                    </div>
-                    <div id="timkiem">		
-                        <div class="moduletable">
-                            <div class="vmCartModule">&#65279;           Bạn chưa có sản phẩm nào trong giỏ!       
-                            </div>		
-                        </div>
-                    </div>
-                </div>
-                <div class="bottom_bg">
-                    <?php echo $column_banner_left; ?>
-                    <?php echo $column_banner_right; ?>
-                    <div class="clear"></div>
+        <div id="container">
+            <div id="notification"></div>
