@@ -1,24 +1,24 @@
 <?php
 // HTTP
-define('HTTP_SERVER', 'http://localhost:8080/amthuctrangia/admin/');
-define('HTTP_CATALOG', 'http://localhost:8080/amthuctrangia/');
+define('HTTP_SERVER', 'http://trangia.lc/admin/');
+define('HTTP_CATALOG', 'http://trangia.lc/');
 
 // HTTPS
-define('HTTPS_SERVER', 'http://localhost:8080/amthuctrangia/admin/');
-define('HTTPS_CATALOG', 'http://localhost:8080/amthuctrangia/');
+define('HTTPS_SERVER', 'http://trangia.lc/admin/');
+define('HTTPS_CATALOG', 'http://trangia.lc/');
 
 // DIR
-define('DIR_APPLICATION', 'D:\xampp\htdocs\amthuctrangia/admin/');
-define('DIR_SYSTEM', 'D:\xampp\htdocs\amthuctrangia/system/');
-define('DIR_DATABASE', 'D:\xampp\htdocs\amthuctrangia/system/database/');
-define('DIR_LANGUAGE', 'D:\xampp\htdocs\amthuctrangia/admin/language/');
-define('DIR_TEMPLATE', 'D:\xampp\htdocs\amthuctrangia/admin/view/template/');
-define('DIR_CONFIG', 'D:\xampp\htdocs\amthuctrangia/system/config/');
-define('DIR_IMAGE', 'D:\xampp\htdocs\amthuctrangia/image/');
-define('DIR_CACHE', 'D:\xampp\htdocs\amthuctrangia/system/cache/');
-define('DIR_DOWNLOAD', 'D:\xampp\htdocs\amthuctrangia/download/');
-define('DIR_LOGS', 'D:\xampp\htdocs\amthuctrangia/system/logs/');
-define('DIR_CATALOG', 'D:\xampp\htdocs\amthuctrangia/catalog/');
+define('DIR_APPLICATION', 'F:\tran-gia-project/admin/');
+define('DIR_SYSTEM', 'F:\tran-gia-project/system/');
+define('DIR_DATABASE', 'F:\tran-gia-project/system/database/');
+define('DIR_LANGUAGE', 'F:\tran-gia-project/admin/language/');
+define('DIR_TEMPLATE', 'F:\tran-gia-project/admin/view/template/');
+define('DIR_CONFIG', 'F:\tran-gia-project/system/config/');
+define('DIR_IMAGE', 'F:\tran-gia-project/image/');
+define('DIR_CACHE', 'F:\tran-gia-project/system/cache/');
+define('DIR_DOWNLOAD', 'F:\tran-gia-project/download/');
+define('DIR_LOGS', 'F:\tran-gia-project/system/logs/');
+define('DIR_CATALOG', 'F:\tran-gia-project/catalog/');
 
 // DB
 define('DB_DRIVER', 'mysql');

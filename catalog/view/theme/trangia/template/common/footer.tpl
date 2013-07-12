@@ -1,3 +1,4 @@
+<div class="clear"></div>
 <div id="wapper-footer">
     <div id="footermenu">
         <div id="links">

@@ -30,7 +30,7 @@
                                 <a href="<?php echo $news['href']; ?>" class="mostread-image">
                                     <img src="<?php echo $news['thumb']; ?>" alt="<?php echo $news['name']; ?>" title="<?php echo $news['name']; ?>" width="<?php echo $news['width']; ?>" height="<?php echo $news['height']; ?>">					</a>
                             <?php } ?>
-                            <div style="padding-left:50px" class="box-right">
+                            <div class="box-right">
                                 <a href="<?php echo $news['href']; ?>" class="mostread"><?php echo $news['name']; ?></a>
                                 <span><?php echo $news['date_added']; ?></span>
                             </div>

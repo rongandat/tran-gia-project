@@ -3,7 +3,7 @@
 -- Server version:               5.5.16 - MySQL Community Server (GPL)
 -- Server OS:                    Win32
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2013-07-12 17:37:58
+-- Date/time:                    2013-07-12 19:40:20
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -11,11 +11,13 @@
 /*!40014 SET FOREIGN_KEY_CHECKS=0 */;
 
 -- Dumping database structure for amthuctrangia
+DROP DATABASE IF EXISTS `amthuctrangia`;
 CREATE DATABASE IF NOT EXISTS `amthuctrangia` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `amthuctrangia`;
 
 
 -- Dumping structure for table amthuctrangia.oc_address
+DROP TABLE IF EXISTS `oc_address`;
 CREATE TABLE IF NOT EXISTS `oc_address` (
   `address_id` int(11) NOT NULL AUTO_INCREMENT,
   `customer_id` int(11) NOT NULL,
@@ -35,12 +37,12 @@ CREATE TABLE IF NOT EXISTS `oc_address` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_address: 0 rows
-DELETE FROM `oc_address`;
 /*!40000 ALTER TABLE `oc_address` DISABLE KEYS */;
 /*!40000 ALTER TABLE `oc_address` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_affiliate
+DROP TABLE IF EXISTS `oc_affiliate`;
 CREATE TABLE IF NOT EXISTS `oc_affiliate` (
   `affiliate_id` int(11) NOT NULL AUTO_INCREMENT,
   `firstname` varchar(32) NOT NULL,
@@ -77,12 +79,12 @@ CREATE TABLE IF NOT EXISTS `oc_affiliate` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_affiliate: 0 rows
-DELETE FROM `oc_affiliate`;
 /*!40000 ALTER TABLE `oc_affiliate` DISABLE KEYS */;
 /*!40000 ALTER TABLE `oc_affiliate` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_affiliate_transaction
+DROP TABLE IF EXISTS `oc_affiliate_transaction`;
 CREATE TABLE IF NOT EXISTS `oc_affiliate_transaction` (
   `affiliate_transaction_id` int(11) NOT NULL AUTO_INCREMENT,
   `affiliate_id` int(11) NOT NULL,
@@ -94,12 +96,12 @@ CREATE TABLE IF NOT EXISTS `oc_affiliate_transaction` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_affiliate_transaction: 0 rows
-DELETE FROM `oc_affiliate_transaction`;
 /*!40000 ALTER TABLE `oc_affiliate_transaction` DISABLE KEYS */;
 /*!40000 ALTER TABLE `oc_affiliate_transaction` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_attribute
+DROP TABLE IF EXISTS `oc_attribute`;
 CREATE TABLE IF NOT EXISTS `oc_attribute` (
   `attribute_id` int(11) NOT NULL AUTO_INCREMENT,
   `attribute_group_id` int(11) NOT NULL,
@@ -108,7 +110,6 @@ CREATE TABLE IF NOT EXISTS `oc_attribute` (
 ) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_attribute: 11 rows
-DELETE FROM `oc_attribute`;
 /*!40000 ALTER TABLE `oc_attribute` DISABLE KEYS */;
 INSERT INTO `oc_attribute` (`attribute_id`, `attribute_group_id`, `sort_order`) VALUES
 	(1, 6, 1),
@@ -126,6 +127,7 @@ INSERT INTO `oc_attribute` (`attribute_id`, `attribute_group_id`, `sort_order`) 
 
 
 -- Dumping structure for table amthuctrangia.oc_attribute_description
+DROP TABLE IF EXISTS `oc_attribute_description`;
 CREATE TABLE IF NOT EXISTS `oc_attribute_description` (
   `attribute_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -134,24 +136,24 @@ CREATE TABLE IF NOT EXISTS `oc_attribute_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_attribute_description: 11 rows
-DELETE FROM `oc_attribute_description`;
 /*!40000 ALTER TABLE `oc_attribute_description` DISABLE KEYS */;
 INSERT INTO `oc_attribute_description` (`attribute_id`, `language_id`, `name`) VALUES
-	(1, 1, 'Description'),
-	(2, 1, 'No. of Cores'),
-	(4, 1, 'test 1'),
-	(5, 1, 'test 2'),
-	(6, 1, 'test 3'),
-	(7, 1, 'test 4'),
-	(8, 1, 'test 5'),
-	(9, 1, 'test 6'),
-	(10, 1, 'test 7'),
-	(11, 1, 'test 8'),
-	(3, 1, 'Clockspeed');
+	(1, 2, 'Description'),
+	(2, 2, 'No. of Cores'),
+	(4, 2, 'test 1'),
+	(5, 2, 'test 2'),
+	(6, 2, 'test 3'),
+	(7, 2, 'test 4'),
+	(8, 2, 'test 5'),
+	(9, 2, 'test 6'),
+	(10, 2, 'test 7'),
+	(11, 2, 'test 8'),
+	(3, 2, 'Clockspeed');
 /*!40000 ALTER TABLE `oc_attribute_description` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_attribute_group
+DROP TABLE IF EXISTS `oc_attribute_group`;
 CREATE TABLE IF NOT EXISTS `oc_attribute_group` (
   `attribute_group_id` int(11) NOT NULL AUTO_INCREMENT,
   `sort_order` int(3) NOT NULL,
@@ -159,7 +161,6 @@ CREATE TABLE IF NOT EXISTS `oc_attribute_group` (
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_attribute_group: 4 rows
-DELETE FROM `oc_attribute_group`;
 /*!40000 ALTER TABLE `oc_attribute_group` DISABLE KEYS */;
 INSERT INTO `oc_attribute_group` (`attribute_group_id`, `sort_order`) VALUES
 	(3, 2),
@@ -170,6 +171,7 @@ INSERT INTO `oc_attribute_group` (`attribute_group_id`, `sort_order`) VALUES
 
 
 -- Dumping structure for table amthuctrangia.oc_attribute_group_description
+DROP TABLE IF EXISTS `oc_attribute_group_description`;
 CREATE TABLE IF NOT EXISTS `oc_attribute_group_description` (
   `attribute_group_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -178,47 +180,47 @@ CREATE TABLE IF NOT EXISTS `oc_attribute_group_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_attribute_group_description: 4 rows
-DELETE FROM `oc_attribute_group_description`;
 /*!40000 ALTER TABLE `oc_attribute_group_description` DISABLE KEYS */;
 INSERT INTO `oc_attribute_group_description` (`attribute_group_id`, `language_id`, `name`) VALUES
-	(3, 1, 'Memory'),
-	(4, 1, 'Technical'),
-	(5, 1, 'Motherboard'),
-	(6, 1, 'Processor');
+	(3, 2, 'Memory'),
+	(4, 2, 'Technical'),
+	(5, 2, 'Motherboard'),
+	(6, 2, 'Processor');
 /*!40000 ALTER TABLE `oc_attribute_group_description` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_banner
+DROP TABLE IF EXISTS `oc_banner`;
 CREATE TABLE IF NOT EXISTS `oc_banner` (
   `banner_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) NOT NULL,
   `status` tinyint(1) NOT NULL,
   PRIMARY KEY (`banner_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
--- Dumping data for table amthuctrangia.oc_banner: 5 rows
-DELETE FROM `oc_banner`;
+-- Dumping data for table amthuctrangia.oc_banner: 6 rows
 /*!40000 ALTER TABLE `oc_banner` DISABLE KEYS */;
 INSERT INTO `oc_banner` (`banner_id`, `name`, `status`) VALUES
 	(6, 'HP Products', 1),
 	(7, 'Samsung Tab', 1),
 	(8, 'Manufacturers', 1),
 	(9, 'Slide', 1),
-	(10, 'Đối tác', 1);
+	(10, 'Đối tác', 1),
+	(11, 'quảng cáo', 1);
 /*!40000 ALTER TABLE `oc_banner` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_banner_image
+DROP TABLE IF EXISTS `oc_banner_image`;
 CREATE TABLE IF NOT EXISTS `oc_banner_image` (
   `banner_image_id` int(11) NOT NULL AUTO_INCREMENT,
   `banner_id` int(11) NOT NULL,
   `link` varchar(255) NOT NULL,
   `image` varchar(255) NOT NULL,
   PRIMARY KEY (`banner_image_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=89 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=90 DEFAULT CHARSET=utf8;
 
--- Dumping data for table amthuctrangia.oc_banner_image: 19 rows
-DELETE FROM `oc_banner_image`;
+-- Dumping data for table amthuctrangia.oc_banner_image: 20 rows
 /*!40000 ALTER TABLE `oc_banner_image` DISABLE KEYS */;
 INSERT INTO `oc_banner_image` (`banner_image_id`, `banner_id`, `link`, `image`) VALUES
 	(54, 7, 'index.php?route=product/product&amp;path=57&amp;product_id=49', 'data/demo/samsung_banner.jpg'),
@@ -239,11 +241,13 @@ INSERT INTO `oc_banner_image` (`banner_image_id`, `banner_id`, `link`, `image`) 
 	(85, 10, '', 'data/manu (5).jpg'),
 	(86, 10, '', 'data/manu (6).jpg'),
 	(87, 10, '', 'data/manu (7).jpg'),
-	(88, 10, '', 'data/manu (8).jpg');
+	(88, 10, '', 'data/manu (8).jpg'),
+	(89, 11, '', 'data/daily.png');
 /*!40000 ALTER TABLE `oc_banner_image` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_banner_image_description
+DROP TABLE IF EXISTS `oc_banner_image_description`;
 CREATE TABLE IF NOT EXISTS `oc_banner_image_description` (
   `banner_image_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -252,33 +256,34 @@ CREATE TABLE IF NOT EXISTS `oc_banner_image_description` (
   PRIMARY KEY (`banner_image_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table amthuctrangia.oc_banner_image_description: 19 rows
-DELETE FROM `oc_banner_image_description`;
+-- Dumping data for table amthuctrangia.oc_banner_image_description: 20 rows
 /*!40000 ALTER TABLE `oc_banner_image_description` DISABLE KEYS */;
 INSERT INTO `oc_banner_image_description` (`banner_image_id`, `language_id`, `banner_id`, `title`) VALUES
-	(54, 1, 7, 'Samsung Tab 10.1'),
-	(77, 1, 6, 'HP Banner'),
-	(75, 1, 8, 'HTC'),
-	(74, 1, 8, 'Canon'),
-	(73, 1, 8, 'Apple'),
-	(72, 1, 8, 'Palm'),
-	(71, 1, 8, 'Sony'),
-	(76, 1, 8, 'Hewlett-Packard'),
-	(78, 1, 9, 'aa'),
-	(79, 1, 9, 'aaa'),
-	(80, 1, 10, 'Acb'),
-	(81, 1, 10, 'Michu'),
-	(82, 1, 10, 'AGribank'),
-	(83, 1, 10, 'VIB'),
-	(84, 1, 10, 'cho limex'),
-	(85, 1, 10, 'local food'),
-	(86, 1, 10, 'Tấn huy food'),
-	(87, 1, 10, 'Mecofood'),
-	(88, 1, 10, 'T&amp;T Food');
+	(89, 2, 11, 'quảng cáo'),
+	(54, 2, 7, 'Samsung Tab 10.1'),
+	(77, 2, 6, 'HP Banner'),
+	(75, 2, 8, 'HTC'),
+	(74, 2, 8, 'Canon'),
+	(73, 2, 8, 'Apple'),
+	(72, 2, 8, 'Palm'),
+	(71, 2, 8, 'Sony'),
+	(76, 2, 8, 'Hewlett-Packard'),
+	(78, 2, 9, 'aa'),
+	(79, 2, 9, 'aaa'),
+	(80, 2, 10, 'Acb'),
+	(81, 2, 10, 'Michu'),
+	(82, 2, 10, 'AGribank'),
+	(83, 2, 10, 'VIB'),
+	(84, 2, 10, 'cho limex'),
+	(85, 2, 10, 'local food'),
+	(86, 2, 10, 'Tấn huy food'),
+	(87, 2, 10, 'Mecofood'),
+	(88, 2, 10, 'T&amp;T Food');
 /*!40000 ALTER TABLE `oc_banner_image_description` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_category
+DROP TABLE IF EXISTS `oc_category`;
 CREATE TABLE IF NOT EXISTS `oc_category` (
   `category_id` int(11) NOT NULL AUTO_INCREMENT,
   `image` varchar(255) DEFAULT NULL,
@@ -293,7 +298,6 @@ CREATE TABLE IF NOT EXISTS `oc_category` (
 ) ENGINE=MyISAM AUTO_INCREMENT=65 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_category: 6 rows
-DELETE FROM `oc_category`;
 /*!40000 ALTER TABLE `oc_category` DISABLE KEYS */;
 INSERT INTO `oc_category` (`category_id`, `image`, `parent_id`, `top`, `column`, `sort_order`, `status`, `date_added`, `date_modified`) VALUES
 	(61, '', 0, 0, 1, 0, 1, '2013-07-12 16:33:03', '2013-07-12 16:33:03'),
@@ -306,6 +310,7 @@ INSERT INTO `oc_category` (`category_id`, `image`, `parent_id`, `top`, `column`,
 
 
 -- Dumping structure for table amthuctrangia.oc_category_description
+DROP TABLE IF EXISTS `oc_category_description`;
 CREATE TABLE IF NOT EXISTS `oc_category_description` (
   `category_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -318,19 +323,19 @@ CREATE TABLE IF NOT EXISTS `oc_category_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_category_description: 6 rows
-DELETE FROM `oc_category_description`;
 /*!40000 ALTER TABLE `oc_category_description` DISABLE KEYS */;
 INSERT INTO `oc_category_description` (`category_id`, `language_id`, `name`, `description`, `meta_description`, `meta_keyword`) VALUES
-	(60, 1, 'Món ăn từ miến', '', '', ''),
-	(61, 1, 'Bánh đa làng chiều', '', '', ''),
-	(62, 1, 'Tin tức', '', '', ''),
-	(63, 1, 'Sản phẩm', '', '', ''),
-	(64, 1, 'Giới thiệu làng nghề', '', '', ''),
-	(59, 1, 'Món ăn từ nem', '', '', '');
+	(60, 2, 'Món ăn từ miến', '', '', ''),
+	(61, 2, 'Bánh đa làng chiều', '', '', ''),
+	(62, 2, 'Tin tức', '', '', ''),
+	(63, 2, 'Sản phẩm', '', '', ''),
+	(64, 2, 'Giới thiệu làng nghề', '', '', ''),
+	(59, 2, 'Món ăn từ nem', '', '', '');
 /*!40000 ALTER TABLE `oc_category_description` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_category_filter
+DROP TABLE IF EXISTS `oc_category_filter`;
 CREATE TABLE IF NOT EXISTS `oc_category_filter` (
   `category_id` int(11) NOT NULL,
   `filter_id` int(11) NOT NULL,
@@ -338,12 +343,12 @@ CREATE TABLE IF NOT EXISTS `oc_category_filter` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_category_filter: 0 rows
-DELETE FROM `oc_category_filter`;
 /*!40000 ALTER TABLE `oc_category_filter` DISABLE KEYS */;
 /*!40000 ALTER TABLE `oc_category_filter` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_category_path
+DROP TABLE IF EXISTS `oc_category_path`;
 CREATE TABLE IF NOT EXISTS `oc_category_path` (
   `category_id` int(11) NOT NULL,
   `path_id` int(11) NOT NULL,
@@ -352,7 +357,6 @@ CREATE TABLE IF NOT EXISTS `oc_category_path` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_category_path: 6 rows
-DELETE FROM `oc_category_path`;
 /*!40000 ALTER TABLE `oc_category_path` DISABLE KEYS */;
 INSERT INTO `oc_category_path` (`category_id`, `path_id`, `level`) VALUES
 	(61, 61, 0),
@@ -365,6 +369,7 @@ INSERT INTO `oc_category_path` (`category_id`, `path_id`, `level`) VALUES
 
 
 -- Dumping structure for table amthuctrangia.oc_category_to_layout
+DROP TABLE IF EXISTS `oc_category_to_layout`;
 CREATE TABLE IF NOT EXISTS `oc_category_to_layout` (
   `category_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
@@ -373,12 +378,12 @@ CREATE TABLE IF NOT EXISTS `oc_category_to_layout` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_category_to_layout: 0 rows
-DELETE FROM `oc_category_to_layout`;
 /*!40000 ALTER TABLE `oc_category_to_layout` DISABLE KEYS */;
 /*!40000 ALTER TABLE `oc_category_to_layout` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_category_to_store
+DROP TABLE IF EXISTS `oc_category_to_store`;
 CREATE TABLE IF NOT EXISTS `oc_category_to_store` (
   `category_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
@@ -386,7 +391,6 @@ CREATE TABLE IF NOT EXISTS `oc_category_to_store` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_category_to_store: 6 rows
-DELETE FROM `oc_category_to_store`;
 /*!40000 ALTER TABLE `oc_category_to_store` DISABLE KEYS */;
 INSERT INTO `oc_category_to_store` (`category_id`, `store_id`) VALUES
 	(59, 0),
@@ -399,6 +403,7 @@ INSERT INTO `oc_category_to_store` (`category_id`, `store_id`) VALUES
 
 
 -- Dumping structure for table amthuctrangia.oc_country
+DROP TABLE IF EXISTS `oc_country`;
 CREATE TABLE IF NOT EXISTS `oc_country` (
   `country_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(128) NOT NULL,
@@ -411,7 +416,6 @@ CREATE TABLE IF NOT EXISTS `oc_country` (
 ) ENGINE=MyISAM AUTO_INCREMENT=252 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_country: 249 rows
-DELETE FROM `oc_country`;
 /*!40000 ALTER TABLE `oc_country` DISABLE KEYS */;
 INSERT INTO `oc_country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `address_format`, `postcode_required`, `status`) VALUES
 	(1, 'Afghanistan', 'AF', 'AFG', '', 0, 1),
@@ -667,6 +671,7 @@ INSERT INTO `oc_country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `add
 
 
 -- Dumping structure for table amthuctrangia.oc_coupon
+DROP TABLE IF EXISTS `oc_coupon`;
 CREATE TABLE IF NOT EXISTS `oc_coupon` (
   `coupon_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(128) NOT NULL,
@@ -686,7 +691,6 @@ CREATE TABLE IF NOT EXISTS `oc_coupon` (
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_coupon: 3 rows
-DELETE FROM `oc_coupon`;
 /*!40000 ALTER TABLE `oc_coupon` DISABLE KEYS */;
 INSERT INTO `oc_coupon` (`coupon_id`, `name`, `code`, `type`, `discount`, `logged`, `shipping`, `total`, `date_start`, `date_end`, `uses_total`, `uses_customer`, `status`, `date_added`) VALUES
 	(4, '-10% Discount', '2222', 'P', 10.0000, 0, 0, 0.0000, '2011-01-01', '2012-01-01', 10, '10', 1, '2009-01-27 13:55:03'),
@@ -696,6 +700,7 @@ INSERT INTO `oc_coupon` (`coupon_id`, `name`, `code`, `type`, `discount`, `logge
 
 
 -- Dumping structure for table amthuctrangia.oc_coupon_category
+DROP TABLE IF EXISTS `oc_coupon_category`;
 CREATE TABLE IF NOT EXISTS `oc_coupon_category` (
   `coupon_id` int(11) NOT NULL,
   `category_id` int(11) NOT NULL,
@@ -703,12 +708,12 @@ CREATE TABLE IF NOT EXISTS `oc_coupon_category` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_coupon_category: 0 rows
-DELETE FROM `oc_coupon_category`;
 /*!40000 ALTER TABLE `oc_coupon_category` DISABLE KEYS */;
 /*!40000 ALTER TABLE `oc_coupon_category` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_coupon_history
+DROP TABLE IF EXISTS `oc_coupon_history`;
 CREATE TABLE IF NOT EXISTS `oc_coupon_history` (
   `coupon_history_id` int(11) NOT NULL AUTO_INCREMENT,
   `coupon_id` int(11) NOT NULL,
@@ -720,12 +725,12 @@ CREATE TABLE IF NOT EXISTS `oc_coupon_history` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_coupon_history: 0 rows
-DELETE FROM `oc_coupon_history`;
 /*!40000 ALTER TABLE `oc_coupon_history` DISABLE KEYS */;
 /*!40000 ALTER TABLE `oc_coupon_history` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_coupon_product
+DROP TABLE IF EXISTS `oc_coupon_product`;
 CREATE TABLE IF NOT EXISTS `oc_coupon_product` (
   `coupon_product_id` int(11) NOT NULL AUTO_INCREMENT,
   `coupon_id` int(11) NOT NULL,
@@ -734,12 +739,12 @@ CREATE TABLE IF NOT EXISTS `oc_coupon_product` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_coupon_product: 0 rows
-DELETE FROM `oc_coupon_product`;
 /*!40000 ALTER TABLE `oc_coupon_product` DISABLE KEYS */;
 /*!40000 ALTER TABLE `oc_coupon_product` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_currency
+DROP TABLE IF EXISTS `oc_currency`;
 CREATE TABLE IF NOT EXISTS `oc_currency` (
   `currency_id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(32) NOT NULL,
@@ -751,19 +756,17 @@ CREATE TABLE IF NOT EXISTS `oc_currency` (
   `status` tinyint(1) NOT NULL,
   `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`currency_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
--- Dumping data for table amthuctrangia.oc_currency: 3 rows
-DELETE FROM `oc_currency`;
+-- Dumping data for table amthuctrangia.oc_currency: 1 rows
 /*!40000 ALTER TABLE `oc_currency` DISABLE KEYS */;
 INSERT INTO `oc_currency` (`currency_id`, `title`, `code`, `symbol_left`, `symbol_right`, `decimal_place`, `value`, `status`, `date_modified`) VALUES
-	(1, 'Pound Sterling', 'GBP', '£', '', '2', 0.66070002, 1, '2013-07-12 10:20:46'),
-	(2, 'US Dollar', 'USD', '$', '', '2', 1.00000000, 1, '2013-07-12 10:21:17'),
-	(3, 'Euro', 'EUR', '', '€', '2', 0.76679999, 1, '2013-07-12 10:20:46');
+	(4, 'VNĐ', 'VNĐ', '', 'VNĐ', '0', 1.00000000, 1, '2013-07-12 14:08:21');
 /*!40000 ALTER TABLE `oc_currency` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_customer
+DROP TABLE IF EXISTS `oc_customer`;
 CREATE TABLE IF NOT EXISTS `oc_customer` (
   `customer_id` int(11) NOT NULL AUTO_INCREMENT,
   `store_id` int(11) NOT NULL DEFAULT '0',
@@ -788,12 +791,12 @@ CREATE TABLE IF NOT EXISTS `oc_customer` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_customer: 0 rows
-DELETE FROM `oc_customer`;
 /*!40000 ALTER TABLE `oc_customer` DISABLE KEYS */;
 /*!40000 ALTER TABLE `oc_customer` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_customer_ban_ip
+DROP TABLE IF EXISTS `oc_customer_ban_ip`;
 CREATE TABLE IF NOT EXISTS `oc_customer_ban_ip` (
   `customer_ban_ip_id` int(11) NOT NULL AUTO_INCREMENT,
   `ip` varchar(40) NOT NULL,
@@ -802,12 +805,12 @@ CREATE TABLE IF NOT EXISTS `oc_customer_ban_ip` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_customer_ban_ip: 0 rows
-DELETE FROM `oc_customer_ban_ip`;
 /*!40000 ALTER TABLE `oc_customer_ban_ip` DISABLE KEYS */;
 /*!40000 ALTER TABLE `oc_customer_ban_ip` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_customer_field
+DROP TABLE IF EXISTS `oc_customer_field`;
 CREATE TABLE IF NOT EXISTS `oc_customer_field` (
   `customer_id` int(11) NOT NULL,
   `custom_field_id` int(11) NOT NULL,
@@ -819,12 +822,12 @@ CREATE TABLE IF NOT EXISTS `oc_customer_field` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_customer_field: 0 rows
-DELETE FROM `oc_customer_field`;
 /*!40000 ALTER TABLE `oc_customer_field` DISABLE KEYS */;
 /*!40000 ALTER TABLE `oc_customer_field` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_customer_group
+DROP TABLE IF EXISTS `oc_customer_group`;
 CREATE TABLE IF NOT EXISTS `oc_customer_group` (
   `customer_group_id` int(11) NOT NULL AUTO_INCREMENT,
   `approval` int(1) NOT NULL,
@@ -837,7 +840,6 @@ CREATE TABLE IF NOT EXISTS `oc_customer_group` (
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_customer_group: 1 rows
-DELETE FROM `oc_customer_group`;
 /*!40000 ALTER TABLE `oc_customer_group` DISABLE KEYS */;
 INSERT INTO `oc_customer_group` (`customer_group_id`, `approval`, `company_id_display`, `company_id_required`, `tax_id_display`, `tax_id_required`, `sort_order`) VALUES
 	(1, 0, 1, 0, 0, 1, 1);
@@ -845,6 +847,7 @@ INSERT INTO `oc_customer_group` (`customer_group_id`, `approval`, `company_id_di
 
 
 -- Dumping structure for table amthuctrangia.oc_customer_group_description
+DROP TABLE IF EXISTS `oc_customer_group_description`;
 CREATE TABLE IF NOT EXISTS `oc_customer_group_description` (
   `customer_group_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -854,14 +857,14 @@ CREATE TABLE IF NOT EXISTS `oc_customer_group_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_customer_group_description: 1 rows
-DELETE FROM `oc_customer_group_description`;
 /*!40000 ALTER TABLE `oc_customer_group_description` DISABLE KEYS */;
 INSERT INTO `oc_customer_group_description` (`customer_group_id`, `language_id`, `name`, `description`) VALUES
-	(1, 1, 'Default', 'test');
+	(1, 2, 'Default', 'test');
 /*!40000 ALTER TABLE `oc_customer_group_description` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_customer_history
+DROP TABLE IF EXISTS `oc_customer_history`;
 CREATE TABLE IF NOT EXISTS `oc_customer_history` (
   `customer_history_id` int(11) NOT NULL AUTO_INCREMENT,
   `customer_id` int(11) NOT NULL,
@@ -871,12 +874,12 @@ CREATE TABLE IF NOT EXISTS `oc_customer_history` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_customer_history: 0 rows
-DELETE FROM `oc_customer_history`;
 /*!40000 ALTER TABLE `oc_customer_history` DISABLE KEYS */;
 /*!40000 ALTER TABLE `oc_customer_history` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_customer_ip
+DROP TABLE IF EXISTS `oc_customer_ip`;
 CREATE TABLE IF NOT EXISTS `oc_customer_ip` (
   `customer_ip_id` int(11) NOT NULL AUTO_INCREMENT,
   `customer_id` int(11) NOT NULL,
@@ -887,12 +890,12 @@ CREATE TABLE IF NOT EXISTS `oc_customer_ip` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_customer_ip: 0 rows
-DELETE FROM `oc_customer_ip`;
 /*!40000 ALTER TABLE `oc_customer_ip` DISABLE KEYS */;
 /*!40000 ALTER TABLE `oc_customer_ip` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_customer_online
+DROP TABLE IF EXISTS `oc_customer_online`;
 CREATE TABLE IF NOT EXISTS `oc_customer_online` (
   `ip` varchar(40) NOT NULL,
   `customer_id` int(11) NOT NULL,
@@ -903,12 +906,12 @@ CREATE TABLE IF NOT EXISTS `oc_customer_online` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_customer_online: 0 rows
-DELETE FROM `oc_customer_online`;
 /*!40000 ALTER TABLE `oc_customer_online` DISABLE KEYS */;
 /*!40000 ALTER TABLE `oc_customer_online` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_customer_reward
+DROP TABLE IF EXISTS `oc_customer_reward`;
 CREATE TABLE IF NOT EXISTS `oc_customer_reward` (
   `customer_reward_id` int(11) NOT NULL AUTO_INCREMENT,
   `customer_id` int(11) NOT NULL DEFAULT '0',
@@ -920,12 +923,12 @@ CREATE TABLE IF NOT EXISTS `oc_customer_reward` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_customer_reward: 0 rows
-DELETE FROM `oc_customer_reward`;
 /*!40000 ALTER TABLE `oc_customer_reward` DISABLE KEYS */;
 /*!40000 ALTER TABLE `oc_customer_reward` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_customer_transaction
+DROP TABLE IF EXISTS `oc_customer_transaction`;
 CREATE TABLE IF NOT EXISTS `oc_customer_transaction` (
   `customer_transaction_id` int(11) NOT NULL AUTO_INCREMENT,
   `customer_id` int(11) NOT NULL,
@@ -937,12 +940,12 @@ CREATE TABLE IF NOT EXISTS `oc_customer_transaction` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_customer_transaction: 0 rows
-DELETE FROM `oc_customer_transaction`;
 /*!40000 ALTER TABLE `oc_customer_transaction` DISABLE KEYS */;
 /*!40000 ALTER TABLE `oc_customer_transaction` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_custom_field
+DROP TABLE IF EXISTS `oc_custom_field`;
 CREATE TABLE IF NOT EXISTS `oc_custom_field` (
   `custom_field_id` int(11) NOT NULL AUTO_INCREMENT,
   `type` varchar(32) NOT NULL,
@@ -955,12 +958,12 @@ CREATE TABLE IF NOT EXISTS `oc_custom_field` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_custom_field: 0 rows
-DELETE FROM `oc_custom_field`;
 /*!40000 ALTER TABLE `oc_custom_field` DISABLE KEYS */;
 /*!40000 ALTER TABLE `oc_custom_field` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_custom_field_description
+DROP TABLE IF EXISTS `oc_custom_field_description`;
 CREATE TABLE IF NOT EXISTS `oc_custom_field_description` (
   `custom_field_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -969,12 +972,12 @@ CREATE TABLE IF NOT EXISTS `oc_custom_field_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_custom_field_description: 0 rows
-DELETE FROM `oc_custom_field_description`;
 /*!40000 ALTER TABLE `oc_custom_field_description` DISABLE KEYS */;
 /*!40000 ALTER TABLE `oc_custom_field_description` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_custom_field_to_customer_group
+DROP TABLE IF EXISTS `oc_custom_field_to_customer_group`;
 CREATE TABLE IF NOT EXISTS `oc_custom_field_to_customer_group` (
   `custom_field_id` int(11) NOT NULL,
   `customer_group_id` int(11) NOT NULL,
@@ -982,12 +985,12 @@ CREATE TABLE IF NOT EXISTS `oc_custom_field_to_customer_group` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_custom_field_to_customer_group: 0 rows
-DELETE FROM `oc_custom_field_to_customer_group`;
 /*!40000 ALTER TABLE `oc_custom_field_to_customer_group` DISABLE KEYS */;
 /*!40000 ALTER TABLE `oc_custom_field_to_customer_group` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_custom_field_value
+DROP TABLE IF EXISTS `oc_custom_field_value`;
 CREATE TABLE IF NOT EXISTS `oc_custom_field_value` (
   `custom_field_value_id` int(11) NOT NULL AUTO_INCREMENT,
   `custom_field_id` int(11) NOT NULL,
@@ -996,12 +999,12 @@ CREATE TABLE IF NOT EXISTS `oc_custom_field_value` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_custom_field_value: 0 rows
-DELETE FROM `oc_custom_field_value`;
 /*!40000 ALTER TABLE `oc_custom_field_value` DISABLE KEYS */;
 /*!40000 ALTER TABLE `oc_custom_field_value` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_custom_field_value_description
+DROP TABLE IF EXISTS `oc_custom_field_value_description`;
 CREATE TABLE IF NOT EXISTS `oc_custom_field_value_description` (
   `custom_field_value_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1011,12 +1014,12 @@ CREATE TABLE IF NOT EXISTS `oc_custom_field_value_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_custom_field_value_description: 0 rows
-DELETE FROM `oc_custom_field_value_description`;
 /*!40000 ALTER TABLE `oc_custom_field_value_description` DISABLE KEYS */;
 /*!40000 ALTER TABLE `oc_custom_field_value_description` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_download
+DROP TABLE IF EXISTS `oc_download`;
 CREATE TABLE IF NOT EXISTS `oc_download` (
   `download_id` int(11) NOT NULL AUTO_INCREMENT,
   `filename` varchar(128) NOT NULL,
@@ -1027,12 +1030,12 @@ CREATE TABLE IF NOT EXISTS `oc_download` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_download: 0 rows
-DELETE FROM `oc_download`;
 /*!40000 ALTER TABLE `oc_download` DISABLE KEYS */;
 /*!40000 ALTER TABLE `oc_download` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_download_description
+DROP TABLE IF EXISTS `oc_download_description`;
 CREATE TABLE IF NOT EXISTS `oc_download_description` (
   `download_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1041,21 +1044,20 @@ CREATE TABLE IF NOT EXISTS `oc_download_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_download_description: 0 rows
-DELETE FROM `oc_download_description`;
 /*!40000 ALTER TABLE `oc_download_description` DISABLE KEYS */;
 /*!40000 ALTER TABLE `oc_download_description` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_extension
+DROP TABLE IF EXISTS `oc_extension`;
 CREATE TABLE IF NOT EXISTS `oc_extension` (
   `extension_id` int(11) NOT NULL AUTO_INCREMENT,
   `type` varchar(32) NOT NULL,
   `code` varchar(32) NOT NULL,
   PRIMARY KEY (`extension_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=430 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=432 DEFAULT CHARSET=utf8;
 
--- Dumping data for table amthuctrangia.oc_extension: 21 rows
-DELETE FROM `oc_extension`;
+-- Dumping data for table amthuctrangia.oc_extension: 23 rows
 /*!40000 ALTER TABLE `oc_extension` DISABLE KEYS */;
 INSERT INTO `oc_extension` (`extension_id`, `type`, `code`) VALUES
 	(23, 'payment', 'cod'),
@@ -1078,11 +1080,14 @@ INSERT INTO `oc_extension` (`extension_id`, `type`, `code`) VALUES
 	(407, 'payment', 'free_checkout'),
 	(429, 'module', 'latest'),
 	(419, 'module', 'slideshow'),
-	(428, 'module', 'newslatest');
+	(428, 'module', 'newslatest'),
+	(430, 'module', 'tnt_yahoo'),
+	(431, 'module', 'visitor');
 /*!40000 ALTER TABLE `oc_extension` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_filter
+DROP TABLE IF EXISTS `oc_filter`;
 CREATE TABLE IF NOT EXISTS `oc_filter` (
   `filter_id` int(11) NOT NULL AUTO_INCREMENT,
   `filter_group_id` int(11) NOT NULL,
@@ -1091,12 +1096,12 @@ CREATE TABLE IF NOT EXISTS `oc_filter` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_filter: 0 rows
-DELETE FROM `oc_filter`;
 /*!40000 ALTER TABLE `oc_filter` DISABLE KEYS */;
 /*!40000 ALTER TABLE `oc_filter` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_filter_description
+DROP TABLE IF EXISTS `oc_filter_description`;
 CREATE TABLE IF NOT EXISTS `oc_filter_description` (
   `filter_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1106,12 +1111,12 @@ CREATE TABLE IF NOT EXISTS `oc_filter_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_filter_description: 0 rows
-DELETE FROM `oc_filter_description`;
 /*!40000 ALTER TABLE `oc_filter_description` DISABLE KEYS */;
 /*!40000 ALTER TABLE `oc_filter_description` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_filter_group
+DROP TABLE IF EXISTS `oc_filter_group`;
 CREATE TABLE IF NOT EXISTS `oc_filter_group` (
   `filter_group_id` int(11) NOT NULL AUTO_INCREMENT,
   `sort_order` int(3) NOT NULL,
@@ -1119,12 +1124,12 @@ CREATE TABLE IF NOT EXISTS `oc_filter_group` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_filter_group: 0 rows
-DELETE FROM `oc_filter_group`;
 /*!40000 ALTER TABLE `oc_filter_group` DISABLE KEYS */;
 /*!40000 ALTER TABLE `oc_filter_group` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_filter_group_description
+DROP TABLE IF EXISTS `oc_filter_group_description`;
 CREATE TABLE IF NOT EXISTS `oc_filter_group_description` (
   `filter_group_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1133,12 +1138,12 @@ CREATE TABLE IF NOT EXISTS `oc_filter_group_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_filter_group_description: 0 rows
-DELETE FROM `oc_filter_group_description`;
 /*!40000 ALTER TABLE `oc_filter_group_description` DISABLE KEYS */;
 /*!40000 ALTER TABLE `oc_filter_group_description` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_geo_zone
+DROP TABLE IF EXISTS `oc_geo_zone`;
 CREATE TABLE IF NOT EXISTS `oc_geo_zone` (
   `geo_zone_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(32) NOT NULL,
@@ -1149,7 +1154,6 @@ CREATE TABLE IF NOT EXISTS `oc_geo_zone` (
 ) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_geo_zone: 2 rows
-DELETE FROM `oc_geo_zone`;
 /*!40000 ALTER TABLE `oc_geo_zone` DISABLE KEYS */;
 INSERT INTO `oc_geo_zone` (`geo_zone_id`, `name`, `description`, `date_modified`, `date_added`) VALUES
 	(3, 'UK VAT Zone', 'UK VAT', '2010-02-26 22:33:24', '2009-01-06 23:26:25'),
@@ -1158,6 +1162,7 @@ INSERT INTO `oc_geo_zone` (`geo_zone_id`, `name`, `description`, `date_modified`
 
 
 -- Dumping structure for table amthuctrangia.oc_information
+DROP TABLE IF EXISTS `oc_information`;
 CREATE TABLE IF NOT EXISTS `oc_information` (
   `information_id` int(11) NOT NULL AUTO_INCREMENT,
   `bottom` int(1) NOT NULL DEFAULT '0',
@@ -1167,7 +1172,6 @@ CREATE TABLE IF NOT EXISTS `oc_information` (
 ) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_information: 6 rows
-DELETE FROM `oc_information`;
 /*!40000 ALTER TABLE `oc_information` DISABLE KEYS */;
 INSERT INTO `oc_information` (`information_id`, `bottom`, `sort_order`, `status`) VALUES
 	(3, 1, 3, 1),
@@ -1180,6 +1184,7 @@ INSERT INTO `oc_information` (`information_id`, `bottom`, `sort_order`, `status`
 
 
 -- Dumping structure for table amthuctrangia.oc_information_description
+DROP TABLE IF EXISTS `oc_information_description`;
 CREATE TABLE IF NOT EXISTS `oc_information_description` (
   `information_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1189,19 +1194,19 @@ CREATE TABLE IF NOT EXISTS `oc_information_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_information_description: 6 rows
-DELETE FROM `oc_information_description`;
 /*!40000 ALTER TABLE `oc_information_description` DISABLE KEYS */;
 INSERT INTO `oc_information_description` (`information_id`, `language_id`, `title`, `description`) VALUES
-	(4, 1, 'Giới thiệu', '&lt;p&gt;About Us&lt;/p&gt;\r\n'),
-	(5, 1, 'Chính sách phân phối', '&lt;p&gt;Terms &amp;amp; Conditions&lt;/p&gt;\r\n'),
-	(3, 1, 'Tìm đối tác', '&lt;p&gt;Privacy Policy&lt;/p&gt;\r\n'),
-	(6, 1, 'Nhà phân phối', '&lt;p&gt;Delivery Information&lt;/p&gt;\r\n'),
-	(7, 1, 'Tuyển dụng', '&lt;p&gt;Tuyển dụng&lt;/p&gt;\r\n'),
-	(8, 1, 'Sản phẩm', '&lt;p&gt;sản phẩm&lt;/p&gt;\r\n');
+	(4, 2, 'Giới thiệu', '&lt;p&gt;About Us&lt;/p&gt;\r\n'),
+	(5, 2, 'Chính sách phân phối', '&lt;p&gt;Terms &amp;amp; Conditions&lt;/p&gt;\r\n'),
+	(3, 2, 'Tìm đối tác', '&lt;p&gt;Privacy Policy&lt;/p&gt;\r\n'),
+	(6, 2, 'Nhà phân phối', '&lt;p&gt;Delivery Information&lt;/p&gt;\r\n'),
+	(7, 2, 'Tuyển dụng', '&lt;p&gt;Tuyển dụng&lt;/p&gt;\r\n'),
+	(8, 2, 'Sản phẩm', '&lt;p&gt;sản phẩm&lt;/p&gt;\r\n');
 /*!40000 ALTER TABLE `oc_information_description` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_information_to_layout
+DROP TABLE IF EXISTS `oc_information_to_layout`;
 CREATE TABLE IF NOT EXISTS `oc_information_to_layout` (
   `information_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
@@ -1210,7 +1215,6 @@ CREATE TABLE IF NOT EXISTS `oc_information_to_layout` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_information_to_layout: 2 rows
-DELETE FROM `oc_information_to_layout`;
 /*!40000 ALTER TABLE `oc_information_to_layout` DISABLE KEYS */;
 INSERT INTO `oc_information_to_layout` (`information_id`, `store_id`, `layout_id`) VALUES
 	(7, 0, 0),
@@ -1219,6 +1223,7 @@ INSERT INTO `oc_information_to_layout` (`information_id`, `store_id`, `layout_id
 
 
 -- Dumping structure for table amthuctrangia.oc_information_to_store
+DROP TABLE IF EXISTS `oc_information_to_store`;
 CREATE TABLE IF NOT EXISTS `oc_information_to_store` (
   `information_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
@@ -1226,7 +1231,6 @@ CREATE TABLE IF NOT EXISTS `oc_information_to_store` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_information_to_store: 6 rows
-DELETE FROM `oc_information_to_store`;
 /*!40000 ALTER TABLE `oc_information_to_store` DISABLE KEYS */;
 INSERT INTO `oc_information_to_store` (`information_id`, `store_id`) VALUES
 	(3, 0),
@@ -1239,6 +1243,7 @@ INSERT INTO `oc_information_to_store` (`information_id`, `store_id`) VALUES
 
 
 -- Dumping structure for table amthuctrangia.oc_language
+DROP TABLE IF EXISTS `oc_language`;
 CREATE TABLE IF NOT EXISTS `oc_language` (
   `language_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(32) NOT NULL,
@@ -1251,17 +1256,17 @@ CREATE TABLE IF NOT EXISTS `oc_language` (
   `status` tinyint(1) NOT NULL,
   PRIMARY KEY (`language_id`),
   KEY `name` (`name`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_language: 1 rows
-DELETE FROM `oc_language`;
 /*!40000 ALTER TABLE `oc_language` DISABLE KEYS */;
 INSERT INTO `oc_language` (`language_id`, `name`, `code`, `locale`, `image`, `directory`, `filename`, `sort_order`, `status`) VALUES
-	(1, 'English', 'en', 'en_US.UTF-8,en_US,en-gb,english', 'gb.png', 'english', 'english', 1, 1);
+	(2, 'vietnamese', 'vi', 'vi_VN.UTF-8,vi_VN,vi-vn,vietnamese', 'vn.png', 'vietnamese', 'vietnamese', 1, 1);
 /*!40000 ALTER TABLE `oc_language` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_layout
+DROP TABLE IF EXISTS `oc_layout`;
 CREATE TABLE IF NOT EXISTS `oc_layout` (
   `layout_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) NOT NULL,
@@ -1269,7 +1274,6 @@ CREATE TABLE IF NOT EXISTS `oc_layout` (
 ) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_layout: 11 rows
-DELETE FROM `oc_layout`;
 /*!40000 ALTER TABLE `oc_layout` DISABLE KEYS */;
 INSERT INTO `oc_layout` (`layout_id`, `name`) VALUES
 	(1, 'Home'),
@@ -1287,6 +1291,7 @@ INSERT INTO `oc_layout` (`layout_id`, `name`) VALUES
 
 
 -- Dumping structure for table amthuctrangia.oc_layout_route
+DROP TABLE IF EXISTS `oc_layout_route`;
 CREATE TABLE IF NOT EXISTS `oc_layout_route` (
   `layout_route_id` int(11) NOT NULL AUTO_INCREMENT,
   `layout_id` int(11) NOT NULL,
@@ -1296,7 +1301,6 @@ CREATE TABLE IF NOT EXISTS `oc_layout_route` (
 ) ENGINE=MyISAM AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_layout_route: 10 rows
-DELETE FROM `oc_layout_route`;
 /*!40000 ALTER TABLE `oc_layout_route` DISABLE KEYS */;
 INSERT INTO `oc_layout_route` (`layout_route_id`, `layout_id`, `store_id`, `route`) VALUES
 	(30, 6, 0, 'account'),
@@ -1313,6 +1317,7 @@ INSERT INTO `oc_layout_route` (`layout_route_id`, `layout_id`, `store_id`, `rout
 
 
 -- Dumping structure for table amthuctrangia.oc_length_class
+DROP TABLE IF EXISTS `oc_length_class`;
 CREATE TABLE IF NOT EXISTS `oc_length_class` (
   `length_class_id` int(11) NOT NULL AUTO_INCREMENT,
   `value` decimal(15,8) NOT NULL,
@@ -1320,7 +1325,6 @@ CREATE TABLE IF NOT EXISTS `oc_length_class` (
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_length_class: 3 rows
-DELETE FROM `oc_length_class`;
 /*!40000 ALTER TABLE `oc_length_class` DISABLE KEYS */;
 INSERT INTO `oc_length_class` (`length_class_id`, `value`) VALUES
 	(1, 1.00000000),
@@ -1330,6 +1334,7 @@ INSERT INTO `oc_length_class` (`length_class_id`, `value`) VALUES
 
 
 -- Dumping structure for table amthuctrangia.oc_length_class_description
+DROP TABLE IF EXISTS `oc_length_class_description`;
 CREATE TABLE IF NOT EXISTS `oc_length_class_description` (
   `length_class_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) NOT NULL,
@@ -1339,16 +1344,16 @@ CREATE TABLE IF NOT EXISTS `oc_length_class_description` (
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_length_class_description: 3 rows
-DELETE FROM `oc_length_class_description`;
 /*!40000 ALTER TABLE `oc_length_class_description` DISABLE KEYS */;
 INSERT INTO `oc_length_class_description` (`length_class_id`, `language_id`, `title`, `unit`) VALUES
-	(1, 1, 'Centimeter', 'cm'),
-	(2, 1, 'Millimeter', 'mm'),
-	(3, 1, 'Inch', 'in');
+	(1, 2, 'Centimeter', 'cm'),
+	(2, 2, 'Millimeter', 'mm'),
+	(3, 2, 'Inch', 'in');
 /*!40000 ALTER TABLE `oc_length_class_description` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_manufacturer
+DROP TABLE IF EXISTS `oc_manufacturer`;
 CREATE TABLE IF NOT EXISTS `oc_manufacturer` (
   `manufacturer_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) NOT NULL,
@@ -1358,7 +1363,6 @@ CREATE TABLE IF NOT EXISTS `oc_manufacturer` (
 ) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_manufacturer: 6 rows
-DELETE FROM `oc_manufacturer`;
 /*!40000 ALTER TABLE `oc_manufacturer` DISABLE KEYS */;
 INSERT INTO `oc_manufacturer` (`manufacturer_id`, `name`, `image`, `sort_order`) VALUES
 	(5, 'HTC', 'data/demo/htc_logo.jpg', 0),
@@ -1371,6 +1375,7 @@ INSERT INTO `oc_manufacturer` (`manufacturer_id`, `name`, `image`, `sort_order`)
 
 
 -- Dumping structure for table amthuctrangia.oc_manufacturer_to_store
+DROP TABLE IF EXISTS `oc_manufacturer_to_store`;
 CREATE TABLE IF NOT EXISTS `oc_manufacturer_to_store` (
   `manufacturer_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
@@ -1378,7 +1383,6 @@ CREATE TABLE IF NOT EXISTS `oc_manufacturer_to_store` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_manufacturer_to_store: 6 rows
-DELETE FROM `oc_manufacturer_to_store`;
 /*!40000 ALTER TABLE `oc_manufacturer_to_store` DISABLE KEYS */;
 INSERT INTO `oc_manufacturer_to_store` (`manufacturer_id`, `store_id`) VALUES
 	(5, 0),
@@ -1391,6 +1395,7 @@ INSERT INTO `oc_manufacturer_to_store` (`manufacturer_id`, `store_id`) VALUES
 
 
 -- Dumping structure for table amthuctrangia.oc_news
+DROP TABLE IF EXISTS `oc_news`;
 CREATE TABLE IF NOT EXISTS `oc_news` (
   `news_id` int(11) NOT NULL AUTO_INCREMENT,
   `image` varchar(255) COLLATE utf8_bin DEFAULT NULL,
@@ -1403,22 +1408,28 @@ CREATE TABLE IF NOT EXISTS `oc_news` (
   `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `viewed` int(5) NOT NULL DEFAULT '0',
   PRIMARY KEY (`news_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=23 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Dumping data for table amthuctrangia.oc_news: 6 rows
-DELETE FROM `oc_news`;
+-- Dumping data for table amthuctrangia.oc_news: 12 rows
 /*!40000 ALTER TABLE `oc_news` DISABLE KEYS */;
 INSERT INTO `oc_news` (`news_id`, `image`, `date_available`, `sort_order`, `comment`, `approved`, `status`, `date_added`, `date_modified`, `viewed`) VALUES
-	(11, 'data/logo.jpg', '2013-07-11', 1, 1, 1, 1, '2013-07-12 16:21:00', '0000-00-00 00:00:00', 0),
+	(11, 'data/logo.jpg', '2013-07-11', 1, 1, 1, 1, '2013-07-12 16:21:00', '0000-00-00 00:00:00', 1),
 	(12, 'data/min trn gia.jpg', '2013-07-11', 1, 1, 1, 1, '2013-07-12 16:22:00', '0000-00-00 00:00:00', 0),
 	(13, 'data/banh da moi5 1.jpg', '2013-07-11', 1, 1, 1, 1, '2013-07-12 16:22:43', '0000-00-00 00:00:00', 0),
 	(14, 'data/B__nh___a_Nem_C__50af8e230ca5b_180x160.jpg', '2013-07-11', 1, 1, 1, 1, '2013-07-12 16:23:36', '0000-00-00 00:00:00', 0),
 	(15, 'data/1.jpg', '2013-07-11', 1, 1, 1, 1, '2013-07-12 16:24:17', '0000-00-00 00:00:00', 0),
-	(16, 'data/nem nan.jpg', '2013-07-11', 1, 1, 1, 1, '2013-07-12 16:24:59', '0000-00-00 00:00:00', 0);
+	(16, 'data/nem nan.jpg', '2013-07-11', 1, 1, 1, 1, '2013-07-12 16:24:59', '0000-00-00 00:00:00', 0),
+	(17, 'data/tin/tintuc1.jpg', '2013-07-11', 1, 1, 1, 1, '2013-07-12 19:00:18', '0000-00-00 00:00:00', 0),
+	(18, 'data/tin/tin2.jpg', '2013-07-11', 1, 1, 1, 1, '2013-07-12 19:00:57', '2013-07-12 19:01:27', 0),
+	(19, 'data/tin/tin3.jpg', '2013-07-11', 1, 1, 1, 1, '2013-07-12 19:02:39', '0000-00-00 00:00:00', 0),
+	(20, 'data/tin/tin4.jpg', '2013-07-11', 1, 1, 1, 1, '2013-07-12 19:03:44', '0000-00-00 00:00:00', 0),
+	(21, 'data/tin/tin5.jpg', '2013-07-11', 1, 1, 1, 1, '2013-07-12 19:32:07', '0000-00-00 00:00:00', 0),
+	(22, 'data/tin/tin3.jpg', '2013-07-11', 1, 1, 1, 1, '2013-07-12 19:33:32', '0000-00-00 00:00:00', 0);
 /*!40000 ALTER TABLE `oc_news` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_news_category
+DROP TABLE IF EXISTS `oc_news_category`;
 CREATE TABLE IF NOT EXISTS `oc_news_category` (
   `news_category_id` int(11) NOT NULL AUTO_INCREMENT,
   `image` varchar(255) COLLATE utf8_bin DEFAULT NULL,
@@ -1432,19 +1443,15 @@ CREATE TABLE IF NOT EXISTS `oc_news_category` (
   PRIMARY KEY (`news_category_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Dumping data for table amthuctrangia.oc_news_category: 5 rows
-DELETE FROM `oc_news_category`;
+-- Dumping data for table amthuctrangia.oc_news_category: 1 rows
 /*!40000 ALTER TABLE `oc_news_category` DISABLE KEYS */;
 INSERT INTO `oc_news_category` (`news_category_id`, `image`, `parent_id`, `top`, `column`, `sort_order`, `status`, `date_added`, `date_modified`) VALUES
-	(3, '', 7, 0, 1, 0, 1, '2013-07-12 11:18:25', '2013-07-12 13:12:57'),
-	(4, '', 7, 0, 1, 0, 1, '2013-07-12 11:18:48', '2013-07-12 13:12:39'),
-	(5, '', 7, 0, 1, 0, 1, '2013-07-12 11:19:06', '2013-07-12 13:13:08'),
-	(6, '', 7, 0, 1, 0, 1, '2013-07-12 11:19:30', '2013-07-12 13:12:48'),
 	(7, '', 0, 1, 1, 0, 1, '2013-07-12 13:12:13', '2013-07-12 13:12:13');
 /*!40000 ALTER TABLE `oc_news_category` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_news_category_description
+DROP TABLE IF EXISTS `oc_news_category_description`;
 CREATE TABLE IF NOT EXISTS `oc_news_category_description` (
   `news_category_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1456,19 +1463,15 @@ CREATE TABLE IF NOT EXISTS `oc_news_category_description` (
   KEY `name` (`name`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Dumping data for table amthuctrangia.oc_news_category_description: 5 rows
-DELETE FROM `oc_news_category_description`;
+-- Dumping data for table amthuctrangia.oc_news_category_description: 1 rows
 /*!40000 ALTER TABLE `oc_news_category_description` DISABLE KEYS */;
 INSERT INTO `oc_news_category_description` (`news_category_id`, `language_id`, `name`, `description`, `meta_description`, `meta_keyword`) VALUES
-	(3, 2, 'Sao Việt với Jumpsuits', '', '', ''),
-	(4, 2, 'Bí quyết mặc đẹp', '', '', ''),
-	(5, 2, 'Tổng hợp', '', '', ''),
-	(6, 2, 'Tin khuyến mãi', '', '', ''),
 	(7, 2, 'Tin tức', '', '', '');
 /*!40000 ALTER TABLE `oc_news_category_description` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_news_category_to_layout
+DROP TABLE IF EXISTS `oc_news_category_to_layout`;
 CREATE TABLE IF NOT EXISTS `oc_news_category_to_layout` (
   `news_category_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
@@ -1477,31 +1480,27 @@ CREATE TABLE IF NOT EXISTS `oc_news_category_to_layout` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- Dumping data for table amthuctrangia.oc_news_category_to_layout: 0 rows
-DELETE FROM `oc_news_category_to_layout`;
 /*!40000 ALTER TABLE `oc_news_category_to_layout` DISABLE KEYS */;
 /*!40000 ALTER TABLE `oc_news_category_to_layout` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_news_category_to_store
+DROP TABLE IF EXISTS `oc_news_category_to_store`;
 CREATE TABLE IF NOT EXISTS `oc_news_category_to_store` (
   `news_category_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
   PRIMARY KEY (`news_category_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Dumping data for table amthuctrangia.oc_news_category_to_store: 5 rows
-DELETE FROM `oc_news_category_to_store`;
+-- Dumping data for table amthuctrangia.oc_news_category_to_store: 1 rows
 /*!40000 ALTER TABLE `oc_news_category_to_store` DISABLE KEYS */;
 INSERT INTO `oc_news_category_to_store` (`news_category_id`, `store_id`) VALUES
-	(3, 0),
-	(4, 0),
-	(5, 0),
-	(6, 0),
 	(7, 0);
 /*!40000 ALTER TABLE `oc_news_category_to_store` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_news_comment
+DROP TABLE IF EXISTS `oc_news_comment`;
 CREATE TABLE IF NOT EXISTS `oc_news_comment` (
   `comment_id` int(11) NOT NULL AUTO_INCREMENT,
   `news_id` int(11) NOT NULL,
@@ -1517,12 +1516,12 @@ CREATE TABLE IF NOT EXISTS `oc_news_comment` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- Dumping data for table amthuctrangia.oc_news_comment: 0 rows
-DELETE FROM `oc_news_comment`;
 /*!40000 ALTER TABLE `oc_news_comment` DISABLE KEYS */;
 /*!40000 ALTER TABLE `oc_news_comment` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_news_description
+DROP TABLE IF EXISTS `oc_news_description`;
 CREATE TABLE IF NOT EXISTS `oc_news_description` (
   `news_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) NOT NULL,
@@ -1533,10 +1532,9 @@ CREATE TABLE IF NOT EXISTS `oc_news_description` (
   `meta_keyword` varchar(255) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`news_id`,`language_id`),
   KEY `name` (`name`)
-) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=23 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Dumping data for table amthuctrangia.oc_news_description: 6 rows
-DELETE FROM `oc_news_description`;
+-- Dumping data for table amthuctrangia.oc_news_description: 12 rows
 /*!40000 ALTER TABLE `oc_news_description` DISABLE KEYS */;
 INSERT INTO `oc_news_description` (`news_id`, `language_id`, `name`, `short_description`, `description`, `meta_description`, `meta_keyword`) VALUES
 	(11, 1, '﻿ Lễ Ký kết hợp đồng Xuất khẩu Bánh Đa Nem sang Úc', 'Vừa qua vào ngày 28 tháng 6 năm 2013 đã diễn ra lễ ký kết hợp đồng hợp tác đầu tiên giữa Công Ty Cổ Phần Thương Mại và Đầu Tư Trần Gia và Công Ty Cổ Phần Sao Vy Vân có trụ sở tại Sài Gòn. Sản phẩm hợp tác là Bánh Đa Nem Xuất Khẩu 22 đi sang thị trường Úc.\r\n ', '&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: center;&quot;&gt;&lt;img border=&quot;0&quot; src=&quot;http://amthuctrangia.vn/images/stories/Anhchung/logo.jpg&quot; style=&quot;margin: 2px 10px 2px 2px; padding: 2px; list-style-type: none; border: 1px solid rgb(241, 241, 241);&quot; /&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;&lt;strong style=&quot;margin: 0px; padding: 0px; list-style-type: none;&quot;&gt;Chi tiết đơn hàng như sau:&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;* Tên sản phẩm: Bánh Đa Nem Xuất Khẩu&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;* Kích thước: 22 mm&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;* Trọng lượng: 250gr&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;* Khối lượng đặt hàng tháng 6: 1,3 tấn&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;* Vận chuyển: Bằng đường Tàu Hỏa vào Sài Gòn và từ Sài Gòn sang Úc là bằng đường Thủy, Tập kết hàng tại Cảng Tân Cảng - Sài Gòn&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;Đây là bước hợp tác đầu tiên giữa 2 công ty và sẽ là cơ sở hợp tác lâu dài giữa 2 công ty 2 ngày và cũng là thể hiện được chất lượng sản phẩm Bánh Đa Nem do Công Ty Trần Gia Sản xuất có thương hiệu nổi tiếng là Bánh Đa Nem Làng Chều.&lt;/p&gt;\r\n', '', ''),
@@ -1544,11 +1542,18 @@ INSERT INTO `oc_news_description` (`news_id`, `language_id`, `name`, `short_desc
 	(13, 1, '﻿ Mẫu Bánh Đa Nem Nan 15 lá', 'Hiện tại, Trần Gia đã và đang phân phối loại bánh đa nem ăn hàng ngày nem Nan. Đây là loại bánh mỏng, mềm và dễ cuốn rất được người tiêu dùng trong nước ưu chuộng.\r\nThông số của sản phẩm như sau:\r\n- Kích thước: 220 mm\r\n- Số lượng: 15 lá/ túi\r\n ', '&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Hình thức đóng gói: Túi PP trắng trong ( Chất liệu an toàn cho người tiêu dùng)&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Thành phần: 100% tinh bột gạo và muối&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Cộng dụng: Dùng làm nem rán hoặc nem cuốn&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Hạn sử dụng: 6 tháng kể từ ngày sản xuất&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Đặc điểm nhận biết: Được đóng vào túi nilong PP trắng trong và gắn 2 đầu. Bên trong có bỏ tem có phông nền vàng nhạt và hình ảnh gia đình đăng dùng cơm phía bên tay trái trên cùng.&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Giá bán lẻ: 5.000 VNĐ/ túi&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Giá nhà phân phối: liên hệ 0977.999.544&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: center;&quot;&gt;&lt;img border=&quot;0&quot; src=&quot;http://amthuctrangia.vn/images/stories/Anhchung/banh%20da%20moi5%201.jpg&quot; style=&quot;margin: 2px 10px 2px 2px; padding: 2px; list-style-type: none; border: 1px solid rgb(241, 241, 241);&quot; /&gt;&lt;/p&gt;\r\n', '', ''),
 	(14, 1, ' Các chính sách hỗ trợ nhà phân phối', 'Để nhà phân phối nhanh chóng tiếp cận thị trường được tốt, ngoài việc đảm bảo chất lượng sản phẩm cũng như hình thức bao bì sản phẩm đẹp cuốn hút khách hàng. Trần Gia sẽ có những chính sách hỗ trợ cho các nhà phân phối như sau:', '&lt;p style=&quot;list-style-type:none;&quot;&gt;&lt;strong style=&quot;list-style-type:none;&quot;&gt;1. Hỗ Trợ trong 2 tháng đầu làm thị trường&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36pt;list-style-type:none;&quot;&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;-&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;Tư vấn các chính sách làm thị trường cho các nhà phân phối&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36pt;list-style-type:none;&quot;&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;-&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;Hỗ trợ trích thưởng trên tổng doanh thu (Trích vào cuối tháng) để nhà phân phối thưởng cho nhân viên làm thị trường. Mức trích thưởng tùy vào thỏa thuận của 2 bên.&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36pt;list-style-type:none;&quot;&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;-&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;Nhập lại sản phẩm nếu nhà phân phối bán không hết hàng&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36pt;list-style-type:none;&quot;&gt;&lt;strong style=&quot;list-style-type:none;&quot;&gt;2. Trong suốt quá trình hợp tác&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36pt;list-style-type:none;&quot;&gt;&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36pt;list-style-type:none;&quot;&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;-&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;Đổi hàng mới cho những lô hàng: hết hạn hoặc sắp hết hạn sử dụng, hàng bị ẩm mốc do thời tiết….)&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36pt;list-style-type:none;&quot;&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;-&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;Thường xuyên chia sẻ thông tin và hỗ trợ kịp thời tới các nhà phân phối.&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36pt;list-style-type:none;&quot;&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;-&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;Cam&lt;/span&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;&amp;nbsp;kết hỗ trợ tối đa do biến động của thị trường và cam kết không tăng giá bán quá 10% vào các dịp lễ tết. (mặt hàng khô thường tăng từ 50 – 100% vào các dịp lễ tết).&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36pt;list-style-type:none;&quot;&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;-&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;Chính sách thưởng cuối năm: Nhà sản xuất sẽ có những hình thưc thưởng cuối năm nếu nhà phân phối vượt chỉ tiêu nhập hàng. Mức thưởng và mức chỉ tiêu sẽ được nhà sản xuất quy định trong bản hợp đồng với các nhà phân phối&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36pt;list-style-type:none;&quot;&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;-&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;Chính sách độc quyền phân phối sản phẩm: Nhà phân phối sẽ có cơ hội độc quyền phân phối sản phẩm các mặt hàng do Trần Gia sản xuất tại 1 đia bàn hoặc nhiều địa bàn (Điều kiện được quy định bên dưới).&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36pt;list-style-type:none;&quot;&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;-&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;Hỗ trợ phân phối và marketing: Nhà sản xuất sẽ đăng thông tin của nhà phân phối và hệ thống website của công ty và các các chiến lược marketing online của công ty thường niên. Dựa trên nguồn khách hàng đăng ký nhập hàng, nhà sản xuất sẽ dựa trên hệ thống nhà phân phối để liên hệ với các nhà phân phối chuyển hàng tới các khách hàng đã đặt hàng với nhà sản xuất.&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36pt;list-style-type:none;&quot;&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;-&amp;nbsp; &lt;/span&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;Được cung cấp các thông tin về hàng hóa, chính sách và các chiến lược marketing cũng như các tài liệu thúc đẩy bán hàng.&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;list-style-type:none;&quot;&gt;&lt;strong style=&quot;list-style-type:none;&quot;&gt;3. Các điều kiện để trở thành nhà phân phối độc quyền&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:18pt;list-style-type:none;&quot;&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;Để trở thành nhà phân phối độc quyền tại 1 địa bàn của các sản phẩm Trần Gia thì nhà phân phối phải đảm bảo các điều kiện sau:&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36pt;list-style-type:none;&quot;&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;-&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;Doanh số đảm bảo hàng tháng theo thỏa thuận của nhà phân phối và nhà sản xuất, mức doanh số tùy thuộc và từng địa bàn mà nhà phân phối lựa chọn.&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36pt;list-style-type:none;&quot;&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;-&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;Có nguồn tài chính ổn định&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36pt;list-style-type:none;&quot;&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;-&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;Có xe chở hàng trọng tải 500kg trở lên&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36pt;list-style-type:none;&quot;&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;-&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;Có đội ngũ nhân viên làm thị trường&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36pt;list-style-type:none;&quot;&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;-&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;Có kho bãi và đảm bảo về thoáng mát không ẩm mốc&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36pt;list-style-type:none;&quot;&gt;&lt;strong style=&quot;list-style-type:none;&quot;&gt;&lt;em style=&quot;list-style-type:none;&quot;&gt;Các nhà phân phối cần thêm thông tin gì hoặc có ý kiên về các chính sách mà Trần Gia đã đề ra xin vui lòng liên hệ với đại diện của công ty theo số điện thoại: 0977.999.544 hoặc qua email:&lt;a href=&quot;mailto:thucphamtrangia@gmail.com&quot; style=&quot;list-style-type:none;&quot;&gt;thucphamtrangia@gmail.com&lt;/a&gt;.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36pt;list-style-type:none;&quot;&gt;&lt;span style=&quot;list-style-type:none;&quot;&gt;&lt;strong style=&quot;list-style-type:none;&quot;&gt;Xin chân thành cảm ơn!&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;\r\n', '', ''),
 	(15, 1, '﻿ Mẫu Bánh Đa Nem Ăn Sống', 'Hiện tại, Trần Gia đã và đang phân phối loại bánh đa nem ăn hàng ngày nem Nan. Đây là loại bánh mỏng, mềm và dễ cuốn rất được người tiêu dùng trong nước ưu chuộng.\r\nThông số của sản phẩm như sau:\r\n- Kích thước: 140 mm x 190mm\r\n- Số lượng: 10 lá/ túi', '&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Hình thức đóng gói: Túi PP trắng trong ( Chất liệu an toàn cho người tiêu dùng)&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Thành phần: 100% tinh bột gạo và muối&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Cộng dụng: Dùng làm nem nem cuốn&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Hạn sử dụng: 6 tháng kể từ ngày sản xuất&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Đặc điểm nhận biết: Được đóng vào túi nilong PP trắng trong và gắn 2 đầu. Bên ngoài dán tem chất liệu decan 2 màu đỏ và xanh có in hình logo của công ty.&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Giá bán lẻ: 2.000 VNĐ/ túi&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Giá nhà phân phối: liên hệ 0977.999.544&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: center;&quot;&gt;&lt;strong style=&quot;margin: 0px; padding: 0px; list-style-type: none;&quot;&gt;HÌNH ẢNH SẢN PHẨM&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: center;&quot;&gt;&lt;img border=&quot;0&quot; src=&quot;http://amthuctrangia.vn/images/stories/Anhchung/1.jpg&quot; style=&quot;margin: 2px 10px 2px 2px; padding: 2px; list-style-type: none; border: 1px solid rgb(241, 241, 241);&quot; /&gt;&lt;/p&gt;\r\n', '', ''),
-	(16, 1, '﻿ Bánh Đa Nem Nan size 22 loại 20 lá', 'Hiện tại, Trần Gia đã và đang phân phối loại bánh đa nem ăn hàng ngày nem Nan. Đây là loại bánh mỏng, mềm và dễ cuốn rất được người tiêu dùng trong nước ưu chuộng.\r\nThông số của sản phẩm như sau:\r\n- Kích thước: 220 mm\r\n- Số lượng: 20 lá/ túi\r\n ', '&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Hình thức đóng gói: Túi PP trắng trong ( Chất liệu an toàn cho người tiêu dùng)&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Thành phần: 100% tinh bột gạo và muối&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Cộng dụng: Dùng làm nem rán hoặc nem cuốn&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Hạn sử dụng: 6 tháng kể từ ngày sản xuất&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Đặc điểm nhận biết: Được đóng vào túi nilong PP trắng trong và gắn 2 đầu. Bên trong có bỏ tem có phông nền vàng đậm và cành Hoa Đào điểm phía trên bên trái. Hình ảnh pháo hoa được in chìm nổi vào phía bên trên của tem. Loại bánh đủ 20 tấm và đều in hình logo màu xanh của nhà sản xuất.&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Giá bán lẻ: 6.000 VNĐ/ túi&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Giá nhà phân phối: liên hệ 0977.999.544&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: center;&quot;&gt;&lt;strong style=&quot;margin: 0px; padding: 0px; list-style-type: none;&quot;&gt;HÌNH ẢNH SẢN PHẨM&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: center;&quot;&gt;&lt;img border=&quot;0&quot; height=&quot;640&quot; src=&quot;http://amthuctrangia.vn/images/stories/Anhchung/nem%20nan.jpg&quot; style=&quot;margin: 2px 10px 2px 2px; padding: 2px; list-style-type: none; border: 1px solid rgb(241, 241, 241);&quot; width=&quot;456&quot; /&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: center;&quot;&gt;&amp;nbsp;&lt;/p&gt;\r\n', '', '');
+	(16, 1, '﻿ Bánh Đa Nem Nan size 22 loại 20 lá', 'Hiện tại, Trần Gia đã và đang phân phối loại bánh đa nem ăn hàng ngày nem Nan. Đây là loại bánh mỏng, mềm và dễ cuốn rất được người tiêu dùng trong nước ưu chuộng.\r\nThông số của sản phẩm như sau:\r\n- Kích thước: 220 mm\r\n- Số lượng: 20 lá/ túi\r\n ', '&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Hình thức đóng gói: Túi PP trắng trong ( Chất liệu an toàn cho người tiêu dùng)&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Thành phần: 100% tinh bột gạo và muối&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Cộng dụng: Dùng làm nem rán hoặc nem cuốn&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Hạn sử dụng: 6 tháng kể từ ngày sản xuất&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Đặc điểm nhận biết: Được đóng vào túi nilong PP trắng trong và gắn 2 đầu. Bên trong có bỏ tem có phông nền vàng đậm và cành Hoa Đào điểm phía trên bên trái. Hình ảnh pháo hoa được in chìm nổi vào phía bên trên của tem. Loại bánh đủ 20 tấm và đều in hình logo màu xanh của nhà sản xuất.&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Giá bán lẻ: 6.000 VNĐ/ túi&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Giá nhà phân phối: liên hệ 0977.999.544&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: center;&quot;&gt;&lt;strong style=&quot;margin: 0px; padding: 0px; list-style-type: none;&quot;&gt;HÌNH ẢNH SẢN PHẨM&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: center;&quot;&gt;&lt;img border=&quot;0&quot; height=&quot;640&quot; src=&quot;http://amthuctrangia.vn/images/stories/Anhchung/nem%20nan.jpg&quot; style=&quot;margin: 2px 10px 2px 2px; padding: 2px; list-style-type: none; border: 1px solid rgb(241, 241, 241);&quot; width=&quot;456&quot; /&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; line-height: 22px; text-align: center;&quot;&gt;&amp;nbsp;&lt;/p&gt;\r\n', '', ''),
+	(17, 2, ' Lễ Ký kết hợp đồng Xuất khẩu Bánh Đa Nem sang Úc', 'Vừa qua vào ngày 28 tháng 6 năm 2013 đã diễn ra lễ ký kết hợp đồng hợp tác đầu tiên giữa Công Ty Cổ Phần Thương Mại và Đầu Tư Trần Gia và Công Ty Cổ Phần Sao Vy Vân có trụ sở tại Sài Gòn. Sản phẩm hợp tác là Bánh Đa Nem Xuất Khẩu 22 đi sang thị trường Úc.', '&lt;p&gt;Vừa qua vào ngày 28 tháng 6 năm 2013 đã diễn ra lễ ký kết hợp đồng hợp tác đầu tiên giữa Công Ty Cổ Phần Thương Mại và Đầu Tư Trần Gia và Công Ty Cổ Phần Sao Vy Vân có trụ sở tại Sài Gòn. Sản phẩm hợp tác là Bánh Đa Nem Xuất Khẩu 22 đi sang thị trường Úc.&lt;/p&gt;\r\n\r\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img border=&quot;0&quot; src=&quot;http://amthuctrangia.vn/images/stories/Anhchung/logo.jpg&quot; /&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;strong&gt;Chi tiết đơn hàng như sau:&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;* Tên sản phẩm: Bánh Đa Nem Xuất Khẩu&lt;/p&gt;\r\n\r\n&lt;p&gt;* Kích thước: 22 mm&lt;/p&gt;\r\n\r\n&lt;p&gt;* Trọng lượng: 250gr&lt;/p&gt;\r\n\r\n&lt;p&gt;* Khối lượng đặt hàng tháng 6: 1,3 tấn&lt;/p&gt;\r\n\r\n&lt;p&gt;* Vận chuyển: Bằng đường Tàu Hỏa vào Sài Gòn và từ Sài Gòn sang Úc là bằng đường Thủy, Tập kết hàng tại Cảng Tân Cảng - Sài Gòn&lt;/p&gt;\r\n\r\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p&gt;Đây là bước hợp tác đầu tiên giữa 2 công ty và sẽ là cơ sở hợp tác lâu dài giữa 2 công ty 2 ngày và cũng là thể hiện được chất lượng sản phẩm Bánh Đa Nem do Công Ty Trần Gia Sản xuất có thương hiệu nổi tiếng là Bánh Đa Nem Làng Chều.&lt;/p&gt;\r\n', '', ''),
+	(18, 2, ' ﻿ Mẫu miến dong mới của Trần Gia', 'Công Ty Cổ Phần Thương Mại và Đầu Tư Trần Gia vừa cho ra mắt sản phẩm miến mới, đó là miến dong làng so - Đặc sản Hà Nội. Miến dong làng So được làm từ tinh bột của củ dong giềng - Được trồng trên các vùng đồi núi cao của Bắc Cạn, Cao Bằng.', '&lt;p&gt;Công Ty Cổ Phần Thương Mại và Đầu Tư Trần Gia vừa cho ra mắt sản phẩm miến mới, đó là &lt;a href=&quot;http://amthuctrangia.vn/tin-tuc/159-mien-dong-tran-gia.html&quot; target=&quot;_blank&quot; title=&quot;mien-dong-lang-so&quot;&gt;miến dong làng so&lt;/a&gt; - Đặc sản Hà Nội.&amp;nbsp;Miến dong làng So được làm từ tinh bột của củ dong giềng - Được trồng trên các vùng đồi núi cao của Bắc Cạn, Cao Bằng.&lt;/p&gt;\r\n\r\n&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;line-height: 1.3em;&quot;&gt;&lt;a href=&quot;http://amthuctrangia.vn/tin-tuc/159-mien-dong-tran-gia.html&quot; target=&quot;_blank&quot; title=&quot;mien-dong-lang-so&quot;&gt;Miến dong làng So&lt;/a&gt; có màu xanh nâu lục, sợi dài khoảng 20-25cm, nhỏ, mảnh đều. Đây là loại miến mộc sạch không sử dụng hóa chất phẩm màu độc hại và được được người tiêu dùng khắp cả nước tin tưởng và sử dụng.&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;text-align: justify;&quot;&gt;Vị miến giòn dai, nấu lâu cũng chỉ mềm hơn chút ít mà không nát. Người ta có thể dùng miến làng So cho các món nấu, xào, trộn. Miến xào lòng gà, miến xào hải sản như vạng, ngao, tôm, cua bể cùng với nấm hương thường là món ăn khiến không ai không xuýt xoa khi thưởng thức.&lt;/p&gt;\r\n\r\n&lt;p style=&quot;text-align: justify;&quot;&gt;Với nhu cầu được sử dụng miến dong sạch, Công ty cổ phần thương mại và đầu tư Trần Gia đã hợp tác với ban đại diện hiệp hội &lt;a href=&quot;http://amthuctrangia.vn/tin-tuc/159-mien-dong-tran-gia.html&quot; target=&quot;_blank&quot; title=&quot;mien-dong-lang-so&quot;&gt;miến dong làng So&lt;/a&gt; cho ra đời &lt;a href=&quot;http://amthuctrangia.vn/tin-tuc/159-mien-dong-tran-gia.html&quot; target=&quot;_blank&quot; title=&quot;mien-dong-lang-so&quot;&gt;miến dong làng So&lt;/a&gt; - Thương hiệu Trần Gia. Đặc biệt, &lt;a href=&quot;http://amthuctrangia.vn/tin-tuc/159-mien-dong-tran-gia.html&quot; target=&quot;_blank&quot; title=&quot;mien-dong-lang-so&quot;&gt;miến dong làng So&lt;/a&gt; thương hiệu Trần Gia đã được trao cúp thương hiệu &quot; SẢN PHẨM VÌ SỨC KHỎE NGƯỜI VIỆT &quot; Do người tiêu dùng bình chọn 2012. Sau đây là hình ảnh bao bì của sản phẩm:&lt;/p&gt;\r\n\r\n&lt;p style=&quot;text-align: justify;&quot;&gt;&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img alt=&quot;mien-dong-lang-so&quot; border=&quot;0&quot; src=&quot;http://amthuctrangia.vn/images/stories/Anhchung/min%20trn%20gia.jpg&quot; style=&quot;border: 0;&quot; /&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;text-align: justify;&quot;&gt;Quý anh chị có nhu cầu làm nhà phân phối sản phẩm này xin vui lòng gửi email vào : &lt;a href=&quot;mailto:thucphamtrangia@gmail.com&quot;&gt;thucphamtrangia@gmail.com&lt;/a&gt; hoặc gọi điện trực tiếp tới số: 0977.999.544.&lt;/p&gt;\r\n\r\n&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;strong&gt;&lt;em&gt;Xin chân thành cảm ơn!&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;\r\n', '', ''),
+	(19, 2, 'Mẫu Bánh Đa Nem Nan 15 lá', 'Hiện tại, Trần Gia đã và đang phân phối loại bánh đa nem ăn hàng ngày nem Nan. Đây là loại bánh mỏng, mềm và dễ cuốn rất được người tiêu dùng trong nước ưu chuộng.', '&lt;p&gt;&lt;span style=&quot;line-height: 1.3em;&quot;&gt;Hiện tại, Trần Gia đã và đang phân phối loại bánh đa nem ăn hàng ngày nem Nan. Đây là loại bánh mỏng, mềm và dễ cuốn rất được người tiêu dùng trong nước ưu chuộng.&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;strong&gt;Thông số của sản phẩm như sau:&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;- Kích thước: 220 mm&lt;/p&gt;\r\n\r\n&lt;p&gt;- Số lượng: 15 lá/ túi&lt;/p&gt;\r\n\r\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p&gt;- Hình thức đóng gói: Túi PP trắng trong ( Chất liệu an toàn cho người tiêu dùng)&lt;/p&gt;\r\n\r\n&lt;p&gt;- Thành phần: 100% tinh bột gạo và muối&lt;/p&gt;\r\n\r\n&lt;p&gt;- Cộng dụng: Dùng làm nem rán hoặc nem cuốn&lt;/p&gt;\r\n\r\n&lt;p&gt;- Hạn sử dụng: 6 tháng kể từ ngày sản xuất&lt;/p&gt;\r\n\r\n&lt;p&gt;- Đặc điểm nhận biết: Được đóng vào túi nilong PP trắng trong và gắn 2 đầu. Bên trong có bỏ tem có phông nền vàng nhạt và hình ảnh gia đình đăng dùng cơm phía bên tay trái trên cùng.&lt;/p&gt;\r\n\r\n&lt;p&gt;- Giá bán lẻ: 5.000 VNĐ/ túi&lt;/p&gt;\r\n\r\n&lt;p&gt;- Giá nhà phân phối: liên hệ 0977.999.544&lt;/p&gt;\r\n\r\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img border=&quot;0&quot; src=&quot;http://amthuctrangia.vn/images/stories/Anhchung/banh%20da%20moi5%201.jpg&quot; /&gt;&lt;/p&gt;\r\n', '', ''),
+	(20, 2, 'Các chính sách hỗ trợ nhà phân phối', 'Để nhà phân phối nhanh chóng tiếp cận thị trường được tốt, ngoài việc đảm bảo chất lượng sản phẩm cũng như hình thức bao bì sản phẩm đẹp cuốn hút khách hàng. Trần Gia sẽ có những chính sách hỗ trợ cho các nhà phân phối như sau: ', '&lt;p&gt;&lt;img border=&quot;0&quot; height=&quot;140&quot; src=&quot;http://amthuctrangia.vn/components/com_virtuemart/shop_image/product/resized/B__nh___a_Nem_C__50af8e230ca5b_180x160.jpg&quot; style=&quot;float:left;&quot; width=&quot;160&quot; /&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;Để nhà phân phối nhanh chóng tiếp cận thị trường được tốt, ngoài việc đảm bảo chất lượng sản phẩm cũng như hình thức bao bì sản phẩm đẹp cuốn hút khách hàng. Trần Gia sẽ có những chính sách hỗ trợ cho các nhà phân phối như sau:&lt;/p&gt;\r\n\r\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;strong&gt;1. Hỗ Trợ trong 2 tháng đầu làm thị trường&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36.0pt;&quot;&gt;- Tư vấn các chính sách làm thị trường cho các nhà phân phối&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36.0pt;&quot;&gt;- Hỗ trợ trích thưởng trên tổng doanh thu (Trích vào cuối tháng) để nhà phân phối thưởng cho nhân viên làm thị trường. Mức trích thưởng tùy vào thỏa thuận của 2 bên.&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36.0pt;&quot;&gt;- Nhập lại sản phẩm nếu nhà phân phối bán không hết hàng&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36.0pt;&quot;&gt;&lt;strong&gt;2. Trong suốt quá trình hợp tác&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36.0pt;&quot;&gt;&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36.0pt;&quot;&gt;- Đổi hàng mới cho những lô hàng: hết hạn hoặc sắp hết hạn sử dụng, hàng bị ẩm mốc do thời tiết….)&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36.0pt;&quot;&gt;-&amp;nbsp; Thường xuyên chia sẻ thông tin và hỗ trợ kịp thời tới các nhà phân phối.&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36.0pt;&quot;&gt;-&amp;nbsp; Cam kết hỗ trợ tối đa do biến động của thị trường và cam kết không tăng giá bán quá 10% vào các dịp lễ tết. (mặt hàng khô thường tăng từ 50 – 100% vào các dịp lễ tết).&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36.0pt;&quot;&gt;- Chính sách thưởng cuối năm: Nhà sản xuất sẽ có những hình thưc thưởng cuối năm nếu nhà phân phối vượt chỉ tiêu nhập hàng. Mức thưởng và mức chỉ tiêu sẽ được nhà sản xuất quy định trong bản hợp đồng với các nhà phân phối&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36.0pt;&quot;&gt;- Chính sách độc quyền phân phối sản phẩm: Nhà phân phối sẽ có cơ hội độc quyền phân phối sản phẩm các mặt hàng do Trần Gia sản xuất tại 1 đia bàn hoặc nhiều địa bàn (Điều kiện được quy định bên dưới).&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36.0pt;&quot;&gt;- Hỗ trợ phân phối và marketing: Nhà sản xuất sẽ đăng thông tin của nhà phân phối và hệ thống website của công ty và các các chiến lược marketing online của công ty thường niên. Dựa trên nguồn khách hàng đăng ký nhập hàng, nhà sản xuất sẽ dựa trên hệ thống nhà phân phối để liên hệ với các nhà phân phối chuyển hàng tới các khách hàng đã đặt hàng với nhà sản xuất.&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36.0pt;&quot;&gt;- Được cung cấp các thông tin về hàng hóa, chính sách và các chiến lược marketing cũng như các tài liệu thúc đẩy bán hàng.&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;strong&gt;3. Các điều kiện để trở thành nhà phân phối độc quyền&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:18.0pt;&quot;&gt;Để trở thành nhà phân phối độc quyền tại 1 địa bàn của các sản phẩm Trần Gia thì nhà phân phối phải đảm bảo các điều kiện sau:&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36.0pt;&quot;&gt;- Doanh số đảm bảo hàng tháng theo thỏa thuận của nhà phân phối và nhà sản xuất, mức doanh số tùy thuộc và từng địa bàn mà nhà phân phối lựa chọn.&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36.0pt;&quot;&gt;- Có nguồn tài chính ổn định&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36.0pt;&quot;&gt;- Có xe chở hàng trọng tải 500kg trở lên&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36.0pt;&quot;&gt;- Có đội ngũ nhân viên làm thị trường&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36.0pt;&quot;&gt;- Có kho bãi và đảm bảo về thoáng mát không ẩm mốc&lt;/p&gt;\r\n', '', ''),
+	(21, 2, 'Mẫu Bánh Đa Nem Ăn Sống', 'Hiện tại, Trần Gia đã và đang phân phối loại bánh đa nem ăn hàng ngày nem Nan. Đây là loại bánh mỏng, mềm và dễ cuốn rất được người tiêu dùng trong nước ưu chuộng.', '&lt;p&gt;&lt;span style=&quot;line-height: 1.3em;&quot;&gt;Hiện tại, Trần Gia đã và đang phân phối loại bánh đa nem ăn hàng ngày nem Nan. Đây là loại bánh mỏng, mềm và dễ cuốn rất được người tiêu dùng trong nước ưu chuộng.&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;strong&gt;Thông số của sản phẩm như sau:&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;- Kích thước: 140 mm x 190mm&lt;/p&gt;\r\n\r\n&lt;p&gt;- Số lượng: 10 lá/ túi&lt;/p&gt;\r\n\r\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p&gt;- Hình thức đóng gói: Túi PP trắng trong ( Chất liệu an toàn cho người tiêu dùng)&lt;/p&gt;\r\n\r\n&lt;p&gt;- Thành phần: 100% tinh bột gạo và muối&lt;/p&gt;\r\n\r\n&lt;p&gt;- Cộng dụng: Dùng làm nem nem cuốn&lt;/p&gt;\r\n\r\n&lt;p&gt;- Hạn sử dụng: 6 tháng kể từ ngày sản xuất&lt;/p&gt;\r\n\r\n&lt;p&gt;- Đặc điểm nhận biết: Được đóng vào túi nilong PP trắng trong và gắn 2 đầu. Bên ngoài dán tem chất liệu decan 2 màu đỏ và xanh có in hình logo của công ty.&lt;/p&gt;\r\n\r\n&lt;p&gt;- Giá bán lẻ: 2.000 VNĐ/ túi&lt;/p&gt;\r\n\r\n&lt;p&gt;- Giá nhà phân phối: liên hệ 0977.999.544&lt;/p&gt;\r\n\r\n&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;HÌNH ẢNH SẢN PHẨM&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img border=&quot;0&quot; src=&quot;http://amthuctrangia.vn/images/stories/Anhchung/1.jpg&quot; /&gt;&lt;/p&gt;\r\n', '', ''),
+	(22, 2, 'Bánh Đa Nem Nan size 22 loại 20 lá', 'Hiện tại, Trần Gia đã và đang phân phối loại bánh đa nem ăn hàng ngày nem Nan. Đây là loại bánh mỏng, mềm và dễ cuốn rất được người tiêu dùng trong nước ưu chuộng.', '&lt;p&gt;&lt;span style=&quot;line-height: 1.3em;&quot;&gt;&lt;img border=&quot;0&quot; height=&quot;140&quot; src=&quot;http://amthuctrangia.vn/images/stories/Anhchung/nem%20nan.jpg&quot; style=&quot;float: left;&quot; width=&quot;160&quot; /&gt;Hiện tại, Trần Gia đã và đang phân phối loại bánh đa nem ăn hàng ngày nem Nan. Đây là loại bánh mỏng, mềm và dễ cuốn rất được người tiêu dùng trong nước ưu chuộng.&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;strong&gt;Thông số của sản phẩm như sau:&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;- Kích thước: 220 mm&lt;/p&gt;\r\n\r\n&lt;p&gt;- Số lượng: 20 lá/ túi&lt;/p&gt;\r\n\r\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p&gt;- Hình thức đóng gói: Túi PP trắng trong ( Chất liệu an toàn cho người tiêu dùng)&lt;/p&gt;\r\n\r\n&lt;p&gt;- Thành phần: 100% tinh bột gạo và muối&lt;/p&gt;\r\n\r\n&lt;p&gt;- Cộng dụng: Dùng làm nem rán hoặc nem cuốn&lt;/p&gt;\r\n\r\n&lt;p&gt;- Hạn sử dụng: 6 tháng kể từ ngày sản xuất&lt;/p&gt;\r\n\r\n&lt;p&gt;- Đặc điểm nhận biết: Được đóng vào túi nilong PP trắng trong và gắn 2 đầu. Bên trong có bỏ tem có phông nền vàng đậm và cành Hoa Đào điểm phía trên bên trái. Hình ảnh pháo hoa được in chìm nổi vào phía bên trên của tem. Loại bánh đủ 20 tấm và đều in hình logo màu xanh của nhà sản xuất.&lt;/p&gt;\r\n\r\n&lt;p&gt;- Giá bán lẻ: 6.000 VNĐ/ túi&lt;/p&gt;\r\n\r\n&lt;p&gt;- Giá nhà phân phối: liên hệ 0977.999.544&lt;/p&gt;\r\n\r\n&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;HÌNH ẢNH SẢN PHẨM&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img border=&quot;0&quot; height=&quot;640&quot; src=&quot;http://amthuctrangia.vn/images/stories/Anhchung/nem%20nan.jpg&quot; width=&quot;456&quot; /&gt;&lt;/p&gt;\r\n', '', '');
 /*!40000 ALTER TABLE `oc_news_description` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_news_related
+DROP TABLE IF EXISTS `oc_news_related`;
 CREATE TABLE IF NOT EXISTS `oc_news_related` (
   `news_id` int(11) NOT NULL,
   `related_id` int(11) NOT NULL,
@@ -1556,12 +1561,12 @@ CREATE TABLE IF NOT EXISTS `oc_news_related` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- Dumping data for table amthuctrangia.oc_news_related: 0 rows
-DELETE FROM `oc_news_related`;
 /*!40000 ALTER TABLE `oc_news_related` DISABLE KEYS */;
 /*!40000 ALTER TABLE `oc_news_related` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_news_tag
+DROP TABLE IF EXISTS `oc_news_tag`;
 CREATE TABLE IF NOT EXISTS `oc_news_tag` (
   `news_tag_id` int(11) NOT NULL AUTO_INCREMENT,
   `news_id` int(11) NOT NULL,
@@ -1571,25 +1576,32 @@ CREATE TABLE IF NOT EXISTS `oc_news_tag` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- Dumping data for table amthuctrangia.oc_news_tag: 0 rows
-DELETE FROM `oc_news_tag`;
 /*!40000 ALTER TABLE `oc_news_tag` DISABLE KEYS */;
 /*!40000 ALTER TABLE `oc_news_tag` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_news_to_category
+DROP TABLE IF EXISTS `oc_news_to_category`;
 CREATE TABLE IF NOT EXISTS `oc_news_to_category` (
   `news_id` int(11) NOT NULL,
   `news_category_id` int(11) NOT NULL,
   PRIMARY KEY (`news_id`,`news_category_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Dumping data for table amthuctrangia.oc_news_to_category: 0 rows
-DELETE FROM `oc_news_to_category`;
+-- Dumping data for table amthuctrangia.oc_news_to_category: 6 rows
 /*!40000 ALTER TABLE `oc_news_to_category` DISABLE KEYS */;
+INSERT INTO `oc_news_to_category` (`news_id`, `news_category_id`) VALUES
+	(17, 7),
+	(18, 7),
+	(19, 7),
+	(20, 7),
+	(21, 7),
+	(22, 7);
 /*!40000 ALTER TABLE `oc_news_to_category` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_news_to_layout
+DROP TABLE IF EXISTS `oc_news_to_layout`;
 CREATE TABLE IF NOT EXISTS `oc_news_to_layout` (
   `news_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
@@ -1598,20 +1610,19 @@ CREATE TABLE IF NOT EXISTS `oc_news_to_layout` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- Dumping data for table amthuctrangia.oc_news_to_layout: 0 rows
-DELETE FROM `oc_news_to_layout`;
 /*!40000 ALTER TABLE `oc_news_to_layout` DISABLE KEYS */;
 /*!40000 ALTER TABLE `oc_news_to_layout` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_news_to_store
+DROP TABLE IF EXISTS `oc_news_to_store`;
 CREATE TABLE IF NOT EXISTS `oc_news_to_store` (
   `news_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`news_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Dumping data for table amthuctrangia.oc_news_to_store: 6 rows
-DELETE FROM `oc_news_to_store`;
+-- Dumping data for table amthuctrangia.oc_news_to_store: 12 rows
 /*!40000 ALTER TABLE `oc_news_to_store` DISABLE KEYS */;
 INSERT INTO `oc_news_to_store` (`news_id`, `store_id`) VALUES
 	(11, 0),
@@ -1619,11 +1630,18 @@ INSERT INTO `oc_news_to_store` (`news_id`, `store_id`) VALUES
 	(13, 0),
 	(14, 0),
 	(15, 0),
-	(16, 0);
+	(16, 0),
+	(17, 0),
+	(18, 0),
+	(19, 0),
+	(20, 0),
+	(21, 0),
+	(22, 0);
 /*!40000 ALTER TABLE `oc_news_to_store` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_option
+DROP TABLE IF EXISTS `oc_option`;
 CREATE TABLE IF NOT EXISTS `oc_option` (
   `option_id` int(11) NOT NULL AUTO_INCREMENT,
   `type` varchar(32) NOT NULL,
@@ -1632,7 +1650,6 @@ CREATE TABLE IF NOT EXISTS `oc_option` (
 ) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_option: 11 rows
-DELETE FROM `oc_option`;
 /*!40000 ALTER TABLE `oc_option` DISABLE KEYS */;
 INSERT INTO `oc_option` (`option_id`, `type`, `sort_order`) VALUES
 	(1, 'radio', 2),
@@ -1650,6 +1667,7 @@ INSERT INTO `oc_option` (`option_id`, `type`, `sort_order`) VALUES
 
 
 -- Dumping structure for table amthuctrangia.oc_option_description
+DROP TABLE IF EXISTS `oc_option_description`;
 CREATE TABLE IF NOT EXISTS `oc_option_description` (
   `option_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1658,24 +1676,24 @@ CREATE TABLE IF NOT EXISTS `oc_option_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_option_description: 11 rows
-DELETE FROM `oc_option_description`;
 /*!40000 ALTER TABLE `oc_option_description` DISABLE KEYS */;
 INSERT INTO `oc_option_description` (`option_id`, `language_id`, `name`) VALUES
-	(1, 1, 'Radio'),
-	(2, 1, 'Checkbox'),
-	(4, 1, 'Text'),
-	(6, 1, 'Textarea'),
-	(8, 1, 'Date'),
-	(7, 1, 'File'),
-	(5, 1, 'Select'),
-	(9, 1, 'Time'),
-	(10, 1, 'Date &amp; Time'),
-	(12, 1, 'Delivery Date'),
-	(11, 1, 'Size');
+	(1, 2, 'Radio'),
+	(2, 2, 'Checkbox'),
+	(4, 2, 'Text'),
+	(6, 2, 'Textarea'),
+	(8, 2, 'Date'),
+	(7, 2, 'File'),
+	(5, 2, 'Select'),
+	(9, 2, 'Time'),
+	(10, 2, 'Date &amp; Time'),
+	(12, 2, 'Delivery Date'),
+	(11, 2, 'Size');
 /*!40000 ALTER TABLE `oc_option_description` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_option_value
+DROP TABLE IF EXISTS `oc_option_value`;
 CREATE TABLE IF NOT EXISTS `oc_option_value` (
   `option_value_id` int(11) NOT NULL AUTO_INCREMENT,
   `option_id` int(11) NOT NULL,
@@ -1685,7 +1703,6 @@ CREATE TABLE IF NOT EXISTS `oc_option_value` (
 ) ENGINE=MyISAM AUTO_INCREMENT=49 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_option_value: 14 rows
-DELETE FROM `oc_option_value`;
 /*!40000 ALTER TABLE `oc_option_value` DISABLE KEYS */;
 INSERT INTO `oc_option_value` (`option_value_id`, `option_id`, `image`, `sort_order`) VALUES
 	(43, 1, '', 3),
@@ -1706,6 +1723,7 @@ INSERT INTO `oc_option_value` (`option_value_id`, `option_id`, `image`, `sort_or
 
 
 -- Dumping structure for table amthuctrangia.oc_option_value_description
+DROP TABLE IF EXISTS `oc_option_value_description`;
 CREATE TABLE IF NOT EXISTS `oc_option_value_description` (
   `option_value_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1715,27 +1733,27 @@ CREATE TABLE IF NOT EXISTS `oc_option_value_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_option_value_description: 14 rows
-DELETE FROM `oc_option_value_description`;
 /*!40000 ALTER TABLE `oc_option_value_description` DISABLE KEYS */;
 INSERT INTO `oc_option_value_description` (`option_value_id`, `language_id`, `option_id`, `name`) VALUES
-	(43, 1, 1, 'Large'),
-	(32, 1, 1, 'Small'),
-	(45, 1, 2, 'Checkbox 4'),
-	(44, 1, 2, 'Checkbox 3'),
-	(31, 1, 1, 'Medium'),
-	(42, 1, 5, 'Yellow'),
-	(41, 1, 5, 'Green'),
-	(39, 1, 5, 'Red'),
-	(40, 1, 5, 'Blue'),
-	(23, 1, 2, 'Checkbox 1'),
-	(24, 1, 2, 'Checkbox 2'),
-	(48, 1, 11, 'Large'),
-	(47, 1, 11, 'Medium'),
-	(46, 1, 11, 'Small');
+	(43, 2, 1, 'Large'),
+	(32, 2, 1, 'Small'),
+	(45, 2, 2, 'Checkbox 4'),
+	(44, 2, 2, 'Checkbox 3'),
+	(31, 2, 1, 'Medium'),
+	(42, 2, 5, 'Yellow'),
+	(41, 2, 5, 'Green'),
+	(39, 2, 5, 'Red'),
+	(40, 2, 5, 'Blue'),
+	(23, 2, 2, 'Checkbox 1'),
+	(24, 2, 2, 'Checkbox 2'),
+	(48, 2, 11, 'Large'),
+	(47, 2, 11, 'Medium'),
+	(46, 2, 11, 'Small');
 /*!40000 ALTER TABLE `oc_option_value_description` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_order
+DROP TABLE IF EXISTS `oc_order`;
 CREATE TABLE IF NOT EXISTS `oc_order` (
   `order_id` int(11) NOT NULL AUTO_INCREMENT,
   `invoice_no` int(11) NOT NULL DEFAULT '0',
@@ -1799,12 +1817,12 @@ CREATE TABLE IF NOT EXISTS `oc_order` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_order: 0 rows
-DELETE FROM `oc_order`;
 /*!40000 ALTER TABLE `oc_order` DISABLE KEYS */;
 /*!40000 ALTER TABLE `oc_order` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_order_download
+DROP TABLE IF EXISTS `oc_order_download`;
 CREATE TABLE IF NOT EXISTS `oc_order_download` (
   `order_download_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
@@ -1817,12 +1835,12 @@ CREATE TABLE IF NOT EXISTS `oc_order_download` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_order_download: 0 rows
-DELETE FROM `oc_order_download`;
 /*!40000 ALTER TABLE `oc_order_download` DISABLE KEYS */;
 /*!40000 ALTER TABLE `oc_order_download` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_order_field
+DROP TABLE IF EXISTS `oc_order_field`;
 CREATE TABLE IF NOT EXISTS `oc_order_field` (
   `order_id` int(11) NOT NULL,
   `custom_field_id` int(11) NOT NULL,
@@ -1834,12 +1852,12 @@ CREATE TABLE IF NOT EXISTS `oc_order_field` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_order_field: 0 rows
-DELETE FROM `oc_order_field`;
 /*!40000 ALTER TABLE `oc_order_field` DISABLE KEYS */;
 /*!40000 ALTER TABLE `oc_order_field` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_order_fraud
+DROP TABLE IF EXISTS `oc_order_fraud`;
 CREATE TABLE IF NOT EXISTS `oc_order_fraud` (
   `order_id` int(11) NOT NULL,
   `customer_id` int(11) NOT NULL,
@@ -1898,12 +1916,12 @@ CREATE TABLE IF NOT EXISTS `oc_order_fraud` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_order_fraud: 0 rows
-DELETE FROM `oc_order_fraud`;
 /*!40000 ALTER TABLE `oc_order_fraud` DISABLE KEYS */;
 /*!40000 ALTER TABLE `oc_order_fraud` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_order_history
+DROP TABLE IF EXISTS `oc_order_history`;
 CREATE TABLE IF NOT EXISTS `oc_order_history` (
   `order_history_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
@@ -1915,12 +1933,12 @@ CREATE TABLE IF NOT EXISTS `oc_order_history` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_order_history: 0 rows
-DELETE FROM `oc_order_history`;
 /*!40000 ALTER TABLE `oc_order_history` DISABLE KEYS */;
 /*!40000 ALTER TABLE `oc_order_history` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_order_option
+DROP TABLE IF EXISTS `oc_order_option`;
 CREATE TABLE IF NOT EXISTS `oc_order_option` (
   `order_option_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
@@ -1934,12 +1952,12 @@ CREATE TABLE IF NOT EXISTS `oc_order_option` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_order_option: 0 rows
-DELETE FROM `oc_order_option`;
 /*!40000 ALTER TABLE `oc_order_option` DISABLE KEYS */;
 /*!40000 ALTER TABLE `oc_order_option` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_order_product
+DROP TABLE IF EXISTS `oc_order_product`;
 CREATE TABLE IF NOT EXISTS `oc_order_product` (
   `order_product_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
@@ -1955,12 +1973,12 @@ CREATE TABLE IF NOT EXISTS `oc_order_product` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_order_product: 0 rows
-DELETE FROM `oc_order_product`;
 /*!40000 ALTER TABLE `oc_order_product` DISABLE KEYS */;
 /*!40000 ALTER TABLE `oc_order_product` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_order_status
+DROP TABLE IF EXISTS `oc_order_status`;
 CREATE TABLE IF NOT EXISTS `oc_order_status` (
   `order_status_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) NOT NULL,
@@ -1969,27 +1987,27 @@ CREATE TABLE IF NOT EXISTS `oc_order_status` (
 ) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_order_status: 14 rows
-DELETE FROM `oc_order_status`;
 /*!40000 ALTER TABLE `oc_order_status` DISABLE KEYS */;
 INSERT INTO `oc_order_status` (`order_status_id`, `language_id`, `name`) VALUES
-	(2, 1, 'Processing'),
-	(3, 1, 'Shipped'),
-	(7, 1, 'Canceled'),
-	(5, 1, 'Complete'),
-	(8, 1, 'Denied'),
-	(9, 1, 'Canceled Reversal'),
-	(10, 1, 'Failed'),
-	(11, 1, 'Refunded'),
-	(12, 1, 'Reversed'),
-	(13, 1, 'Chargeback'),
-	(1, 1, 'Pending'),
-	(16, 1, 'Voided'),
-	(15, 1, 'Processed'),
-	(14, 1, 'Expired');
+	(2, 2, 'Processing'),
+	(3, 2, 'Shipped'),
+	(7, 2, 'Canceled'),
+	(5, 2, 'Complete'),
+	(8, 2, 'Denied'),
+	(9, 2, 'Canceled Reversal'),
+	(10, 2, 'Failed'),
+	(11, 2, 'Refunded'),
+	(12, 2, 'Reversed'),
+	(13, 2, 'Chargeback'),
+	(1, 2, 'Pending'),
+	(16, 2, 'Voided'),
+	(15, 2, 'Processed'),
+	(14, 2, 'Expired');
 /*!40000 ALTER TABLE `oc_order_status` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_order_total
+DROP TABLE IF EXISTS `oc_order_total`;
 CREATE TABLE IF NOT EXISTS `oc_order_total` (
   `order_total_id` int(10) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
@@ -2003,12 +2021,12 @@ CREATE TABLE IF NOT EXISTS `oc_order_total` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_order_total: 0 rows
-DELETE FROM `oc_order_total`;
 /*!40000 ALTER TABLE `oc_order_total` DISABLE KEYS */;
 /*!40000 ALTER TABLE `oc_order_total` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_order_voucher
+DROP TABLE IF EXISTS `oc_order_voucher`;
 CREATE TABLE IF NOT EXISTS `oc_order_voucher` (
   `order_voucher_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
@@ -2026,12 +2044,12 @@ CREATE TABLE IF NOT EXISTS `oc_order_voucher` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_order_voucher: 0 rows
-DELETE FROM `oc_order_voucher`;
 /*!40000 ALTER TABLE `oc_order_voucher` DISABLE KEYS */;
 /*!40000 ALTER TABLE `oc_order_voucher` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_product
+DROP TABLE IF EXISTS `oc_product`;
 CREATE TABLE IF NOT EXISTS `oc_product` (
   `product_id` int(11) NOT NULL AUTO_INCREMENT,
   `model` varchar(64) NOT NULL,
@@ -2068,19 +2086,19 @@ CREATE TABLE IF NOT EXISTS `oc_product` (
 ) ENGINE=MyISAM AUTO_INCREMENT=56 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_product: 6 rows
-DELETE FROM `oc_product`;
 /*!40000 ALTER TABLE `oc_product` DISABLE KEYS */;
 INSERT INTO `oc_product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `isbn`, `mpn`, `location`, `quantity`, `stock_status_id`, `image`, `manufacturer_id`, `shipping`, `price`, `points`, `tax_class_id`, `date_available`, `weight`, `weight_class_id`, `length`, `width`, `height`, `length_class_id`, `subtract`, `minimum`, `sort_order`, `status`, `date_added`, `date_modified`, `viewed`) VALUES
 	(54, 'banhdanem05', '', '', '', '', '', '', '', 1, 5, 'data/B__nh___a_Nem_Vu_50af8bfedbd83.jpg', 0, 1, 6000.0000, 0, 0, '2013-07-11', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, '2013-07-12 17:28:14', '0000-00-00 00:00:00', 0),
 	(55, 'banhdanem06', '', '', '', '', '', '', '', 1, 5, 'data/B__nh___a_Vu__ng_50af8c7fd0e7a.jpg', 0, 1, 6000.0000, 0, 0, '2013-07-11', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, '2013-07-12 17:29:10', '0000-00-00 00:00:00', 0),
-	(50, 'banhdanem01', '', '', '', '', '', '', '', 1, 5, 'data/banh hinh chu nhat.jpg', 0, 1, 150000.0000, 0, 0, '2013-07-11', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, '2013-07-12 17:22:31', '0000-00-00 00:00:00', 0),
+	(50, 'banhdanem01', '', '', '', '', '', '', '', 1, 5, 'data/banh hinh chu nhat.jpg', 0, 1, 150000.0000, 0, 0, '2013-07-11', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, '2013-07-12 17:22:31', '0000-00-00 00:00:00', 1),
 	(51, 'banhdanem02', '', '', '', '', '', '', '', 1, 5, 'data/B__nh___a_Nem_C__50af8e6cc7d3a.jpg', 0, 1, 150000.0000, 0, 0, '2013-07-11', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, '2013-07-12 17:23:59', '0000-00-00 00:00:00', 0),
 	(52, 'banhdanem03', '', '', '', '', '', '', '', 1, 5, 'data/B__nh___a_Nem_C__50af8e2316aad.jpg', 0, 1, 20000.0000, 0, 0, '2013-07-11', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, '2013-07-12 17:25:15', '0000-00-00 00:00:00', 0),
-	(53, 'banhdanem04', '', '', '', '', '', '', '', 1, 5, 'data/16can.jpg', 0, 1, 15000.0000, 0, 0, '2013-07-11', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, '2013-07-12 17:27:04', '0000-00-00 00:00:00', 0);
+	(53, 'banhdanem04', '', '', '', '', '', '', '', 1, 5, 'data/16can.jpg', 0, 1, 15000.0000, 0, 0, '2013-07-11', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, '2013-07-12 17:27:04', '0000-00-00 00:00:00', 5);
 /*!40000 ALTER TABLE `oc_product` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_product_attribute
+DROP TABLE IF EXISTS `oc_product_attribute`;
 CREATE TABLE IF NOT EXISTS `oc_product_attribute` (
   `product_id` int(11) NOT NULL,
   `attribute_id` int(11) NOT NULL,
@@ -2090,12 +2108,12 @@ CREATE TABLE IF NOT EXISTS `oc_product_attribute` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_product_attribute: 0 rows
-DELETE FROM `oc_product_attribute`;
 /*!40000 ALTER TABLE `oc_product_attribute` DISABLE KEYS */;
 /*!40000 ALTER TABLE `oc_product_attribute` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_product_description
+DROP TABLE IF EXISTS `oc_product_description`;
 CREATE TABLE IF NOT EXISTS `oc_product_description` (
   `product_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -2109,19 +2127,19 @@ CREATE TABLE IF NOT EXISTS `oc_product_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_product_description: 6 rows
-DELETE FROM `oc_product_description`;
 /*!40000 ALTER TABLE `oc_product_description` DISABLE KEYS */;
 INSERT INTO `oc_product_description` (`product_id`, `language_id`, `name`, `description`, `meta_description`, `meta_keyword`, `tag`) VALUES
-	(50, 1, 'Bánh Đa Nem Chữ Nhật', '&lt;p&gt;&lt;span style=&quot;margin: 0px; padding: 0px; list-style-type: none; font-family: Arial, Helvetica, sans-serif; text-align: justify; font-size: 18px; color: rgb(255, 0, 0); font-weight: bold;&quot;&gt;THÔNG TIN CHI TIẾT&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;Bánh đa nem Làng Chều - Thương Hiệu Trần Gia với tiêu chí cung cấp bữa ăn ngon cho mọi gia đình Việt thành phần:&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- 100 % Tinh Bột Gạo và muối&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Không chất bảo quản, không hóa chất độc hại&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Kích thước: 160mm - 220mm&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Số lượng tấm: 20 tấm/ túi&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Hạn sử dụng: 6 tháng kể từ ngày sản xuất&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Công dụng: Dùng làm nem cuốn hoặc nem rán&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Hướng dẫn sử dụng: Làm mềm vỏ trước khi cuốn, gói. Đặc biệt ngon hơn khi làm mềm bằng nước dấm pha loãng hoặc cà chua.&lt;/p&gt;\r\n', '', '', ''),
-	(51, 1, 'Bánh Đa Nem Cân 22', '&lt;p&gt;&lt;span style=&quot;margin: 0px; padding: 0px; list-style-type: none; font-family: Arial, Helvetica, sans-serif; text-align: justify; font-size: 18px; color: rgb(255, 0, 0); font-weight: bold;&quot;&gt;THÔNG TIN CHI TIẾT&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;Bánh đa nem Làng Chều - Thương Hiệu Trần Gia với tiêu chí cung cấp bữa ăn ngon cho mọi gia đình Việt thành phần:&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- 100 % Tinh Bột Gạo và muối&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Không chất bảo quản, không hóa chất độc hại&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Kích thước: 220mm&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Số lượng tấm: 100 tấm/ túi&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Hạn sử dụng: 6 tháng kể từ ngày sản xuất&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Công dụng: Dùng làm nem cuốn hoặc nem rán&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Hướng dẫn sử dụng: Làm mềm vỏ trước khi cuốn, gói. Đặc biệt ngon hơn khi làm mềm bằng nước dấm pha loãng hoặc cà chua.&lt;/p&gt;\r\n', '', '', ''),
-	(52, 1, ' Bánh Đa Nem Xuất Khẩu 22', '&lt;p&gt;&lt;span style=&quot;margin: 0px; padding: 0px; list-style-type: none; font-family: Arial, Helvetica, sans-serif; text-align: justify; font-size: 18px; color: rgb(255, 0, 0); font-weight: bold;&quot;&gt;THÔNG TIN CHI TIẾT&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;Bánh đa nem Làng Chều - Thương Hiệu Trần Gia với tiêu chí cung cấp bữa ăn ngon cho mọi gia đình Việt thành phần:&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- 100 % Tinh Bột Gạo và muối&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Không chất bảo quản, không hóa chất độc hại&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Kích thước: 220mm&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Trọng lượng: 250gr ( 40-45 tấm)&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Hạn sử dụng: 6 tháng kể từ ngày sản xuất&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Công dụng: Dùng làm nem nem rán&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Hướng dẫn sử dụng: Làm mềm vỏ trước khi cuốn, gói. Đặc biệt ngon hơn khi làm mềm bằng nước dấm pha loãng hoặc cà chua.&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Sản phẩm chuyên dùng để đi xuất khẩu.&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;&amp;nbsp;&lt;/p&gt;\r\n', '', '', ''),
-	(53, 1, 'Bánh Đa Nem Cân 16', '&lt;p&gt;&lt;span style=&quot;margin: 0px; padding: 0px; list-style-type: none; font-family: Arial, Helvetica, sans-serif; text-align: justify; font-size: 18px; color: rgb(255, 0, 0); font-weight: bold;&quot;&gt;THÔNG TIN CHI TIẾT&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;Bánh đa nem Làng Chều - Thương Hiệu Trần Gia với tiêu chí cung cấp bữa ăn ngon cho mọi gia đình Việt thành phần:&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- 100 % Tinh Bột Gạo và muối&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Không chất bảo quản, không hóa chất độc hại&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Kích thước: 160mm - 220mm&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Số lượng tấm: 100 tấm/ túi&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Hạn sử dụng: 6 tháng kể từ ngày sản xuất&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Công dụng: Dùng làm nem cuốn hoặc nem rán&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Hướng dẫn sử dụng: Làm mềm vỏ trước khi cuốn, gói. Đặc biệt ngon hơn khi làm mềm bằng nước dấm pha loãng hoặc cà chua.&lt;/p&gt;\r\n', '', '', ''),
-	(54, 1, ' Bánh Đa Nem Vuông size 18', '&lt;p&gt;&lt;span style=&quot;margin: 0px; padding: 0px; list-style-type: none; font-family: Arial, Helvetica, sans-serif; text-align: justify; font-size: 18px; color: rgb(255, 0, 0); font-weight: bold;&quot;&gt;THÔNG TIN CHI TIẾT&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;Bánh đa nem Làng Chều - Thương Hiệu Trần Gia với tiêu chí cung cấp bữa ăn ngon cho mọi gia đình Việt thành phần:&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- 100 % Tinh Bột Gạo và muối&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Không chất bảo quản, không hóa chất độc hại&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Kích thước: 180mm&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Số lượng tấm: 20 tấm/ túi&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Hạn sử dụng: 6 tháng kể từ ngày sản xuất&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Công dụng: Dùng làm nem cuốn hoặc nem rán&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Hướng dẫn sử dụng: Làm mềm vỏ trước khi cuốn, gói. Đặc biệt ngon hơn khi làm mềm bằng nước dấm pha loãng hoặc cà chua.&lt;/p&gt;\r\n', '', '', ''),
-	(55, 1, 'Bánh Đa Vuông size 22', '&lt;p&gt;&lt;span style=&quot;margin: 0px; padding: 0px; list-style-type: none; font-family: Arial, Helvetica, sans-serif; text-align: justify; font-size: 18px; color: rgb(255, 0, 0); font-weight: bold;&quot;&gt;THÔNG TIN CHI TIẾT&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;Bánh đa nem Làng Chều - Thương Hiệu Trần Gia với tiêu chí cung cấp bữa ăn ngon cho mọi gia đình Việt thành phần:&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- 100 % Tinh Bột Gạo và muối&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Không chất bảo quản, không hóa chất độc hại&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Kích thước: 220mm&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Số lượng tấm: 20 tấm/ túi&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Hạn sử dụng: 6 tháng kể từ ngày sản xuất&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Công dụng: Dùng làm nem cuốn hoặc nem rán&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Hướng dẫn sử dụng: Làm mềm vỏ trước khi cuốn, gói. Đặc biệt ngon hơn khi làm mềm bằng nước dấm pha loãng hoặc cà chua.&lt;/p&gt;\r\n', '', '', '');
+	(50, 2, 'Bánh Đa Nem Chữ Nhật', '&lt;p&gt;&lt;span style=&quot;margin: 0px; padding: 0px; list-style-type: none; font-family: Arial, Helvetica, sans-serif; text-align: justify; font-size: 18px; color: rgb(255, 0, 0); font-weight: bold;&quot;&gt;THÔNG TIN CHI TIẾT&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;Bánh đa nem Làng Chều - Thương Hiệu Trần Gia với tiêu chí cung cấp bữa ăn ngon cho mọi gia đình Việt thành phần:&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- 100 % Tinh Bột Gạo và muối&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Không chất bảo quản, không hóa chất độc hại&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Kích thước: 160mm - 220mm&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Số lượng tấm: 20 tấm/ túi&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Hạn sử dụng: 6 tháng kể từ ngày sản xuất&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Công dụng: Dùng làm nem cuốn hoặc nem rán&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Hướng dẫn sử dụng: Làm mềm vỏ trước khi cuốn, gói. Đặc biệt ngon hơn khi làm mềm bằng nước dấm pha loãng hoặc cà chua.&lt;/p&gt;\r\n', '', '', ''),
+	(51, 2, 'Bánh Đa Nem Cân 22', '&lt;p&gt;&lt;span style=&quot;margin: 0px; padding: 0px; list-style-type: none; font-family: Arial, Helvetica, sans-serif; text-align: justify; font-size: 18px; color: rgb(255, 0, 0); font-weight: bold;&quot;&gt;THÔNG TIN CHI TIẾT&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;Bánh đa nem Làng Chều - Thương Hiệu Trần Gia với tiêu chí cung cấp bữa ăn ngon cho mọi gia đình Việt thành phần:&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- 100 % Tinh Bột Gạo và muối&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Không chất bảo quản, không hóa chất độc hại&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Kích thước: 220mm&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Số lượng tấm: 100 tấm/ túi&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Hạn sử dụng: 6 tháng kể từ ngày sản xuất&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Công dụng: Dùng làm nem cuốn hoặc nem rán&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Hướng dẫn sử dụng: Làm mềm vỏ trước khi cuốn, gói. Đặc biệt ngon hơn khi làm mềm bằng nước dấm pha loãng hoặc cà chua.&lt;/p&gt;\r\n', '', '', ''),
+	(52, 2, ' Bánh Đa Nem Xuất Khẩu 22', '&lt;p&gt;&lt;span style=&quot;margin: 0px; padding: 0px; list-style-type: none; font-family: Arial, Helvetica, sans-serif; text-align: justify; font-size: 18px; color: rgb(255, 0, 0); font-weight: bold;&quot;&gt;THÔNG TIN CHI TIẾT&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;Bánh đa nem Làng Chều - Thương Hiệu Trần Gia với tiêu chí cung cấp bữa ăn ngon cho mọi gia đình Việt thành phần:&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- 100 % Tinh Bột Gạo và muối&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Không chất bảo quản, không hóa chất độc hại&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Kích thước: 220mm&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Trọng lượng: 250gr ( 40-45 tấm)&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Hạn sử dụng: 6 tháng kể từ ngày sản xuất&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Công dụng: Dùng làm nem nem rán&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Hướng dẫn sử dụng: Làm mềm vỏ trước khi cuốn, gói. Đặc biệt ngon hơn khi làm mềm bằng nước dấm pha loãng hoặc cà chua.&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Sản phẩm chuyên dùng để đi xuất khẩu.&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;&amp;nbsp;&lt;/p&gt;\r\n', '', '', ''),
+	(53, 2, 'Bánh Đa Nem Cân 16', '&lt;p&gt;&lt;span style=&quot;margin: 0px; padding: 0px; list-style-type: none; font-family: Arial, Helvetica, sans-serif; text-align: justify; font-size: 18px; color: rgb(255, 0, 0); font-weight: bold;&quot;&gt;THÔNG TIN CHI TIẾT&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;Bánh đa nem Làng Chều - Thương Hiệu Trần Gia với tiêu chí cung cấp bữa ăn ngon cho mọi gia đình Việt thành phần:&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- 100 % Tinh Bột Gạo và muối&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Không chất bảo quản, không hóa chất độc hại&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Kích thước: 160mm - 220mm&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Số lượng tấm: 100 tấm/ túi&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Hạn sử dụng: 6 tháng kể từ ngày sản xuất&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Công dụng: Dùng làm nem cuốn hoặc nem rán&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Hướng dẫn sử dụng: Làm mềm vỏ trước khi cuốn, gói. Đặc biệt ngon hơn khi làm mềm bằng nước dấm pha loãng hoặc cà chua.&lt;/p&gt;\r\n', '', '', ''),
+	(54, 2, ' Bánh Đa Nem Vuông size 18', '&lt;p&gt;&lt;span style=&quot;margin: 0px; padding: 0px; list-style-type: none; font-family: Arial, Helvetica, sans-serif; text-align: justify; font-size: 18px; color: rgb(255, 0, 0); font-weight: bold;&quot;&gt;THÔNG TIN CHI TIẾT&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;Bánh đa nem Làng Chều - Thương Hiệu Trần Gia với tiêu chí cung cấp bữa ăn ngon cho mọi gia đình Việt thành phần:&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- 100 % Tinh Bột Gạo và muối&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Không chất bảo quản, không hóa chất độc hại&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Kích thước: 180mm&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Số lượng tấm: 20 tấm/ túi&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Hạn sử dụng: 6 tháng kể từ ngày sản xuất&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Công dụng: Dùng làm nem cuốn hoặc nem rán&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Hướng dẫn sử dụng: Làm mềm vỏ trước khi cuốn, gói. Đặc biệt ngon hơn khi làm mềm bằng nước dấm pha loãng hoặc cà chua.&lt;/p&gt;\r\n', '', '', ''),
+	(55, 2, 'Bánh Đa Vuông size 22', '&lt;p&gt;&lt;span style=&quot;margin: 0px; padding: 0px; list-style-type: none; font-family: Arial, Helvetica, sans-serif; text-align: justify; font-size: 18px; color: rgb(255, 0, 0); font-weight: bold;&quot;&gt;THÔNG TIN CHI TIẾT&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;Bánh đa nem Làng Chều - Thương Hiệu Trần Gia với tiêu chí cung cấp bữa ăn ngon cho mọi gia đình Việt thành phần:&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- 100 % Tinh Bột Gạo và muối&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Không chất bảo quản, không hóa chất độc hại&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Kích thước: 220mm&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Số lượng tấm: 20 tấm/ túi&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Hạn sử dụng: 6 tháng kể từ ngày sản xuất&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Công dụng: Dùng làm nem cuốn hoặc nem rán&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin: 0px; padding: 0px; list-style-type: none; color: rgb(0, 0, 139); font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 22px; text-align: justify;&quot;&gt;- Hướng dẫn sử dụng: Làm mềm vỏ trước khi cuốn, gói. Đặc biệt ngon hơn khi làm mềm bằng nước dấm pha loãng hoặc cà chua.&lt;/p&gt;\r\n', '', '', '');
 /*!40000 ALTER TABLE `oc_product_description` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_product_discount
+DROP TABLE IF EXISTS `oc_product_discount`;
 CREATE TABLE IF NOT EXISTS `oc_product_discount` (
   `product_discount_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_id` int(11) NOT NULL,
@@ -2136,12 +2154,12 @@ CREATE TABLE IF NOT EXISTS `oc_product_discount` (
 ) ENGINE=MyISAM AUTO_INCREMENT=441 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_product_discount: 0 rows
-DELETE FROM `oc_product_discount`;
 /*!40000 ALTER TABLE `oc_product_discount` DISABLE KEYS */;
 /*!40000 ALTER TABLE `oc_product_discount` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_product_filter
+DROP TABLE IF EXISTS `oc_product_filter`;
 CREATE TABLE IF NOT EXISTS `oc_product_filter` (
   `product_id` int(11) NOT NULL,
   `filter_id` int(11) NOT NULL,
@@ -2149,12 +2167,12 @@ CREATE TABLE IF NOT EXISTS `oc_product_filter` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_product_filter: 0 rows
-DELETE FROM `oc_product_filter`;
 /*!40000 ALTER TABLE `oc_product_filter` DISABLE KEYS */;
 /*!40000 ALTER TABLE `oc_product_filter` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_product_image
+DROP TABLE IF EXISTS `oc_product_image`;
 CREATE TABLE IF NOT EXISTS `oc_product_image` (
   `product_image_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_id` int(11) NOT NULL,
@@ -2164,12 +2182,12 @@ CREATE TABLE IF NOT EXISTS `oc_product_image` (
 ) ENGINE=MyISAM AUTO_INCREMENT=2352 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_product_image: 0 rows
-DELETE FROM `oc_product_image`;
 /*!40000 ALTER TABLE `oc_product_image` DISABLE KEYS */;
 /*!40000 ALTER TABLE `oc_product_image` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_product_option
+DROP TABLE IF EXISTS `oc_product_option`;
 CREATE TABLE IF NOT EXISTS `oc_product_option` (
   `product_option_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_id` int(11) NOT NULL,
@@ -2180,12 +2198,12 @@ CREATE TABLE IF NOT EXISTS `oc_product_option` (
 ) ENGINE=MyISAM AUTO_INCREMENT=227 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_product_option: 0 rows
-DELETE FROM `oc_product_option`;
 /*!40000 ALTER TABLE `oc_product_option` DISABLE KEYS */;
 /*!40000 ALTER TABLE `oc_product_option` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_product_option_value
+DROP TABLE IF EXISTS `oc_product_option_value`;
 CREATE TABLE IF NOT EXISTS `oc_product_option_value` (
   `product_option_value_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_option_id` int(11) NOT NULL,
@@ -2204,12 +2222,12 @@ CREATE TABLE IF NOT EXISTS `oc_product_option_value` (
 ) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_product_option_value: 0 rows
-DELETE FROM `oc_product_option_value`;
 /*!40000 ALTER TABLE `oc_product_option_value` DISABLE KEYS */;
 /*!40000 ALTER TABLE `oc_product_option_value` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_product_related
+DROP TABLE IF EXISTS `oc_product_related`;
 CREATE TABLE IF NOT EXISTS `oc_product_related` (
   `product_id` int(11) NOT NULL,
   `related_id` int(11) NOT NULL,
@@ -2217,12 +2235,12 @@ CREATE TABLE IF NOT EXISTS `oc_product_related` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_product_related: 0 rows
-DELETE FROM `oc_product_related`;
 /*!40000 ALTER TABLE `oc_product_related` DISABLE KEYS */;
 /*!40000 ALTER TABLE `oc_product_related` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_product_reward
+DROP TABLE IF EXISTS `oc_product_reward`;
 CREATE TABLE IF NOT EXISTS `oc_product_reward` (
   `product_reward_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_id` int(11) NOT NULL DEFAULT '0',
@@ -2232,7 +2250,6 @@ CREATE TABLE IF NOT EXISTS `oc_product_reward` (
 ) ENGINE=MyISAM AUTO_INCREMENT=552 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_product_reward: 6 rows
-DELETE FROM `oc_product_reward`;
 /*!40000 ALTER TABLE `oc_product_reward` DISABLE KEYS */;
 INSERT INTO `oc_product_reward` (`product_reward_id`, `product_id`, `customer_group_id`, `points`) VALUES
 	(550, 54, 1, 0),
@@ -2245,6 +2262,7 @@ INSERT INTO `oc_product_reward` (`product_reward_id`, `product_id`, `customer_gr
 
 
 -- Dumping structure for table amthuctrangia.oc_product_special
+DROP TABLE IF EXISTS `oc_product_special`;
 CREATE TABLE IF NOT EXISTS `oc_product_special` (
   `product_special_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_id` int(11) NOT NULL,
@@ -2258,12 +2276,12 @@ CREATE TABLE IF NOT EXISTS `oc_product_special` (
 ) ENGINE=MyISAM AUTO_INCREMENT=440 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_product_special: 0 rows
-DELETE FROM `oc_product_special`;
 /*!40000 ALTER TABLE `oc_product_special` DISABLE KEYS */;
 /*!40000 ALTER TABLE `oc_product_special` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_product_to_category
+DROP TABLE IF EXISTS `oc_product_to_category`;
 CREATE TABLE IF NOT EXISTS `oc_product_to_category` (
   `product_id` int(11) NOT NULL,
   `category_id` int(11) NOT NULL,
@@ -2271,7 +2289,6 @@ CREATE TABLE IF NOT EXISTS `oc_product_to_category` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_product_to_category: 6 rows
-DELETE FROM `oc_product_to_category`;
 /*!40000 ALTER TABLE `oc_product_to_category` DISABLE KEYS */;
 INSERT INTO `oc_product_to_category` (`product_id`, `category_id`) VALUES
 	(50, 61),
@@ -2284,6 +2301,7 @@ INSERT INTO `oc_product_to_category` (`product_id`, `category_id`) VALUES
 
 
 -- Dumping structure for table amthuctrangia.oc_product_to_download
+DROP TABLE IF EXISTS `oc_product_to_download`;
 CREATE TABLE IF NOT EXISTS `oc_product_to_download` (
   `product_id` int(11) NOT NULL,
   `download_id` int(11) NOT NULL,
@@ -2291,12 +2309,12 @@ CREATE TABLE IF NOT EXISTS `oc_product_to_download` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_product_to_download: 0 rows
-DELETE FROM `oc_product_to_download`;
 /*!40000 ALTER TABLE `oc_product_to_download` DISABLE KEYS */;
 /*!40000 ALTER TABLE `oc_product_to_download` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_product_to_layout
+DROP TABLE IF EXISTS `oc_product_to_layout`;
 CREATE TABLE IF NOT EXISTS `oc_product_to_layout` (
   `product_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
@@ -2305,12 +2323,12 @@ CREATE TABLE IF NOT EXISTS `oc_product_to_layout` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_product_to_layout: 0 rows
-DELETE FROM `oc_product_to_layout`;
 /*!40000 ALTER TABLE `oc_product_to_layout` DISABLE KEYS */;
 /*!40000 ALTER TABLE `oc_product_to_layout` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_product_to_store
+DROP TABLE IF EXISTS `oc_product_to_store`;
 CREATE TABLE IF NOT EXISTS `oc_product_to_store` (
   `product_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL DEFAULT '0',
@@ -2318,7 +2336,6 @@ CREATE TABLE IF NOT EXISTS `oc_product_to_store` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_product_to_store: 6 rows
-DELETE FROM `oc_product_to_store`;
 /*!40000 ALTER TABLE `oc_product_to_store` DISABLE KEYS */;
 INSERT INTO `oc_product_to_store` (`product_id`, `store_id`) VALUES
 	(50, 0),
@@ -2331,6 +2348,7 @@ INSERT INTO `oc_product_to_store` (`product_id`, `store_id`) VALUES
 
 
 -- Dumping structure for table amthuctrangia.oc_return
+DROP TABLE IF EXISTS `oc_return`;
 CREATE TABLE IF NOT EXISTS `oc_return` (
   `return_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
@@ -2355,12 +2373,12 @@ CREATE TABLE IF NOT EXISTS `oc_return` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_return: 0 rows
-DELETE FROM `oc_return`;
 /*!40000 ALTER TABLE `oc_return` DISABLE KEYS */;
 /*!40000 ALTER TABLE `oc_return` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_return_action
+DROP TABLE IF EXISTS `oc_return_action`;
 CREATE TABLE IF NOT EXISTS `oc_return_action` (
   `return_action_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) NOT NULL DEFAULT '0',
@@ -2369,16 +2387,16 @@ CREATE TABLE IF NOT EXISTS `oc_return_action` (
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_return_action: 3 rows
-DELETE FROM `oc_return_action`;
 /*!40000 ALTER TABLE `oc_return_action` DISABLE KEYS */;
 INSERT INTO `oc_return_action` (`return_action_id`, `language_id`, `name`) VALUES
-	(1, 1, 'Refunded'),
-	(2, 1, 'Credit Issued'),
-	(3, 1, 'Replacement Sent');
+	(1, 2, 'Refunded'),
+	(2, 2, 'Credit Issued'),
+	(3, 2, 'Replacement Sent');
 /*!40000 ALTER TABLE `oc_return_action` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_return_history
+DROP TABLE IF EXISTS `oc_return_history`;
 CREATE TABLE IF NOT EXISTS `oc_return_history` (
   `return_history_id` int(11) NOT NULL AUTO_INCREMENT,
   `return_id` int(11) NOT NULL,
@@ -2390,12 +2408,12 @@ CREATE TABLE IF NOT EXISTS `oc_return_history` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_return_history: 0 rows
-DELETE FROM `oc_return_history`;
 /*!40000 ALTER TABLE `oc_return_history` DISABLE KEYS */;
 /*!40000 ALTER TABLE `oc_return_history` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_return_reason
+DROP TABLE IF EXISTS `oc_return_reason`;
 CREATE TABLE IF NOT EXISTS `oc_return_reason` (
   `return_reason_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) NOT NULL DEFAULT '0',
@@ -2404,18 +2422,18 @@ CREATE TABLE IF NOT EXISTS `oc_return_reason` (
 ) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_return_reason: 5 rows
-DELETE FROM `oc_return_reason`;
 /*!40000 ALTER TABLE `oc_return_reason` DISABLE KEYS */;
 INSERT INTO `oc_return_reason` (`return_reason_id`, `language_id`, `name`) VALUES
-	(1, 1, 'Dead On Arrival'),
-	(2, 1, 'Received Wrong Item'),
-	(3, 1, 'Order Error'),
-	(4, 1, 'Faulty, please supply details'),
-	(5, 1, 'Other, please supply details');
+	(1, 2, 'Dead On Arrival'),
+	(2, 2, 'Received Wrong Item'),
+	(3, 2, 'Order Error'),
+	(4, 2, 'Faulty, please supply details'),
+	(5, 2, 'Other, please supply details');
 /*!40000 ALTER TABLE `oc_return_reason` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_return_status
+DROP TABLE IF EXISTS `oc_return_status`;
 CREATE TABLE IF NOT EXISTS `oc_return_status` (
   `return_status_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) NOT NULL DEFAULT '0',
@@ -2424,16 +2442,16 @@ CREATE TABLE IF NOT EXISTS `oc_return_status` (
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_return_status: 3 rows
-DELETE FROM `oc_return_status`;
 /*!40000 ALTER TABLE `oc_return_status` DISABLE KEYS */;
 INSERT INTO `oc_return_status` (`return_status_id`, `language_id`, `name`) VALUES
-	(1, 1, 'Pending'),
-	(3, 1, 'Complete'),
-	(2, 1, 'Awaiting Products');
+	(1, 2, 'Pending'),
+	(3, 2, 'Complete'),
+	(2, 2, 'Awaiting Products');
 /*!40000 ALTER TABLE `oc_return_status` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_review
+DROP TABLE IF EXISTS `oc_review`;
 CREATE TABLE IF NOT EXISTS `oc_review` (
   `review_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_id` int(11) NOT NULL,
@@ -2449,12 +2467,12 @@ CREATE TABLE IF NOT EXISTS `oc_review` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_review: 0 rows
-DELETE FROM `oc_review`;
 /*!40000 ALTER TABLE `oc_review` DISABLE KEYS */;
 /*!40000 ALTER TABLE `oc_review` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_setting
+DROP TABLE IF EXISTS `oc_setting`;
 CREATE TABLE IF NOT EXISTS `oc_setting` (
   `setting_id` int(11) NOT NULL AUTO_INCREMENT,
   `store_id` int(11) NOT NULL DEFAULT '0',
@@ -2463,10 +2481,9 @@ CREATE TABLE IF NOT EXISTS `oc_setting` (
   `value` text NOT NULL,
   `serialized` tinyint(1) NOT NULL,
   PRIMARY KEY (`setting_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=253 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=505 DEFAULT CHARSET=utf8;
 
--- Dumping data for table amthuctrangia.oc_setting: 141 rows
-DELETE FROM `oc_setting`;
+-- Dumping data for table amthuctrangia.oc_setting: 175 rows
 /*!40000 ALTER TABLE `oc_setting` DISABLE KEYS */;
 INSERT INTO `oc_setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `serialized`) VALUES
 	(1, 0, 'shipping', 'shipping_sort_order', '3', 0),
@@ -2497,123 +2514,158 @@ INSERT INTO `oc_setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `se
 	(53, 0, 'reward', 'reward_sort_order', '2', 0),
 	(54, 0, 'reward', 'reward_status', '1', 0),
 	(56, 0, 'affiliate', 'affiliate_module', 'a:1:{i:0;a:4:{s:9:"layout_id";s:2:"10";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
-	(241, 0, 'category', 'category_module', 'a:2:{i:0;a:4:{s:9:"layout_id";s:1:"1";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"3";}i:1;a:4:{s:9:"layout_id";s:1:"3";s:8:"position";s:11:"column_left";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
+	(356, 0, 'category', 'category_module', 'a:2:{i:0;a:4:{s:9:"layout_id";s:1:"1";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"3";}i:1;a:4:{s:9:"layout_id";s:1:"3";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
 	(60, 0, 'account', 'account_module', 'a:1:{i:0;a:4:{s:9:"layout_id";s:1:"6";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
 	(94, 0, 'voucher', 'voucher_sort_order', '8', 0),
 	(95, 0, 'voucher', 'voucher_status', '1', 0),
-	(225, 0, 'config', 'config_robots', 'abot\r\ndbot\r\nebot\r\nhbot\r\nkbot\r\nlbot\r\nmbot\r\nnbot\r\nobot\r\npbot\r\nrbot\r\nsbot\r\ntbot\r\nvbot\r\nybot\r\nzbot\r\nbot.\r\nbot/\r\n_bot\r\n.bot\r\n/bot\r\n-bot\r\n:bot\r\n(bot\r\ncrawl\r\nslurp\r\nspider\r\nseek\r\naccoona\r\nacoon\r\nadressendeutschland\r\nah-ha.com\r\nahoy\r\naltavista\r\nananzi\r\nanthill\r\nappie\r\narachnophilia\r\narale\r\naraneo\r\naranha\r\narchitext\r\naretha\r\narks\r\nasterias\r\natlocal\r\natn\r\natomz\r\naugurfind\r\nbackrub\r\nbannana_bot\r\nbaypup\r\nbdfetch\r\nbig brother\r\nbiglotron\r\nbjaaland\r\nblackwidow\r\nblaiz\r\nblog\r\nblo.\r\nbloodhound\r\nboitho\r\nbooch\r\nbradley\r\nbutterfly\r\ncalif\r\ncassandra\r\nccubee\r\ncfetch\r\ncharlotte\r\nchurl\r\ncienciaficcion\r\ncmc\r\ncollective\r\ncomagent\r\ncombine\r\ncomputingsite\r\ncsci\r\ncurl\r\ncusco\r\ndaumoa\r\ndeepindex\r\ndelorie\r\ndepspid\r\ndeweb\r\ndie blinde kuh\r\ndigger\r\nditto\r\ndmoz\r\ndocomo\r\ndownload express\r\ndtaagent\r\ndwcp\r\nebiness\r\nebingbong\r\ne-collector\r\nejupiter\r\nemacs-w3 search engine\r\nesther\r\nevliya celebi\r\nezresult\r\nfalcon\r\nfelix ide\r\nferret\r\nfetchrover\r\nfido\r\nfindlinks\r\nfireball\r\nfish search\r\nfouineur\r\nfunnelweb\r\ngazz\r\ngcreep\r\ngenieknows\r\ngetterroboplus\r\ngeturl\r\nglx\r\ngoforit\r\ngolem\r\ngrabber\r\ngrapnel\r\ngralon\r\ngriffon\r\ngromit\r\ngrub\r\ngulliver\r\nhamahakki\r\nharvest\r\nhavindex\r\nhelix\r\nheritrix\r\nhku www octopus\r\nhomerweb\r\nhtdig\r\nhtml index\r\nhtml_analyzer\r\nhtmlgobble\r\nhubater\r\nhyper-decontextualizer\r\nia_archiver\r\nibm_planetwide\r\nichiro\r\niconsurf\r\niltrovatore\r\nimage.kapsi.net\r\nimagelock\r\nincywincy\r\nindexer\r\ninfobee\r\ninformant\r\ningrid\r\ninktomisearch.com\r\ninspector web\r\nintelliagent\r\ninternet shinchakubin\r\nip3000\r\niron33\r\nisraeli-search\r\nivia\r\njack\r\njakarta\r\njavabee\r\njetbot\r\njumpstation\r\nkatipo\r\nkdd-explorer\r\nkilroy\r\nknowledge\r\nkototoi\r\nkretrieve\r\nlabelgrabber\r\nlachesis\r\nlarbin\r\nlegs\r\nlibwww\r\nlinkalarm\r\nlink validator\r\nlinkscan\r\nlockon\r\nlwp\r\nlycos\r\nmagpie\r\nmantraagent\r\nmapoftheinternet\r\nmarvin/\r\nmattie\r\nmediafox\r\nmediapartners\r\nmercator\r\nmerzscope\r\nmicrosoft url control\r\nminirank\r\nmiva\r\nmj12\r\nmnogosearch\r\nmoget\r\nmonster\r\nmoose\r\nmotor\r\nmultitext\r\nmuncher\r\nmuscatferret\r\nmwd.search\r\nmyweb\r\nnajdi\r\nnameprotect\r\nnationaldirectory\r\nnazilla\r\nncsa beta\r\nnec-meshexplorer\r\nnederland.zoek\r\nnetcarta webmap engine\r\nnetmechanic\r\nnetresearchserver\r\nnetscoop\r\nnewscan-online\r\nnhse\r\nnokia6682/\r\nnomad\r\nnoyona\r\nnutch\r\nnzexplorer\r\nobjectssearch\r\noccam\r\nomni\r\nopen text\r\nopenfind\r\nopenintelligencedata\r\norb search\r\nosis-project\r\npack rat\r\npageboy\r\npagebull\r\npage_verifier\r\npanscient\r\nparasite\r\npartnersite\r\npatric\r\npear.\r\npegasus\r\nperegrinator\r\npgp key agent\r\nphantom\r\nphpdig\r\npicosearch\r\npiltdownman\r\npimptrain\r\npinpoint\r\npioneer\r\npiranha\r\nplumtreewebaccessor\r\npogodak\r\npoirot\r\npompos\r\npoppelsdorf\r\npoppi\r\npopular iconoclast\r\npsycheclone\r\npublisher\r\npython\r\nrambler\r\nraven search\r\nroach\r\nroad runner\r\nroadhouse\r\nrobbie\r\nrobofox\r\nrobozilla\r\nrules\r\nsalty\r\nsbider\r\nscooter\r\nscoutjet\r\nscrubby\r\nsearch.\r\nsearchprocess\r\nsemanticdiscovery\r\nsenrigan\r\nsg-scout\r\nshai\'hulud\r\nshark\r\nshopwiki\r\nsidewinder\r\nsift\r\nsilk\r\nsimmany\r\nsite searcher\r\nsite valet\r\nsitetech-rover\r\nskymob.com\r\nsleek\r\nsmartwit\r\nsna-\r\nsnappy\r\nsnooper\r\nsohu\r\nspeedfind\r\nsphere\r\nsphider\r\nspinner\r\nspyder\r\nsteeler/\r\nsuke\r\nsuntek\r\nsupersnooper\r\nsurfnomore\r\nsven\r\nsygol\r\nszukacz\r\ntach black widow\r\ntarantula\r\ntempleton\r\n/teoma\r\nt-h-u-n-d-e-r-s-t-o-n-e\r\ntheophrastus\r\ntitan\r\ntitin\r\ntkwww\r\ntoutatis\r\nt-rex\r\ntutorgig\r\ntwiceler\r\ntwisted\r\nucsd\r\nudmsearch\r\nurl check\r\nupdated\r\nvagabondo\r\nvalkyrie\r\nverticrawl\r\nvictoria\r\nvision-search\r\nvolcano\r\nvoyager/\r\nvoyager-hc\r\nw3c_validator\r\nw3m2\r\nw3mir\r\nwalker\r\nwallpaper\r\nwanderer\r\nwauuu\r\nwavefire\r\nweb core\r\nweb hopper\r\nweb wombat\r\nwebbandit\r\nwebcatcher\r\nwebcopy\r\nwebfoot\r\nweblayers\r\nweblinker\r\nweblog monitor\r\nwebmirror\r\nwebmonkey\r\nwebquest\r\nwebreaper\r\nwebsitepulse\r\nwebsnarf\r\nwebstolperer\r\nwebvac\r\nwebwalk\r\nwebwatch\r\nwebwombat\r\nwebzinger\r\nwhizbang\r\nwhowhere\r\nwild ferret\r\nworldlight\r\nwwwc\r\nwwwster\r\nxenu\r\nxget\r\nxift\r\nxirq\r\nyandex\r\nyanga\r\nyeti\r\nyodao\r\nzao\r\nzippp\r\nzyborg', 0),
-	(224, 0, 'config', 'config_shared', '0', 0),
-	(223, 0, 'config', 'config_secure', '0', 0),
+	(492, 0, 'config', 'config_seo_url', '0', 0),
+	(493, 0, 'config', 'config_file_extension_allowed', 'txt\r\npng\r\njpe\r\njpeg\r\njpg\r\ngif\r\nbmp\r\nico\r\ntiff\r\ntif\r\nsvg\r\nsvgz\r\nzip\r\nrar\r\nmsi\r\ncab\r\nmp3\r\nqt\r\nmov\r\npdf\r\npsd\r\nai\r\neps\r\nps\r\ndoc\r\nrtf\r\nxls\r\nppt\r\nodt\r\nods', 0),
+	(494, 0, 'config', 'config_file_mime_allowed', 'text/plain\r\nimage/png\r\nimage/jpeg\r\nimage/jpeg\r\nimage/jpeg\r\nimage/gif\r\nimage/bmp\r\nimage/vnd.microsoft.icon\r\nimage/tiff\r\nimage/tiff\r\nimage/svg+xml\r\nimage/svg+xml\r\napplication/zip\r\napplication/x-rar-compressed\r\napplication/x-msdownload\r\napplication/vnd.ms-cab-compressed\r\naudio/mpeg\r\nvideo/quicktime\r\nvideo/quicktime\r\napplication/pdf\r\nimage/vnd.adobe.photoshop\r\napplication/postscript\r\napplication/postscript\r\napplication/postscript\r\napplication/msword\r\napplication/rtf\r\napplication/vnd.ms-excel\r\napplication/vnd.ms-powerpoint\r\napplication/vnd.oasis.opendocument.text\r\napplication/vnd.oasis.opendocument.spreadsheet', 0),
 	(103, 0, 'free_checkout', 'free_checkout_status', '1', 0),
 	(104, 0, 'free_checkout', 'free_checkout_order_status_id', '1', 0),
-	(222, 0, 'config', 'config_fraud_status_id', '7', 0),
-	(221, 0, 'config', 'config_fraud_score', '', 0),
-	(220, 0, 'config', 'config_fraud_key', '', 0),
 	(238, 0, 'slideshow', 'slideshow_module', 'a:1:{i:0;a:7:{s:9:"banner_id";s:1:"9";s:5:"width";s:3:"700";s:6:"height";s:3:"340";s:9:"layout_id";s:1:"1";s:8:"position";s:11:"content_top";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
-	(109, 0, 'banner', 'banner_module', 'a:1:{i:0;a:8:{s:9:"banner_id";s:1:"6";s:5:"width";s:3:"182";s:6:"height";s:3:"182";s:11:"resize_type";s:7:"default";s:9:"layout_id";s:1:"3";s:8:"position";s:11:"column_left";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"3";}}', 1),
-	(219, 0, 'config', 'config_fraud_detection', '0', 0),
-	(218, 0, 'config', 'config_alert_emails', '', 0),
-	(217, 0, 'config', 'config_account_mail', '0', 0),
-	(216, 0, 'config', 'config_alert_mail', '0', 0),
-	(215, 0, 'config', 'config_smtp_timeout', '5', 0),
-	(214, 0, 'config', 'config_smtp_port', '25', 0),
-	(213, 0, 'config', 'config_smtp_password', '', 0),
-	(212, 0, 'config', 'config_smtp_username', '', 0),
-	(211, 0, 'config', 'config_smtp_host', '', 0),
-	(210, 0, 'config', 'config_mail_parameter', '', 0),
-	(209, 0, 'config', 'config_mail_protocol', 'mail', 0),
-	(208, 0, 'config', 'config_ftp_status', '0', 0),
-	(207, 0, 'config', 'config_ftp_root', '', 0),
-	(206, 0, 'config', 'config_ftp_password', '', 0),
-	(205, 0, 'config', 'config_ftp_username', '', 0),
-	(138, 0, 'config', 'config_telephone', '123456789', 0),
-	(139, 0, 'config', 'config_fax', '', 0),
-	(140, 0, 'config', 'config_title', 'Your Store', 0),
-	(141, 0, 'config', 'config_meta_description', 'My Store', 0),
-	(142, 0, 'config', 'config_template', 'trangia', 0),
-	(143, 0, 'config', 'config_layout_id', '4', 0),
-	(144, 0, 'config', 'config_country_id', '222', 0),
-	(145, 0, 'config', 'config_zone_id', '3563', 0),
-	(146, 0, 'config', 'config_language', 'en', 0),
-	(147, 0, 'config', 'config_admin_language', 'en', 0),
-	(148, 0, 'config', 'config_currency', 'USD', 0),
-	(149, 0, 'config', 'config_currency_auto', '1', 0),
-	(150, 0, 'config', 'config_length_class_id', '1', 0),
-	(151, 0, 'config', 'config_weight_class_id', '1', 0),
-	(152, 0, 'config', 'config_catalog_limit', '15', 0),
-	(153, 0, 'config', 'config_admin_limit', '20', 0),
-	(154, 0, 'config', 'config_product_count', '1', 0),
-	(155, 0, 'config', 'config_review_status', '1', 0),
-	(156, 0, 'config', 'config_download', '1', 0),
-	(157, 0, 'config', 'config_voucher_min', '1', 0),
-	(158, 0, 'config', 'config_voucher_max', '1000', 0),
-	(159, 0, 'config', 'config_tax', '1', 0),
-	(160, 0, 'config', 'config_vat', '0', 0),
-	(161, 0, 'config', 'config_tax_default', 'shipping', 0),
-	(162, 0, 'config', 'config_tax_customer', 'shipping', 0),
-	(163, 0, 'config', 'config_customer_online', '0', 0),
-	(164, 0, 'config', 'config_customer_group_id', '1', 0),
-	(165, 0, 'config', 'config_customer_group_display', 'a:1:{i:0;s:1:"1";}', 1),
-	(166, 0, 'config', 'config_customer_price', '0', 0),
-	(167, 0, 'config', 'config_account_id', '3', 0),
-	(168, 0, 'config', 'config_cart_weight', '1', 0),
-	(169, 0, 'config', 'config_guest_checkout', '1', 0),
-	(170, 0, 'config', 'config_checkout_id', '5', 0),
-	(171, 0, 'config', 'config_order_edit', '100', 0),
-	(172, 0, 'config', 'config_invoice_prefix', 'INV-2013-00', 0),
-	(173, 0, 'config', 'config_order_status_id', '1', 0),
-	(174, 0, 'config', 'config_complete_status_id', '5', 0),
-	(175, 0, 'config', 'config_stock_display', '0', 0),
-	(176, 0, 'config', 'config_stock_warning', '0', 0),
-	(177, 0, 'config', 'config_stock_checkout', '0', 0),
-	(178, 0, 'config', 'config_stock_status_id', '5', 0),
-	(179, 0, 'config', 'config_affiliate_id', '4', 0),
-	(180, 0, 'config', 'config_commission', '5', 0),
-	(181, 0, 'config', 'config_return_id', '0', 0),
-	(182, 0, 'config', 'config_return_status_id', '2', 0),
-	(183, 0, 'config', 'config_logo', 'data/logo.png', 0),
-	(184, 0, 'config', 'config_icon', 'data/cart.png', 0),
-	(185, 0, 'config', 'config_image_category_width', '80', 0),
-	(186, 0, 'config', 'config_image_category_height', '80', 0),
-	(187, 0, 'config', 'config_image_thumb_width', '228', 0),
-	(188, 0, 'config', 'config_image_thumb_height', '228', 0),
-	(189, 0, 'config', 'config_image_popup_width', '500', 0),
-	(190, 0, 'config', 'config_image_popup_height', '500', 0),
-	(191, 0, 'config', 'config_image_product_width', '80', 0),
-	(192, 0, 'config', 'config_image_product_height', '80', 0),
-	(193, 0, 'config', 'config_image_additional_width', '74', 0),
-	(194, 0, 'config', 'config_image_additional_height', '74', 0),
-	(195, 0, 'config', 'config_image_related_width', '80', 0),
-	(196, 0, 'config', 'config_image_related_height', '80', 0),
-	(197, 0, 'config', 'config_image_compare_width', '90', 0),
-	(198, 0, 'config', 'config_image_compare_height', '90', 0),
-	(199, 0, 'config', 'config_image_wishlist_width', '47', 0),
-	(200, 0, 'config', 'config_image_wishlist_height', '47', 0),
-	(201, 0, 'config', 'config_image_cart_width', '47', 0),
-	(202, 0, 'config', 'config_image_cart_height', '47', 0),
-	(203, 0, 'config', 'config_ftp_host', 'localhost:8080', 0),
-	(204, 0, 'config', 'config_ftp_port', '21', 0),
-	(137, 0, 'config', 'config_email', 'admin@gmail.com', 0),
-	(136, 0, 'config', 'config_address', 'Address 1', 0),
-	(134, 0, 'config', 'config_name', 'Your Store', 0),
-	(135, 0, 'config', 'config_owner', 'Your Name', 0),
-	(226, 0, 'config', 'config_seo_url', '0', 0),
-	(227, 0, 'config', 'config_file_extension_allowed', 'txt\r\npng\r\njpe\r\njpeg\r\njpg\r\ngif\r\nbmp\r\nico\r\ntiff\r\ntif\r\nsvg\r\nsvgz\r\nzip\r\nrar\r\nmsi\r\ncab\r\nmp3\r\nqt\r\nmov\r\npdf\r\npsd\r\nai\r\neps\r\nps\r\ndoc\r\nrtf\r\nxls\r\nppt\r\nodt\r\nods', 0),
-	(228, 0, 'config', 'config_file_mime_allowed', 'text/plain\r\nimage/png\r\nimage/jpeg\r\nimage/jpeg\r\nimage/jpeg\r\nimage/gif\r\nimage/bmp\r\nimage/vnd.microsoft.icon\r\nimage/tiff\r\nimage/tiff\r\nimage/svg+xml\r\nimage/svg+xml\r\napplication/zip\r\napplication/x-rar-compressed\r\napplication/x-msdownload\r\napplication/vnd.ms-cab-compressed\r\naudio/mpeg\r\nvideo/quicktime\r\nvideo/quicktime\r\napplication/pdf\r\nimage/vnd.adobe.photoshop\r\napplication/postscript\r\napplication/postscript\r\napplication/postscript\r\napplication/msword\r\napplication/rtf\r\napplication/vnd.ms-excel\r\napplication/vnd.ms-powerpoint\r\napplication/vnd.oasis.opendocument.text\r\napplication/vnd.oasis.opendocument.spreadsheet', 0),
-	(229, 0, 'config', 'config_maintenance', '0', 0),
-	(230, 0, 'config', 'config_password', '1', 0),
-	(231, 0, 'config', 'config_encryption', '95930368d275edb5ae96acfffa532204', 0),
-	(232, 0, 'config', 'config_compression', '0', 0),
-	(233, 0, 'config', 'config_error_display', '1', 0),
-	(234, 0, 'config', 'config_error_log', '1', 0),
-	(235, 0, 'config', 'config_error_filename', 'error.txt', 0),
-	(236, 0, 'config', 'config_google_analytics', '', 0),
-	(240, 0, 'newslatest', 'newslatest_module', 'a:1:{i:0;a:10:{s:5:"limit";s:1:"5";s:16:"limitdescription";s:3:"200";s:11:"image_width";s:2:"30";s:12:"image_height";s:2:"30";s:9:"layout_id";s:1:"1";s:8:"position";s:12:"column_right";s:11:"description";s:1:"1";s:11:"imagestatus";s:1:"1";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
-	(248, 0, 'latest', 'latest_module', 'a:1:{i:0;a:7:{s:5:"limit";s:2:"12";s:11:"image_width";s:3:"180";s:12:"image_height";s:3:"180";s:9:"layout_id";s:1:"1";s:8:"position";s:11:"content_top";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"2";}}', 1);
+	(399, 0, 'banner', 'banner_module', 'a:1:{i:0;a:7:{s:9:"banner_id";s:2:"11";s:5:"width";s:3:"210";s:6:"height";s:3:"200";s:9:"layout_id";s:1:"1";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"4";}}', 1),
+	(491, 0, 'config', 'config_robots', 'abot\r\ndbot\r\nebot\r\nhbot\r\nkbot\r\nlbot\r\nmbot\r\nnbot\r\nobot\r\npbot\r\nrbot\r\nsbot\r\ntbot\r\nvbot\r\nybot\r\nzbot\r\nbot.\r\nbot/\r\n_bot\r\n.bot\r\n/bot\r\n-bot\r\n:bot\r\n(bot\r\ncrawl\r\nslurp\r\nspider\r\nseek\r\naccoona\r\nacoon\r\nadressendeutschland\r\nah-ha.com\r\nahoy\r\naltavista\r\nananzi\r\nanthill\r\nappie\r\narachnophilia\r\narale\r\naraneo\r\naranha\r\narchitext\r\naretha\r\narks\r\nasterias\r\natlocal\r\natn\r\natomz\r\naugurfind\r\nbackrub\r\nbannana_bot\r\nbaypup\r\nbdfetch\r\nbig brother\r\nbiglotron\r\nbjaaland\r\nblackwidow\r\nblaiz\r\nblog\r\nblo.\r\nbloodhound\r\nboitho\r\nbooch\r\nbradley\r\nbutterfly\r\ncalif\r\ncassandra\r\nccubee\r\ncfetch\r\ncharlotte\r\nchurl\r\ncienciaficcion\r\ncmc\r\ncollective\r\ncomagent\r\ncombine\r\ncomputingsite\r\ncsci\r\ncurl\r\ncusco\r\ndaumoa\r\ndeepindex\r\ndelorie\r\ndepspid\r\ndeweb\r\ndie blinde kuh\r\ndigger\r\nditto\r\ndmoz\r\ndocomo\r\ndownload express\r\ndtaagent\r\ndwcp\r\nebiness\r\nebingbong\r\ne-collector\r\nejupiter\r\nemacs-w3 search engine\r\nesther\r\nevliya celebi\r\nezresult\r\nfalcon\r\nfelix ide\r\nferret\r\nfetchrover\r\nfido\r\nfindlinks\r\nfireball\r\nfish search\r\nfouineur\r\nfunnelweb\r\ngazz\r\ngcreep\r\ngenieknows\r\ngetterroboplus\r\ngeturl\r\nglx\r\ngoforit\r\ngolem\r\ngrabber\r\ngrapnel\r\ngralon\r\ngriffon\r\ngromit\r\ngrub\r\ngulliver\r\nhamahakki\r\nharvest\r\nhavindex\r\nhelix\r\nheritrix\r\nhku www octopus\r\nhomerweb\r\nhtdig\r\nhtml index\r\nhtml_analyzer\r\nhtmlgobble\r\nhubater\r\nhyper-decontextualizer\r\nia_archiver\r\nibm_planetwide\r\nichiro\r\niconsurf\r\niltrovatore\r\nimage.kapsi.net\r\nimagelock\r\nincywincy\r\nindexer\r\ninfobee\r\ninformant\r\ningrid\r\ninktomisearch.com\r\ninspector web\r\nintelliagent\r\ninternet shinchakubin\r\nip3000\r\niron33\r\nisraeli-search\r\nivia\r\njack\r\njakarta\r\njavabee\r\njetbot\r\njumpstation\r\nkatipo\r\nkdd-explorer\r\nkilroy\r\nknowledge\r\nkototoi\r\nkretrieve\r\nlabelgrabber\r\nlachesis\r\nlarbin\r\nlegs\r\nlibwww\r\nlinkalarm\r\nlink validator\r\nlinkscan\r\nlockon\r\nlwp\r\nlycos\r\nmagpie\r\nmantraagent\r\nmapoftheinternet\r\nmarvin/\r\nmattie\r\nmediafox\r\nmediapartners\r\nmercator\r\nmerzscope\r\nmicrosoft url control\r\nminirank\r\nmiva\r\nmj12\r\nmnogosearch\r\nmoget\r\nmonster\r\nmoose\r\nmotor\r\nmultitext\r\nmuncher\r\nmuscatferret\r\nmwd.search\r\nmyweb\r\nnajdi\r\nnameprotect\r\nnationaldirectory\r\nnazilla\r\nncsa beta\r\nnec-meshexplorer\r\nnederland.zoek\r\nnetcarta webmap engine\r\nnetmechanic\r\nnetresearchserver\r\nnetscoop\r\nnewscan-online\r\nnhse\r\nnokia6682/\r\nnomad\r\nnoyona\r\nnutch\r\nnzexplorer\r\nobjectssearch\r\noccam\r\nomni\r\nopen text\r\nopenfind\r\nopenintelligencedata\r\norb search\r\nosis-project\r\npack rat\r\npageboy\r\npagebull\r\npage_verifier\r\npanscient\r\nparasite\r\npartnersite\r\npatric\r\npear.\r\npegasus\r\nperegrinator\r\npgp key agent\r\nphantom\r\nphpdig\r\npicosearch\r\npiltdownman\r\npimptrain\r\npinpoint\r\npioneer\r\npiranha\r\nplumtreewebaccessor\r\npogodak\r\npoirot\r\npompos\r\npoppelsdorf\r\npoppi\r\npopular iconoclast\r\npsycheclone\r\npublisher\r\npython\r\nrambler\r\nraven search\r\nroach\r\nroad runner\r\nroadhouse\r\nrobbie\r\nrobofox\r\nrobozilla\r\nrules\r\nsalty\r\nsbider\r\nscooter\r\nscoutjet\r\nscrubby\r\nsearch.\r\nsearchprocess\r\nsemanticdiscovery\r\nsenrigan\r\nsg-scout\r\nshai\'hulud\r\nshark\r\nshopwiki\r\nsidewinder\r\nsift\r\nsilk\r\nsimmany\r\nsite searcher\r\nsite valet\r\nsitetech-rover\r\nskymob.com\r\nsleek\r\nsmartwit\r\nsna-\r\nsnappy\r\nsnooper\r\nsohu\r\nspeedfind\r\nsphere\r\nsphider\r\nspinner\r\nspyder\r\nsteeler/\r\nsuke\r\nsuntek\r\nsupersnooper\r\nsurfnomore\r\nsven\r\nsygol\r\nszukacz\r\ntach black widow\r\ntarantula\r\ntempleton\r\n/teoma\r\nt-h-u-n-d-e-r-s-t-o-n-e\r\ntheophrastus\r\ntitan\r\ntitin\r\ntkwww\r\ntoutatis\r\nt-rex\r\ntutorgig\r\ntwiceler\r\ntwisted\r\nucsd\r\nudmsearch\r\nurl check\r\nupdated\r\nvagabondo\r\nvalkyrie\r\nverticrawl\r\nvictoria\r\nvision-search\r\nvolcano\r\nvoyager/\r\nvoyager-hc\r\nw3c_validator\r\nw3m2\r\nw3mir\r\nwalker\r\nwallpaper\r\nwanderer\r\nwauuu\r\nwavefire\r\nweb core\r\nweb hopper\r\nweb wombat\r\nwebbandit\r\nwebcatcher\r\nwebcopy\r\nwebfoot\r\nweblayers\r\nweblinker\r\nweblog monitor\r\nwebmirror\r\nwebmonkey\r\nwebquest\r\nwebreaper\r\nwebsitepulse\r\nwebsnarf\r\nwebstolperer\r\nwebvac\r\nwebwalk\r\nwebwatch\r\nwebwombat\r\nwebzinger\r\nwhizbang\r\nwhowhere\r\nwild ferret\r\nworldlight\r\nwwwc\r\nwwwster\r\nxenu\r\nxget\r\nxift\r\nxirq\r\nyandex\r\nyanga\r\nyeti\r\nyodao\r\nzao\r\nzippp\r\nzyborg', 0),
+	(490, 0, 'config', 'config_shared', '0', 0),
+	(489, 0, 'config', 'config_secure', '0', 0),
+	(488, 0, 'config', 'config_fraud_status_id', '7', 0),
+	(487, 0, 'config', 'config_fraud_score', '', 0),
+	(486, 0, 'config', 'config_fraud_key', '', 0),
+	(485, 0, 'config', 'config_fraud_detection', '0', 0),
+	(484, 0, 'config', 'config_alert_emails', '', 0),
+	(483, 0, 'config', 'config_account_mail', '0', 0),
+	(481, 0, 'config', 'config_smtp_timeout', '5', 0),
+	(482, 0, 'config', 'config_alert_mail', '0', 0),
+	(480, 0, 'config', 'config_smtp_port', '25', 0),
+	(479, 0, 'config', 'config_smtp_password', '', 0),
+	(478, 0, 'config', 'config_smtp_username', '', 0),
+	(477, 0, 'config', 'config_smtp_host', '', 0),
+	(476, 0, 'config', 'config_mail_parameter', '', 0),
+	(474, 0, 'config', 'config_ftp_status', '0', 0),
+	(475, 0, 'config', 'config_mail_protocol', 'mail', 0),
+	(473, 0, 'config', 'config_ftp_root', '', 0),
+	(472, 0, 'config', 'config_ftp_password', '', 0),
+	(471, 0, 'config', 'config_ftp_username', '', 0),
+	(470, 0, 'config', 'config_ftp_port', '21', 0),
+	(468, 0, 'config', 'config_image_cart_height', '47', 0),
+	(469, 0, 'config', 'config_ftp_host', 'localhost:8080', 0),
+	(467, 0, 'config', 'config_image_cart_width', '47', 0),
+	(466, 0, 'config', 'config_image_wishlist_height', '47', 0),
+	(465, 0, 'config', 'config_image_wishlist_width', '47', 0),
+	(464, 0, 'config', 'config_image_compare_height', '90', 0),
+	(463, 0, 'config', 'config_image_compare_width', '90', 0),
+	(462, 0, 'config', 'config_image_related_height', '80', 0),
+	(461, 0, 'config', 'config_image_related_width', '80', 0),
+	(460, 0, 'config', 'config_image_additional_height', '74', 0),
+	(458, 0, 'config', 'config_image_product_height', '107', 0),
+	(459, 0, 'config', 'config_image_additional_width', '74', 0),
+	(457, 0, 'config', 'config_image_product_width', '180', 0),
+	(456, 0, 'config', 'config_image_popup_height', '500', 0),
+	(455, 0, 'config', 'config_image_popup_width', '500', 0),
+	(454, 0, 'config', 'config_image_thumb_height', '228', 0),
+	(453, 0, 'config', 'config_image_thumb_width', '228', 0),
+	(451, 0, 'config', 'config_image_category_width', '80', 0),
+	(452, 0, 'config', 'config_image_category_height', '80', 0),
+	(450, 0, 'config', 'config_icon', 'data/cart.png', 0),
+	(448, 0, 'config', 'config_return_status_id', '2', 0),
+	(449, 0, 'config', 'config_logo', 'data/logo.png', 0),
+	(447, 0, 'config', 'config_return_id', '0', 0),
+	(446, 0, 'config', 'config_commission', '5', 0),
+	(445, 0, 'config', 'config_affiliate_id', '4', 0),
+	(444, 0, 'config', 'config_stock_status_id', '5', 0),
+	(443, 0, 'config', 'config_stock_checkout', '0', 0),
+	(442, 0, 'config', 'config_stock_warning', '0', 0),
+	(439, 0, 'config', 'config_order_status_id', '1', 0),
+	(440, 0, 'config', 'config_complete_status_id', '5', 0),
+	(441, 0, 'config', 'config_stock_display', '0', 0),
+	(438, 0, 'config', 'config_invoice_prefix', 'INV-2013-00', 0),
+	(437, 0, 'config', 'config_order_edit', '100', 0),
+	(436, 0, 'config', 'config_checkout_id', '5', 0),
+	(435, 0, 'config', 'config_guest_checkout', '1', 0),
+	(434, 0, 'config', 'config_cart_weight', '1', 0),
+	(433, 0, 'config', 'config_account_id', '3', 0),
+	(432, 0, 'config', 'config_customer_price', '0', 0),
+	(431, 0, 'config', 'config_customer_group_display', 'a:1:{i:0;s:1:"1";}', 1),
+	(430, 0, 'config', 'config_customer_group_id', '1', 0),
+	(429, 0, 'config', 'config_customer_online', '0', 0),
+	(428, 0, 'config', 'config_tax_customer', 'shipping', 0),
+	(427, 0, 'config', 'config_tax_default', 'shipping', 0),
+	(425, 0, 'config', 'config_tax', '1', 0),
+	(426, 0, 'config', 'config_vat', '0', 0),
+	(424, 0, 'config', 'config_voucher_max', '1000', 0),
+	(423, 0, 'config', 'config_voucher_min', '1', 0),
+	(422, 0, 'config', 'config_download', '1', 0),
+	(504, 0, 'newslatest', 'newslatest_module', 'a:1:{i:0;a:10:{s:5:"limit";s:1:"6";s:16:"limitdescription";s:3:"200";s:11:"image_width";s:2:"40";s:12:"image_height";s:2:"40";s:9:"layout_id";s:1:"1";s:8:"position";s:12:"column_right";s:11:"description";s:1:"1";s:11:"imagestatus";s:1:"1";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
+	(248, 0, 'latest', 'latest_module', 'a:1:{i:0;a:7:{s:5:"limit";s:2:"12";s:11:"image_width";s:3:"180";s:12:"image_height";s:3:"180";s:9:"layout_id";s:1:"1";s:8:"position";s:11:"content_top";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"2";}}', 1),
+	(418, 0, 'config', 'config_catalog_limit', '15', 0),
+	(419, 0, 'config', 'config_admin_limit', '20', 0),
+	(420, 0, 'config', 'config_product_count', '1', 0),
+	(421, 0, 'config', 'config_review_status', '1', 0),
+	(406, 0, 'config', 'config_title', 'Your Store', 0),
+	(407, 0, 'config', 'config_meta_description', 'My Store', 0),
+	(408, 0, 'config', 'config_template', 'trangia', 0),
+	(409, 0, 'config', 'config_layout_id', '4', 0),
+	(410, 0, 'config', 'config_country_id', '230', 0),
+	(411, 0, 'config', 'config_zone_id', '3776', 0),
+	(412, 0, 'config', 'config_language', 'vi', 0),
+	(413, 0, 'config', 'config_admin_language', 'vi', 0),
+	(414, 0, 'config', 'config_currency', 'VNĐ', 0),
+	(415, 0, 'config', 'config_currency_auto', '1', 0),
+	(416, 0, 'config', 'config_length_class_id', '1', 0),
+	(417, 0, 'config', 'config_weight_class_id', '1', 0),
+	(405, 0, 'config', 'config_fax', '', 0),
+	(404, 0, 'config', 'config_telephone', '123456789', 0),
+	(403, 0, 'config', 'config_email', 'admin@gmail.com', 0),
+	(402, 0, 'config', 'config_address', 'Address 1', 0),
+	(401, 0, 'config', 'config_owner', 'Your Name', 0),
+	(400, 0, 'config', 'config_name', 'Your Store', 0),
+	(357, 0, 'tnt_yahoo', 'tnt_yahoo_yahooid1', 'doidondoc_tinhtieutan', 0),
+	(358, 0, 'tnt_yahoo', 'tnt_yahoo_mobile1', '01694046627', 0),
+	(359, 0, 'tnt_yahoo', 'tnt_yahoo_image1', '1', 0),
+	(360, 0, 'tnt_yahoo', 'tnt_yahoo_yahooid2', '', 0),
+	(361, 0, 'tnt_yahoo', 'tnt_yahoo_mobile2', '', 0),
+	(362, 0, 'tnt_yahoo', 'tnt_yahoo_image2', '', 0),
+	(363, 0, 'tnt_yahoo', 'tnt_yahoo_yahooid3', '', 0),
+	(364, 0, 'tnt_yahoo', 'tnt_yahoo_mobile3', '', 0),
+	(365, 0, 'tnt_yahoo', 'tnt_yahoo_image3', '', 0),
+	(366, 0, 'tnt_yahoo', 'tnt_yahoo_yahooid4', '', 0),
+	(367, 0, 'tnt_yahoo', 'tnt_yahoo_mobile4', '', 0),
+	(368, 0, 'tnt_yahoo', 'tnt_yahoo_image4', '', 0),
+	(369, 0, 'tnt_yahoo', 'tnt_yahoo_yahooid5', '', 0),
+	(370, 0, 'tnt_yahoo', 'tnt_yahoo_mobile5', '', 0),
+	(371, 0, 'tnt_yahoo', 'tnt_yahoo_image5', '', 0),
+	(372, 0, 'tnt_yahoo', 'tnt_skype_skypeid1', '', 0),
+	(373, 0, 'tnt_yahoo', 'tnt_skype_mobile1', '', 0),
+	(374, 0, 'tnt_yahoo', 'tnt_skype_image1', '', 0),
+	(375, 0, 'tnt_yahoo', 'tnt_skype_skypeid2', '', 0),
+	(376, 0, 'tnt_yahoo', 'tnt_skype_mobile2', '', 0),
+	(377, 0, 'tnt_yahoo', 'tnt_skype_image2', '', 0),
+	(378, 0, 'tnt_yahoo', 'tnt_skype_skypeid3', '', 0),
+	(379, 0, 'tnt_yahoo', 'tnt_skype_mobile3', '', 0),
+	(380, 0, 'tnt_yahoo', 'tnt_skype_image3', '', 0),
+	(381, 0, 'tnt_yahoo', 'tnt_skype_skypeid4', '', 0),
+	(382, 0, 'tnt_yahoo', 'tnt_skype_mobile4', '', 0),
+	(383, 0, 'tnt_yahoo', 'tnt_skype_image4', '', 0),
+	(384, 0, 'tnt_yahoo', 'tnt_skype_skypeid5', '', 0),
+	(385, 0, 'tnt_yahoo', 'tnt_skype_mobile5', '', 0),
+	(386, 0, 'tnt_yahoo', 'tnt_skype_image5', '', 0),
+	(387, 0, 'tnt_yahoo', 'tnt_yahoo_module', 'a:1:{i:0;a:4:{s:9:"layout_id";s:1:"1";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"3";}}', 1),
+	(396, 0, 'visitor', 'visitor_expire', '600', 0),
+	(397, 0, 'visitor', 'visitor_theme', 'Shopping', 0),
+	(398, 0, 'visitor', 'visitor_module', 'a:1:{i:0;a:4:{s:9:"layout_id";s:1:"1";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"3";}}', 1),
+	(495, 0, 'config', 'config_maintenance', '0', 0),
+	(496, 0, 'config', 'config_password', '1', 0),
+	(497, 0, 'config', 'config_encryption', '95930368d275edb5ae96acfffa532204', 0),
+	(498, 0, 'config', 'config_compression', '0', 0),
+	(499, 0, 'config', 'config_error_display', '1', 0),
+	(500, 0, 'config', 'config_error_log', '1', 0),
+	(501, 0, 'config', 'config_error_filename', 'error.txt', 0),
+	(502, 0, 'config', 'config_google_analytics', '', 0);
 /*!40000 ALTER TABLE `oc_setting` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_stock_status
+DROP TABLE IF EXISTS `oc_stock_status`;
 CREATE TABLE IF NOT EXISTS `oc_stock_status` (
   `stock_status_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) NOT NULL,
@@ -2622,17 +2674,17 @@ CREATE TABLE IF NOT EXISTS `oc_stock_status` (
 ) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_stock_status: 4 rows
-DELETE FROM `oc_stock_status`;
 /*!40000 ALTER TABLE `oc_stock_status` DISABLE KEYS */;
 INSERT INTO `oc_stock_status` (`stock_status_id`, `language_id`, `name`) VALUES
-	(7, 1, 'In Stock'),
-	(8, 1, 'Pre-Order'),
-	(5, 1, 'Out Of Stock'),
-	(6, 1, '2 - 3 Days');
+	(7, 2, 'In Stock'),
+	(8, 2, 'Pre-Order'),
+	(5, 2, 'Out Of Stock'),
+	(6, 2, '2 - 3 Days');
 /*!40000 ALTER TABLE `oc_stock_status` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_store
+DROP TABLE IF EXISTS `oc_store`;
 CREATE TABLE IF NOT EXISTS `oc_store` (
   `store_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) NOT NULL,
@@ -2642,12 +2694,12 @@ CREATE TABLE IF NOT EXISTS `oc_store` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_store: 0 rows
-DELETE FROM `oc_store`;
 /*!40000 ALTER TABLE `oc_store` DISABLE KEYS */;
 /*!40000 ALTER TABLE `oc_store` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_tax_class
+DROP TABLE IF EXISTS `oc_tax_class`;
 CREATE TABLE IF NOT EXISTS `oc_tax_class` (
   `tax_class_id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(32) NOT NULL,
@@ -2658,7 +2710,6 @@ CREATE TABLE IF NOT EXISTS `oc_tax_class` (
 ) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_tax_class: 2 rows
-DELETE FROM `oc_tax_class`;
 /*!40000 ALTER TABLE `oc_tax_class` DISABLE KEYS */;
 INSERT INTO `oc_tax_class` (`tax_class_id`, `title`, `description`, `date_added`, `date_modified`) VALUES
 	(9, 'Taxable Goods', 'Taxed Stuff', '2009-01-06 23:21:53', '2011-09-23 14:07:50'),
@@ -2667,6 +2718,7 @@ INSERT INTO `oc_tax_class` (`tax_class_id`, `title`, `description`, `date_added`
 
 
 -- Dumping structure for table amthuctrangia.oc_tax_rate
+DROP TABLE IF EXISTS `oc_tax_rate`;
 CREATE TABLE IF NOT EXISTS `oc_tax_rate` (
   `tax_rate_id` int(11) NOT NULL AUTO_INCREMENT,
   `geo_zone_id` int(11) NOT NULL DEFAULT '0',
@@ -2679,7 +2731,6 @@ CREATE TABLE IF NOT EXISTS `oc_tax_rate` (
 ) ENGINE=MyISAM AUTO_INCREMENT=88 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_tax_rate: 2 rows
-DELETE FROM `oc_tax_rate`;
 /*!40000 ALTER TABLE `oc_tax_rate` DISABLE KEYS */;
 INSERT INTO `oc_tax_rate` (`tax_rate_id`, `geo_zone_id`, `name`, `rate`, `type`, `date_added`, `date_modified`) VALUES
 	(86, 3, 'VAT (17.5%)', 17.5000, 'P', '2011-03-09 21:17:10', '2011-09-22 22:24:29'),
@@ -2688,6 +2739,7 @@ INSERT INTO `oc_tax_rate` (`tax_rate_id`, `geo_zone_id`, `name`, `rate`, `type`,
 
 
 -- Dumping structure for table amthuctrangia.oc_tax_rate_to_customer_group
+DROP TABLE IF EXISTS `oc_tax_rate_to_customer_group`;
 CREATE TABLE IF NOT EXISTS `oc_tax_rate_to_customer_group` (
   `tax_rate_id` int(11) NOT NULL,
   `customer_group_id` int(11) NOT NULL,
@@ -2695,7 +2747,6 @@ CREATE TABLE IF NOT EXISTS `oc_tax_rate_to_customer_group` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_tax_rate_to_customer_group: 2 rows
-DELETE FROM `oc_tax_rate_to_customer_group`;
 /*!40000 ALTER TABLE `oc_tax_rate_to_customer_group` DISABLE KEYS */;
 INSERT INTO `oc_tax_rate_to_customer_group` (`tax_rate_id`, `customer_group_id`) VALUES
 	(86, 1),
@@ -2704,6 +2755,7 @@ INSERT INTO `oc_tax_rate_to_customer_group` (`tax_rate_id`, `customer_group_id`)
 
 
 -- Dumping structure for table amthuctrangia.oc_tax_rule
+DROP TABLE IF EXISTS `oc_tax_rule`;
 CREATE TABLE IF NOT EXISTS `oc_tax_rule` (
   `tax_rule_id` int(11) NOT NULL AUTO_INCREMENT,
   `tax_class_id` int(11) NOT NULL,
@@ -2714,7 +2766,6 @@ CREATE TABLE IF NOT EXISTS `oc_tax_rule` (
 ) ENGINE=MyISAM AUTO_INCREMENT=129 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_tax_rule: 4 rows
-DELETE FROM `oc_tax_rule`;
 /*!40000 ALTER TABLE `oc_tax_rule` DISABLE KEYS */;
 INSERT INTO `oc_tax_rule` (`tax_rule_id`, `tax_class_id`, `tax_rate_id`, `based`, `priority`) VALUES
 	(121, 10, 86, 'payment', 1),
@@ -2725,23 +2776,30 @@ INSERT INTO `oc_tax_rule` (`tax_rule_id`, `tax_class_id`, `tax_rate_id`, `based`
 
 
 -- Dumping structure for table amthuctrangia.oc_url_alias
+DROP TABLE IF EXISTS `oc_url_alias`;
 CREATE TABLE IF NOT EXISTS `oc_url_alias` (
   `url_alias_id` int(11) NOT NULL AUTO_INCREMENT,
   `query` varchar(255) NOT NULL,
   `keyword` varchar(255) NOT NULL,
   PRIMARY KEY (`url_alias_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=775 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=781 DEFAULT CHARSET=utf8;
 
--- Dumping data for table amthuctrangia.oc_url_alias: 2 rows
-DELETE FROM `oc_url_alias`;
+-- Dumping data for table amthuctrangia.oc_url_alias: 8 rows
 /*!40000 ALTER TABLE `oc_url_alias` DISABLE KEYS */;
 INSERT INTO `oc_url_alias` (`url_alias_id`, `query`, `keyword`) VALUES
 	(730, 'manufacturer_id=8', 'apple'),
-	(774, 'information_id=4', 'about_us');
+	(774, 'information_id=4', 'about_us'),
+	(775, 'news_id=17', 'le-ky-hop-dong-xuat-khau-banh-da-nem-sang-uc'),
+	(776, 'news_id=18', 'mau-mien-dong-moi'),
+	(777, 'news_id=19', 'mau-banh-da-15-la'),
+	(778, 'news_id=20', 'cac-chinh-sach-ho-tro'),
+	(779, 'news_id=21', 'banh-da-nem-an-song'),
+	(780, 'news_id=22', 'banh-da-nem-size-22-loai-2-la');
 /*!40000 ALTER TABLE `oc_url_alias` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_user
+DROP TABLE IF EXISTS `oc_user`;
 CREATE TABLE IF NOT EXISTS `oc_user` (
   `user_id` int(11) NOT NULL AUTO_INCREMENT,
   `user_group_id` int(11) NOT NULL,
@@ -2759,14 +2817,14 @@ CREATE TABLE IF NOT EXISTS `oc_user` (
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_user: 1 rows
-DELETE FROM `oc_user`;
 /*!40000 ALTER TABLE `oc_user` DISABLE KEYS */;
 INSERT INTO `oc_user` (`user_id`, `user_group_id`, `username`, `password`, `salt`, `firstname`, `lastname`, `email`, `code`, `ip`, `status`, `date_added`) VALUES
-	(1, 1, 'admin', '965a87f397f23d137c6953d482296fc21ebc06c4', '9718b6cd1', '', '', 'admin@gmail.com', '', '::1', 1, '2013-07-12 15:19:47');
+	(1, 1, 'admin', '965a87f397f23d137c6953d482296fc21ebc06c4', '9718b6cd1', '', '', 'admin@gmail.com', '', '127.0.0.1', 1, '2013-07-12 15:19:47');
 /*!40000 ALTER TABLE `oc_user` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_user_group
+DROP TABLE IF EXISTS `oc_user_group`;
 CREATE TABLE IF NOT EXISTS `oc_user_group` (
   `user_group_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) NOT NULL,
@@ -2775,15 +2833,15 @@ CREATE TABLE IF NOT EXISTS `oc_user_group` (
 ) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_user_group: 2 rows
-DELETE FROM `oc_user_group`;
 /*!40000 ALTER TABLE `oc_user_group` DISABLE KEYS */;
 INSERT INTO `oc_user_group` (`user_group_id`, `name`, `permission`) VALUES
-	(1, 'Top Administrator', 'a:2:{s:6:"access";a:133:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:14:"catalog/filter";i:5;s:19:"catalog/information";i:6;s:20:"catalog/manufacturer";i:7;s:12:"catalog/news";i:8;s:21:"catalog/news_category";i:9;s:20:"catalog/news_comment";i:10;s:14:"catalog/option";i:11;s:15:"catalog/product";i:12;s:14:"catalog/review";i:13;s:18:"common/filemanager";i:14;s:13:"design/banner";i:15;s:19:"design/custom_field";i:16;s:13:"design/layout";i:17;s:14:"extension/feed";i:18;s:17:"extension/manager";i:19;s:16:"extension/module";i:20;s:17:"extension/payment";i:21;s:18:"extension/shipping";i:22;s:15:"extension/total";i:23;s:16:"feed/google_base";i:24;s:19:"feed/google_sitemap";i:25;s:20:"localisation/country";i:26;s:21:"localisation/currency";i:27;s:21:"localisation/geo_zone";i:28;s:21:"localisation/language";i:29;s:25:"localisation/length_class";i:30;s:25:"localisation/order_status";i:31;s:26:"localisation/return_action";i:32;s:26:"localisation/return_reason";i:33;s:26:"localisation/return_status";i:34;s:25:"localisation/stock_status";i:35;s:22:"localisation/tax_class";i:36;s:21:"localisation/tax_rate";i:37;s:25:"localisation/weight_class";i:38;s:17:"localisation/zone";i:39;s:14:"module/account";i:40;s:16:"module/affiliate";i:41;s:13:"module/banner";i:42;s:17:"module/bestseller";i:43;s:15:"module/carousel";i:44;s:15:"module/category";i:45;s:15:"module/featured";i:46;s:13:"module/filter";i:47;s:18:"module/google_talk";i:48;s:18:"module/information";i:49;s:13:"module/latest";i:50;s:20:"module/news_category";i:51;s:19:"module/newsfeatured";i:52;s:17:"module/newslatest";i:53;s:16:"module/slideshow";i:54;s:14:"module/special";i:55;s:12:"module/store";i:56;s:14:"module/welcome";i:57;s:24:"payment/authorizenet_aim";i:58;s:21:"payment/bank_transfer";i:59;s:14:"payment/cheque";i:60;s:11:"payment/cod";i:61;s:21:"payment/free_checkout";i:62;s:22:"payment/klarna_account";i:63;s:22:"payment/klarna_invoice";i:64;s:14:"payment/liqpay";i:65;s:20:"payment/moneybookers";i:66;s:14:"payment/nochex";i:67;s:15:"payment/paymate";i:68;s:16:"payment/paypoint";i:69;s:13:"payment/payza";i:70;s:26:"payment/perpetual_payments";i:71;s:14:"payment/pp_pro";i:72;s:17:"payment/pp_pro_uk";i:73;s:19:"payment/pp_standard";i:74;s:15:"payment/sagepay";i:75;s:22:"payment/sagepay_direct";i:76;s:18:"payment/sagepay_us";i:77;s:19:"payment/twocheckout";i:78;s:28:"payment/web_payment_software";i:79;s:16:"payment/worldpay";i:80;s:27:"report/affiliate_commission";i:81;s:22:"report/customer_credit";i:82;s:22:"report/customer_online";i:83;s:21:"report/customer_order";i:84;s:22:"report/customer_reward";i:85;s:24:"report/product_purchased";i:86;s:21:"report/product_viewed";i:87;s:18:"report/sale_coupon";i:88;s:17:"report/sale_order";i:89;s:18:"report/sale_return";i:90;s:20:"report/sale_shipping";i:91;s:15:"report/sale_tax";i:92;s:14:"sale/affiliate";i:93;s:12:"sale/contact";i:94;s:11:"sale/coupon";i:95;s:13:"sale/customer";i:96;s:20:"sale/customer_ban_ip";i:97;s:19:"sale/customer_group";i:98;s:10:"sale/order";i:99;s:11:"sale/return";i:100;s:12:"sale/voucher";i:101;s:18:"sale/voucher_theme";i:102;s:15:"setting/setting";i:103;s:13:"setting/store";i:104;s:16:"shipping/auspost";i:105;s:17:"shipping/citylink";i:106;s:14:"shipping/fedex";i:107;s:13:"shipping/flat";i:108;s:13:"shipping/free";i:109;s:13:"shipping/item";i:110;s:23:"shipping/parcelforce_48";i:111;s:15:"shipping/pickup";i:112;s:19:"shipping/royal_mail";i:113;s:12:"shipping/ups";i:114;s:13:"shipping/usps";i:115;s:15:"shipping/weight";i:116;s:11:"tool/backup";i:117;s:14:"tool/error_log";i:118;s:12:"total/coupon";i:119;s:12:"total/credit";i:120;s:14:"total/handling";i:121;s:16:"total/klarna_fee";i:122;s:19:"total/low_order_fee";i:123;s:12:"total/reward";i:124;s:14:"total/shipping";i:125;s:15:"total/sub_total";i:126;s:9:"total/tax";i:127;s:11:"total/total";i:128;s:13:"total/voucher";i:129;s:9:"user/user";i:130;s:20:"user/user_permission";i:131;s:17:"module/newslatest";i:132;s:13:"module/latest";}s:6:"modify";a:133:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:14:"catalog/filter";i:5;s:19:"catalog/information";i:6;s:20:"catalog/manufacturer";i:7;s:12:"catalog/news";i:8;s:21:"catalog/news_category";i:9;s:20:"catalog/news_comment";i:10;s:14:"catalog/option";i:11;s:15:"catalog/product";i:12;s:14:"catalog/review";i:13;s:18:"common/filemanager";i:14;s:13:"design/banner";i:15;s:19:"design/custom_field";i:16;s:13:"design/layout";i:17;s:14:"extension/feed";i:18;s:17:"extension/manager";i:19;s:16:"extension/module";i:20;s:17:"extension/payment";i:21;s:18:"extension/shipping";i:22;s:15:"extension/total";i:23;s:16:"feed/google_base";i:24;s:19:"feed/google_sitemap";i:25;s:20:"localisation/country";i:26;s:21:"localisation/currency";i:27;s:21:"localisation/geo_zone";i:28;s:21:"localisation/language";i:29;s:25:"localisation/length_class";i:30;s:25:"localisation/order_status";i:31;s:26:"localisation/return_action";i:32;s:26:"localisation/return_reason";i:33;s:26:"localisation/return_status";i:34;s:25:"localisation/stock_status";i:35;s:22:"localisation/tax_class";i:36;s:21:"localisation/tax_rate";i:37;s:25:"localisation/weight_class";i:38;s:17:"localisation/zone";i:39;s:14:"module/account";i:40;s:16:"module/affiliate";i:41;s:13:"module/banner";i:42;s:17:"module/bestseller";i:43;s:15:"module/carousel";i:44;s:15:"module/category";i:45;s:15:"module/featured";i:46;s:13:"module/filter";i:47;s:18:"module/google_talk";i:48;s:18:"module/information";i:49;s:13:"module/latest";i:50;s:20:"module/news_category";i:51;s:19:"module/newsfeatured";i:52;s:17:"module/newslatest";i:53;s:16:"module/slideshow";i:54;s:14:"module/special";i:55;s:12:"module/store";i:56;s:14:"module/welcome";i:57;s:24:"payment/authorizenet_aim";i:58;s:21:"payment/bank_transfer";i:59;s:14:"payment/cheque";i:60;s:11:"payment/cod";i:61;s:21:"payment/free_checkout";i:62;s:22:"payment/klarna_account";i:63;s:22:"payment/klarna_invoice";i:64;s:14:"payment/liqpay";i:65;s:20:"payment/moneybookers";i:66;s:14:"payment/nochex";i:67;s:15:"payment/paymate";i:68;s:16:"payment/paypoint";i:69;s:13:"payment/payza";i:70;s:26:"payment/perpetual_payments";i:71;s:14:"payment/pp_pro";i:72;s:17:"payment/pp_pro_uk";i:73;s:19:"payment/pp_standard";i:74;s:15:"payment/sagepay";i:75;s:22:"payment/sagepay_direct";i:76;s:18:"payment/sagepay_us";i:77;s:19:"payment/twocheckout";i:78;s:28:"payment/web_payment_software";i:79;s:16:"payment/worldpay";i:80;s:27:"report/affiliate_commission";i:81;s:22:"report/customer_credit";i:82;s:22:"report/customer_online";i:83;s:21:"report/customer_order";i:84;s:22:"report/customer_reward";i:85;s:24:"report/product_purchased";i:86;s:21:"report/product_viewed";i:87;s:18:"report/sale_coupon";i:88;s:17:"report/sale_order";i:89;s:18:"report/sale_return";i:90;s:20:"report/sale_shipping";i:91;s:15:"report/sale_tax";i:92;s:14:"sale/affiliate";i:93;s:12:"sale/contact";i:94;s:11:"sale/coupon";i:95;s:13:"sale/customer";i:96;s:20:"sale/customer_ban_ip";i:97;s:19:"sale/customer_group";i:98;s:10:"sale/order";i:99;s:11:"sale/return";i:100;s:12:"sale/voucher";i:101;s:18:"sale/voucher_theme";i:102;s:15:"setting/setting";i:103;s:13:"setting/store";i:104;s:16:"shipping/auspost";i:105;s:17:"shipping/citylink";i:106;s:14:"shipping/fedex";i:107;s:13:"shipping/flat";i:108;s:13:"shipping/free";i:109;s:13:"shipping/item";i:110;s:23:"shipping/parcelforce_48";i:111;s:15:"shipping/pickup";i:112;s:19:"shipping/royal_mail";i:113;s:12:"shipping/ups";i:114;s:13:"shipping/usps";i:115;s:15:"shipping/weight";i:116;s:11:"tool/backup";i:117;s:14:"tool/error_log";i:118;s:12:"total/coupon";i:119;s:12:"total/credit";i:120;s:14:"total/handling";i:121;s:16:"total/klarna_fee";i:122;s:19:"total/low_order_fee";i:123;s:12:"total/reward";i:124;s:14:"total/shipping";i:125;s:15:"total/sub_total";i:126;s:9:"total/tax";i:127;s:11:"total/total";i:128;s:13:"total/voucher";i:129;s:9:"user/user";i:130;s:20:"user/user_permission";i:131;s:17:"module/newslatest";i:132;s:13:"module/latest";}}'),
+	(1, 'Top Administrator', 'a:2:{s:6:"access";a:135:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:14:"catalog/filter";i:5;s:19:"catalog/information";i:6;s:20:"catalog/manufacturer";i:7;s:12:"catalog/news";i:8;s:21:"catalog/news_category";i:9;s:20:"catalog/news_comment";i:10;s:14:"catalog/option";i:11;s:15:"catalog/product";i:12;s:14:"catalog/review";i:13;s:18:"common/filemanager";i:14;s:13:"design/banner";i:15;s:19:"design/custom_field";i:16;s:13:"design/layout";i:17;s:14:"extension/feed";i:18;s:17:"extension/manager";i:19;s:16:"extension/module";i:20;s:17:"extension/payment";i:21;s:18:"extension/shipping";i:22;s:15:"extension/total";i:23;s:16:"feed/google_base";i:24;s:19:"feed/google_sitemap";i:25;s:20:"localisation/country";i:26;s:21:"localisation/currency";i:27;s:21:"localisation/geo_zone";i:28;s:21:"localisation/language";i:29;s:25:"localisation/length_class";i:30;s:25:"localisation/order_status";i:31;s:26:"localisation/return_action";i:32;s:26:"localisation/return_reason";i:33;s:26:"localisation/return_status";i:34;s:25:"localisation/stock_status";i:35;s:22:"localisation/tax_class";i:36;s:21:"localisation/tax_rate";i:37;s:25:"localisation/weight_class";i:38;s:17:"localisation/zone";i:39;s:14:"module/account";i:40;s:16:"module/affiliate";i:41;s:13:"module/banner";i:42;s:17:"module/bestseller";i:43;s:15:"module/carousel";i:44;s:15:"module/category";i:45;s:15:"module/featured";i:46;s:13:"module/filter";i:47;s:18:"module/google_talk";i:48;s:18:"module/information";i:49;s:13:"module/latest";i:50;s:20:"module/news_category";i:51;s:19:"module/newsfeatured";i:52;s:17:"module/newslatest";i:53;s:16:"module/slideshow";i:54;s:14:"module/special";i:55;s:12:"module/store";i:56;s:14:"module/welcome";i:57;s:24:"payment/authorizenet_aim";i:58;s:21:"payment/bank_transfer";i:59;s:14:"payment/cheque";i:60;s:11:"payment/cod";i:61;s:21:"payment/free_checkout";i:62;s:22:"payment/klarna_account";i:63;s:22:"payment/klarna_invoice";i:64;s:14:"payment/liqpay";i:65;s:20:"payment/moneybookers";i:66;s:14:"payment/nochex";i:67;s:15:"payment/paymate";i:68;s:16:"payment/paypoint";i:69;s:13:"payment/payza";i:70;s:26:"payment/perpetual_payments";i:71;s:14:"payment/pp_pro";i:72;s:17:"payment/pp_pro_uk";i:73;s:19:"payment/pp_standard";i:74;s:15:"payment/sagepay";i:75;s:22:"payment/sagepay_direct";i:76;s:18:"payment/sagepay_us";i:77;s:19:"payment/twocheckout";i:78;s:28:"payment/web_payment_software";i:79;s:16:"payment/worldpay";i:80;s:27:"report/affiliate_commission";i:81;s:22:"report/customer_credit";i:82;s:22:"report/customer_online";i:83;s:21:"report/customer_order";i:84;s:22:"report/customer_reward";i:85;s:24:"report/product_purchased";i:86;s:21:"report/product_viewed";i:87;s:18:"report/sale_coupon";i:88;s:17:"report/sale_order";i:89;s:18:"report/sale_return";i:90;s:20:"report/sale_shipping";i:91;s:15:"report/sale_tax";i:92;s:14:"sale/affiliate";i:93;s:12:"sale/contact";i:94;s:11:"sale/coupon";i:95;s:13:"sale/customer";i:96;s:20:"sale/customer_ban_ip";i:97;s:19:"sale/customer_group";i:98;s:10:"sale/order";i:99;s:11:"sale/return";i:100;s:12:"sale/voucher";i:101;s:18:"sale/voucher_theme";i:102;s:15:"setting/setting";i:103;s:13:"setting/store";i:104;s:16:"shipping/auspost";i:105;s:17:"shipping/citylink";i:106;s:14:"shipping/fedex";i:107;s:13:"shipping/flat";i:108;s:13:"shipping/free";i:109;s:13:"shipping/item";i:110;s:23:"shipping/parcelforce_48";i:111;s:15:"shipping/pickup";i:112;s:19:"shipping/royal_mail";i:113;s:12:"shipping/ups";i:114;s:13:"shipping/usps";i:115;s:15:"shipping/weight";i:116;s:11:"tool/backup";i:117;s:14:"tool/error_log";i:118;s:12:"total/coupon";i:119;s:12:"total/credit";i:120;s:14:"total/handling";i:121;s:16:"total/klarna_fee";i:122;s:19:"total/low_order_fee";i:123;s:12:"total/reward";i:124;s:14:"total/shipping";i:125;s:15:"total/sub_total";i:126;s:9:"total/tax";i:127;s:11:"total/total";i:128;s:13:"total/voucher";i:129;s:9:"user/user";i:130;s:20:"user/user_permission";i:131;s:17:"module/newslatest";i:132;s:13:"module/latest";i:133;s:16:"module/tnt_yahoo";i:134;s:14:"module/visitor";}s:6:"modify";a:135:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:14:"catalog/filter";i:5;s:19:"catalog/information";i:6;s:20:"catalog/manufacturer";i:7;s:12:"catalog/news";i:8;s:21:"catalog/news_category";i:9;s:20:"catalog/news_comment";i:10;s:14:"catalog/option";i:11;s:15:"catalog/product";i:12;s:14:"catalog/review";i:13;s:18:"common/filemanager";i:14;s:13:"design/banner";i:15;s:19:"design/custom_field";i:16;s:13:"design/layout";i:17;s:14:"extension/feed";i:18;s:17:"extension/manager";i:19;s:16:"extension/module";i:20;s:17:"extension/payment";i:21;s:18:"extension/shipping";i:22;s:15:"extension/total";i:23;s:16:"feed/google_base";i:24;s:19:"feed/google_sitemap";i:25;s:20:"localisation/country";i:26;s:21:"localisation/currency";i:27;s:21:"localisation/geo_zone";i:28;s:21:"localisation/language";i:29;s:25:"localisation/length_class";i:30;s:25:"localisation/order_status";i:31;s:26:"localisation/return_action";i:32;s:26:"localisation/return_reason";i:33;s:26:"localisation/return_status";i:34;s:25:"localisation/stock_status";i:35;s:22:"localisation/tax_class";i:36;s:21:"localisation/tax_rate";i:37;s:25:"localisation/weight_class";i:38;s:17:"localisation/zone";i:39;s:14:"module/account";i:40;s:16:"module/affiliate";i:41;s:13:"module/banner";i:42;s:17:"module/bestseller";i:43;s:15:"module/carousel";i:44;s:15:"module/category";i:45;s:15:"module/featured";i:46;s:13:"module/filter";i:47;s:18:"module/google_talk";i:48;s:18:"module/information";i:49;s:13:"module/latest";i:50;s:20:"module/news_category";i:51;s:19:"module/newsfeatured";i:52;s:17:"module/newslatest";i:53;s:16:"module/slideshow";i:54;s:14:"module/special";i:55;s:12:"module/store";i:56;s:14:"module/welcome";i:57;s:24:"payment/authorizenet_aim";i:58;s:21:"payment/bank_transfer";i:59;s:14:"payment/cheque";i:60;s:11:"payment/cod";i:61;s:21:"payment/free_checkout";i:62;s:22:"payment/klarna_account";i:63;s:22:"payment/klarna_invoice";i:64;s:14:"payment/liqpay";i:65;s:20:"payment/moneybookers";i:66;s:14:"payment/nochex";i:67;s:15:"payment/paymate";i:68;s:16:"payment/paypoint";i:69;s:13:"payment/payza";i:70;s:26:"payment/perpetual_payments";i:71;s:14:"payment/pp_pro";i:72;s:17:"payment/pp_pro_uk";i:73;s:19:"payment/pp_standard";i:74;s:15:"payment/sagepay";i:75;s:22:"payment/sagepay_direct";i:76;s:18:"payment/sagepay_us";i:77;s:19:"payment/twocheckout";i:78;s:28:"payment/web_payment_software";i:79;s:16:"payment/worldpay";i:80;s:27:"report/affiliate_commission";i:81;s:22:"report/customer_credit";i:82;s:22:"report/customer_online";i:83;s:21:"report/customer_order";i:84;s:22:"report/customer_reward";i:85;s:24:"report/product_purchased";i:86;s:21:"report/product_viewed";i:87;s:18:"report/sale_coupon";i:88;s:17:"report/sale_order";i:89;s:18:"report/sale_return";i:90;s:20:"report/sale_shipping";i:91;s:15:"report/sale_tax";i:92;s:14:"sale/affiliate";i:93;s:12:"sale/contact";i:94;s:11:"sale/coupon";i:95;s:13:"sale/customer";i:96;s:20:"sale/customer_ban_ip";i:97;s:19:"sale/customer_group";i:98;s:10:"sale/order";i:99;s:11:"sale/return";i:100;s:12:"sale/voucher";i:101;s:18:"sale/voucher_theme";i:102;s:15:"setting/setting";i:103;s:13:"setting/store";i:104;s:16:"shipping/auspost";i:105;s:17:"shipping/citylink";i:106;s:14:"shipping/fedex";i:107;s:13:"shipping/flat";i:108;s:13:"shipping/free";i:109;s:13:"shipping/item";i:110;s:23:"shipping/parcelforce_48";i:111;s:15:"shipping/pickup";i:112;s:19:"shipping/royal_mail";i:113;s:12:"shipping/ups";i:114;s:13:"shipping/usps";i:115;s:15:"shipping/weight";i:116;s:11:"tool/backup";i:117;s:14:"tool/error_log";i:118;s:12:"total/coupon";i:119;s:12:"total/credit";i:120;s:14:"total/handling";i:121;s:16:"total/klarna_fee";i:122;s:19:"total/low_order_fee";i:123;s:12:"total/reward";i:124;s:14:"total/shipping";i:125;s:15:"total/sub_total";i:126;s:9:"total/tax";i:127;s:11:"total/total";i:128;s:13:"total/voucher";i:129;s:9:"user/user";i:130;s:20:"user/user_permission";i:131;s:17:"module/newslatest";i:132;s:13:"module/latest";i:133;s:16:"module/tnt_yahoo";i:134;s:14:"module/visitor";}}'),
 	(10, 'Demonstration', '');
 /*!40000 ALTER TABLE `oc_user_group` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_voucher
+DROP TABLE IF EXISTS `oc_voucher`;
 CREATE TABLE IF NOT EXISTS `oc_voucher` (
   `voucher_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
@@ -2801,12 +2859,12 @@ CREATE TABLE IF NOT EXISTS `oc_voucher` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_voucher: 0 rows
-DELETE FROM `oc_voucher`;
 /*!40000 ALTER TABLE `oc_voucher` DISABLE KEYS */;
 /*!40000 ALTER TABLE `oc_voucher` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_voucher_history
+DROP TABLE IF EXISTS `oc_voucher_history`;
 CREATE TABLE IF NOT EXISTS `oc_voucher_history` (
   `voucher_history_id` int(11) NOT NULL AUTO_INCREMENT,
   `voucher_id` int(11) NOT NULL,
@@ -2817,12 +2875,12 @@ CREATE TABLE IF NOT EXISTS `oc_voucher_history` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_voucher_history: 0 rows
-DELETE FROM `oc_voucher_history`;
 /*!40000 ALTER TABLE `oc_voucher_history` DISABLE KEYS */;
 /*!40000 ALTER TABLE `oc_voucher_history` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_voucher_theme
+DROP TABLE IF EXISTS `oc_voucher_theme`;
 CREATE TABLE IF NOT EXISTS `oc_voucher_theme` (
   `voucher_theme_id` int(11) NOT NULL AUTO_INCREMENT,
   `image` varchar(255) NOT NULL,
@@ -2830,7 +2888,6 @@ CREATE TABLE IF NOT EXISTS `oc_voucher_theme` (
 ) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_voucher_theme: 3 rows
-DELETE FROM `oc_voucher_theme`;
 /*!40000 ALTER TABLE `oc_voucher_theme` DISABLE KEYS */;
 INSERT INTO `oc_voucher_theme` (`voucher_theme_id`, `image`) VALUES
 	(8, 'data/demo/canon_eos_5d_2.jpg'),
@@ -2840,6 +2897,7 @@ INSERT INTO `oc_voucher_theme` (`voucher_theme_id`, `image`) VALUES
 
 
 -- Dumping structure for table amthuctrangia.oc_voucher_theme_description
+DROP TABLE IF EXISTS `oc_voucher_theme_description`;
 CREATE TABLE IF NOT EXISTS `oc_voucher_theme_description` (
   `voucher_theme_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -2848,16 +2906,16 @@ CREATE TABLE IF NOT EXISTS `oc_voucher_theme_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_voucher_theme_description: 3 rows
-DELETE FROM `oc_voucher_theme_description`;
 /*!40000 ALTER TABLE `oc_voucher_theme_description` DISABLE KEYS */;
 INSERT INTO `oc_voucher_theme_description` (`voucher_theme_id`, `language_id`, `name`) VALUES
-	(6, 1, 'Christmas'),
-	(7, 1, 'Birthday'),
-	(8, 1, 'General');
+	(6, 2, 'Christmas'),
+	(7, 2, 'Birthday'),
+	(8, 2, 'General');
 /*!40000 ALTER TABLE `oc_voucher_theme_description` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_weight_class
+DROP TABLE IF EXISTS `oc_weight_class`;
 CREATE TABLE IF NOT EXISTS `oc_weight_class` (
   `weight_class_id` int(11) NOT NULL AUTO_INCREMENT,
   `value` decimal(15,8) NOT NULL DEFAULT '0.00000000',
@@ -2865,7 +2923,6 @@ CREATE TABLE IF NOT EXISTS `oc_weight_class` (
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_weight_class: 4 rows
-DELETE FROM `oc_weight_class`;
 /*!40000 ALTER TABLE `oc_weight_class` DISABLE KEYS */;
 INSERT INTO `oc_weight_class` (`weight_class_id`, `value`) VALUES
 	(1, 1.00000000),
@@ -2876,6 +2933,7 @@ INSERT INTO `oc_weight_class` (`weight_class_id`, `value`) VALUES
 
 
 -- Dumping structure for table amthuctrangia.oc_weight_class_description
+DROP TABLE IF EXISTS `oc_weight_class_description`;
 CREATE TABLE IF NOT EXISTS `oc_weight_class_description` (
   `weight_class_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) NOT NULL,
@@ -2885,17 +2943,17 @@ CREATE TABLE IF NOT EXISTS `oc_weight_class_description` (
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_weight_class_description: 4 rows
-DELETE FROM `oc_weight_class_description`;
 /*!40000 ALTER TABLE `oc_weight_class_description` DISABLE KEYS */;
 INSERT INTO `oc_weight_class_description` (`weight_class_id`, `language_id`, `title`, `unit`) VALUES
-	(1, 1, 'Kilogram', 'kg'),
-	(2, 1, 'Gram', 'g'),
-	(5, 1, 'Pound ', 'lb'),
-	(6, 1, 'Ounce', 'oz');
+	(1, 2, 'Kilogram', 'kg'),
+	(2, 2, 'Gram', 'g'),
+	(5, 2, 'Pound ', 'lb'),
+	(6, 2, 'Ounce', 'oz');
 /*!40000 ALTER TABLE `oc_weight_class_description` ENABLE KEYS */;
 
 
 -- Dumping structure for table amthuctrangia.oc_zone
+DROP TABLE IF EXISTS `oc_zone`;
 CREATE TABLE IF NOT EXISTS `oc_zone` (
   `zone_id` int(11) NOT NULL AUTO_INCREMENT,
   `country_id` int(11) NOT NULL,
@@ -2906,7 +2964,6 @@ CREATE TABLE IF NOT EXISTS `oc_zone` (
 ) ENGINE=MyISAM AUTO_INCREMENT=4033 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_zone: 3,985 rows
-DELETE FROM `oc_zone`;
 /*!40000 ALTER TABLE `oc_zone` DISABLE KEYS */;
 INSERT INTO `oc_zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 	(1, 1, 'Badakhshan', 'BDS', 1),
@@ -6898,6 +6955,7 @@ INSERT INTO `oc_zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 
 
 -- Dumping structure for table amthuctrangia.oc_zone_to_geo_zone
+DROP TABLE IF EXISTS `oc_zone_to_geo_zone`;
 CREATE TABLE IF NOT EXISTS `oc_zone_to_geo_zone` (
   `zone_to_geo_zone_id` int(11) NOT NULL AUTO_INCREMENT,
   `country_id` int(11) NOT NULL,
@@ -6909,7 +6967,6 @@ CREATE TABLE IF NOT EXISTS `oc_zone_to_geo_zone` (
 ) ENGINE=MyISAM AUTO_INCREMENT=66 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_zone_to_geo_zone: 2 rows
-DELETE FROM `oc_zone_to_geo_zone`;
 /*!40000 ALTER TABLE `oc_zone_to_geo_zone` DISABLE KEYS */;
 INSERT INTO `oc_zone_to_geo_zone` (`zone_to_geo_zone_id`, `country_id`, `zone_id`, `geo_zone_id`, `date_added`, `date_modified`) VALUES
 	(57, 222, 0, 3, '2010-02-26 22:33:24', '0000-00-00 00:00:00'),

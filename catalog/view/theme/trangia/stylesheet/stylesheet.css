@@ -4,11 +4,15 @@ html {
     padding: 0;
 }
 body {
-    background-color: #ffffff;
+    background-color: #A52E4E;
     color: #000000;
     font-family: Arial, Helvetica, sans-serif;
     margin: 0px;
     padding: 0px;
+}
+
+.bnflash{
+    height: 180px;
 }
 body, td, th, input, textarea, select, a {
     font-size: 12px;
@@ -69,6 +73,7 @@ label {
     margin-left: auto;
     margin-right: auto;
     text-align: left;
+    background: #fff;
 }
 #column-left {
     float: left;
@@ -77,6 +82,7 @@ label {
 #column-right {
     float: right;
     width: 300px;
+    padding-right: 10px;    
 }
 #content {
     min-height: 400px;
@@ -96,6 +102,7 @@ label {
     z-index: 99;
     width: 1024px;
     margin: 0px auto;
+    background: #fff;
 }
 #header #logo {
     position: absolute;
@@ -173,8 +180,8 @@ label {
 #header #cart .content {
     clear: both;
     display: none;
-    position: relative;
-    top: -1px;
+    position: absolute;
+    top: 48px;
     padding: 8px;
     min-height: 150px;
     border-top: 1px solid #EEEEEE;
@@ -190,9 +197,13 @@ label {
     box-shadow: 0px 2px 2px #DDDDDD;
     background: #FFF;
 }
+
+.clear{
+    clear: both;
+}
 #header #cart.active .heading {
     margin-top: 5px;
-    padding-top: 10px;
+    padding-top: 0;
     padding-bottom: 6px;
     border-top: 1px solid #EEEEEE;
     border-left: 1px solid #EEEEEE;
@@ -201,6 +212,8 @@ label {
     -moz-border-radius: 7px 7px 0px 0px;
     -khtml-border-radius: 7px 7px 0px 0px;
     border-radius: 7px 7px 0px 0px;
+    position: relative;
+    
 }
 #header #cart.active .content {
     display: block;
@@ -1723,7 +1736,7 @@ ul.box-filter > li ul {
 
 #ja-last ul li,ul.ja-last li {
     margin: 0;
-    padding: 3px 3px 6px 0px;
+    padding: 3px 3px 4px 0px;
     border-bottom: 1px solid #E6E6E6;
     background: none;
     position: relative;
@@ -1754,13 +1767,25 @@ ul.box-filter > li ul {
 }
 
 #ja-last ul span,ul.ja-last span {
-    font-size: 70%;
+    font-size: 90%;
     color: #ff9900;
     overflow:hidden;
 }
-#ja-last a.mostread,ul.ja-last a.mostread{
-    display:block;
-    overflow:hidden;
 
+#ja-last a.mostread, ul.ja-last a.mostread {
+    color: #00008B;
+    display: block;
+    overflow: hidden;
+    text-decoration: none;
 }
 
+.ja-last a.mostread-image{
+    float: left;
+    padding-right: 5px;
+    
+}
+
+.ja-last .box-right{
+    float: left;
+    padding: 5px 0 0 55px;
+}
