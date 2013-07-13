@@ -43,8 +43,8 @@
     <?php foreach ($stores as $store) { ?>
                 $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></iframe>');
     <?php } ?>
-                });
-                //--></script>
+        });
+        //--></script>
         <?php } ?>
         <?php echo $google_analytics; ?>
     </head>
@@ -52,7 +52,7 @@
         <div id="header">
             <div class="bnflash" style="background: url('<?php echo $config_header_backgroud ?>') no-repeat top center;height: 180px;">
                 <?php if (!empty($logo)) { ?>
-                <div class="logo"><a href="<?php echo $home; ?>"><img src="<?php echo $logo ?>"/></a></div>
+                    <div class="logo"><a href="<?php echo $home; ?>"><img src="<?php echo $logo ?>"/></a></div>
                 <?php } ?>
             </div>
             <div id="topmenu">
@@ -60,6 +60,11 @@
                     <div class="moduletable_menu">
                         <ul class="menu">
                             <li  id="current" class="active item1"><a href="<?php echo $home; ?>"><span><?php echo $text_home; ?></span></a></li>
+                            <?php if ($news_categories) { ?>
+                                <?php foreach ($news_categories as $category) { ?>
+                                    <li><a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a></li>
+                                <?php } ?>
+                            <?php } ?>
                             <?php if ($informations) { ?>
                                 <?php foreach ($informations as $information) { ?>
                                     <li><a href="<?php echo $information['href']; ?>"><?php echo $information['title']; ?></a></li>

@@ -22,32 +22,33 @@
         <div class="share" style="margin-top: 30px;"><!-- AddThis Button BEGIN -->
             <div class="addthis_default_style"><a class="addthis_button_compact"><?php echo $text_share; ?></a> <a class="addthis_button_email"></a><a class="addthis_button_print"></a> <a class="addthis_button_facebook"></a> <a class="addthis_button_twitter"></a></div>
             <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js"></script> 
-            <!-- AddThis Button END -->   
-            <?php if ($allow_comment) { ?>
-                <span style="padding-left: 30px;"><a href="<?php echo $current_url; ?>#comments" class="scroll"><?php echo $total_comments; ?></a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="<?php echo $current_url; ?>#comment-title" class="scroll"><?php echo $text_write; ?></a></span>
-            <?php } ?>
+           
         </div><br />  
+
+        <?php if ($news) { ?>
+            <div style="font-size: 13px; font-weight: bold; margin-top: 30px;"><?php echo $tab_related; ?></div>
+            <div><ul>
+                    <?php foreach ($news as $related_news) { ?>
+                        <li style="padding: 2px;"><a href="<?php echo $related_news['href']; ?>"><?php echo $related_news['name']; ?></a> <span style="color: gray; font-size: 11px;">(<?php echo $related_news['date_added']; ?>)</span></li>
+                    <?php } ?>
+                </ul></div>
+        <?php } ?>
+
+        <?php if ($other_news) { ?>
+            <div style="font-size: 13px; font-weight: bold; margin-top: 30px;"><?php echo $tab_others; ?></div>
+            <div>
+                <ul class="other_news">
+                    <?php foreach ($other_news as $other_news_item) { ?>
+                        <li style="padding: 2px;"><a href="<?php echo $other_news_item['href']; ?>"><?php echo $other_news_item['name']; ?></a> <span style="color: gray; font-size: 11px;">(<?php echo $other_news_item['date_added']; ?>)</span></li>
+                    <?php } ?>
+                </ul>
+            </div>
+        <?php } ?>
     </div>
 
 
 
-    <?php if ($news) { ?>
-        <div style="font-size: 13px; font-weight: bold; margin-top: 30px;"><?php echo $tab_related; ?></div>
-        <div><ul>
-                <?php foreach ($news as $related_news) { ?>
-                    <li style="padding: 2px;"><a href="<?php echo $related_news['href']; ?>"><?php echo $related_news['name']; ?></a> <span style="color: gray; font-size: 11px;">(<?php echo $related_news['date_added']; ?>)</span></li>
-                <?php } ?>
-            </ul></div>
-    <?php } ?>
 
-    <?php if ($other_news) { ?>
-        <div style="font-size: 13px; font-weight: bold; margin-top: 30px;"><?php echo $tab_others; ?></div>
-        <div><ul>
-                <?php foreach ($other_news as $other_news_item) { ?>
-                    <li style="padding: 2px;"><a href="<?php echo $other_news_item['href']; ?>"><?php echo $other_news_item['name']; ?></a> <span style="color: gray; font-size: 11px;">(<?php echo $other_news_item['date_added']; ?>)</span></li>
-                <?php } ?>
-            </ul></div>
-    <?php } ?>
 
     <?php if ($allow_comment) { ?>
         <div id="comments" style="margin-top: 40px;"><h2><?php echo $tab_comment; ?></h2>
@@ -83,11 +84,11 @@
     <script type="text/javascript"><!--
         $('#comment .pagination a').live('click', function() {
             $('#comment').slideUp('slow');
-        		
+                		
             $('#comment').load(this.href);
-        	
+                	
             $('#comment').slideDown('slow');
-        	
+                	
             return false;
         });			
 
@@ -112,10 +113,10 @@
                     if (data.error) {
                         $('#comment-title').after('<div class="warning">' + data.error + '</div>');
                     }
-        			
+                			
                     if (data.success) {
                         $('#comment-title').after('<div class="success">' + data.success + '</div>');
-        								
+                								
                         $('input[name=\'name\']').val('');
                         $('input[name=\'email\']').val('');
                         $('textarea[name=\'text\']').val('');
@@ -127,7 +128,7 @@
         //--></script>
     <script type="text/javascript"><!--
         jQuery(document).ready(function($) {
-         
+                 
             $(".scroll").click(function(event){		
                 event.preventDefault();
                 $('html,body').animate({scrollTop:$(this.hash).offset().top}, 500);

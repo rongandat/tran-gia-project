@@ -293,7 +293,7 @@ label {
     padding-bottom: 50px;
 }
 #header #cart .heading a{
-    background: none repeat scroll 0 0 #DEDEDE;
+    /*background: none repeat scroll 0 0 #DEDEDE;*/
     border-radius: 5px 5px 5px 5px;
     float: right;
     margin-top: 0;
@@ -849,6 +849,7 @@ a.button,input.button {
     font-size: 13px;
     line-height: 18px;
     text-decoration: none;
+    padding: 9px 13px 8px;
 }
 a.button span {
     color: #FFFFFF;
@@ -856,7 +857,6 @@ a.button span {
     font-size: 13px;
     font-weight: bold;
     line-height: 18px;
-    padding: 9px 13px 8px;
     white-space: nowrap;
 }
 a.button:hover,input.button:hover {
@@ -2255,4 +2255,115 @@ div.logo{
 }
 #wapper-footer {
     clear: both;
+}
+
+.clear{
+    clear: both;
+}
+
+.news-list{
+    padding: 15px 0px 0;
+}
+
+.news-list > div {
+    border-bottom: 1px solid #EEEEEE;
+    display: block;
+    float: left;
+    margin-bottom: 10px;
+    overflow: hidden;
+    padding: 10px;
+}
+.news-list > div:last-child{
+    border-bottom:none;
+}
+
+.news-list .news-content{
+    display: block;
+    float: left;
+    width: 565px;
+}
+
+.news-list .name a{
+    color: #154479;
+    cursor: pointer;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.news-list ul li {
+    padding-bottom:19px;
+}
+.news-list .left {
+    overflow:hidden;
+}
+.news-list .right {
+    float: right;
+    text-align:left;
+    min-height:150px;
+    width:120px;
+    margin-left:20px;
+    padding-left:20px;
+    border-left:1px solid #CCCCCC
+}
+.news-list ul li {
+    overflow:hidden;
+    border:1px solid #CCCCCC;
+    margin-bottom:20px;
+    padding:20px;
+}
+.news-list .image img{
+    background: none repeat scroll 0 0 #F4F4F2;
+}
+.news-list .image {
+    float: left;
+    margin-right:15px;
+}
+.news-list .name {
+    margin-bottom:10px;
+}
+
+.news-list .description {
+    overflow:hidden;
+    margin-bottom: 5px;
+}
+.news-list .rating {
+    color: #7B7B7B;
+}
+.news-list .price {
+    float:left;
+    margin-bottom:20px;
+}
+.product-list .price-old, .product-list .price-old {
+    font-weight:normal;
+}
+.news-list .price-tax {
+    font-size: 11px;
+    color:#414141;
+    font-weight: normal;
+    padding-top:5px;
+    display:block;
+}
+.news-list .cart {
+    margin-bottom:10px;
+}
+.news-list .wishlist, .news-list .compare {
+    position:relative;
+    margin-left:-5px;
+}
+.news-list .wishlist a {
+}
+.news-list .compare a {
+}
+.other_news{
+    background: none repeat scroll 0 0 transparent;
+    line-height: 1.6;
+    list-style-image: url("../image/arrow.png");
+    margin: 0 0 0 20px;
+    padding: 0;
+    width: 650px;
+}
+
+.other_news li a{
+    color: #00008B;
+    text-decoration: none;
 }

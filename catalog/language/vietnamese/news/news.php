@@ -25,6 +25,10 @@ $_['text_upload']       = 'Tập tin của bạn đã tải lên thành công!';
 $_['text_wait']         = 'Vui lòng đợi!';
 $_['text_tags']         = 'Tag:';
 $_['text_error']        = 'Không có sản phẩm!';
+$_['text_no_comment']        = 'Không có đánh giá nào!';
+$_['text_post_on']        = 'Đăng lúc';
+$_['text_viewed']        = 'Số người xem: ';
+$_['button_send']        = 'Gửi đánh giá';
 
 // Entry
 $_['entry_name']        = 'Tên bạn:';
@@ -39,7 +43,7 @@ $_['entry_captcha']     = 'Nhập mã kiểm tra vào ô bên dưới:';
 $_['tab_description']   = 'Nội dung';
 $_['tab_related']       = 'Tin liên quan'; 
 $_['tab_others']       = 'Các tin khác'; 
-$_['tab_comment']       = 'Comments'; 
+$_['tab_comment']       = 'Đánh giá'; 
 
 //Error
 $_['error_name']        = 'Warning: Your Name must be between 3 and 25 characters!';

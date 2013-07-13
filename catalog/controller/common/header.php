@@ -145,6 +145,20 @@ class ControllerCommonHeader extends Controller {
                 );
             }
         }
+        
+        $this->load->model('catalog/news_category');
+        $news_categories = $this->model_catalog_news_category->getNewsCategories(0);
+        $this->data['news_categories'] = array();
+        foreach ($news_categories as $category) {
+            if ($category['top']) {
+                // Level 1
+                $this->data['news_categories'][] = array(
+                    'name' => $category['name'],
+                    'column' => $category['column'] ? $category['column'] : 1,
+                    'href' => $this->url->link('news/news_category', 'cat_id=' . $category['news_category_id'])
+                );
+            }
+        }
 
         $this->children = array(
             'module/language',
