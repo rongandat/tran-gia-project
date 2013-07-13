@@ -46,7 +46,7 @@ class ControllerCommonFooter extends Controller {
         $this->data['newsletter'] = $this->url->link('account/newsletter', '', 'SSL');
 
         $this->data['powered'] = sprintf($this->language->get('text_powered'), $this->config->get('config_name'), date('Y', time()));
-
+        $this->data['config_info_footer'] = html_entity_decode($this->config->get('config_info_footer'));
         // Whos Online
         if ($this->config->get('config_customer_online')) {
             $this->load->model('tool/online');

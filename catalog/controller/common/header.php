@@ -11,6 +11,7 @@ class ControllerCommonHeader extends Controller {
             $server = $this->config->get('config_url');
         }
         $this->data['text_config_information'] = $this->config->get('config_information');
+        $this->data['config_header_backgroud'] = $server . 'image/'.$this->config->get('config_header_backgroud');
 
         $this->data['base'] = $server;
         $this->data['description'] = $this->document->getDescription();

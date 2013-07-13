@@ -2006,3 +2006,55 @@ ul {
     margin: 0;
     padding: 0;
 }
+
+
+.box-product-feature > div {
+    display: inline-block;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    min-height: 250px !important;
+    vertical-align: top;
+    width: 206px;
+}
+
+
+.box-product-feature .image {
+    display: block;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+
+.box-product-feature .name a {
+    color: #00008F;
+    display: block;
+    font-weight: bold;
+    margin-bottom: 4px;
+    text-align: center;
+    text-decoration: none;
+}
+
+
+.box-product-feature .price {
+    color: #FF0000;
+    display: block;
+    font-weight: bold;
+    margin-bottom: 4px;
+    text-align: center;
+}
+.box-product-feature .cart {
+    text-align: center;
+}
+
+.info{
+    border: 1px solid #DDDDDD;
+    padding: 0 10px;
+}
+.news{
+    border: 1px solid #DDDDDD;
+    padding: 10px;
+}
+
+div.logo{
+    padding: 10px 18px;
+}

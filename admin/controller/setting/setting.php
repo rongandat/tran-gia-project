@@ -141,6 +141,9 @@ class ControllerSettingSetting extends Controller {
 		$this->data['entry_error_filename'] = $this->language->get('entry_error_filename');
 		$this->data['entry_google_analytics'] = $this->language->get('entry_google_analytics');
 		$this->data['entry_information'] = $this->language->get('entry_information');
+		$this->data['entry_image_header'] = $this->language->get('entry_image_header');
+		$this->data['entry_header_backgroud'] = $this->language->get('entry_header_backgroud');
+		$this->data['entry_footer'] = $this->language->get('entry_footer');
 		
 		$this->data['button_save'] = $this->language->get('button_save');
 		$this->data['button_cancel'] = $this->language->get('button_cancel');
@@ -385,6 +388,11 @@ class ControllerSettingSetting extends Controller {
 			$this->data['config_information'] = $this->request->post['config_information'];
 		} else {
 			$this->data['config_information'] = $this->config->get('config_information');
+		}
+		if (isset($this->request->post['config_info_footer'])) {
+			$this->data['config_info_footer'] = $this->request->post['config_info_footer'];
+		} else {
+			$this->data['config_info_footer'] = $this->config->get('config_info_footer');
 		}
 
 		if (isset($this->request->post['config_title'])) {
@@ -729,6 +737,18 @@ class ControllerSettingSetting extends Controller {
 			$this->data['icon'] = $this->model_tool_image->resize($this->config->get('config_icon'), 100, 100);		
 		} else {
 			$this->data['icon'] = $this->model_tool_image->resize('no_image.jpg', 100, 100);
+		}
+                
+		if (isset($this->request->post['config_header_backgroud'])) {
+			$this->data['config_header_backgroud'] = $this->request->post['config_header_backgroud'];
+		} else {
+			$this->data['config_header_backgroud'] = $this->config->get('config_header_backgroud');			
+		}
+		
+		if ($this->config->get('config_header_backgroud') && file_exists(DIR_IMAGE . $this->config->get('config_header_backgroud')) && is_file(DIR_IMAGE . $this->config->get('config_header_backgroud'))) {
+			$this->data['header_backgroud'] = $this->model_tool_image->resize($this->config->get('config_header_backgroud'), 100, 100);		
+		} else {
+			$this->data['header_backgroud'] = $this->model_tool_image->resize('no_image.jpg', 100, 100);
 		}
 		
 		$this->data['no_image'] = $this->model_tool_image->resize('no_image.jpg', 100, 100);

@@ -42,16 +42,18 @@
                 $(document).ready(function() {
     <?php foreach ($stores as $store) { ?>
                 $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></iframe>');
-            <?php } ?>
-                    });
-                    //--></script>
+    <?php } ?>
+                });
+                //--></script>
         <?php } ?>
         <?php echo $google_analytics; ?>
     </head>
     <body>
         <div id="header">
-            <div class="bnflash">
-                <embed src="<?php echo HTTP_SERVER; ?>image/banner.swf" alt="Banh da nem, banh da nem lang cheu" quality="high" type="application/x-shockwave-flash" wmode="transparent" width="1024" height="180" pluginspage="http://www.macromedia.com/go/getflashplayer" allowscriptaccess="always" __idm_id__="-1942421503">		
+            <div class="bnflash" style="background: url('<?php echo $config_header_backgroud ?>') no-repeat top center;height: 180px;">
+                <?php if (!empty($logo)) { ?>
+                <div class="logo"><a href="<?php echo $home; ?>"><img src="<?php echo $logo ?>"/></a></div>
+                <?php } ?>
             </div>
             <div id="topmenu">
                 <div id="links">
