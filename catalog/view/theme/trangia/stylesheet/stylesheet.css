@@ -38,11 +38,12 @@ p {
 }
 a, a:visited, a b {
     color: #38B0E3;
-    text-decoration: underline;
+    text-decoration: none;
     cursor: pointer;
+
 }
 a:hover {
-    text-decoration: none;
+    color: #711391;
 }
 a img {
     border: none;
@@ -390,7 +391,7 @@ label {
     height: 40px;
     line-height: 39px;
     margin-top: 2px;
-    margin-left: 0px;
+    margin-left: 10px;
     color: #ff0000;
     font-weight: bold;
     font-family: Candara;
@@ -729,7 +730,6 @@ a.button:hover, input.button:hover {
 }
 .box .box-heading {
     background: url(../image/tg-sanpham.png) no-repeat left top;
-    width: 310px;
     height: 35px;
     line-height: 33px;
     margin: 0px 0px 0px 2px;
@@ -978,6 +978,18 @@ ul.box-filter > li ul {
     border-bottom: 1px solid #EEEEEE;
     padding-bottom: 5px;
     overflow: auto;
+    margin-bottom: 10px;
+}
+h1.category-heading{
+    background: url(../image/tg-sanpham.png) no-repeat left top;
+    width: 310px;
+    height: 35px;
+    line-height: 33px;
+    margin: 0px 0px 0px 2px;
+    padding: 0px 0px 0px 10px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
 }
 .product-filter .display {
     margin-right: 15px;
@@ -1009,6 +1021,9 @@ ul.box-filter > li ul {
 .product-list > div {
     overflow: auto;
     margin-bottom: 15px;
+}
+.product-list{
+    padding: 10px 0;
 }
 .product-list .right {
     float: right;
@@ -1085,13 +1100,17 @@ ul.box-filter > li ul {
 .product-grid {
     width: 100%;
     overflow: auto;
+    padding: 10px 0;
 }
 .product-grid > div {
-    width: 130px;
+    width: 186px;
+    height: 200px;
     display: inline-block;
     vertical-align: top;
-    margin-right: 20px;
-    margin-bottom: 15px;
+    margin: 0 0 5px 5px;
+    border: 1px solid #F1F1F1;
+    padding: 5px 0;
+    text-align: center;
 }
 #column-left + #column-right + #content .product-grid > div {
     width: 125px;
@@ -1102,10 +1121,9 @@ ul.box-filter > li ul {
 }
 .product-grid .image img {
     padding: 3px;
-    border: 1px solid #E7E7E7;
 }
 .product-grid .name a {
-    color: #38B0E3;
+    color: #00008B;
     font-weight: bold;
     text-decoration: none;
     display: block;
@@ -1121,7 +1139,7 @@ ul.box-filter > li ul {
 .product-grid .price {
     display: block;
     font-weight: bold;
-    color: #333333;
+    color: #FF0000;
     margin-bottom: 4px;
 }
 .product-grid .price-old {
@@ -1878,6 +1896,33 @@ ul.box-filter > li ul {
 
 .box-news-content div.name a{
     text-decoration: none;
-     color: #FF0000;
+    color: #FF0000;
     line-height: 25px;
+}
+
+.breadcrumb a{
+    color: #00008B;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.breadcrumb a:hover{
+    color: #711391
+}
+
+.breadcrumb{
+    color: #FF0000;
+    font-family: Candara;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 39px;
+}
+
+h1{
+    color: #FF0000;
+    font-size: 25px;
+    font-weight: normal;
+    margin-bottom: 20px;
+    margin-top: 0;
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.01);
 }

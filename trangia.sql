@@ -3,7 +3,7 @@
 -- Server version:               5.5.16 - MySQL Community Server (GPL)
 -- Server OS:                    Win32
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2013-07-13 00:53:47
+-- Date/time:                    2013-07-13 11:09:03
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -761,7 +761,7 @@ CREATE TABLE IF NOT EXISTS `oc_currency` (
 -- Dumping data for table amthuctrangia.oc_currency: 1 rows
 /*!40000 ALTER TABLE `oc_currency` DISABLE KEYS */;
 INSERT INTO `oc_currency` (`currency_id`, `title`, `code`, `symbol_left`, `symbol_right`, `decimal_place`, `value`, `status`, `date_modified`) VALUES
-	(4, 'VNĐ', 'VNĐ', '', 'VNĐ', '0', 1.00000000, 1, '2013-07-12 19:45:01');
+	(4, 'VNĐ', 'VNĐ', '', 'VNĐ', '0', 1.00000000, 1, '2013-07-13 05:06:26');
 /*!40000 ALTER TABLE `oc_currency` ENABLE KEYS */;
 
 
@@ -1055,7 +1055,7 @@ CREATE TABLE IF NOT EXISTS `oc_extension` (
   `type` varchar(32) NOT NULL,
   `code` varchar(32) NOT NULL,
   PRIMARY KEY (`extension_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=432 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=433 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_extension: 24 rows
 /*!40000 ALTER TABLE `oc_extension` DISABLE KEYS */;
@@ -1409,7 +1409,7 @@ CREATE TABLE IF NOT EXISTS `oc_news` (
   `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `viewed` int(5) NOT NULL DEFAULT '0',
   PRIMARY KEY (`news_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=23 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=29 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- Dumping data for table amthuctrangia.oc_news: 18 rows
 /*!40000 ALTER TABLE `oc_news` DISABLE KEYS */;
@@ -1426,7 +1426,7 @@ INSERT INTO `oc_news` (`news_id`, `image`, `date_available`, `sort_order`, `comm
 	(20, 'data/tin/tin4.jpg', '2013-07-11', 1, 1, 1, 1, '2013-07-12 19:03:44', '0000-00-00 00:00:00', 0),
 	(21, 'data/tin/tin5.jpg', '2013-07-11', 1, 1, 1, 1, '2013-07-12 19:32:07', '0000-00-00 00:00:00', 0),
 	(22, 'data/tin/tin3.jpg', '2013-07-11', 1, 1, 1, 1, '2013-07-12 19:33:32', '0000-00-00 00:00:00', 0),
-	(23, 'data/tin/h1.jpg', '2013-07-11', 1, 1, 1, 1, '2013-07-13 00:17:56', '0000-00-00 00:00:00', 0),
+	(23, 'data/tin/h1.jpg', '2013-07-11', 1, 1, 1, 1, '2013-07-13 00:17:56', '0000-00-00 00:00:00', 1),
 	(24, 'data/tin/h2.jpg', '2013-07-11', 1, 1, 1, 1, '2013-07-13 00:18:57', '2013-07-13 00:19:04', 0),
 	(25, 'data/tin/h3.jpg', '2013-07-11', 1, 1, 1, 1, '2013-07-13 00:20:01', '0000-00-00 00:00:00', 0),
 	(26, 'data/tin/h4.jpg', '2013-07-11', 1, 1, 1, 1, '2013-07-13 00:24:14', '0000-00-00 00:00:00', 0),
@@ -1539,7 +1539,7 @@ CREATE TABLE IF NOT EXISTS `oc_news_description` (
   `meta_keyword` varchar(255) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`news_id`,`language_id`),
   KEY `name` (`name`)
-) ENGINE=MyISAM AUTO_INCREMENT=23 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=29 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- Dumping data for table amthuctrangia.oc_news_description: 18 rows
 /*!40000 ALTER TABLE `oc_news_description` DISABLE KEYS */;
@@ -2114,7 +2114,7 @@ CREATE TABLE IF NOT EXISTS `oc_product` (
 /*!40000 ALTER TABLE `oc_product` DISABLE KEYS */;
 INSERT INTO `oc_product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `isbn`, `mpn`, `location`, `quantity`, `stock_status_id`, `image`, `manufacturer_id`, `shipping`, `price`, `points`, `tax_class_id`, `date_available`, `weight`, `weight_class_id`, `length`, `width`, `height`, `length_class_id`, `subtract`, `minimum`, `sort_order`, `status`, `date_added`, `date_modified`, `viewed`) VALUES
 	(54, 'banhdanem05', '', '', '', '', '', '', '', 1, 5, 'data/B__nh___a_Nem_Vu_50af8bfedbd83.jpg', 0, 1, 6000.0000, 0, 0, '2013-07-11', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, '2013-07-12 17:28:14', '0000-00-00 00:00:00', 1),
-	(55, 'banhdanem06', '', '', '', '', '', '', '', 1, 5, 'data/B__nh___a_Vu__ng_50af8c7fd0e7a.jpg', 0, 1, 6000.0000, 0, 0, '2013-07-11', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, '2013-07-12 17:29:10', '0000-00-00 00:00:00', 0),
+	(55, 'banhdanem06', '', '', '', '', '', '', '', 1, 5, 'data/B__nh___a_Vu__ng_50af8c7fd0e7a.jpg', 0, 1, 6000.0000, 0, 0, '2013-07-11', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, '2013-07-12 17:29:10', '0000-00-00 00:00:00', 6),
 	(50, 'banhdanem01', '', '', '', '', '', '', '', 1, 5, 'data/banh hinh chu nhat.jpg', 0, 1, 150000.0000, 0, 0, '2013-07-11', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, '2013-07-12 17:22:31', '0000-00-00 00:00:00', 1),
 	(51, 'banhdanem02', '', '', '', '', '', '', '', 1, 5, 'data/B__nh___a_Nem_C__50af8e6cc7d3a.jpg', 0, 1, 150000.0000, 0, 0, '2013-07-11', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, '2013-07-12 17:23:59', '0000-00-00 00:00:00', 0),
 	(52, 'banhdanem03', '', '', '', '', '', '', '', 1, 5, 'data/B__nh___a_Nem_C__50af8e2316aad.jpg', 0, 1, 20000.0000, 0, 0, '2013-07-11', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, '2013-07-12 17:25:15', '0000-00-00 00:00:00', 0),
@@ -2506,9 +2506,9 @@ CREATE TABLE IF NOT EXISTS `oc_setting` (
   `value` text NOT NULL,
   `serialized` tinyint(1) NOT NULL,
   PRIMARY KEY (`setting_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=505 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=704 DEFAULT CHARSET=utf8;
 
--- Dumping data for table amthuctrangia.oc_setting: 178 rows
+-- Dumping data for table amthuctrangia.oc_setting: 179 rows
 /*!40000 ALTER TABLE `oc_setting` DISABLE KEYS */;
 INSERT INTO `oc_setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `serialized`) VALUES
 	(1, 0, 'shipping', 'shipping_sort_order', '3', 0),
@@ -2539,7 +2539,7 @@ INSERT INTO `oc_setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `se
 	(53, 0, 'reward', 'reward_sort_order', '2', 0),
 	(54, 0, 'reward', 'reward_status', '1', 0),
 	(56, 0, 'affiliate', 'affiliate_module', 'a:1:{i:0;a:4:{s:9:"layout_id";s:2:"10";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
-	(356, 0, 'category', 'category_module', 'a:2:{i:0;a:4:{s:9:"layout_id";s:1:"1";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"3";}i:1;a:4:{s:9:"layout_id";s:1:"3";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
+	(669, 0, 'category', 'category_module', 'a:3:{i:0;a:4:{s:9:"layout_id";s:1:"1";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"3";}i:1;a:4:{s:9:"layout_id";s:1:"3";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}i:2;a:4:{s:9:"layout_id";s:1:"2";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"2";}}', 1),
 	(60, 0, 'account', 'account_module', 'a:1:{i:0;a:4:{s:9:"layout_id";s:1:"6";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
 	(94, 0, 'voucher', 'voucher_sort_order', '8', 0),
 	(95, 0, 'voucher', 'voucher_status', '1', 0),
@@ -2551,7 +2551,7 @@ INSERT INTO `oc_setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `se
 	(103, 0, 'free_checkout', 'free_checkout_status', '1', 0),
 	(104, 0, 'free_checkout', 'free_checkout_order_status_id', '1', 0),
 	(511, 0, 'slideshow', 'slideshow_module', 'a:1:{i:0;a:7:{s:9:"banner_id";s:1:"9";s:5:"width";s:3:"700";s:6:"height";s:3:"340";s:9:"layout_id";s:1:"1";s:8:"position";s:15:"banner_top_left";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
-	(399, 0, 'banner', 'banner_module', 'a:1:{i:0;a:7:{s:9:"banner_id";s:2:"11";s:5:"width";s:3:"210";s:6:"height";s:3:"200";s:9:"layout_id";s:1:"1";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"4";}}', 1),
+	(668, 0, 'banner', 'banner_module', 'a:1:{i:0;a:7:{s:9:"banner_id";s:2:"11";s:5:"width";s:3:"210";s:6:"height";s:3:"200";s:9:"layout_id";s:1:"1";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"4";}}', 1),
 	(612, 0, 'config', 'config_seo_url', '0', 0),
 	(613, 0, 'config', 'config_file_extension_allowed', 'txt\r\npng\r\njpe\r\njpeg\r\njpg\r\ngif\r\nbmp\r\nico\r\ntiff\r\ntif\r\nsvg\r\nsvgz\r\nzip\r\nrar\r\nmsi\r\ncab\r\nmp3\r\nqt\r\nmov\r\npdf\r\npsd\r\nai\r\neps\r\nps\r\ndoc\r\nrtf\r\nxls\r\nppt\r\nodt\r\nods', 0),
 	(614, 0, 'config', 'config_file_mime_allowed', 'text/plain\r\nimage/png\r\nimage/jpeg\r\nimage/jpeg\r\nimage/jpeg\r\nimage/gif\r\nimage/bmp\r\nimage/vnd.microsoft.icon\r\nimage/tiff\r\nimage/tiff\r\nimage/svg+xml\r\nimage/svg+xml\r\napplication/zip\r\napplication/x-rar-compressed\r\napplication/x-msdownload\r\napplication/vnd.ms-cab-compressed\r\naudio/mpeg\r\nvideo/quicktime\r\nvideo/quicktime\r\napplication/pdf\r\nimage/vnd.adobe.photoshop\r\napplication/postscript\r\napplication/postscript\r\napplication/postscript\r\napplication/msword\r\napplication/rtf\r\napplication/vnd.ms-excel\r\napplication/vnd.ms-powerpoint\r\napplication/vnd.oasis.opendocument.text\r\napplication/vnd.oasis.opendocument.spreadsheet', 0),
@@ -2643,40 +2643,37 @@ INSERT INTO `oc_setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `se
 	(527, 0, 'config', 'config_meta_description', 'My Store', 0),
 	(526, 0, 'config', 'config_title', 'Your Store', 0),
 	(525, 0, 'config', 'config_information', ' TRANGIA..,JSC Cảm ơn quý khách đã ghé thăm Website công ty, Kính chúc quý khách sức khỏe - thành đạt - hạnh phúc !', 0),
-	(357, 0, 'tnt_yahoo', 'tnt_yahoo_yahooid1', 'doidondoc_tinhtieutan', 0),
-	(358, 0, 'tnt_yahoo', 'tnt_yahoo_mobile1', '01694046627', 0),
-	(359, 0, 'tnt_yahoo', 'tnt_yahoo_image1', '1', 0),
-	(360, 0, 'tnt_yahoo', 'tnt_yahoo_yahooid2', '', 0),
-	(361, 0, 'tnt_yahoo', 'tnt_yahoo_mobile2', '', 0),
-	(362, 0, 'tnt_yahoo', 'tnt_yahoo_image2', '', 0),
-	(363, 0, 'tnt_yahoo', 'tnt_yahoo_yahooid3', '', 0),
-	(364, 0, 'tnt_yahoo', 'tnt_yahoo_mobile3', '', 0),
-	(365, 0, 'tnt_yahoo', 'tnt_yahoo_image3', '', 0),
-	(366, 0, 'tnt_yahoo', 'tnt_yahoo_yahooid4', '', 0),
-	(367, 0, 'tnt_yahoo', 'tnt_yahoo_mobile4', '', 0),
-	(368, 0, 'tnt_yahoo', 'tnt_yahoo_image4', '', 0),
-	(369, 0, 'tnt_yahoo', 'tnt_yahoo_yahooid5', '', 0),
-	(370, 0, 'tnt_yahoo', 'tnt_yahoo_mobile5', '', 0),
-	(371, 0, 'tnt_yahoo', 'tnt_yahoo_image5', '', 0),
-	(372, 0, 'tnt_yahoo', 'tnt_skype_skypeid1', '', 0),
-	(373, 0, 'tnt_yahoo', 'tnt_skype_mobile1', '', 0),
-	(374, 0, 'tnt_yahoo', 'tnt_skype_image1', '', 0),
-	(375, 0, 'tnt_yahoo', 'tnt_skype_skypeid2', '', 0),
-	(376, 0, 'tnt_yahoo', 'tnt_skype_mobile2', '', 0),
-	(377, 0, 'tnt_yahoo', 'tnt_skype_image2', '', 0),
-	(378, 0, 'tnt_yahoo', 'tnt_skype_skypeid3', '', 0),
-	(379, 0, 'tnt_yahoo', 'tnt_skype_mobile3', '', 0),
-	(380, 0, 'tnt_yahoo', 'tnt_skype_image3', '', 0),
-	(381, 0, 'tnt_yahoo', 'tnt_skype_skypeid4', '', 0),
-	(382, 0, 'tnt_yahoo', 'tnt_skype_mobile4', '', 0),
-	(383, 0, 'tnt_yahoo', 'tnt_skype_image4', '', 0),
-	(384, 0, 'tnt_yahoo', 'tnt_skype_skypeid5', '', 0),
-	(385, 0, 'tnt_yahoo', 'tnt_skype_mobile5', '', 0),
-	(386, 0, 'tnt_yahoo', 'tnt_skype_image5', '', 0),
-	(387, 0, 'tnt_yahoo', 'tnt_yahoo_module', 'a:1:{i:0;a:4:{s:9:"layout_id";s:1:"1";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"3";}}', 1),
-	(396, 0, 'visitor', 'visitor_expire', '600', 0),
-	(397, 0, 'visitor', 'visitor_theme', 'Shopping', 0),
-	(398, 0, 'visitor', 'visitor_module', 'a:1:{i:0;a:4:{s:9:"layout_id";s:1:"1";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"3";}}', 1),
+	(699, 0, 'tnt_yahoo', 'tnt_skype_image5', '', 0),
+	(698, 0, 'tnt_yahoo', 'tnt_skype_mobile5', '', 0),
+	(697, 0, 'tnt_yahoo', 'tnt_skype_skypeid5', '', 0),
+	(696, 0, 'tnt_yahoo', 'tnt_skype_image4', '', 0),
+	(695, 0, 'tnt_yahoo', 'tnt_skype_mobile4', '', 0),
+	(694, 0, 'tnt_yahoo', 'tnt_skype_skypeid4', '', 0),
+	(693, 0, 'tnt_yahoo', 'tnt_skype_image3', '', 0),
+	(692, 0, 'tnt_yahoo', 'tnt_skype_mobile3', '', 0),
+	(691, 0, 'tnt_yahoo', 'tnt_skype_skypeid3', '', 0),
+	(690, 0, 'tnt_yahoo', 'tnt_skype_image2', '', 0),
+	(689, 0, 'tnt_yahoo', 'tnt_skype_mobile2', '', 0),
+	(688, 0, 'tnt_yahoo', 'tnt_skype_skypeid2', '', 0),
+	(687, 0, 'tnt_yahoo', 'tnt_skype_image1', '', 0),
+	(686, 0, 'tnt_yahoo', 'tnt_skype_mobile1', '', 0),
+	(685, 0, 'tnt_yahoo', 'tnt_skype_skypeid1', '', 0),
+	(684, 0, 'tnt_yahoo', 'tnt_yahoo_image5', '', 0),
+	(683, 0, 'tnt_yahoo', 'tnt_yahoo_mobile5', '', 0),
+	(682, 0, 'tnt_yahoo', 'tnt_yahoo_yahooid5', '', 0),
+	(681, 0, 'tnt_yahoo', 'tnt_yahoo_image4', '', 0),
+	(680, 0, 'tnt_yahoo', 'tnt_yahoo_mobile4', '', 0),
+	(679, 0, 'tnt_yahoo', 'tnt_yahoo_yahooid4', '', 0),
+	(678, 0, 'tnt_yahoo', 'tnt_yahoo_image3', '', 0),
+	(677, 0, 'tnt_yahoo', 'tnt_yahoo_mobile3', '', 0),
+	(676, 0, 'tnt_yahoo', 'tnt_yahoo_yahooid3', '', 0),
+	(675, 0, 'tnt_yahoo', 'tnt_yahoo_image2', '', 0),
+	(674, 0, 'tnt_yahoo', 'tnt_yahoo_mobile2', '', 0),
+	(673, 0, 'tnt_yahoo', 'tnt_yahoo_yahooid2', '', 0),
+	(672, 0, 'tnt_yahoo', 'tnt_yahoo_image1', '1', 0),
+	(671, 0, 'tnt_yahoo', 'tnt_yahoo_mobile1', '01694046627', 0),
+	(670, 0, 'tnt_yahoo', 'tnt_yahoo_yahooid1', 'doidondoc_tinhtieutan', 0),
+	(703, 0, 'visitor', 'visitor_module', 'a:3:{i:0;a:4:{s:9:"layout_id";s:1:"1";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:2:"13";}i:1;a:4:{s:9:"layout_id";s:1:"3";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:2:"13";}i:2;a:4:{s:9:"layout_id";s:1:"2";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:2:"13";}}', 1),
 	(524, 0, 'config', 'config_fax', '', 0),
 	(523, 0, 'config', 'config_telephone', '123456789', 0),
 	(522, 0, 'config', 'config_email', 'admin@gmail.com', 0),
@@ -2684,12 +2681,15 @@ INSERT INTO `oc_setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `se
 	(520, 0, 'config', 'config_owner', 'Your Name', 0),
 	(519, 0, 'config', 'config_name', 'Your Store', 0),
 	(509, 0, 'newslatest', 'newslatest_module', 'a:1:{i:0;a:10:{s:5:"limit";s:1:"6";s:16:"limitdescription";s:3:"200";s:11:"image_width";s:2:"40";s:12:"image_height";s:2:"40";s:9:"layout_id";s:1:"1";s:8:"position";s:16:"banner_top_right";s:11:"description";s:1:"1";s:11:"imagestatus";s:1:"1";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
-	(516, 0, 'newsfeatured', 'news', 'b', 0),
-	(517, 0, 'newsfeatured', 'newsfeatured_news', '23,25,24,26,27,28', 0),
-	(518, 0, 'newsfeatured', 'newsfeatured_module', 'a:1:{i:0;a:10:{s:5:"limit";s:1:"6";s:16:"limitdescription";s:3:"200";s:11:"image_width";s:3:"163";s:12:"image_height";s:3:"140";s:9:"layout_id";s:1:"1";s:8:"position";s:13:"banner_center";s:11:"description";s:1:"1";s:11:"imagestatus";s:1:"1";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
+	(626, 0, 'newsfeatured', 'news', '', 0),
 	(620, 0, 'config', 'config_error_log', '1', 0),
 	(621, 0, 'config', 'config_error_filename', 'error.txt', 0),
-	(622, 0, 'config', 'config_google_analytics', '', 0);
+	(622, 0, 'config', 'config_google_analytics', '', 0),
+	(627, 0, 'newsfeatured', 'newsfeatured_news', '23,25,24,26,27,28', 0),
+	(628, 0, 'newsfeatured', 'newsfeatured_module', 'a:3:{i:0;a:10:{s:5:"limit";s:1:"6";s:16:"limitdescription";s:3:"200";s:11:"image_width";s:3:"163";s:12:"image_height";s:3:"140";s:9:"layout_id";s:1:"1";s:8:"position";s:13:"banner_center";s:11:"description";s:1:"1";s:11:"imagestatus";s:1:"1";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}i:1;a:10:{s:5:"limit";s:1:"6";s:16:"limitdescription";s:3:"200";s:11:"image_width";s:3:"163";s:12:"image_height";s:3:"140";s:9:"layout_id";s:1:"3";s:8:"position";s:13:"banner_center";s:11:"description";s:1:"1";s:11:"imagestatus";s:1:"1";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}i:2;a:10:{s:5:"limit";s:1:"6";s:16:"limitdescription";s:3:"200";s:11:"image_width";s:3:"163";s:12:"image_height";s:3:"140";s:9:"layout_id";s:1:"2";s:8:"position";s:13:"banner_center";s:11:"description";s:1:"1";s:11:"imagestatus";s:1:"1";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
+	(700, 0, 'tnt_yahoo', 'tnt_yahoo_module', 'a:3:{i:0;a:4:{s:9:"layout_id";s:1:"1";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"3";}i:1;a:4:{s:9:"layout_id";s:1:"3";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}i:2;a:4:{s:9:"layout_id";s:1:"2";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
+	(702, 0, 'visitor', 'visitor_theme', 'Shopping', 0),
+	(701, 0, 'visitor', 'visitor_expire', '600', 0);
 /*!40000 ALTER TABLE `oc_setting` ENABLE KEYS */;
 
 
@@ -2811,7 +2811,7 @@ CREATE TABLE IF NOT EXISTS `oc_url_alias` (
   `query` varchar(255) NOT NULL,
   `keyword` varchar(255) NOT NULL,
   PRIMARY KEY (`url_alias_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=781 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=788 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_url_alias: 13 rows
 /*!40000 ALTER TABLE `oc_url_alias` DISABLE KEYS */;
