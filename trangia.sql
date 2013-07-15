@@ -3,18 +3,12 @@
 -- Server version:               5.5.16 - MySQL Community Server (GPL)
 -- Server OS:                    Win32
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2013-07-13 17:43:32
+-- Date/time:                    2013-07-14 11:02:28
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET NAMES utf8 */;
 /*!40014 SET FOREIGN_KEY_CHECKS=0 */;
-
--- Dumping database structure for amthuctrangia
-DROP DATABASE IF EXISTS `amthuctrangia`;
-CREATE DATABASE IF NOT EXISTS `amthuctrangia` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `amthuctrangia`;
-
 
 -- Dumping structure for table amthuctrangia.oc_address
 DROP TABLE IF EXISTS `oc_address`;
@@ -297,14 +291,11 @@ CREATE TABLE IF NOT EXISTS `oc_category` (
   PRIMARY KEY (`category_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=65 DEFAULT CHARSET=utf8;
 
--- Dumping data for table amthuctrangia.oc_category: 6 rows
+-- Dumping data for table amthuctrangia.oc_category: 3 rows
 /*!40000 ALTER TABLE `oc_category` DISABLE KEYS */;
 INSERT INTO `oc_category` (`category_id`, `image`, `parent_id`, `top`, `column`, `sort_order`, `status`, `date_added`, `date_modified`) VALUES
 	(61, '', 0, 0, 1, 0, 1, '2013-07-12 16:33:03', '2013-07-12 16:33:03'),
-	(62, '', 0, 0, 1, 0, 1, '2013-07-12 16:33:12', '2013-07-12 16:33:12'),
 	(60, '', 0, 0, 1, 0, 1, '2013-07-12 16:32:47', '2013-07-12 16:32:47'),
-	(63, '', 0, 0, 1, 0, 1, '2013-07-12 16:33:20', '2013-07-12 16:33:20'),
-	(64, '', 0, 0, 1, 0, 1, '2013-07-12 16:33:34', '2013-07-12 16:33:34'),
 	(59, '', 0, 0, 1, 0, 1, '2013-07-12 16:32:37', '2013-07-12 16:32:37');
 /*!40000 ALTER TABLE `oc_category` ENABLE KEYS */;
 
@@ -322,14 +313,11 @@ CREATE TABLE IF NOT EXISTS `oc_category_description` (
   KEY `name` (`name`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table amthuctrangia.oc_category_description: 6 rows
+-- Dumping data for table amthuctrangia.oc_category_description: 3 rows
 /*!40000 ALTER TABLE `oc_category_description` DISABLE KEYS */;
 INSERT INTO `oc_category_description` (`category_id`, `language_id`, `name`, `description`, `meta_description`, `meta_keyword`) VALUES
 	(60, 2, 'Món ăn từ miến', '', '', ''),
 	(61, 2, 'Bánh đa làng chiều', '', '', ''),
-	(62, 2, 'Tin tức', '', '', ''),
-	(63, 2, 'Sản phẩm', '', '', ''),
-	(64, 2, 'Giới thiệu làng nghề', '', '', ''),
 	(59, 2, 'Món ăn từ nem', '', '', '');
 /*!40000 ALTER TABLE `oc_category_description` ENABLE KEYS */;
 
@@ -356,14 +344,11 @@ CREATE TABLE IF NOT EXISTS `oc_category_path` (
   PRIMARY KEY (`category_id`,`path_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table amthuctrangia.oc_category_path: 6 rows
+-- Dumping data for table amthuctrangia.oc_category_path: 3 rows
 /*!40000 ALTER TABLE `oc_category_path` DISABLE KEYS */;
 INSERT INTO `oc_category_path` (`category_id`, `path_id`, `level`) VALUES
 	(61, 61, 0),
 	(60, 60, 0),
-	(64, 64, 0),
-	(63, 63, 0),
-	(62, 62, 0),
 	(59, 59, 0);
 /*!40000 ALTER TABLE `oc_category_path` ENABLE KEYS */;
 
@@ -390,15 +375,12 @@ CREATE TABLE IF NOT EXISTS `oc_category_to_store` (
   PRIMARY KEY (`category_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table amthuctrangia.oc_category_to_store: 6 rows
+-- Dumping data for table amthuctrangia.oc_category_to_store: 3 rows
 /*!40000 ALTER TABLE `oc_category_to_store` DISABLE KEYS */;
 INSERT INTO `oc_category_to_store` (`category_id`, `store_id`) VALUES
 	(59, 0),
 	(60, 0),
-	(61, 0),
-	(62, 0),
-	(63, 0),
-	(64, 0);
+	(61, 0);
 /*!40000 ALTER TABLE `oc_category_to_store` ENABLE KEYS */;
 
 
@@ -761,7 +743,7 @@ CREATE TABLE IF NOT EXISTS `oc_currency` (
 -- Dumping data for table amthuctrangia.oc_currency: 1 rows
 /*!40000 ALTER TABLE `oc_currency` DISABLE KEYS */;
 INSERT INTO `oc_currency` (`currency_id`, `title`, `code`, `symbol_left`, `symbol_right`, `decimal_place`, `value`, `status`, `date_modified`) VALUES
-	(4, 'VNĐ', 'VNĐ', '', 'VNĐ', '0', 1.00000000, 1, '2013-07-13 12:38:56');
+	(4, 'VNĐ', 'VNĐ', '', 'VNĐ', '0', 1.00000000, 1, '2013-07-13 15:29:09');
 /*!40000 ALTER TABLE `oc_currency` ENABLE KEYS */;
 
 
@@ -1055,9 +1037,9 @@ CREATE TABLE IF NOT EXISTS `oc_extension` (
   `type` varchar(32) NOT NULL,
   `code` varchar(32) NOT NULL,
   PRIMARY KEY (`extension_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=433 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=434 DEFAULT CHARSET=utf8;
 
--- Dumping data for table amthuctrangia.oc_extension: 24 rows
+-- Dumping data for table amthuctrangia.oc_extension: 25 rows
 /*!40000 ALTER TABLE `oc_extension` DISABLE KEYS */;
 INSERT INTO `oc_extension` (`extension_id`, `type`, `code`) VALUES
 	(23, 'payment', 'cod'),
@@ -1173,7 +1155,7 @@ CREATE TABLE IF NOT EXISTS `oc_information` (
   PRIMARY KEY (`information_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
--- Dumping data for table amthuctrangia.oc_information: 6 rows
+-- Dumping data for table amthuctrangia.oc_information: 5 rows
 /*!40000 ALTER TABLE `oc_information` DISABLE KEYS */;
 INSERT INTO `oc_information` (`information_id`, `bottom`, `sort_order`, `status`) VALUES
 	(3, 1, 3, 1),
@@ -1194,12 +1176,12 @@ CREATE TABLE IF NOT EXISTS `oc_information_description` (
   PRIMARY KEY (`information_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table amthuctrangia.oc_information_description: 6 rows
+-- Dumping data for table amthuctrangia.oc_information_description: 5 rows
 /*!40000 ALTER TABLE `oc_information_description` DISABLE KEYS */;
 INSERT INTO `oc_information_description` (`information_id`, `language_id`, `title`, `description`) VALUES
-	(4, 2, 'Giới thiệu', '&lt;p&gt;About Us&lt;/p&gt;\r\n'),
+	(4, 2, 'Giới thiệu', '&lt;p style=&quot;text-align: justify;&quot;&gt;Công Ty Cổ Phần Thương Mại Và Đầu Tư Trần Gia được thành lập vào năm 2011 ngay chính tại mảnh đất làng nghề truyền thống quê Hương Làng Chều - Hà Nam. Với mong muốn đưa sản phẩm quê hương ra thị trường trong nước và nước ngoài. Lĩnh vực hoạt động chủ yếu của công ty là sản xuất và phân phối các mặt hàng thực phẩm và các mặt hàng có nguồn gốc từ lương thực, nông lâm sản. Công ty Cổ Phần Thương Mại và Đầu Tư Trần Gia đang ngày càng khẳng định được thương hiệu và chỗ đứng trên thị trường. Sau hơn 2 năm đi vào hoạt động, Trần Gia gần như có một hệ thống nhà phân phối trên khắp các tỉnh và thành phố tại Việt Nam. Đặc biệt hơn, các sản phẩm của Công ty còn vươn ra thị trường thế giới như Châu Âu, Hàn Quốc, Trung Quốc, Đài Loan, Nhật Bản.....&lt;/p&gt;\r\n\r\n&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;strong&gt;Sản phẩm chủ đạo của công ty là:&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;line-height: 1.3em;&quot;&gt;&lt;strong&gt;- Bánh Đa Nem Làng Chều - Hà Nam&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;line-height: 1.3em;&quot;&gt;&lt;strong&gt;- Miến Dong&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;strong&gt;&lt;span style=&quot;line-height: 1.3em;&quot;&gt;- Phở khô&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;text-align: justify;&quot;&gt;Trần Gia luôn cam kết cung cấp các sản phẩm chất lượng nhất đến với quý khách hàng. Đặc biệt đối với các nhà phân phối Trần Gia luôn dựa theo tiêu chí hợp tác lâu dài, đôi bên cùng có lợi.&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;strong&gt;Mọi chi tiết xin vui lòng liên hệ :&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;strong&gt;Công ty Công ty Cp Thương mại và Đầu Tư Trần Gia.&lt;/strong&gt;&lt;br /&gt;\r\nLàng Chều - Nguyên Lý - Lý Nhân - Hà Nam.&lt;br /&gt;\r\n&lt;strong&gt;Tel:&lt;/strong&gt;(0351)3635686&amp;nbsp; - Fax:(0351)3635886&lt;br /&gt;\r\n&lt;strong&gt;Văn Phòng Tại Hà Nội:&lt;/strong&gt; 2 Ngõ 50/30 Phố Mễ Trì Thượng - Từ Liêm - Hà Nội&lt;br /&gt;\r\n&lt;strong&gt;Tel: &lt;/strong&gt;0462.966.111&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;strong&gt;Hotline: &lt;/strong&gt;0977.999.544&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;strong&gt;Email:&lt;/strong&gt; &lt;a href=&quot;mailto:thucphamtrangia@gmail.com&quot;&gt;thucphamtrangia@gmail.com&lt;/a&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;strong&gt;Website:&lt;/strong&gt; www.amthuctrangia.vn&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;br /&gt;\r\n&lt;strong&gt;Trân trọng!&lt;/strong&gt;&lt;/p&gt;\r\n'),
 	(5, 2, 'Chính sách phân phối', '&lt;p&gt;Để nhà phân phối nhanh chóng tiếp cận thị trường được tốt, ngoài việc đảm bảo chất lượng sản phẩm cũng như hình thức bao bì sản phẩm đẹp cuốn hút khách hàng. Trần Gia sẽ có những chính sách hỗ trợ cho các nhà phân phối như sau:&lt;/p&gt;\r\n\r\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;strong&gt;1. Hỗ Trợ trong 2 tháng đầu làm thị trường&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p&gt;* Tư vấn các chính sách làm thị trường cho các nhà phân phối&lt;/p&gt;\r\n\r\n&lt;p&gt;* Hỗ trợ trích thưởng trên tổng doanh thu (Trích vào cuối tháng) để nhà phân phối thưởng cho nhân viên làm thị trường. Mức trích thưởng tùy vào thỏa thuận của 2 bên.&lt;/p&gt;\r\n\r\n&lt;p&gt;* Nhập lại sản phẩm nếu nhà phân phối bán không hết hàng&lt;/p&gt;\r\n\r\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36.0pt;&quot;&gt;&lt;strong&gt;2. Trong suốt quá trình hợp tác&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36.0pt;&quot;&gt;&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36.0pt;&quot;&gt;* Đổi hàng mới cho những lô hàng: hết hạn hoặc sắp hết hạn sử dụng, hàng bị ẩm mốc do thời tiết….)&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36.0pt;&quot;&gt;* Thường xuyên chia sẻ thông tin và hỗ trợ kịp thời tới các nhà phân phối.&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36.0pt;&quot;&gt;* Cam kết hỗ trợ tối đa do biến động của thị trường và cam kết không tăng giá bán quá 10% vào các dịp lễ tết. (mặt hàng khô thường tăng từ 50 – 100% vào các dịp lễ tết).&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36.0pt;&quot;&gt;* Chính sách thưởng cuối năm: Nhà sản xuất sẽ có những hình thưc thưởng cuối năm nếu nhà phân phối vượt chỉ tiêu nhập hàng. Mức thưởng và mức chỉ tiêu sẽ được nhà sản xuất quy định trong bản hợp đồng với các nhà phân phối&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36.0pt;&quot;&gt;* Chính sách độc quyền phân phối sản phẩm: Nhà phân phối sẽ có cơ hội độc quyền phân phối sản phẩm các mặt hàng do Trần Gia sản xuất tại 1 đia bàn hoặc nhiều địa bàn (Điều kiện được quy định bên dưới).&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36.0pt;&quot;&gt;* Hỗ trợ phân phối và marketing: Nhà sản xuất sẽ đăng thông tin của nhà phân phối và hệ thống website của công ty và các các chiến lược marketing online của công ty thường niên. Dựa trên nguồn khách hàng đăng ký nhập hàng, nhà sản xuất sẽ dựa trên hệ thống nhà phân phối để liên hệ với các nhà phân phối chuyển hàng tới các khách hàng đã đặt hàng với nhà sản xuất.&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36.0pt;&quot;&gt;* Được cung cấp các thông tin về hàng hóa, chính sách và các chiến lược marketing cũng như các tài liệu thúc đẩy bán hàng.&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36.0pt;&quot;&gt;&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;strong&gt;3. Các điều kiện để trở thành nhà phân phối độc quyền&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:18.0pt;&quot;&gt;Để trở thành nhà phân phối độc quyền tại 1 địa bàn của các sản phẩm Trần Gia thì nhà phân phối phải đảm bảo các điều kiện sau:&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:18.0pt;&quot;&gt;* Doanh số đảm bảo hàng tháng theo thỏa thuận của nhà phân phối và nhà sản xuất, mức doanh số tùy thuộc và từng địa bàn mà nhà phân phối lựa chọn.&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:18.0pt;&quot;&gt;* Có nguồn tài chính ổn định&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:18.0pt;&quot;&gt;* Có xe chở hàng trọng tải 500kg trở lên&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:18.0pt;&quot;&gt;* Có đội ngũ nhân viên làm thị trường&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:18.0pt;&quot;&gt;* Có kho bãi và đảm bảo về thoáng mát không ẩm mốc.&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:18.0pt;&quot;&gt;&lt;strong&gt;Lưu ý: Trong vòng 3 tháng nếu nhà phân phối độc quyền không đảm bảo doanh số sẽ bị tước mọi quyền lợi của nhà phân phối độc quyền cấp 1 và nhà sản xuất có quyền chỉ định nhà phân phối khác lên thay thế.&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:18.0pt;&quot;&gt;&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36pt;&quot;&gt;&lt;strong&gt;&lt;em&gt;Các nhà phân phối cần thêm thông tin gì hoặc có ý kiên về các chính sách mà Trần Gia đã đề ra xin vui lòng liên hệ với đại diện của công ty theo số điện thoại: 0977.999.544 hoặc qua email: &lt;a href=&quot;mailto:thucphamtrangia@gmail.com&quot;&gt;thucphamtrangia@gmail.com&lt;/a&gt;.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;margin-left:36.0pt;&quot;&gt;&lt;strong&gt;Xin chân thành cảm ơn!&lt;/strong&gt;&lt;/p&gt;\r\n'),
-	(3, 2, 'Tìm đối tác', '&lt;p&gt;Privacy Policy&lt;/p&gt;\r\n'),
+	(3, 2, 'Tìm đối tác', '&lt;p&gt;Được thành lập tại một ngôi làng làm bánh đa nem truyền thống, Công Ty Cổ Phần Thương Mại và Đầu Tư Trần Gia đang dần chiếm lĩnh được thị trường không chỉ trong và ngoài nước. Ngoài việc cung cấp thị trường nội địa, công ty còn mở rộng ra các thị trường lớn khác như Trung Quốc, Đài Loan, Nga và một số nước Châu Âu khác.&lt;/p&gt;\r\n\r\n&lt;p&gt;Với diện tích nhà xưởng hơn 1000m2 và một dây truyền sản xuất làm bánh hiện đại, Trần gia khẳng định sẽ mang lại cho người tiêu dùng những dòng sản phẩm bánh đa nem chất lượng nhất và đảm bảo nhất. Ngoài ra, Trần Gia xin cam kết với quý khách hàng mọi sản phẩm được sản xuất ra đều được chứng nhận an toàn vệ sinh thực phẩm do các cơ quan chức năng thẩm quyền cấp phép.&lt;/p&gt;\r\n\r\n&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img border=&quot;0&quot; height=&quot;350&quot; src=&quot;http://amthuctrangia.vn/images/stories/logo%20tran%20gia.png&quot; style=&quot;vertical-align: middle;&quot; width=&quot;400&quot; /&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;Trần Gia luôn mong muốn hợp tác với các đối tác trong và ngoài nước để phân phối các mặt hàng bánh đa nem làng Chều mang thương hiệu Trần Gia. Với nhiều chủng loại sản phẩm như bánh đa nem xuất khẩu, bánh đa nem nhà hàng, bánh đa nem ăn hàng ngày.... và nhận các đơn đặt hàng theo yêu cầu của quý khách. Trần gia cam kết đưa lại sản phẩm tốt và giá cả tốt nhất đến các đối tác.&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;strong&gt;CÁC SẢN PHẨM CHỦ ĐẠO MÀ CÔNG TY ĐANG PHÂN PHỐI:&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;em&gt;&lt;span style=&quot;text-decoration: underline;&quot;&gt;* Bánh đa nem xuất khẩu size 16 ( Loại vuông, tròn)&lt;/span&gt;&lt;/em&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;em&gt;&lt;span style=&quot;text-decoration: underline;&quot;&gt;* Bánh đa nem xuất khẩu size 22 ( Loại vuông tròn)&lt;/span&gt;&lt;/em&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;em&gt;&lt;span style=&quot;text-decoration: underline;&quot;&gt;* Bánh đa nem ăn hàng ngày ( Nem Lưới) loại 22&lt;/span&gt;&lt;/em&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;em&gt;&lt;span style=&quot;text-decoration: underline;&quot;&gt;* Bánh đa nem ăn hàng ngày ( Nem nan) loại 22&lt;/span&gt;&lt;/em&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;em&gt;&lt;span style=&quot;text-decoration: underline;&quot;&gt;* Bánh đa nem pin ( Ăn sống)&lt;/span&gt;&lt;/em&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;Và các loại bánh đa với các kích cỡ khác nhau tùy theo đơn đặt hàng của khách hàng.&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;strong&gt;Quý khách hàng có thể xem hình ảnh các dòng sản phẩm Bánh Đa Nem do Công Ty Trần Gia phân phối &lt;a href=&quot;http://amthuctrangia.vn/tin-tuc/150-banh-da-nem.html&quot; target=&quot;_blank&quot;&gt;&lt;span style=&quot;text-decoration: underline;&quot;&gt;tại đây&lt;/span&gt;&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;strong&gt;CÁC SẢN PHẨM SẮP RA MẮT:&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;em&gt;&lt;span style=&quot;text-decoration: underline;&quot;&gt;* Bún Khô&lt;/span&gt;&lt;/em&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;em&gt;&lt;span style=&quot;text-decoration: underline;&quot;&gt;* Miến Dong&lt;/span&gt;&lt;/em&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;em&gt;&lt;span style=&quot;text-decoration: underline;&quot;&gt;* Phở Khô&lt;/span&gt;&lt;/em&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;strong&gt;Mọi chi tiết xin Quý khách vui lòng liên hệ với:&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;strong&gt;Phòng Quan Hệ Và Hợp Tác Công Ty Trần Gia&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;strong&gt;Tel: 0462.966.111&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;strong&gt;Hotline: 0977.999.544&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;strong&gt;Email: &lt;a href=&quot;mailto:banhdanemlangcheu@gmail.com&quot;&gt;banhdanemlangcheu@gmail.com&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;strong&gt;Web: www.amthuctrangia.vn&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;strong&gt;Xin chân thành cảm ơn!&lt;/strong&gt;&lt;/p&gt;\r\n'),
 	(7, 2, 'Tuyển dụng', '&lt;p&gt;Tuyển dụng&lt;/p&gt;\r\n'),
 	(8, 2, 'Sản phẩm', '&lt;p&gt;sản phẩm&lt;/p&gt;\r\n');
 /*!40000 ALTER TABLE `oc_information_description` ENABLE KEYS */;
@@ -1230,7 +1212,7 @@ CREATE TABLE IF NOT EXISTS `oc_information_to_store` (
   PRIMARY KEY (`information_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table amthuctrangia.oc_information_to_store: 6 rows
+-- Dumping data for table amthuctrangia.oc_information_to_store: 5 rows
 /*!40000 ALTER TABLE `oc_information_to_store` DISABLE KEYS */;
 INSERT INTO `oc_information_to_store` (`information_id`, `store_id`) VALUES
 	(3, 0),
@@ -1270,9 +1252,9 @@ CREATE TABLE IF NOT EXISTS `oc_layout` (
   `layout_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) NOT NULL,
   PRIMARY KEY (`layout_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
--- Dumping data for table amthuctrangia.oc_layout: 11 rows
+-- Dumping data for table amthuctrangia.oc_layout: 12 rows
 /*!40000 ALTER TABLE `oc_layout` DISABLE KEYS */;
 INSERT INTO `oc_layout` (`layout_id`, `name`) VALUES
 	(1, 'Home'),
@@ -1298,9 +1280,9 @@ CREATE TABLE IF NOT EXISTS `oc_layout_route` (
   `store_id` int(11) NOT NULL,
   `route` varchar(255) NOT NULL,
   PRIMARY KEY (`layout_route_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=34 DEFAULT CHARSET=utf8;
 
--- Dumping data for table amthuctrangia.oc_layout_route: 10 rows
+-- Dumping data for table amthuctrangia.oc_layout_route: 11 rows
 /*!40000 ALTER TABLE `oc_layout_route` DISABLE KEYS */;
 INSERT INTO `oc_layout_route` (`layout_route_id`, `layout_id`, `store_id`, `route`) VALUES
 	(30, 6, 0, 'account'),
@@ -1430,8 +1412,8 @@ INSERT INTO `oc_news` (`news_id`, `image`, `date_available`, `sort_order`, `comm
 	(24, 'data/tin/h2.jpg', '2013-07-11', 1, 1, 1, 1, '2013-07-13 00:18:57', '2013-07-13 00:19:04', 0),
 	(25, 'data/tin/h3.jpg', '2013-07-11', 1, 1, 1, 1, '2013-07-13 00:20:01', '0000-00-00 00:00:00', 5),
 	(26, 'data/tin/h4.jpg', '2013-07-11', 1, 1, 1, 1, '2013-07-13 00:24:14', '0000-00-00 00:00:00', 0),
-	(27, 'data/tin/h5.jpg', '2013-07-11', 1, 1, 1, 1, '2013-07-13 00:25:25', '0000-00-00 00:00:00', 8),
-	(28, 'data/tin/h6.jpg', '2013-07-11', 1, 1, 1, 1, '2013-07-13 00:26:55', '0000-00-00 00:00:00', 0);
+	(27, 'data/tin/h5.jpg', '2013-07-11', 1, 1, 1, 1, '2013-07-13 00:25:25', '0000-00-00 00:00:00', 15),
+	(28, 'data/tin/h6.jpg', '2013-07-11', 1, 1, 1, 1, '2013-07-13 00:26:55', '0000-00-00 00:00:00', 13);
 /*!40000 ALTER TABLE `oc_news` ENABLE KEYS */;
 
 
@@ -2116,7 +2098,7 @@ INSERT INTO `oc_product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `is
 	(54, 'banhdanem05', '', '', '', '', '', '', '', 1, 5, 'data/B__nh___a_Nem_Vu_50af8bfedbd83.jpg', 0, 1, 6000.0000, 0, 0, '2013-07-11', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, '2013-07-12 17:28:14', '0000-00-00 00:00:00', 1),
 	(55, 'banhdanem06', '', '', '', '', '', '', '', 1, 5, 'data/B__nh___a_Vu__ng_50af8c7fd0e7a.jpg', 0, 1, 6000.0000, 0, 0, '2013-07-11', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, '2013-07-12 17:29:10', '0000-00-00 00:00:00', 6),
 	(50, 'banhdanem01', '', '', '', '', '', '', '', 1, 5, 'data/banh hinh chu nhat.jpg', 0, 1, 150000.0000, 0, 0, '2013-07-11', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, '2013-07-12 17:22:31', '0000-00-00 00:00:00', 1),
-	(51, 'banhdanem02', '', '', '', '', '', '', '', 1, 5, 'data/B__nh___a_Nem_C__50af8e6cc7d3a.jpg', 0, 1, 150000.0000, 0, 0, '2013-07-11', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, '2013-07-12 17:23:59', '0000-00-00 00:00:00', 0),
+	(51, 'banhdanem02', '', '', '', '', '', '', '', 1, 5, 'data/B__nh___a_Nem_C__50af8e6cc7d3a.jpg', 0, 1, 150000.0000, 0, 0, '2013-07-11', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, '2013-07-12 17:23:59', '0000-00-00 00:00:00', 2),
 	(52, 'banhdanem03', '', '', '', '', '', '', '', 1, 5, 'data/B__nh___a_Nem_C__50af8e2316aad.jpg', 0, 1, 20000.0000, 0, 0, '2013-07-11', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, '2013-07-12 17:25:15', '0000-00-00 00:00:00', 1),
 	(53, 'banhdanem04', '', '', '', '', '', '', '', 1, 5, 'data/16can.jpg', 0, 1, 15000.0000, 0, 0, '2013-07-11', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, '2013-07-12 17:27:04', '0000-00-00 00:00:00', 6);
 /*!40000 ALTER TABLE `oc_product` ENABLE KEYS */;
@@ -2506,9 +2488,9 @@ CREATE TABLE IF NOT EXISTS `oc_setting` (
   `value` text NOT NULL,
   `serialized` tinyint(1) NOT NULL,
   PRIMARY KEY (`setting_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=704 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=1037 DEFAULT CHARSET=utf8;
 
--- Dumping data for table amthuctrangia.oc_setting: 179 rows
+-- Dumping data for table amthuctrangia.oc_setting: 184 rows
 /*!40000 ALTER TABLE `oc_setting` DISABLE KEYS */;
 INSERT INTO `oc_setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `serialized`) VALUES
 	(1, 0, 'shipping', 'shipping_sort_order', '3', 0),
@@ -2542,6 +2524,8 @@ INSERT INTO `oc_setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `se
 	(60, 0, 'account', 'account_module', 'a:1:{i:0;a:4:{s:9:"layout_id";s:1:"6";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
 	(94, 0, 'voucher', 'voucher_sort_order', '8', 0),
 	(95, 0, 'voucher', 'voucher_status', '1', 0),
+	(1035, 0, 'featured', 'featured_product', '53,51,50,55,54', 0),
+	(1036, 0, 'featured', 'featured_module', 'a:1:{i:0;a:7:{s:5:"limit";s:1:"5";s:11:"image_width";s:3:"160";s:12:"image_height";s:3:"160";s:9:"layout_id";s:2:"11";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"3";}}', 1),
 	(995, 0, 'config', 'config_google_analytics', '', 0),
 	(994, 0, 'config', 'config_error_filename', 'error.txt', 0),
 	(993, 0, 'config', 'config_error_log', '1', 0),
@@ -2624,9 +2608,6 @@ INSERT INTO `oc_setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `se
 	(920, 0, 'config', 'config_tax_customer', 'shipping', 0),
 	(921, 0, 'config', 'config_customer_online', '0', 0),
 	(922, 0, 'config', 'config_customer_group_id', '1', 0),
-	(781, 0, 'featured', 'product', '', 0),
-	(782, 0, 'featured', 'featured_product', '53,51,50,55,54', 0),
-	(783, 0, 'featured', 'featured_module', 'a:1:{i:0;a:7:{s:5:"limit";s:1:"5";s:11:"image_width";s:3:"160";s:12:"image_height";s:3:"160";s:9:"layout_id";s:2:"11";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
 	(923, 0, 'config', 'config_customer_group_display', 'a:1:{i:0;s:1:"1";}', 1),
 	(924, 0, 'config', 'config_customer_price', '0', 0),
 	(925, 0, 'config', 'config_account_id', '3', 0),
@@ -2644,25 +2625,30 @@ INSERT INTO `oc_setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `se
 	(937, 0, 'config', 'config_affiliate_id', '4', 0),
 	(938, 0, 'config', 'config_commission', '5', 0),
 	(939, 0, 'config', 'config_return_id', '0', 0),
-	(743, 0, 'tnt_yahoo', 'tnt_yahoo_yahooid1', 'doidondoc_tinhtieutan', 0),
-	(766, 0, 'tnt_yahoo', 'tnt_skype_image3', '', 0),
-	(765, 0, 'tnt_yahoo', 'tnt_skype_mobile3', '', 0),
-	(764, 0, 'tnt_yahoo', 'tnt_skype_skypeid3', '', 0),
-	(763, 0, 'tnt_yahoo', 'tnt_skype_image2', '', 0),
-	(762, 0, 'tnt_yahoo', 'tnt_skype_mobile2', '', 0),
-	(761, 0, 'tnt_yahoo', 'tnt_skype_skypeid2', '', 0),
-	(760, 0, 'tnt_yahoo', 'tnt_skype_image1', '', 0),
-	(759, 0, 'tnt_yahoo', 'tnt_skype_mobile1', '', 0),
-	(758, 0, 'tnt_yahoo', 'tnt_skype_skypeid1', '', 0),
-	(757, 0, 'tnt_yahoo', 'tnt_yahoo_image5', '', 0),
-	(756, 0, 'tnt_yahoo', 'tnt_yahoo_mobile5', '', 0),
-	(755, 0, 'tnt_yahoo', 'tnt_yahoo_yahooid5', '', 0),
-	(754, 0, 'tnt_yahoo', 'tnt_yahoo_image4', '', 0),
-	(753, 0, 'tnt_yahoo', 'tnt_yahoo_mobile4', '', 0),
-	(752, 0, 'tnt_yahoo', 'tnt_yahoo_yahooid4', '', 0),
-	(750, 0, 'tnt_yahoo', 'tnt_yahoo_mobile3', '', 0),
-	(751, 0, 'tnt_yahoo', 'tnt_yahoo_image3', '', 0),
-	(776, 0, 'visitor', 'visitor_module', 'a:5:{i:0;a:4:{s:9:"layout_id";s:1:"1";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:2:"13";}i:1;a:4:{s:9:"layout_id";s:1:"3";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:2:"13";}i:2;a:4:{s:9:"layout_id";s:1:"2";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:2:"13";}i:3;a:4:{s:9:"layout_id";s:2:"12";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:2:"13";}i:4;a:4:{s:9:"layout_id";s:2:"11";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:2:"13";}}', 1),
+	(1004, 0, 'tnt_yahoo', 'tnt_yahoo_mobile2', '', 0),
+	(1005, 0, 'tnt_yahoo', 'tnt_yahoo_image2', '', 0),
+	(1006, 0, 'tnt_yahoo', 'tnt_yahoo_yahooid3', '', 0),
+	(1007, 0, 'tnt_yahoo', 'tnt_yahoo_mobile3', '', 0),
+	(1008, 0, 'tnt_yahoo', 'tnt_yahoo_image3', '', 0),
+	(1009, 0, 'tnt_yahoo', 'tnt_yahoo_yahooid4', '', 0),
+	(1010, 0, 'tnt_yahoo', 'tnt_yahoo_mobile4', '', 0),
+	(1011, 0, 'tnt_yahoo', 'tnt_yahoo_image4', '', 0),
+	(1012, 0, 'tnt_yahoo', 'tnt_yahoo_yahooid5', '', 0),
+	(1013, 0, 'tnt_yahoo', 'tnt_yahoo_mobile5', '', 0),
+	(1014, 0, 'tnt_yahoo', 'tnt_yahoo_image5', '', 0),
+	(1015, 0, 'tnt_yahoo', 'tnt_skype_skypeid1', '', 0),
+	(1016, 0, 'tnt_yahoo', 'tnt_skype_mobile1', '', 0),
+	(1017, 0, 'tnt_yahoo', 'tnt_skype_image1', '', 0),
+	(1018, 0, 'tnt_yahoo', 'tnt_skype_skypeid2', '', 0),
+	(1019, 0, 'tnt_yahoo', 'tnt_skype_mobile2', '', 0),
+	(1020, 0, 'tnt_yahoo', 'tnt_skype_image2', '', 0),
+	(1021, 0, 'tnt_yahoo', 'tnt_skype_skypeid3', '', 0),
+	(1022, 0, 'tnt_yahoo', 'tnt_skype_mobile3', '', 0),
+	(1023, 0, 'tnt_yahoo', 'tnt_skype_image3', '', 0),
+	(1024, 0, 'tnt_yahoo', 'tnt_skype_skypeid4', '', 0),
+	(1025, 0, 'tnt_yahoo', 'tnt_skype_mobile4', '', 0),
+	(1026, 0, 'tnt_yahoo', 'tnt_skype_image4', '', 0),
+	(1027, 0, 'tnt_yahoo', 'tnt_skype_skypeid5', '', 0),
 	(898, 0, 'config', 'config_title', 'Your Store', 0),
 	(899, 0, 'config', 'config_meta_description', 'My Store', 0),
 	(900, 0, 'config', 'config_template', 'trangia', 0),
@@ -2670,22 +2656,17 @@ INSERT INTO `oc_setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `se
 	(706, 0, 'newsfeatured', 'newsfeatured_news', '23,25,24,26,27,28', 0),
 	(707, 0, 'newsfeatured', 'newsfeatured_module', 'a:4:{i:0;a:10:{s:5:"limit";s:1:"6";s:16:"limitdescription";s:3:"200";s:11:"image_width";s:3:"163";s:12:"image_height";s:3:"140";s:9:"layout_id";s:1:"1";s:8:"position";s:13:"banner_center";s:11:"description";s:1:"1";s:11:"imagestatus";s:1:"1";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}i:1;a:10:{s:5:"limit";s:1:"6";s:16:"limitdescription";s:3:"200";s:11:"image_width";s:3:"163";s:12:"image_height";s:3:"140";s:9:"layout_id";s:1:"3";s:8:"position";s:13:"banner_center";s:11:"description";s:1:"1";s:11:"imagestatus";s:1:"1";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}i:2;a:10:{s:5:"limit";s:1:"6";s:16:"limitdescription";s:3:"200";s:11:"image_width";s:3:"163";s:12:"image_height";s:3:"140";s:9:"layout_id";s:1:"2";s:8:"position";s:13:"banner_center";s:11:"description";s:1:"1";s:11:"imagestatus";s:1:"1";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}i:3;a:10:{s:5:"limit";s:1:"6";s:16:"limitdescription";s:3:"200";s:11:"image_width";s:3:"163";s:12:"image_height";s:3:"140";s:9:"layout_id";s:2:"12";s:8:"position";s:13:"banner_center";s:11:"description";s:1:"1";s:11:"imagestatus";s:1:"1";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
 	(705, 0, 'newsfeatured', 'news', '', 0),
-	(749, 0, 'tnt_yahoo', 'tnt_yahoo_yahooid3', '', 0),
-	(748, 0, 'tnt_yahoo', 'tnt_yahoo_image2', '', 0),
-	(747, 0, 'tnt_yahoo', 'tnt_yahoo_mobile2', '', 0),
-	(746, 0, 'tnt_yahoo', 'tnt_yahoo_yahooid2', '', 0),
-	(745, 0, 'tnt_yahoo', 'tnt_yahoo_image1', '1', 0),
-	(744, 0, 'tnt_yahoo', 'tnt_yahoo_mobile1', '01694046627', 0),
-	(742, 0, 'category', 'category_module', 'a:5:{i:0;a:4:{s:9:"layout_id";s:1:"1";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"3";}i:1;a:4:{s:9:"layout_id";s:1:"3";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}i:2;a:4:{s:9:"layout_id";s:1:"2";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"2";}i:3;a:4:{s:9:"layout_id";s:2:"12";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}i:4;a:4:{s:9:"layout_id";s:2:"11";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
-	(774, 0, 'visitor', 'visitor_expire', '600', 0),
-	(775, 0, 'visitor', 'visitor_theme', 'Shopping', 0),
-	(767, 0, 'tnt_yahoo', 'tnt_skype_skypeid4', '', 0),
-	(768, 0, 'tnt_yahoo', 'tnt_skype_mobile4', '', 0),
-	(769, 0, 'tnt_yahoo', 'tnt_skype_image4', '', 0),
-	(770, 0, 'tnt_yahoo', 'tnt_skype_skypeid5', '', 0),
-	(771, 0, 'tnt_yahoo', 'tnt_skype_mobile5', '', 0),
-	(772, 0, 'tnt_yahoo', 'tnt_skype_image5', '', 0),
-	(773, 0, 'tnt_yahoo', 'tnt_yahoo_module', 'a:5:{i:0;a:4:{s:9:"layout_id";s:1:"1";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"3";}i:1;a:4:{s:9:"layout_id";s:1:"3";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}i:2;a:4:{s:9:"layout_id";s:1:"2";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}i:3;a:4:{s:9:"layout_id";s:2:"12";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"2";}i:4;a:4:{s:9:"layout_id";s:2:"11";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"2";}}', 1),
+	(1032, 0, 'visitor', 'visitor_theme', 'Shopping', 0),
+	(1031, 0, 'visitor', 'visitor_expire', '600', 0),
+	(1030, 0, 'tnt_yahoo', 'tnt_yahoo_module', 'a:6:{i:0;a:4:{s:9:"layout_id";s:1:"1";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"3";}i:1;a:4:{s:9:"layout_id";s:1:"3";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}i:2;a:4:{s:9:"layout_id";s:1:"2";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}i:3;a:4:{s:9:"layout_id";s:2:"12";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"2";}i:4;a:4:{s:9:"layout_id";s:2:"11";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"2";}i:5;a:4:{s:9:"layout_id";s:1:"8";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"2";}}', 1),
+	(1028, 0, 'tnt_yahoo', 'tnt_skype_mobile5', '', 0),
+	(1029, 0, 'tnt_yahoo', 'tnt_skype_image5', '', 0),
+	(996, 0, 'category', 'category_module', 'a:6:{i:0;a:4:{s:9:"layout_id";s:1:"1";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"3";}i:1;a:4:{s:9:"layout_id";s:1:"3";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}i:2;a:4:{s:9:"layout_id";s:1:"2";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"2";}i:3;a:4:{s:9:"layout_id";s:2:"12";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}i:4;a:4:{s:9:"layout_id";s:2:"11";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}i:5;a:4:{s:9:"layout_id";s:1:"8";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
+	(1000, 0, 'tnt_yahoo', 'tnt_yahoo_yahooid1', 'doidondoc_tinhtieutan', 0),
+	(1001, 0, 'tnt_yahoo', 'tnt_yahoo_mobile1', '01694046627', 0),
+	(1002, 0, 'tnt_yahoo', 'tnt_yahoo_image1', '1', 0),
+	(1003, 0, 'tnt_yahoo', 'tnt_yahoo_yahooid2', '', 0),
+	(1033, 0, 'visitor', 'visitor_module', 'a:6:{i:0;a:4:{s:9:"layout_id";s:1:"1";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:2:"13";}i:1;a:4:{s:9:"layout_id";s:1:"3";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:2:"13";}i:2;a:4:{s:9:"layout_id";s:1:"2";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:2:"13";}i:3;a:4:{s:9:"layout_id";s:2:"12";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:2:"13";}i:4;a:4:{s:9:"layout_id";s:2:"11";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:2:"13";}i:5;a:4:{s:9:"layout_id";s:1:"8";s:8:"position";s:12:"column_right";s:6:"status";s:1:"1";s:10:"sort_order";s:2:"13";}}', 1),
 	(778, 0, 'latest', 'latest_module', 'a:1:{i:0;a:7:{s:5:"limit";s:2:"12";s:11:"image_width";s:3:"160";s:12:"image_height";s:3:"160";s:9:"layout_id";s:1:"1";s:8:"position";s:11:"content_top";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"2";}}', 1),
 	(896, 0, 'config', 'config_information', ' TRANGIA..,JSC Cảm ơn quý khách đã ghé thăm Website công ty, Kính chúc quý khách sức khỏe - thành đạt - hạnh phúc !', 0),
 	(897, 0, 'config', 'config_info_footer', '&lt;div class=&quot;diachi1&quot;&gt;\r\n&lt;div class=&quot;moduletable&quot;&gt;&lt;strong&gt;Công Ty Cổ Phần Thương Mại và Đầu Tư Trần Gia&lt;/strong&gt;&lt;br /&gt;\r\nĐịa chỉ: Làng Chều - Nguyên Lý - Lý Nhân - Hà Nam&lt;br /&gt;\r\nTel:(0351) 3653.686 - Fax:(0351) 3653.886&lt;br /&gt;\r\nHotline: 0977.999.544&lt;br /&gt;\r\nEmail: banhdanemlangcheu@gmail.com&lt;/div&gt;\r\n&lt;/div&gt;\r\n\r\n&lt;div class=&quot;diachi2&quot;&gt;\r\n&lt;div class=&quot;moduletable&quot;&gt;&lt;strong&gt;Văn phòng đại diện tại Hà Nội&lt;/strong&gt;&lt;br /&gt;\r\nSố 2 Ngõ 50/30 Phố Mễ Trì Thượng - Từ Liêm - Hà Nội.&lt;br /&gt;\r\nTel: 0462.966.111 - Hotline: 0977.999.544&lt;br /&gt;\r\nEmail: banhdanemlangcheu@gmail.com&lt;/div&gt;\r\n&lt;/div&gt;\r\n\r\n&lt;div class=&quot;diachi3&quot;&gt;\r\n&lt;div class=&quot;moduletable&quot;&gt;&lt;strong&gt;Văn phòng đại diện khu vực Miền Trung&lt;/strong&gt;&lt;br /&gt;\r\nThị Trấn Phủ Diễn - Diễn Châu - Nghệ An&lt;br /&gt;\r\nHotline: 0977.999.544&lt;br /&gt;\r\nEmail: banhdanemlangcheu@gmail.com&lt;/div&gt;\r\n&lt;/div&gt;\r\n', 0),
@@ -2694,7 +2675,8 @@ INSERT INTO `oc_setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `se
 	(893, 0, 'config', 'config_email', 'admin@gmail.com', 0),
 	(892, 0, 'config', 'config_address', 'Address 1', 0),
 	(891, 0, 'config', 'config_owner', 'Your Name', 0),
-	(890, 0, 'config', 'config_name', 'Your Store', 0);
+	(890, 0, 'config', 'config_name', 'Your Store', 0),
+	(1034, 0, 'featured', 'product', '', 0);
 /*!40000 ALTER TABLE `oc_setting` ENABLE KEYS */;
 
 
@@ -2816,13 +2798,13 @@ CREATE TABLE IF NOT EXISTS `oc_url_alias` (
   `query` varchar(255) NOT NULL,
   `keyword` varchar(255) NOT NULL,
   PRIMARY KEY (`url_alias_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=788 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=789 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table amthuctrangia.oc_url_alias: 13 rows
 /*!40000 ALTER TABLE `oc_url_alias` DISABLE KEYS */;
 INSERT INTO `oc_url_alias` (`url_alias_id`, `query`, `keyword`) VALUES
 	(730, 'manufacturer_id=8', 'apple'),
-	(774, 'information_id=4', 'about_us'),
+	(788, 'information_id=4', 'about_us'),
 	(781, 'news_id=17', 'le-ky-hop-dong-xuat-khau-banh-da-nem-sang-uc'),
 	(776, 'news_id=18', 'mau-mien-dong-moi'),
 	(777, 'news_id=19', 'mau-banh-da-15-la'),
