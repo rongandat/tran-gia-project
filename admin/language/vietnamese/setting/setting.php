@@ -11,6 +11,15 @@ $_['text_shipping']            = 'Dịa chỉ Shipping';
 $_['text_payment']             = 'Địa chỉ thanh toán';
 $_['text_mail']                = 'Mail';
 $_['text_smtp']                = 'SMTP';
+$_['text_items']                = 'Items';
+$_['text_product']                = 'Sản phẩm';
+$_['text_voucher']                = 'Khuyến mại';
+$_['text_tax']                = 'Thuế';
+$_['text_account']                = 'Tài khoản';
+$_['text_checkout']                = 'Mua hàng';
+$_['text_stock']                = 'Kho hàng';
+$_['text_affiliate']                = 'Liên kết';
+$_['text_return']                = 'Trả hàng';
 
 // Entry
 $_['entry_name']                = 'Tên cửa hàng:';
@@ -96,6 +105,19 @@ $_['entry_information']      = 'Thông tin cửa hàng:';
 $_['entry_footer']      = 'Thông tin cuối trang:';
 $_['entry_image_header']      = 'Thông tin cuối trang:';
 $_['entry_header_backgroud']      = 'Ảnh nền đầu trang:';
+$_['entry_product_count']      = 'Đếm sản phẩm:';
+$_['entry_voucher_min']      = 'Voucher nhỏ nhất:';
+$_['entry_voucher_max']      = 'Voucher lớn nhất:';
+$_['entry_vat']      = 'VAT:';
+$_['entry_customer_group_display']      = 'Nhóm khách hàng mặc định:';
+$_['entry_return']      = 'Trả hàng:';
+$_['tab_ftp']      = 'Ftp';
+$_['entry_secure']      = 'Bảo mật:';
+$_['entry_shared']      = 'Chia sẻ:';
+$_['entry_robots']      = 'Robot:';
+$_['entry_file_extension_allowed']      = 'Các loại file cho phép:';
+$_['entry_file_mime_allowed']      = 'Các định dạng file cho phép:';
+$_['entry_password']      = 'Mật khẩu:';
 // Error
 $_['error_warning']             = 'Cảnh báo: Dữ liệu bắt buộc chưa được nhập vào. Kiểm tra các ô trống!';
 $_['error_permission']        = 'Cảnh báo: Bạn không được phép thay đổi các cài đặt!';

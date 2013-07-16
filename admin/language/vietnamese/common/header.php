@@ -76,5 +76,9 @@ $_['text_voucher']          = 'Phiếu quà tặng';
 $_['text_voucher_theme']    = 'Giao diện phiếu quà tặng';
 $_['text_weight_class']     = 'Trọng Lượng';
 $_['text_length_class']     = 'Chiều dài';
-$_['text_zone']             = 'Vùng';
+$_['text_news']             = 'Tin tức';
+$_['text_news_category']             = 'Danh mục tin tức';
+$_['text_news_comment']             = 'Bình luận';
+$_['text_filter']             = 'Bộ lọc';
+$_['text_customer_ban_ip']             = 'Ban IP';
 ?>
